@@ -1,8 +1,8 @@
 /**
   Fichier qui contient toute la logique du jeu.
 
-  @author   JCO
-  @date     Février 2014
+  @author   PAPEFAB
+  @date     novembre 2021
  */
 #include "gamecore.h"
 
@@ -11,10 +11,30 @@
 #include <QDebug>
 #include <QSettings>
 
+#include <QDebug>
+#include <QGraphicsBlurEffect>
+#include <QGraphicsScale>
+#include <QGraphicsSvgItem>
+#include <QParallelAnimationGroup>
+#include <QPainter>
+#include <QPropertyAnimation>
+#include <QSequentialAnimationGroup>
+#include <QSettings>
+
+#include "automaticwalkinghandler.h"
+#include "blueball.h"
+#include "bouncingspritehandler.h"
 #include "gamescene.h"
 #include "gamecanvas.h"
+#include "manualwalkinghandler.h"
+#include "randommovetickhandler.h"
+#include "player.h"
 #include "resources.h"
+#include "spinningpinwheel.h"
+#include "sprite.h"
 #include "utilities.h"
+#include "walkingman.h"
+#include "playertickhandler.h"
 
 const int SCENE_WIDTH = 1280;
 
@@ -22,6 +42,7 @@ const int SCENE_WIDTH = 1280;
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
+    m_pPlayer = nullptr;
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -34,9 +55,11 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_pScene->addRect(m_pScene->sceneRect(), QPen(Qt::white));
 
     // Instancier et initialiser les sprite ici :
-    // ...
-
-
+    pSprite = new Sprite(GameFramework::imagesPath() + "personnage.png");
+    pSprite->setPos(200, 200);
+    pSprite->setScale(0.1);
+    m_pScene->addSpriteToScene(pSprite);
+    m_pPlayer = pSprite;
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
@@ -55,6 +78,15 @@ GameCore::~GameCore() {
 //!
 void GameCore::keyPressed(int key) {
     emit notifyKeyPressed(key);
+
+    switch (key)  {
+    case Qt::Key_Right:
+        m_pPlayer->setX(m_pPlayer->x() + 20);
+        break;
+    case Qt::Key_Left:
+        m_pPlayer->setX(m_pPlayer->x() - 20);
+        break;
+    }
 
 }
 

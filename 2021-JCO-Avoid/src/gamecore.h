@@ -13,6 +13,7 @@
 
 class GameCanvas;
 class GameScene;
+class Sprite;
 
 //! \brief Classe qui gère la logique du jeu.
 //!
@@ -45,6 +46,8 @@ private:
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
+    Sprite* pSprite;
+    Sprite* m_pPlayer;
 
 private slots:
 

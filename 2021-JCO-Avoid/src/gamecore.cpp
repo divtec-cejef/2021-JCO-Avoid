@@ -56,7 +56,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
 
     // Instancier et initialiser les sprite ici :
     pSprite = new Sprite(GameFramework::imagesPath() + "personnage.png");
-    pSprite->setPos(200, 200);
+    pSprite->setPos(m_pScene->width()/2.0, m_pScene->height() - 70);
     pSprite->setScale(0.1);
     m_pScene->addSpriteToScene(pSprite);
     m_pPlayer = pSprite;

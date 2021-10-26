@@ -1,4 +1,3 @@
-
 #-------------------------------------------------
 #
 # Project created by QtCreator 2014-01-31T13:38:06
@@ -18,7 +17,6 @@ TEMPLATE = app
 #DEFINES += DEPLOY # Pour une compilation dans un but de déploiement
 
 SOURCES += main.cpp\
-    gamecore_blank.cpp \
     keytickhandler.cpp \
         mainfrm.cpp \
     gamescene.cpp \
@@ -40,7 +38,6 @@ SOURCES += main.cpp\
     automaticwalkinghandler.cpp
 
 HEADERS  += mainfrm.h \
-    gamecore_blank.h \
     gamescene.h \
     keytickhandler.h \
     player.h \

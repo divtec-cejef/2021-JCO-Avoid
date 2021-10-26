@@ -1,8 +1,8 @@
 /**
   \file
   \brief    Déclaration de la classe GameCore.
-  \author   PAPEFAB
-  \date     novembre 2021
+  \author   JCO
+  \date     septembre 2018
 */
 #ifndef GAMECORE_H
 #define GAMECORE_H

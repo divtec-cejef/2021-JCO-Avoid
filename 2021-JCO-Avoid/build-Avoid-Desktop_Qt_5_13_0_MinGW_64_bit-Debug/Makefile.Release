@@ -303,7 +303,7 @@ release/moc_mainfrm.cpp: ../src/mainfrm.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\mainfrm.h -o release\moc_mainfrm.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\mainfrm.h -o release\moc_mainfrm.cpp
 
 release/moc_gamescene.cpp: ../src/gamescene.h \
 		../src/gamecanvas.h \
@@ -403,7 +403,7 @@ release/moc_gamescene.cpp: ../src/gamescene.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpen.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamescene.h -o release\moc_gamescene.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamescene.h -o release\moc_gamescene.cpp
 
 release/moc_keytickhandler.cpp: ../src/keytickhandler.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
@@ -462,7 +462,7 @@ release/moc_keytickhandler.cpp: ../src/keytickhandler.h \
 		../src/spritetickhandler.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\keytickhandler.h -o release\moc_keytickhandler.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\keytickhandler.h -o release\moc_keytickhandler.cpp
 
 release/moc_player.cpp: ../src/player.h \
 		../src/sprite.h \
@@ -561,7 +561,7 @@ release/moc_player.cpp: ../src/player.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\player.h -o release\moc_player.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\player.h -o release\moc_player.cpp
 
 release/moc_sprite.cpp: ../src/sprite.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
@@ -659,12 +659,13 @@ release/moc_sprite.cpp: ../src/sprite.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\sprite.h -o release\moc_sprite.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\sprite.h -o release\moc_sprite.cpp
 
 release/moc_gamecore.cpp: ../src/gamecore.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QList \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qevent.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qnamespace.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qglobal.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qconfig.h \
@@ -686,21 +687,7 @@ release/moc_gamecore.cpp: ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmutex.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qnumeric.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtgui-config.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qnamespace.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qregion.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qrect.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmargins.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsize.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatastream.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qstring.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qchar.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbytearray.h \
@@ -716,38 +703,21 @@ release/moc_gamecore.cpp: ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpair.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpoint.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbytearraylist.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qstringlist.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qregexp.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qstringmatcher.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qscopedpointer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qkeysequence.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmap.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhash.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qset.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurlquery.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfile.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamecore.h -o release\moc_gamecore.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamecore.h -o release\moc_gamecore.cpp
 
 release/moc_gamecanvas.cpp: ../src/gamecanvas.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
@@ -817,7 +787,7 @@ release/moc_gamecanvas.cpp: ../src/gamecanvas.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamecanvas.h -o release\moc_gamecanvas.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamecanvas.h -o release\moc_gamecanvas.cpp
 
 release/moc_walkingman.cpp: ../src/walkingman.h \
 		../src/sprite.h \
@@ -916,7 +886,7 @@ release/moc_walkingman.cpp: ../src/walkingman.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\walkingman.h -o release\moc_walkingman.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\walkingman.h -o release\moc_walkingman.cpp
 
 release/moc_blueball.cpp: ../src/blueball.h \
 		../src/sprite.h \
@@ -1015,7 +985,7 @@ release/moc_blueball.cpp: ../src/blueball.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\blueball.h -o release\moc_blueball.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\blueball.h -o release\moc_blueball.cpp
 
 release/moc_spinningpinwheel.cpp: ../src/spinningpinwheel.h \
 		../src/sprite.h \
@@ -1114,7 +1084,7 @@ release/moc_spinningpinwheel.cpp: ../src/spinningpinwheel.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\spinningpinwheel.h -o release\moc_spinningpinwheel.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\spinningpinwheel.h -o release\moc_spinningpinwheel.cpp
 
 release/moc_automaticwalkinghandler.cpp: ../src/automaticwalkinghandler.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
@@ -1172,7 +1142,7 @@ release/moc_automaticwalkinghandler.cpp: ../src/automaticwalkinghandler.h \
 		../src/spritetickhandler.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/Atelier/31-ProgrammationOO/papefab-Avoid-jeu/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\automaticwalkinghandler.h -o release\moc_automaticwalkinghandler.cpp
+	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\automaticwalkinghandler.h -o release\moc_automaticwalkinghandler.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1532,16 +1502,7 @@ release/keytickhandler.o: ../src/keytickhandler.cpp ../src/keytickhandler.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qbrush.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qfont.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpen.h \
-		../src/gamecore.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QList \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qevent.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qkeysequence.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurlquery.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfile.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h
+		../src/gamecore.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\keytickhandler.o ..\src\keytickhandler.cpp
 
 release/mainfrm.o: ../src/mainfrm.cpp ../src/mainfrm.h \
@@ -1649,6 +1610,29 @@ release/mainfrm.o: ../src/mainfrm.cpp ../src/mainfrm.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
 		ui_mainfrm.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../src/gameview.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		../src/gamecanvas.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointer \
@@ -1796,7 +1780,6 @@ release/gamescene.o: ../src/gamescene.cpp ../src/gamescene.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QPen \
 		../src/gamecore.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QList \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
 		../src/resources.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QString \
@@ -2262,9 +2245,10 @@ release/sprite.o: ../src/sprite.cpp ../src/sprite.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\sprite.o ..\src\sprite.cpp
 
 release/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QList \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qevent.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qnamespace.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qglobal.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qconfig.h \
@@ -2286,21 +2270,7 @@ release/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmutex.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qnumeric.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtgui-config.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qnamespace.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qregion.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qrect.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmargins.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsize.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatastream.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qstring.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qchar.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbytearray.h \
@@ -2316,46 +2286,63 @@ release/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpair.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpoint.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbytearraylist.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qstringlist.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qregexp.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qstringmatcher.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qscopedpointer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qkeysequence.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdebug.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmap.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qiodevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariant.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qshareddata.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qset.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurlquery.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfile.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsBlurEffect \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicseffect.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSettings \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsettings.h \
+		../src/gamescene.h \
+		../src/gamecanvas.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpointer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtgui-config.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qrect.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmargins.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsize.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qbrush.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qcolor.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qrgb.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qrgba64.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qbrush.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qmatrix.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpolygon.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qregion.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatastream.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qline.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtransform.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpainterpath.h \
@@ -2363,70 +2350,12 @@ release/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpaintdevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpixelformat.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpixmap.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsScale \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicstransform.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QVector3D \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector3d.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QTransform \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QMatrix4x4 \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qmatrix4x4.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector4d.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qquaternion.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qgenericmatrix.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg/QGraphicsSvgItem \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg/qgraphicssvgitem.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg/qtsvgglobal.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QParallelAnimationGroup \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qparallelanimationgroup.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qanimationgroup.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qabstractanimation.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QPainter \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpainter.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtextoption.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qfontinfo.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qfont.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPropertyAnimation \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpropertyanimation.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariantanimation.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qeasingcurve.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSequentialAnimationGroup \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsequentialanimationgroup.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSettings \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsettings.h \
-		../src/automaticwalkinghandler.h \
-		../src/spritetickhandler.h \
-		../src/blueball.h \
-		../src/sprite.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QPixmap \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
-		../src/bouncingspritehandler.h \
-		../src/gamescene.h \
-		../src/gamecanvas.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpointer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsScene \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
-		../src/manualwalkinghandler.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsTransform \
-		../src/randommovetickhandler.h \
-		../src/player.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpen.h \
 		../src/resources.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QString \
-		../src/spinningpinwheel.h \
 		../src/utilities.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSize \
-		../src/walkingman.h \
-		../src/playertickhandler.h
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSize
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gamecore.o ..\src\gamecore.cpp
 
 release/resources.o: ../src/resources.cpp ../src/resources.h \
@@ -2809,44 +2738,28 @@ release/gamecanvas.o: ../src/gamecanvas.cpp ../src/gamecanvas.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
 		../src/gamecore.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QList \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qevent.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtgui-config.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qregion.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qrect.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmargins.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsize.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatastream.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qkeysequence.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmap.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qset.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurlquery.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfile.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
 		../src/gamescene.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtgui-config.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qrect.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmargins.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsize.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qbrush.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qcolor.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qrgb.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qrgba64.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qmatrix.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpolygon.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qregion.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatastream.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qiodevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qline.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtransform.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpainterpath.h \
@@ -2870,6 +2783,21 @@ release/gamecanvas.o: ../src/gamecanvas.cpp ../src/gamecanvas.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpalette.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qsizepolicy.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qcursor.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qkeysequence.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qevent.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariant.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdebug.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qset.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurl.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qurlquery.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfile.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \

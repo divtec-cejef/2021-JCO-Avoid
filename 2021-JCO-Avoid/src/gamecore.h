@@ -45,6 +45,7 @@ signals:
 private:
 
     void setupPlayer();
+    void setupWalkingMen();
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;

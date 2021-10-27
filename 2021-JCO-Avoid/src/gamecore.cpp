@@ -83,14 +83,35 @@ void GameCore::setupPlayer() {
     m_pPlayer = pPlayer;
 }
 
+//! Met en place la démo des deux marcheurs.
+//! Un marcheur (WalkingMan) hérite de Sprite afin d'y placer la responsabilité
+//! de gérer les images d'animation.
+//! Le déplacement se fait au moyen d'un gestionnaire de tick (SpriteTickHandler).
+//! Deux gestionnaires de tick ont été créés :
+//! - ManualWalkingHandler : déplacement classique en se basant sur la cadence.
+//! - AutomatiqueWalkingHandler : déplacement en préprogrammant une séquence d'animation
+//!   avec QPropertyAnimation.
+void GameCore::setupWalkingMen() {
+    WalkingMan* pAutoWalkingMan = new WalkingMan;
+    pAutoWalkingMan->setPos(10, 100);
+    m_pScene->addSpriteToScene(pAutoWalkingMan);
+    pAutoWalkingMan->setTickHandler(new AutomaticWalkingHandler);
+
+    WalkingMan* pManualWalkingMan = new WalkingMan;
+    pManualWalkingMan ->setPos(30,300);
+    m_pScene->addSpriteToScene(pManualWalkingMan );
+    pManualWalkingMan->setTickHandler(new ManualWalkingHandler);
+    pManualWalkingMan->registerForTick();
+}
+
 //! Traite la pression d'une touche.
 //! \param key Numéro de la touche (voir les constantes Qt)
 //!
 void GameCore::keyPressed(int key) {
     emit notifyKeyPressed(key);
-
-
 }
+
+
 
 //! Traite le relâchement d'une touche.
 //! \param key Numéro de la touche (voir les constantes Qt)

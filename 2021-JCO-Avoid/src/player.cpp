@@ -13,9 +13,16 @@
 
 const int BALL_VELOCITY = 200; // pixels par seconde
 
+enum Player_Animation {
+    WALKING_DOWN = 0,
+    WALKING_LEFT,
+    WALKING_RIGHT,
+    WALKING_UP
+};
+
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
-Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "personnage.png", pParent) {
+Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "perso1.png", pParent) {
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
@@ -68,11 +75,17 @@ void Player::onKeyReleased(int key) {
 void Player::updateBallVelocity()  {
     int XVelocity = 0;
     int YVelocity = 0;
-    if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
-    if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
-    if (m_keyRightPressed) XVelocity = BALL_VELOCITY;
-    if (m_keyLeftPressed)  XVelocity = -BALL_VELOCITY;
+    //if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
+    //if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
+    if (m_keyRightPressed){
+        XVelocity = BALL_VELOCITY;
+        this->setActiveAnimation(WALKING_RIGHT);
+    }
+    if (m_keyLeftPressed){
 
-    m_ballVelocity = QPoint(XVelocity, YVelocity);
+        XVelocity = -BALL_VELOCITY;
+        this->setActiveAnimation(WALKING_LEFT);
+
+        m_ballVelocity = QPoint(XVelocity, YVelocity);
+    }
 }
-

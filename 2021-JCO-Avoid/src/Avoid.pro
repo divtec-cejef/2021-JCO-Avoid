@@ -20,6 +20,8 @@ SOURCES += main.cpp\
     keytickhandler.cpp \
         mainfrm.cpp \
     gamescene.cpp \
+    obstacle.cpp \
+    player.cpp \
     playertickhandler.cpp \
     randommovetickhandler.cpp \
     sprite.cpp \
@@ -29,7 +31,6 @@ SOURCES += main.cpp\
     utilities.cpp \
     gamecanvas.cpp \
     walkingman.cpp \
-    blueball.cpp \
     spinningpinwheel.cpp \
     spritetickhandler.cpp \
     bouncingspritehandler.cpp \
@@ -39,6 +40,8 @@ SOURCES += main.cpp\
 HEADERS  += mainfrm.h \
     gamescene.h \
     keytickhandler.h \
+    obstacle.h \
+    player.h \
     playertickhandler.h \
     randommovetickhandler.h \
     sprite.h \
@@ -48,7 +51,6 @@ HEADERS  += mainfrm.h \
     utilities.h \
     gamecanvas.h \
     walkingman.h \
-    blueball.h \
     spinningpinwheel.h \
     spritetickhandler.h \
     bouncingspritehandler.h \

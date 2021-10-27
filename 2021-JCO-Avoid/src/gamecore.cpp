@@ -22,7 +22,7 @@
 #include <QSettings>
 
 #include "automaticwalkinghandler.h"
-#include "blueball.h"
+#include "player.h"
 #include "bouncingspritehandler.h"
 #include "gamescene.h"
 #include "gamecanvas.h"
@@ -71,8 +71,9 @@ GameCore::~GameCore() {
 
 //! Met en place la démo de la balle bleue.
 void GameCore::setupBlueBall() {
+    int ajustementHauteur = 71;
     BlueBall* pBall = new BlueBall;
-    pBall->setPos(m_pScene->width()/2, m_pScene->height()/2 - 71);
+    pBall->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
     pBall->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
     pBall->setScale(0.1);
     m_pScene->addSpriteToScene(pBall);

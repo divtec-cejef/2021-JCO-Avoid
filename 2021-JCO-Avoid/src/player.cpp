@@ -1,27 +1,21 @@
+/**
+  \file
+  \brief    Déclaration de la classe BlueBall.
+  \author   JCO
+  \date     septembre 2018
+*/
 #include "player.h"
 #include "gamescene.h"
 
 #include "resources.h"
 
-const int LINE_COUNT = 4;
-const int FRAME_COUNT = 12;
+#include <QDebug>
 
-const int FRAME_WIDTH = 95;
-const int FRAME_HEIGHT = 158;
-const int SCALE_RATIO = 1;
+const int BALL_VELOCITY = 2000; // pixels par seconde
 
-const int PLAYER_VELOCITY = 200; // pixels par seconde
-
-enum Player_Animation {
-    WALKING_DOWN = 0,
-    WALKING_LEFT,
-    WALKING_RIGHT,
-    WALKING_UP
-};
-
-Player::Player(QGraphicsItem* pParent) : Sprite(pParent) {
-    configureAnimation();
-
+//! Construit et initialise une balle bleue.
+//! \param pParent  Objet propiétaire de cet objet.
+Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "personnage.png", pParent) {
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
@@ -42,7 +36,7 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
 
     // Si la prochaine position reste dans les limites de la scène, la balle
     // y est positionnée. Sinon, elle reste sur place.
-    if (parentScene()->isInsideScene(nextRect)) {
+    if (this->parentScene()->isInsideScene(nextRect)) {
         this->setPos(this->pos() + ballDistance);
     }
 }
@@ -51,10 +45,10 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
 //! \param key Code de la touche appuyée.
 void Player::onKeyPressed(int key) {
     switch (key)  {
-    case Qt::Key_W:    m_keyUpPressed    = true;  updateBallVelocity(); break;
-    case Qt::Key_S:  m_keyDownPressed  = true;  updateBallVelocity(); break;
-    case Qt::Key_D: m_keyRightPressed = true;  updateBallVelocity(); break;
-    case Qt::Key_A:  m_keyLeftPressed  = true;  updateBallVelocity(); break;
+    //case Qt::Key_Up:    m_keyUpPressed    = true;  updateBallVelocity(); break;
+    //case Qt::Key_Down:  m_keyDownPressed  = true;  updateBallVelocity(); break;
+    case Qt::Key_Right: m_keyRightPressed = true;  updateBallVelocity(); break;
+    case Qt::Key_Left:  m_keyLeftPressed  = true;  updateBallVelocity(); break;
     }
 }
 
@@ -62,10 +56,10 @@ void Player::onKeyPressed(int key) {
 //! \param key Code de la touche relâchée.
 void Player::onKeyReleased(int key) {
     switch (key)  {
-    case Qt::Key_W:    m_keyUpPressed    = false;  updateBallVelocity(); break;
-    case Qt::Key_S:  m_keyDownPressed  = false;  updateBallVelocity(); break;
-    case Qt::Key_D: m_keyRightPressed = false;  updateBallVelocity(); break;
-    case Qt::Key_A:  m_keyLeftPressed  = false;  updateBallVelocity(); break;
+    //case Qt::Key_Up:    m_keyUpPressed    = false;  updateBallVelocity(); break;
+    //case Qt::Key_Down:  m_keyDownPressed  = false;  updateBallVelocity(); break;
+    case Qt::Key_Right: m_keyRightPressed = false;  updateBallVelocity(); break;
+    case Qt::Key_Left:  m_keyLeftPressed  = false;  updateBallVelocity(); break;
     }
 
 }
@@ -74,55 +68,11 @@ void Player::onKeyReleased(int key) {
 void Player::updateBallVelocity()  {
     int XVelocity = 0;
     int YVelocity = 0;
-    if (m_keyUpPressed) {
-        YVelocity = -PLAYER_VELOCITY;
-    }
-    if (m_keyDownPressed) {
-        YVelocity = PLAYER_VELOCITY;
-    }
-
-    if (m_keyRightPressed) {
-        XVelocity = PLAYER_VELOCITY;
-    }
-
-    if (m_keyLeftPressed) {
-        XVelocity = -PLAYER_VELOCITY;
-    }
+    if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
+    if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
+    if (m_keyRightPressed) XVelocity = BALL_VELOCITY;
+    if (m_keyLeftPressed)  XVelocity = -BALL_VELOCITY;
 
     m_ballVelocity = QPoint(XVelocity, YVelocity);
-
 }
 
-
-//! Découpe la spritesheet pour en extraire les étapes d'animation et
-//! les ajouter au sprite.
-void Player::configureAnimation() {
-    // Chargement de la spritesheet
-    QPixmap spriteSheet(GameFramework::imagesPath() + "personnage.png");
-    this->addAnimationFrame(spriteSheet);
-    // Découpage de la spritesheet
-    /**
-    for (int animationIndex = 0; animationIndex < LINE_COUNT; animationIndex++) {
-
-        while (this->animationCount() <= animationIndex)
-            this->addAnimation();
-
-        this->setActiveAnimation(animationIndex);
-
-        for (int frameIndex = 0; frameIndex < FRAME_COUNT; frameIndex++) {
-            QImage sprite = spriteSheet.copy(frameIndex * FRAME_WIDTH,
-                                             animationIndex * FRAME_HEIGHT,
-                                             FRAME_WIDTH, FRAME_HEIGHT);
-
-            this->addAnimationFrame(QPixmap::fromImage(sprite.scaled(FRAME_WIDTH * SCALE_RATIO,
-                                                                     FRAME_HEIGHT * SCALE_RATIO,
-                                                                     Qt::IgnoreAspectRatio,
-                                                                     Qt::SmoothTransformation)));
-
-        }
-    }
-    **/
-
-    this->setAnimationSpeed(100);
-    this->setActiveAnimation(0);
-}

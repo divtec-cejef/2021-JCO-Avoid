@@ -21,29 +21,29 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_Player_t {
+struct qt_meta_stringdata_BlueBall_t {
     QByteArrayData data[5];
-    char stringdata0[39];
+    char stringdata0[41];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_Player_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_BlueBall_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_Player_t qt_meta_stringdata_Player = {
+static const qt_meta_stringdata_BlueBall_t qt_meta_stringdata_BlueBall = {
     {
-QT_MOC_LITERAL(0, 0, 6), // "Player"
-QT_MOC_LITERAL(1, 7, 12), // "onKeyPressed"
-QT_MOC_LITERAL(2, 20, 0), // ""
-QT_MOC_LITERAL(3, 21, 3), // "key"
-QT_MOC_LITERAL(4, 25, 13) // "onKeyReleased"
+QT_MOC_LITERAL(0, 0, 8), // "BlueBall"
+QT_MOC_LITERAL(1, 9, 12), // "onKeyPressed"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 3), // "key"
+QT_MOC_LITERAL(4, 27, 13) // "onKeyReleased"
 
     },
-    "Player\0onKeyPressed\0\0key\0onKeyReleased"
+    "BlueBall\0onKeyPressed\0\0key\0onKeyReleased"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Player[] = {
+static const uint qt_meta_data_BlueBall[] = {
 
  // content:
        8,       // revision
@@ -67,10 +67,10 @@ static const uint qt_meta_data_Player[] = {
        0        // eod
 };
 
-void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void BlueBall::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Player *>(_o);
+        auto *_t = static_cast<BlueBall *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->onKeyPressed((*reinterpret_cast< int(*)>(_a[1]))); break;
@@ -80,30 +80,30 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject Player::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject BlueBall::staticMetaObject = { {
     &Sprite::staticMetaObject,
-    qt_meta_stringdata_Player.data,
-    qt_meta_data_Player,
+    qt_meta_stringdata_BlueBall.data,
+    qt_meta_data_BlueBall,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *Player::metaObject() const
+const QMetaObject *BlueBall::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Player::qt_metacast(const char *_clname)
+void *BlueBall::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_Player.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_BlueBall.stringdata0))
         return static_cast<void*>(this);
     return Sprite::qt_metacast(_clname);
 }
 
-int Player::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int BlueBall::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = Sprite::qt_metacall(_c, _id, _a);
     if (_id < 0)

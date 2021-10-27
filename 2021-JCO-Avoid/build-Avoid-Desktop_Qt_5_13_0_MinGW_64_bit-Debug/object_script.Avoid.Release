@@ -2,6 +2,7 @@ release/main.o
 release/keytickhandler.o
 release/mainfrm.o
 release/gamescene.o
+release/obstacle.o
 release/player.o
 release/playertickhandler.o
 release/randommovetickhandler.o

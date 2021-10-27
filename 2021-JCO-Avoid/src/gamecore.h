@@ -45,12 +45,11 @@ signals:
 private:
 
     void setupPlayer();
-    void setupBlueBall();
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
     Sprite* pSprite;
-    Sprite* m_pBall;
+    Sprite* m_pPlayer;
 
 
 private slots:

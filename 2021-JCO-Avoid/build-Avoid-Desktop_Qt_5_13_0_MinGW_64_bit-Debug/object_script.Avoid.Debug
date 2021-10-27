@@ -2,6 +2,7 @@ debug/main.o
 debug/keytickhandler.o
 debug/mainfrm.o
 debug/gamescene.o
+debug/obstacle.o
 debug/player.o
 debug/playertickhandler.o
 debug/randommovetickhandler.o

@@ -7,7 +7,7 @@
 class obstacle : public Sprite
 {
 public:
-    obstacle();
+    obstacle(QGraphicsItem* pParent = nullptr);
     virtual void tick(long long elapsedTimeInMilliseconds);
     void lengthUpdate();
     void obstacleSpawn();

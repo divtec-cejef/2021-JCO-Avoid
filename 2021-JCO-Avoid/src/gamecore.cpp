@@ -52,7 +52,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Trace un rectangle blanc tout autour des limites de la scène.
     m_pScene->addRect(m_pScene->sceneRect(), QPen(Qt::white));
 
-    setupBlueBall();
+    setupPlayer();
     // Instancier et initialiser les sprite ici :
 
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
@@ -70,17 +70,17 @@ GameCore::~GameCore() {
 
 
 //! Met en place la démo de la balle bleue.
-void GameCore::setupBlueBall() {
+void GameCore::setupPlayer() {
     int ajustementHauteur = 71;
-    BlueBall* pBall = new BlueBall;
-    pBall->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
-    pBall->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
-    pBall->setScale(0.1);
-    m_pScene->addSpriteToScene(pBall);
-    pBall->registerForTick();
-    connect(this, &GameCore::notifyKeyPressed, pBall, &BlueBall::onKeyPressed);
-    connect(this, &GameCore::notifyKeyReleased, pBall, &BlueBall::onKeyReleased);
-    m_pBall = pBall;
+    Player* pPlayer = new Player;
+    pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
+    pPlayer->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
+    pPlayer->setScale(0.1);
+    m_pScene->addSpriteToScene(pPlayer);
+    pPlayer->registerForTick();
+    connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
+    connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
+    m_pPlayer = pPlayer;
 }
 
 //! Traite la pression d'une touche.

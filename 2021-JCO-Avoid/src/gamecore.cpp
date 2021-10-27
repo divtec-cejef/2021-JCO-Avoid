@@ -28,7 +28,6 @@
 #include "gamecanvas.h"
 #include "manualwalkinghandler.h"
 #include "randommovetickhandler.h"
-#include "player.h"
 #include "resources.h"
 #include "spinningpinwheel.h"
 #include "sprite.h"
@@ -42,7 +41,6 @@ const int SCENE_WIDTH = 1280;
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
-    m_pPlayer = nullptr;
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -54,12 +52,9 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Trace un rectangle blanc tout autour des limites de la scène.
     m_pScene->addRect(m_pScene->sceneRect(), QPen(Qt::white));
 
+    setupBlueBall();
     // Instancier et initialiser les sprite ici :
-    pSprite = new Sprite(GameFramework::imagesPath() + "personnage.png");
-    pSprite->setPos(m_pScene->width()/2.0, m_pScene->height() - 70);
-    pSprite->setScale(0.1);
-    m_pScene->addSpriteToScene(pSprite);
-    m_pPlayer = pSprite;
+
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
@@ -73,20 +68,26 @@ GameCore::~GameCore() {
     m_pScene = nullptr;
 }
 
+
+//! Met en place la démo de la balle bleue.
+void GameCore::setupBlueBall() {
+    BlueBall* pBall = new BlueBall;
+    pBall->setPos(m_pScene->width()/2, m_pScene->height()/2 - 71);
+    pBall->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
+    pBall->setScale(0.1);
+    m_pScene->addSpriteToScene(pBall);
+    pBall->registerForTick();
+    connect(this, &GameCore::notifyKeyPressed, pBall, &BlueBall::onKeyPressed);
+    connect(this, &GameCore::notifyKeyReleased, pBall, &BlueBall::onKeyReleased);
+    m_pBall = pBall;
+}
+
 //! Traite la pression d'une touche.
 //! \param key Numéro de la touche (voir les constantes Qt)
 //!
 void GameCore::keyPressed(int key) {
     emit notifyKeyPressed(key);
 
-    switch (key)  {
-    case Qt::Key_Right:
-        m_pPlayer->setX(m_pPlayer->x() + 20);
-        break;
-    case Qt::Key_Left:
-        m_pPlayer->setX(m_pPlayer->x() - 20);
-        break;
-    }
 
 }
 

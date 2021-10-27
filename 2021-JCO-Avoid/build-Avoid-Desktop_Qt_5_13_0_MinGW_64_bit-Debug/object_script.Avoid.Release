@@ -2,7 +2,6 @@ release/main.o
 release/keytickhandler.o
 release/mainfrm.o
 release/gamescene.o
-release/player.o
 release/playertickhandler.o
 release/randommovetickhandler.o
 release/sprite.o
@@ -21,7 +20,6 @@ release/automaticwalkinghandler.o
 release/moc_mainfrm.o
 release/moc_gamescene.o
 release/moc_keytickhandler.o
-release/moc_player.o
 release/moc_sprite.o
 release/moc_gamecore.o
 release/moc_gamecanvas.o

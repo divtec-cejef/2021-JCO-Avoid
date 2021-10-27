@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     keytickhandler.cpp \
         mainfrm.cpp \
     gamescene.cpp \
-    player.cpp \
     playertickhandler.cpp \
     randommovetickhandler.cpp \
     sprite.cpp \
@@ -40,7 +39,6 @@ SOURCES += main.cpp\
 HEADERS  += mainfrm.h \
     gamescene.h \
     keytickhandler.h \
-    player.h \
     playertickhandler.h \
     randommovetickhandler.h \
     sprite.h \

@@ -15,7 +15,7 @@ const int BALL_VELOCITY = 200; // pixels par seconde
 
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
-BlueBall::BlueBall(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "ball.png", pParent) {
+BlueBall::BlueBall(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "personnage.png", pParent) {
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
@@ -45,8 +45,8 @@ void BlueBall::tick(long long elapsedTimeInMilliseconds) {
 //! \param key Code de la touche appuyée.
 void BlueBall::onKeyPressed(int key) {
     switch (key)  {
-    case Qt::Key_Up:    m_keyUpPressed    = true;  updateBallVelocity(); break;
-    case Qt::Key_Down:  m_keyDownPressed  = true;  updateBallVelocity(); break;
+    //case Qt::Key_Up:    m_keyUpPressed    = true;  updateBallVelocity(); break;
+    //case Qt::Key_Down:  m_keyDownPressed  = true;  updateBallVelocity(); break;
     case Qt::Key_Right: m_keyRightPressed = true;  updateBallVelocity(); break;
     case Qt::Key_Left:  m_keyLeftPressed  = true;  updateBallVelocity(); break;
     }
@@ -56,8 +56,8 @@ void BlueBall::onKeyPressed(int key) {
 //! \param key Code de la touche relâchée.
 void BlueBall::onKeyReleased(int key) {
     switch (key)  {
-    case Qt::Key_Up:    m_keyUpPressed    = false;  updateBallVelocity(); break;
-    case Qt::Key_Down:  m_keyDownPressed  = false;  updateBallVelocity(); break;
+    //case Qt::Key_Up:    m_keyUpPressed    = false;  updateBallVelocity(); break;
+    //case Qt::Key_Down:  m_keyDownPressed  = false;  updateBallVelocity(); break;
     case Qt::Key_Right: m_keyRightPressed = false;  updateBallVelocity(); break;
     case Qt::Key_Left:  m_keyLeftPressed  = false;  updateBallVelocity(); break;
     }

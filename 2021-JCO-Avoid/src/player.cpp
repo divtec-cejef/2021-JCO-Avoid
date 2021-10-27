@@ -10,7 +10,7 @@ const int FRAME_WIDTH = 95;
 const int FRAME_HEIGHT = 158;
 const int SCALE_RATIO = 1;
 
-const int PLAYER_VELOCITY = 80; // pixels par seconde
+const int PLAYER_VELOCITY = 200; // pixels par seconde
 
 enum Player_Animation {
     WALKING_DOWN = 0,
@@ -76,30 +76,20 @@ void Player::updateBallVelocity()  {
     int YVelocity = 0;
     if (m_keyUpPressed) {
         YVelocity = -PLAYER_VELOCITY;
-        this->setActiveAnimation(WALKING_UP);
     }
     if (m_keyDownPressed) {
         YVelocity = PLAYER_VELOCITY;
-        this->setActiveAnimation(WALKING_DOWN);
     }
 
     if (m_keyRightPressed) {
         XVelocity = PLAYER_VELOCITY;
-        this->setActiveAnimation(WALKING_RIGHT);
     }
 
     if (m_keyLeftPressed) {
         XVelocity = -PLAYER_VELOCITY;
-        this->setActiveAnimation(WALKING_LEFT);
     }
 
     m_ballVelocity = QPoint(XVelocity, YVelocity);
-
-    if (XVelocity == 0 && YVelocity == 0)
-        this->stopAnimation();
-    else {
-        this->startAnimation();
-    }
 
 }
 
@@ -108,9 +98,10 @@ void Player::updateBallVelocity()  {
 //! les ajouter au sprite.
 void Player::configureAnimation() {
     // Chargement de la spritesheet
-    QImage spriteSheet(GameFramework::imagesPath() + "player.png");
-
+    QPixmap spriteSheet(GameFramework::imagesPath() + "personnage.png");
+    this->addAnimationFrame(spriteSheet);
     // Découpage de la spritesheet
+    /**
     for (int animationIndex = 0; animationIndex < LINE_COUNT; animationIndex++) {
 
         while (this->animationCount() <= animationIndex)
@@ -127,8 +118,10 @@ void Player::configureAnimation() {
                                                                      FRAME_HEIGHT * SCALE_RATIO,
                                                                      Qt::IgnoreAspectRatio,
                                                                      Qt::SmoothTransformation)));
+
         }
     }
+    **/
 
     this->setAnimationSpeed(100);
     this->setActiveAnimation(0);

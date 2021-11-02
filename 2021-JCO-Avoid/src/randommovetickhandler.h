@@ -42,6 +42,8 @@ private:
     long m_moveDuration = 0; // en millisecondes
     double m_moveAngle = 0;  // en radians
     double m_spriteVelocity; // en pixels/seconde
+    int m_playerDirection = 1;
+
 };
 
 #endif // RANDOMMOVETICKHANDLER_H

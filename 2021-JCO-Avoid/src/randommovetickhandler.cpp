@@ -21,7 +21,7 @@ const double DEFAULT_SPRITE_VELOCITY = 250.0;
 const int MOVE_MINIMAL_DURATION = 400;
 const int MOVE_MAXIMAL_DURATION = 2000;
 const int MAXIMAL_ANGLE_CHANGE = 120; // Changement de direction maximal autorisé
-
+const int PLAYER_SPEED = 10;
 //! Constructeur.
 //! \param pParentSprite Sprite dont le déplacement doit être géré.
 RandomMoveTickHandler::RandomMoveTickHandler(Sprite* pParentSprite) : SpriteTickHandler (pParentSprite)
@@ -51,15 +51,44 @@ void RandomMoveTickHandler::init() {
 
 //! Cadence : détermine le mouvement que fait le sprite durant le temps écoulé.
 void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
-    // Calcul de la distance parcourue par le sprite, selon sa vitesse et le temps écoulé.
-    double distance = elapsedTimeInMilliseconds * m_spriteVelocity / 1000.;
+     // Création d'un vecteur de déplacement du sprite.
+     QPointF spriteMovement(0, 3);
+     // Détermine la prochaine position du sprite
+     QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
+     // Récupère tous les sprites de la scène que toucherait ce sprite à sa prochaine position
+     auto collidingSprites = m_pParentSprite->parentScene()->collidingSprites(nextSpriteRect);
+     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
+     collidingSprites.removeAll(m_pParentSprite);
+     bool collision = !collidingSprites.isEmpty();
+     // Si la prochaine position du sprite n'est pas comprise au sein de la scène,
+     // ou s’il y a collision, le sprite n’est pas déplacé et change de direction
+     if (!m_pParentSprite->parentScene()->isInsideScene(nextSpriteRect) ||
+     collision)
+     m_pParentSprite->deleteLater();
+     else
+     // S'il n'y a pas de collision et que le sprite ne sort pas de la scène, on le déplace
+     // (en lui appliquant le vecteur de déplacement)
+     m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
 
-    m_pParentSprite->setY(m_pParentSprite->y() + distance);
+    //QPointF spriteMovement = m_spriteVelocity * elapsedTimeInMilliseconds / 1000.;
+
+    // Détermine la prochaine position du sprite
+    //QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
+
+
+
+
+
+    // Calcul de la distance parcourue par le sprite, selon sa vitesse et le temps écoulé.
+    //double distance = elapsedTimeInMilliseconds * m_spriteVelocity / 1000.;
+
+    //m_pParentSprite->setY(m_pParentSprite->y() + distance);
+
 
     // Détermine, selon l'angle, le déplacement en x et en y
     //double moveX = qCos(m_moveAngle) * distance;
-    double moveX = 0;
-    double moveY = 1 * distance;
+    //double moveX = 0;
+    //double moveY = 1 * distance;
 
     //QPointF spriteMovement(moveX, moveY);
 

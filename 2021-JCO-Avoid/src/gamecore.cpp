@@ -13,9 +13,6 @@
 #include <time.h>
 
 #include <QDebug>
-#include <QSettings>
-
-#include <QDebug>
 #include <QGraphicsBlurEffect>
 #include <QGraphicsScale>
 #include <QGraphicsSvgItem>
@@ -38,6 +35,7 @@
 #include "utilities.h"
 #include "walkingman.h"
 #include "playertickhandler.h"
+#include "obstacle.h"
 
 
 
@@ -58,10 +56,10 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Trace un rectangle blanc tout autour des limites de la scène.
     m_pScene->addRect(m_pScene->sceneRect(), QPen(Qt::white));
 
-
+    std::srand(std::time(nullptr));
     // Instancier et initialiser les sprite ici :
     setupPlayer();
-    setupObstacle();
+
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
@@ -76,8 +74,6 @@ GameCore::~GameCore() {
 }
 
 void GameCore::setupObstacle(){
-
-    srand(time(NULL));
     int nbgen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
 
     Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
@@ -93,7 +89,6 @@ void GameCore::setupObstacle(){
     pObstacle->setTickHandler(pTickHandler);
     m_pScene->addSpriteToScene(pObstacle);
     pObstacle->registerForTick();
-
 }
 
 
@@ -152,6 +147,8 @@ void GameCore::keyReleased(int key) {
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
+
+        setupObstacle();
 }
 
 //! La souris a été déplacée.

@@ -6,7 +6,6 @@
 */
 #include "player.h"
 #include "gamescene.h"
-
 #include "resources.h"
 
 #include <QDebug>

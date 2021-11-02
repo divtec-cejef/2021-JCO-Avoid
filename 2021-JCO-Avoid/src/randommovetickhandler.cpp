@@ -54,17 +54,22 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
     // Calcul de la distance parcourue par le sprite, selon sa vitesse et le temps écoulé.
     double distance = elapsedTimeInMilliseconds * m_spriteVelocity / 1000.;
 
+    m_pParentSprite->setY(m_pParentSprite->y() + distance);
+
     // Détermine, selon l'angle, le déplacement en x et en y
-    double moveX = qCos(m_moveAngle) * distance;
-    double moveY = qSin(m_moveAngle) * distance;
+    //double moveX = qCos(m_moveAngle) * distance;
+    double moveX = 0;
+    double moveY = 1 * distance;
 
-    QPointF spriteMovement(moveX, moveY);
+    //QPointF spriteMovement(moveX, moveY);
 
-    bool collision = false;
+    //bool collision = false;
 
     // Détermine la prochaine position du sprite
-    QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
+    //QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
 
+
+    /**
     // Si les collisions ne sont pas ignorées, on vérifie si le déplacement provoquerait une
     // collision afin de modifier la trajectoire le cas échéant.
     if (!m_ignoreCollision) {
@@ -77,7 +82,8 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
 
         collision = !collidingSprites.isEmpty();
     }
-
+    **/
+    /**
     m_moveDuration -= elapsedTimeInMilliseconds;
 
     if (m_moveDuration < 0 ||
@@ -88,7 +94,7 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
     } else {
         m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
     }
-
+    **/
     // Si la destruction sur collision est activée, on vérifie si le sprite
     // est en collision. Si c'est le cas, on le détruit.
     if (m_destroyOnCollision && !m_pParentSprite->parentScene()->collidingSprites(m_pParentSprite).isEmpty()) {

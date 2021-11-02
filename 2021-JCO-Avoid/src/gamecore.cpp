@@ -83,9 +83,16 @@ void GameCore::setupObstacle(){
     Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
     pObstacle->setPos(nbgen,0);
     pObstacle->setScale(0.1);
+
+    // Déplace le sprite aléatoirement, en évitant les collisions.
+    // Si une collision à quand-même lieu, le tickhandler se charge
+    // de détruire son sprite.
+    RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
+    pTickHandler->setDestroyOnCollisionEnabled(true);
+
+    pObstacle->setTickHandler(pTickHandler);
     m_pScene->addSpriteToScene(pObstacle);
-
-
+    pObstacle->registerForTick();
 
 }
 

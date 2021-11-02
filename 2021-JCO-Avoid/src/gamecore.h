@@ -9,7 +9,13 @@
 
 #include <QObject>
 #include <QPointF>
-
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <functional>
+#include <QTime>
+#include <QTimer>
+#include <QElapsedTimer>
 
 class GameCanvas;
 class GameScene;
@@ -23,12 +29,18 @@ class GameCore : public QObject
 {
     Q_OBJECT
 public:
+    enum { KEEP_PREVIOUS_TICK_INTERVAL = -1  };
+
     explicit GameCore(GameCanvas* pGameCanvas, QObject *parent = nullptr);
     ~GameCore();
+
+
 
     void keyPressed(int key);
     void keyReleased(int key);
 
+
+    void startSpawnObstacleTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
     void mouseMoved(QPointF newMousePosition);
     void mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
     void mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
@@ -47,19 +59,22 @@ private:
     void setupPlayer();
     void setupWalkingMen();
     void configureAnimation();
-    void setupObstacle();
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
     Sprite* pSprite;
     Sprite* m_pPlayer;
+    QTimer m_tickTimer;
+    bool m_keepTicking;
+
+    QElapsedTimer m_lastUpdateTime;
 
     const int LARGEUR_MINIMUM = 1;
     const int LARGEUR_MAX = 1150;
 
 
 private slots:
-
+    void setupObstacle();
 };
 
 

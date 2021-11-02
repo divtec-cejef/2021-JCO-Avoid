@@ -11,6 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <functional>
 
 #include <QDebug>
 #include <QGraphicsBlurEffect>
@@ -21,6 +25,8 @@
 #include <QPropertyAnimation>
 #include <QSequentialAnimationGroup>
 #include <QSettings>
+#include <QTime>
+#include <QTimer>
 
 #include "automaticwalkinghandler.h"
 #include "player.h"
@@ -38,13 +44,18 @@
 #include "obstacle.h"
 
 
-
+const int SPAWN_INTERVAL = 1000;
 const int SCENE_WIDTH = 1280;
 
 //! Initialise le contrôleur de jeu.
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
+
+    m_tickTimer.setSingleShot(false);
+    m_tickTimer.setInterval(SPAWN_INTERVAL);
+    m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(setupObstacle()));
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -59,6 +70,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     std::srand(std::time(nullptr));
     // Instancier et initialiser les sprite ici :
     setupPlayer();
+    startSpawnObstacleTimer();
 
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
@@ -85,12 +97,26 @@ void GameCore::setupObstacle(){
     // de détruire son sprite.
     RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
     pTickHandler->setDestroyOnCollisionEnabled(true);
-
     pObstacle->setTickHandler(pTickHandler);
     m_pScene->addSpriteToScene(pObstacle);
     pObstacle->registerForTick();
 }
 
+
+//!
+//! Démarre la génération d'un tick sur une base de temps régulière,
+//! donnée en paramètre.
+//! \param tickInterval  Intervalle de temps (en millisecondes) entre chaque tick. Si cette valeur est
+//! inférieure à zéro, l'intervalle de temps précédent est utilisé.
+//!
+void GameCore::startSpawnObstacleTimer(int tickInterval)  {
+    if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
+        m_tickTimer.setInterval(tickInterval);
+
+    m_keepTicking = true;
+    m_lastUpdateTime.start();
+    m_tickTimer.start();
+}
 
 //! Met en place la démo de la balle bleue.
 void GameCore::setupPlayer() {
@@ -143,12 +169,18 @@ void GameCore::keyReleased(int key) {
 
 }
 
+
+
+
+
 //! Cadence.
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
 
-        setupObstacle();
+
+
+
 }
 
 //! La souris a été déplacée.
@@ -167,4 +199,6 @@ void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons button
 void GameCore::mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons) {
     emit notifyMouseButtonReleased(mousePosition, buttons);
 }
+
+
 

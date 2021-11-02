@@ -21,7 +21,7 @@ const double DEFAULT_SPRITE_VELOCITY = 250.0;
 const int MOVE_MINIMAL_DURATION = 400;
 const int MOVE_MAXIMAL_DURATION = 2000;
 const int MAXIMAL_ANGLE_CHANGE = 120; // Changement de direction maximal autorisé
-const int PLAYER_SPEED = 10;
+
 //! Constructeur.
 //! \param pParentSprite Sprite dont le déplacement doit être géré.
 RandomMoveTickHandler::RandomMoveTickHandler(Sprite* pParentSprite) : SpriteTickHandler (pParentSprite)

@@ -7,6 +7,7 @@
 #include "gamecore.h"
 
 #include <cmath>
+#include <random>
 
 #include <QDebug>
 #include <QSettings>
@@ -34,6 +35,8 @@
 #include "utilities.h"
 #include "walkingman.h"
 #include "playertickhandler.h"
+
+
 
 const int SCENE_WIDTH = 1280;
 
@@ -70,10 +73,14 @@ GameCore::~GameCore() {
 }
 
 void GameCore::setupObstacle(){
+    int randomCoord = <int> distr(MIN, MAX);
+    
     Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
     pObstacle->setPos(0,0);
     pObstacle->setScale(0.1);
     m_pScene->addSpriteToScene(pObstacle);
+    
+    
 
 }
 

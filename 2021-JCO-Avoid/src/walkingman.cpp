@@ -5,7 +5,6 @@
   \date     septembre 2018
 */
 #include "walkingman.h"
-
 #include "resources.h"
 
 //! Construit un marcheur et l'initialise.

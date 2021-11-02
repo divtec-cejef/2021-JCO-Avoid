@@ -44,6 +44,7 @@ public slots:
 
 private:
     void updateBallVelocity();
+    void configureAnimation();
 
     QPointF m_ballVelocity;
     bool m_keyUpPressed;

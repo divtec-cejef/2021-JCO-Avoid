@@ -46,6 +46,8 @@ private:
 
     void setupPlayer();
     void setupWalkingMen();
+    void configureAnimation();
+    void setupObstacle();
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;

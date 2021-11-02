@@ -13,16 +13,10 @@
 
 const int BALL_VELOCITY = 200; // pixels par seconde
 
-enum Player_Animation {
-    WALKING_DOWN = 0,
-    WALKING_LEFT,
-    WALKING_RIGHT,
-    WALKING_UP
-};
-
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
 Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "perso1.png", pParent) {
+    configureAnimation();
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
@@ -75,17 +69,20 @@ void Player::onKeyReleased(int key) {
 void Player::updateBallVelocity()  {
     int XVelocity = 0;
     int YVelocity = 0;
-    //if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
-    //if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
-    if (m_keyRightPressed){
-        XVelocity = BALL_VELOCITY;
-        this->setActiveAnimation(WALKING_RIGHT);
-    }
-    if (m_keyLeftPressed){
+    if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
+    if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
+    if (m_keyRightPressed) XVelocity = BALL_VELOCITY;
+    if (m_keyLeftPressed)  XVelocity = -BALL_VELOCITY;
 
-        XVelocity = -BALL_VELOCITY;
-        this->setActiveAnimation(WALKING_LEFT);
-
-        m_ballVelocity = QPoint(XVelocity, YVelocity);
-    }
+    m_ballVelocity = QPoint(XVelocity, YVelocity);
 }
+
+void Player::configureAnimation() {
+    for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
+        this->addAnimationFrame(QString(GameFramework::imagesPath() + "perso%1.png").arg(FrameNumber));
+    }
+    this->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
+    this->startAnimation();
+}
+
+

@@ -20,7 +20,6 @@ public:
 private :
     int speed;
     int length;
-    QList<obstacle*> m_obstacleList;
 
 };
 

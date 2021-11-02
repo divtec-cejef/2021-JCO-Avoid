@@ -54,6 +54,9 @@ private:
     Sprite* pSprite;
     Sprite* m_pPlayer;
 
+    const int LARGEUR_MINIMUM = 1;
+    const int LARGEUR_MAX = 1150;
+
 
 private slots:
 

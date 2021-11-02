@@ -7,6 +7,10 @@
 #include "gamecore.h"
 
 #include <cmath>
+#include <random>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include <QDebug>
 #include <QSettings>
@@ -34,6 +38,8 @@
 #include "utilities.h"
 #include "walkingman.h"
 #include "playertickhandler.h"
+
+
 
 const int SCENE_WIDTH = 1280;
 
@@ -70,10 +76,16 @@ GameCore::~GameCore() {
 }
 
 void GameCore::setupObstacle(){
+
+    srand(time(NULL));
+    int nbgen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
+
     Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
-    pObstacle->setPos(0,0);
+    pObstacle->setPos(nbgen,0);
     pObstacle->setScale(0.1);
     m_pScene->addSpriteToScene(pObstacle);
+
+
 
 }
 

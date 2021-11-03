@@ -9,6 +9,9 @@
 
 #include "sprite.h"
 
+#include <QGraphicsTransform>
+#include <QList>
+
 //! \brief Classe qui gère la balle bleue.
 //!
 //! Cette classe démontre les fonctionnalités suivantes :
@@ -36,7 +39,16 @@ class Player : public Sprite
 public:
     Player(QGraphicsItem* pParent = nullptr);
 
+    enum WalkingDirection {
+        WALKING_RIGHT,
+        WALKING_LEFT
+    };
+
+
+
     virtual void tick(long long elapsedTimeInMilliseconds);
+    void changeWalkingDirection();
+    void setWalkingDirection(WalkingDirection newWalkingDirection);
 
 public slots:
     void onKeyPressed(int key);
@@ -45,6 +57,12 @@ public slots:
 private:
     void updateBallVelocity();
     void configureAnimation();
+
+    void configureTransformationMatrix();
+    WalkingDirection m_walkingDirection;
+    QList<QGraphicsTransform*> m_transformsForFlip;
+    int m_walkingSpeed;
+
 
     QPointF m_ballVelocity;
     bool m_keyUpPressed;

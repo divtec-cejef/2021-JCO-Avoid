@@ -58,15 +58,14 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
 
     connect(&m_tickTimerObstacle, SIGNAL(timeout()), this, SLOT(setupObstacle()));
-
+/**
     m_tickTimerRetournement.setSingleShot(false);
     m_tickTimerRetournement.setInterval(RETOURNEMENT_INTERVAL);
     m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
 
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
-
+**/
     startRetournerEcran();
-
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -132,16 +131,10 @@ void GameCore::setupBonus(){
     pTickHandler->setDestroyOnCollisionEnabled(true);
     pBonus->setTickHandler(pTickHandler);
 
-    pBonus->startAnimation(100);
 
     m_pScene->addSpriteToScene(pBonus);
     pBonus->registerForTick();
-
-
 }
-
-
-
 
 //!
 //! Démarre la génération d'un tick sur une base de temps régulière,
@@ -171,11 +164,11 @@ void GameCore::startRetournerEcran(int tickInterval)  {
 
 //! Met en place la démo de la balle bleue.
 void GameCore::setupPlayer() {
-    int ajustementHauteur = 50;
+    int ajustementHauteur = 80;
     Player* pPlayer = new Player;
     pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
     pPlayer->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
-    pPlayer->setScale(0.1);
+    pPlayer->setScale(0.4);
     m_pScene->addSpriteToScene(pPlayer);
     pPlayer->registerForTick();
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
@@ -225,16 +218,10 @@ void GameCore::keyReleased(int key) {
 }
 
 
-
-
-
 //! Cadence.
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
-
-
-
 
 }
 

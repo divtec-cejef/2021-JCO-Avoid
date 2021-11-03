@@ -14,8 +14,7 @@ const int BALL_VELOCITY = 600; // pixels par seconde
 
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
-Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "perso1.png", pParent) {
-    configureAnimation();
+Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "personnage/tile019.png", pParent) {
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
@@ -76,12 +75,40 @@ void Player::updateBallVelocity()  {
     m_ballVelocity = QPoint(XVelocity, YVelocity);
 }
 
+//! \return la direction de marche.
+void Player::changeWalkingDirection() {
+    setWalkingDirection(m_walkingDirection == WALKING_RIGHT ? WALKING_LEFT : WALKING_RIGHT);
+}
+
+//! Change la direction de marche.
+//! \param newWalkingDirection  Nouvelle direction de marche.
+void Player::setWalkingDirection(WalkingDirection newWalkingDirection) {
+    if (m_walkingDirection != newWalkingDirection) {
+        m_walkingDirection = newWalkingDirection;
+    }
+}
+
+void Player::configureTransformationMatrix() {
+    // Préparation d'une matrice de transformation pour faire un miroir du marcheur
+    QGraphicsScale* pHorizontalFlip = new QGraphicsScale(this);
+    pHorizontalFlip->setOrigin(QVector3D(this->width()/2,0,0));
+    pHorizontalFlip->setXScale(-1);
+    m_transformsForFlip << pHorizontalFlip;
+}
+/**
+void Player::init(){
+    configureTransformationMatrix();
+}
+**/
 void Player::configureAnimation() {
     for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
-        this->addAnimationFrame(QString(GameFramework::imagesPath() + "perso%1.png").arg(FrameNumber));
+        this->addAnimationFrame(QString(GameFramework::imagesPath() + "personnage/tile0%1.png").arg(FrameNumber));
     }
     this->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
     this->startAnimation();
 }
+
+
+
 
 

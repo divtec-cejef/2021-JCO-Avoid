@@ -44,7 +44,7 @@
 #include "obstacle.h"
 
 
-const int SPAWN_INTERVAL = 130;
+const int SPAWN_INTERVAL = 170;
 const int SCENE_WIDTH = 1280;
 
 //! Initialise le contrôleur de jeu.
@@ -55,7 +55,6 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimer.setSingleShot(false);
     m_tickTimer.setInterval(SPAWN_INTERVAL);
     m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-
 
     connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(setupObstacle()));
 

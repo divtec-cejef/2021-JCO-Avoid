@@ -8,6 +8,9 @@
 #define GAMEVIEW_H
 
 #include <QGraphicsView>
+#include <QTime>
+#include <QTimer>
+#include <QElapsedTimer>
 
 //! \brief Classe de visualisation d'un espace 2D de jeu.
 //!
@@ -23,6 +26,8 @@
 class GameView : public QGraphicsView
 {
 public:
+
+    enum { KEEP_PREVIOUS_TICK_INTERVAL = -1  };
     GameView(QWidget* pParent = nullptr);
     GameView(QGraphicsScene* pScene, QWidget* pParent = nullptr);
 
@@ -31,6 +36,8 @@ public:
 
     void setClipSceneEnabled(bool clipSceneEnabled);
     bool isClipSceneEnabled() const;
+
+    void startRetournerEcran(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
 
 protected:
     virtual void resizeEvent(QResizeEvent* pEvent);
@@ -44,6 +51,15 @@ private:
 
     bool m_clippingRectUpToDate;
     QRectF m_clippingRect[4];
+    QTimer m_tickTimer;
+    bool m_keepTicking;
+
+    QElapsedTimer m_lastUpdateTime;
+
+private slots:
+    void setupRetournement();
 };
+
+
 
 #endif // GAMEVIEW_H

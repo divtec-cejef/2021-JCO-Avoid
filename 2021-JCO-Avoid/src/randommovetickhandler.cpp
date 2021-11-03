@@ -52,7 +52,7 @@ void RandomMoveTickHandler::init() {
 //! Cadence : détermine le mouvement que fait le sprite durant le temps écoulé.
 void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
      // Création d'un vecteur de déplacement du sprite.
-     QPointF spriteMovement(0, 10);
+     QPointF spriteMovement(0, 7);
      // Détermine la prochaine position du sprite
      QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
      // Récupère tous les sprites de la scène que toucherait ce sprite à sa prochaine position

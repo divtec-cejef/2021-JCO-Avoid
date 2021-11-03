@@ -64,6 +64,8 @@ public:
     void startTick(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
     void stopTick();
 
+    void rotateView();
+
     void startMouseTracking();
     void stopMouseTracking();
     QPointF currentMousePosition() const;

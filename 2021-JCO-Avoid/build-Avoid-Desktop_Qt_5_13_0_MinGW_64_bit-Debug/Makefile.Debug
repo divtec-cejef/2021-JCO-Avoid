@@ -713,6 +713,15 @@ debug/moc_gamecore.cpp: ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/bin/moc.exe
 	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/build-Avoid-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/mkspecs/win32-g++ -IC:/Users/papefab/Documents/GitHub/2021-JCO-Avoid/2021-JCO-Avoid/src -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtSvg -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.13.0/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.13.0/Tools/mingw730_64/x86_64-w64-mingw32/include ..\src\gamecore.h -o debug\moc_gamecore.cpp
@@ -1163,7 +1172,14 @@ ui_mainfrm.h: ../src/mainfrm.ui \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h
 	C:\Qt\Qt5.13.0\5.13.0\mingw73_64\bin\uic.exe ..\src\mainfrm.ui -o ui_mainfrm.h
 
 compiler_yacc_decl_make_all:
@@ -1532,17 +1548,17 @@ debug/mainfrm.o: ../src/mainfrm.cpp ../src/mainfrm.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qframe.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
-		../src/gamecanvas.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpointer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
+		../src/gamecanvas.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpointer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainfrm.o ..\src\mainfrm.cpp
 
 debug/gamescene.o: ../src/gamescene.cpp ../src/gamescene.h \
@@ -1796,9 +1812,9 @@ debug/obstacle.o: ../src/obstacle.cpp ../src/obstacle.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qbrush.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qfont.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug \
 		../src/resources.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QString
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QString \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obstacle.o ..\src\obstacle.cpp
 
 debug/player.o: ../src/player.cpp ../src/player.h \
@@ -2311,21 +2327,26 @@ debug/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointF \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qhash.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qmap.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtextstream.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qiodevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qlocale.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qshareddata.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qset.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSettings \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsettings.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsBlurEffect \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicseffect.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -2383,24 +2404,19 @@ debug/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSequentialAnimationGroup \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSettings \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qsettings.h \
 		../src/automaticwalkinghandler.h \
 		../src/spritetickhandler.h \
 		../src/player.h \
 		../src/sprite.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QPixmap \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
 		../src/bouncingspritehandler.h \
 		../src/gamescene.h \
 		../src/gamecanvas.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QPointer \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qpointer.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
-		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		../src/manualwalkinghandler.h \
@@ -2421,7 +2437,8 @@ debug/gamecore.o: ../src/gamecore.cpp ../src/gamecore.h \
 		../src/utilities.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QSize \
 		../src/walkingman.h \
-		../src/playertickhandler.h
+		../src/playertickhandler.h \
+		../src/obstacle.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gamecore.o ..\src\gamecore.cpp
 
 debug/resources.o: ../src/resources.cpp ../src/resources.h \
@@ -2612,6 +2629,13 @@ debug/gameview.o: ../src/gameview.cpp ../src/gameview.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTime \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QElapsedTimer \
+		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/qelapsedtimer.h \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.13.0/5.13.0/mingw73_64/include/QtGui/QMouseEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gameview.o ..\src\gameview.cpp

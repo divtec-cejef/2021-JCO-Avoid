@@ -252,3 +252,7 @@ void GameCanvas::onTick() {
     if (m_keepTicking)
         m_tickTimer.start();
 }
+
+void GameCanvas::rotateView() {
+    m_pView->rotateScreen();
+}

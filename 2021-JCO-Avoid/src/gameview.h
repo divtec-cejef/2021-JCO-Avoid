@@ -37,7 +37,7 @@ public:
     void setClipSceneEnabled(bool clipSceneEnabled);
     bool isClipSceneEnabled() const;
 
-    void startRetournerEcran(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
+    void rotateScreen();
 
 protected:
     virtual void resizeEvent(QResizeEvent* pEvent);
@@ -55,9 +55,6 @@ private:
     bool m_keepTicking;
 
     QElapsedTimer m_lastUpdateTime;
-
-private slots:
-    void setupRetournement();
 };
 
 

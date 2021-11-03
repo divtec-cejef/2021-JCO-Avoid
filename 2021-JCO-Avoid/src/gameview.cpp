@@ -8,15 +8,15 @@
 
 #include <QDebug>
 #include <QMouseEvent>
+#include <QTime>
+#include <QTimer>
 
-const int RETOURNEMENT_INTERVAL = 500;
+const int RETOURNEMENT_INTERVAL = 10000;
 
 //! Construit une fenêtre de visualisation de la scène de jeu.
 //! \param pParent  Widget parent.
 GameView::GameView(QWidget* pParent) : QGraphicsView(pParent) {
-
     init();
-    startRetournerEcran();
 }
 
 //! Construit une fenêtre de visualisation de la scène de jeu.
@@ -93,25 +93,9 @@ void GameView::init() {
     m_clippingRectUpToDate = false;
 
     //setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
-
-    m_tickTimer.setSingleShot(false);
-    m_tickTimer.setInterval(RETOURNEMENT_INTERVAL);
-    m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(setupRetournement()));
-
 }
 
-void GameView::setupRetournement(){
+void GameView::rotateScreen(){
     rotate(180);
-}
-
-void GameView::startRetournerEcran(int tickInterval)  {
-
-    if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
-        m_tickTimer.setInterval(tickInterval);
-
-    m_keepTicking = true;
-    m_lastUpdateTime.start();
-    m_tickTimer.start();
 }
 

@@ -45,6 +45,7 @@
 
 
 const int SPAWN_INTERVAL = 170;
+const int RETOURNEMENT_INTERVAL = 10000;
 const int SCENE_WIDTH = 1280;
 
 //! Initialise le contrôleur de jeu.
@@ -52,11 +53,19 @@ const int SCENE_WIDTH = 1280;
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
 
-    m_tickTimer.setSingleShot(false);
-    m_tickTimer.setInterval(SPAWN_INTERVAL);
-    m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    m_tickTimerObstacle.setSingleShot(false);
+    m_tickTimerObstacle.setInterval(SPAWN_INTERVAL);
+    m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
 
-    connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(setupObstacle()));
+    connect(&m_tickTimerObstacle, SIGNAL(timeout()), this, SLOT(setupObstacle()));
+
+    m_tickTimerRetournement.setSingleShot(false);
+    m_tickTimerRetournement.setInterval(RETOURNEMENT_INTERVAL);
+    m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+
+    connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
+
+    startRetournerEcran();
 
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
@@ -143,11 +152,21 @@ void GameCore::setupBonus(){
 void GameCore::startSpawnObstacleTimer(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
-        m_tickTimer.setInterval(tickInterval);
+        m_tickTimerObstacle.setInterval(tickInterval);
 
     m_keepTicking = true;
     m_lastUpdateTime.start();
-    m_tickTimer.start();
+    m_tickTimerObstacle.start();
+}
+
+void GameCore::startRetournerEcran(int tickInterval)  {
+
+    if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
+        m_tickTimerRetournement.setInterval(tickInterval);
+
+    m_keepTicking = true;
+    m_lastUpdateTime.start();
+    m_tickTimerRetournement.start();
 }
 
 //! Met en place la démo de la balle bleue.
@@ -183,6 +202,10 @@ void GameCore::setupWalkingMen() {
     m_pScene->addSpriteToScene(pManualWalkingMan );
     pManualWalkingMan->setTickHandler(new ManualWalkingHandler);
     pManualWalkingMan->registerForTick();
+}
+
+void GameCore::rotateScreen() {
+    m_pGameCanvas->rotateView();
 }
 
 //! Traite la pression d'une touche.

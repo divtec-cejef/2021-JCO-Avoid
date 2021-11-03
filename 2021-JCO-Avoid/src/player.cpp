@@ -10,7 +10,7 @@
 
 #include <QDebug>
 
-const int BALL_VELOCITY = 200; // pixels par seconde
+const int BALL_VELOCITY = 600; // pixels par seconde
 
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.

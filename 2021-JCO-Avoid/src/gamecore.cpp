@@ -44,7 +44,7 @@
 #include "obstacle.h"
 
 
-const int SPAWN_INTERVAL = 1000;
+const int SPAWN_INTERVAL = 130;
 const int SCENE_WIDTH = 1280;
 
 //! Initialise le contrôleur de jeu.
@@ -55,7 +55,10 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimer.setSingleShot(false);
     m_tickTimer.setInterval(SPAWN_INTERVAL);
     m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+
+
     connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(setupObstacle()));
+
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -86,21 +89,50 @@ GameCore::~GameCore() {
 }
 
 void GameCore::setupObstacle(){
-    int nbgen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
+    nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
+    nombreObstacle++;
 
-    Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
-    pObstacle->setPos(nbgen,0);
-    pObstacle->setScale(0.1);
+    if(nombreObstacle == APPARITION_BONUS){
+        setupBonus();
+        nombreObstacle = 0;
+    }else{
+        Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
+        pObstacle->setPos(nbGen,0);
+        pObstacle->setScale(0.1);
+
+        // Déplace le sprite aléatoirement, en évitant les collisions.
+        // Si une collision à quand-même lieu, le tickhandler se charge
+        // de détruire son sprite.
+        RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
+        pTickHandler->setDestroyOnCollisionEnabled(true);
+        pObstacle->setTickHandler(pTickHandler);
+        m_pScene->addSpriteToScene(pObstacle);
+        pObstacle->registerForTick();
+    }
+
+}
+
+void GameCore::setupBonus(){
+    Sprite* pBonus = new Sprite(GameFramework::imagesPath() + "Bonus1.png");
+    pBonus->setPos(nbGen,0);
+    pBonus->setScale(0.25);
 
     // Déplace le sprite aléatoirement, en évitant les collisions.
     // Si une collision à quand-même lieu, le tickhandler se charge
     // de détruire son sprite.
     RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
     pTickHandler->setDestroyOnCollisionEnabled(true);
-    pObstacle->setTickHandler(pTickHandler);
-    m_pScene->addSpriteToScene(pObstacle);
-    pObstacle->registerForTick();
+    pBonus->setTickHandler(pTickHandler);
+
+    pBonus->startAnimation(100);
+
+    m_pScene->addSpriteToScene(pBonus);
+    pBonus->registerForTick();
+
+
 }
+
+
 
 
 //!
@@ -110,6 +142,7 @@ void GameCore::setupObstacle(){
 //! inférieure à zéro, l'intervalle de temps précédent est utilisé.
 //!
 void GameCore::startSpawnObstacleTimer(int tickInterval)  {
+
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
         m_tickTimer.setInterval(tickInterval);
 

@@ -59,6 +59,7 @@ private:
     void setupPlayer();
     void setupWalkingMen();
     void configureAnimation();
+    void setupBonus();
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
@@ -66,11 +67,14 @@ private:
     Sprite* m_pPlayer;
     QTimer m_tickTimer;
     bool m_keepTicking;
+    int nombreObstacle;
+    int nbGen;
 
     QElapsedTimer m_lastUpdateTime;
 
     const int LARGEUR_MINIMUM = 1;
     const int LARGEUR_MAX = 1150;
+    const int APPARITION_BONUS = 15;
 
 
 private slots:

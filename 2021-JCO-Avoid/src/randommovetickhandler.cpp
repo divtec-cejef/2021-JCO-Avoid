@@ -135,6 +135,7 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         // complètement exécuté.
         m_pParentSprite->parentScene()->sprites().first()->clearAnimations();
         m_pParentSprite->parentScene()->sprites().first()->stopAnimation();
+        m_pParentSprite->parentScene()->sprites().first()->clearAnimationFrames();
         configureAnimation();
         //m_pParentSprite->parentScene()->sprites().first()->deleteLater();
 

@@ -43,6 +43,7 @@ private:
     bool m_ignoreCollision = false;
     bool m_destroyOnCollision = false;
     Player* m_pPlayer;
+    Sprite* m_pMort;
 
     long m_moveDuration = 0; // en millisecondes
     double m_moveAngle = 0;  // en radians

@@ -72,14 +72,14 @@ private:
     QTimer m_tickTimerRetournement;
 
     bool m_keepTicking;
-    int nombreObstacle;
+    int nombreObstacle = 0;
     int nbGen;
 
     QElapsedTimer m_lastUpdateTime;
 
     const int LARGEUR_MINIMUM = 1;
     const int LARGEUR_MAX = 1150;
-    const int APPARITION_BONUS = 5;
+    const int APPARITION_BONUS = 10 ;
 
 
 private slots:

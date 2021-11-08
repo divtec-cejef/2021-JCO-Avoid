@@ -52,20 +52,19 @@ const int SCENE_WIDTH = 1280;
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
-
     m_tickTimerObstacle.setSingleShot(false);
     m_tickTimerObstacle.setInterval(SPAWN_INTERVAL);
     m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
 
     connect(&m_tickTimerObstacle, SIGNAL(timeout()), this, SLOT(setupObstacle()));
-/**
+
     m_tickTimerRetournement.setSingleShot(false);
     m_tickTimerRetournement.setInterval(RETOURNEMENT_INTERVAL);
     m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
 
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
-**/
-    startRetournerEcran();
+
+
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -81,6 +80,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Instancier et initialiser les sprite ici :
     setupPlayer();
     startSpawnObstacleTimer();
+    startRetournerEcran();
 
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,

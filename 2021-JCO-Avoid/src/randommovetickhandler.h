@@ -9,6 +9,7 @@
 #define RANDOMMOVETICKHANDLER_H
 
 #include "spritetickhandler.h"
+#include "player.h"
 
 //! \brief Classe qui gère un déplacement aléatoire d'un sprite
 //!
@@ -19,6 +20,7 @@
 class RandomMoveTickHandler : public SpriteTickHandler
 {
 public:
+
     RandomMoveTickHandler(Sprite* pParentSprite = nullptr);
     RandomMoveTickHandler(bool ignoreCollision, bool destroyOnCollision, Sprite* pParentSprite = nullptr);
 
@@ -36,8 +38,11 @@ private:
 
     static bool s_seeded;
 
+    void configureAnimation();
+
     bool m_ignoreCollision = false;
     bool m_destroyOnCollision = false;
+    Player* m_pPlayer;
 
     long m_moveDuration = 0; // en millisecondes
     double m_moveAngle = 0;  // en radians

@@ -61,6 +61,7 @@ private:
     void setupWalkingMen();
     void configureAnimation();
     void setupBonus();
+    void onSpriteDestroyed(QObject* pSprite);
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;

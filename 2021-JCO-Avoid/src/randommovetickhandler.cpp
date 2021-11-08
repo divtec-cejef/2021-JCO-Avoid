@@ -15,7 +15,8 @@
 #include "sprite.h"
 #include "gamescene.h"
 #include "player.h"
-
+#include "gamecore.h"
+#include "resources.h"
 bool RandomMoveTickHandler::s_seeded = false;
 
 const double DEFAULT_SPRITE_VELOCITY = 250.0;
@@ -132,10 +133,23 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         // provoquerait alors un crash.
         // deleteLater() permet d'efface le sprite plus tard, une fois que le code qui le concerne a été
         // complètement exécuté.
-        m_pParentSprite->deleteLater();
-        m_pParentSprite->parentScene()->sprites().first()->deleteLater();
+        m_pParentSprite->parentScene()->sprites().first()->clearAnimations();
+        m_pParentSprite->parentScene()->sprites().first()->stopAnimation();
+        configureAnimation();
+        //m_pParentSprite->parentScene()->sprites().first()->deleteLater();
+
 
     }
+}
+
+//! Charge les différentes images qui composent l'animation du marcheur et
+//! les ajoute à ce sprite.
+void RandomMoveTickHandler::configureAnimation() {
+    for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
+        m_pParentSprite->parentScene()->sprites().first()->addAnimationFrame(QString(GameFramework::imagesPath() + "mort/tile00%1.png").arg(FrameNumber));
+    }
+    m_pParentSprite->parentScene()->sprites().first()->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
+    m_pParentSprite->parentScene()->sprites().first()->startAnimation();
 }
 
 //! Change la vitesse de déplacement du sprite.

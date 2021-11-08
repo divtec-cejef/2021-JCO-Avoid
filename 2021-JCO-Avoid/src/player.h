@@ -37,6 +37,7 @@ class Player : public Sprite
     Q_OBJECT
 
 public:
+    const bool ON_DESTROYED = false;
     Player(QGraphicsItem* pParent = nullptr);
 
     enum WalkingDirection {

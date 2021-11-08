@@ -64,8 +64,6 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
 
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
 
-
-
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
 
@@ -86,6 +84,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
     // déplacements, surtout si le déboggueur est démarré.
+
     m_pGameCanvas->startTick();
 }
 
@@ -120,13 +119,13 @@ void GameCore::setupObstacle(){
 }
 
 void GameCore::setupBonus(){
-    Sprite* pBonus = new Sprite(GameFramework::imagesPath() + "Bonus1.png");
+    Sprite* pBonus = new Sprite();
     pBonus->setPos(nbGen,0);
     pBonus->setScale(0.25);
 
     // Déplace le sprite aléatoirement, en évitant les collisions.
     // Si une collision à quand-même lieu, le tickhandler se charge
-    // de détruire son sprite.
+    // de détruire son sprite.GameFramework::imagesPath() + "Bonus1.png"
     RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
     pTickHandler->setDestroyOnCollisionEnabled(true);
     pBonus->setTickHandler(pTickHandler);
@@ -175,6 +174,8 @@ void GameCore::setupPlayer() {
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
     m_pPlayer = pPlayer;
 }
+
+
 
 //! Met en place la démo des deux marcheurs.
 //! Un marcheur (WalkingMan) hérite de Sprite afin d'y placer la responsabilité

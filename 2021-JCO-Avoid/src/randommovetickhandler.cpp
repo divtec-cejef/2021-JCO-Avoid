@@ -145,8 +145,8 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
 //! Charge les différentes images qui composent l'animation du marcheur et
 //! les ajoute à ce sprite.
 void RandomMoveTickHandler::configureAnimation() {
-    for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
-        m_pParentSprite->parentScene()->sprites().first()->addAnimationFrame(QString(GameFramework::imagesPath() + "mort/tile00%1.png").arg(FrameNumber));
+    for (int FrameNumber = 1; FrameNumber <= 15; ++FrameNumber)  {
+        m_pParentSprite->parentScene()->sprites().first()->addAnimationFrame(QString(GameFramework::imagesPath() + "mort/pngegg_%1.png").arg(FrameNumber));
     }
     m_pParentSprite->parentScene()->sprites().first()->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
     m_pParentSprite->parentScene()->sprites().first()->startAnimation();

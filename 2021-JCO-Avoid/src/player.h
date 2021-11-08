@@ -40,8 +40,8 @@ public:
     Player(QGraphicsItem* pParent = nullptr);
 
     enum WalkingDirection {
-        WALKING_RIGHT,
-        WALKING_LEFT
+        WALKING_RIGHT = 1,
+        WALKING_LEFT = -1
     };
 
 
@@ -58,7 +58,7 @@ private:
     void updateBallVelocity();
     void configureAnimation();
 
-    void configureTransformationMatrix();
+    void updateRotation();
     WalkingDirection m_walkingDirection;
     QList<QGraphicsTransform*> m_transformsForFlip;
     int m_walkingSpeed;

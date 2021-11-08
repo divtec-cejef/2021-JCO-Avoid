@@ -14,12 +14,13 @@ const int BALL_VELOCITY = 600; // pixels par seconde
 
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
-Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "personnage/tile019.png", pParent) {
+Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "tile19.png", pParent) {
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
     m_keyRightPressed = false;
     m_ballVelocity = QPointF(0,0);
+
 
 }
 
@@ -46,20 +47,25 @@ void Player::onKeyPressed(int key) {
     switch (key)  {
     //case Qt::Key_Up:    m_keyUpPressed    = true;  updateBallVelocity(); break;
     //case Qt::Key_Down:  m_keyDownPressed  = true;  updateBallVelocity(); break;
-    case Qt::Key_Right: m_keyRightPressed = true;  updateBallVelocity(); break;
-    case Qt::Key_Left:  m_keyLeftPressed  = true;  updateBallVelocity(); break;
+    case Qt::Key_Right: m_keyRightPressed = true;  configureAnimation(); break;
+    case Qt::Key_Left:  m_keyLeftPressed  = true;  configureAnimation(); break;
     }
+
+    updateBallVelocity();
+    updateRotation();
 }
 
 //! Une touche a été relâchée.
 //! \param key Code de la touche relâchée.
 void Player::onKeyReleased(int key) {
     switch (key)  {
-    //case Qt::Key_Up:    m_keyUpPressed    = false;  updateBallVelocity(); break;
-    //case Qt::Key_Down:  m_keyDownPressed  = false;  updateBallVelocity(); break;
-    case Qt::Key_Right: m_keyRightPressed = false;  updateBallVelocity(); break;
-    case Qt::Key_Left:  m_keyLeftPressed  = false;  updateBallVelocity(); break;
+    //case Qt::Key_Up:    m_keyUpPressed    = false;  break;
+    //case Qt::Key_Down:  m_keyDownPressed  = false;  break;
+    case Qt::Key_Right: m_keyRightPressed = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
+    case Qt::Key_Left:  m_keyLeftPressed  = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
     }
+
+    updateBallVelocity();
 
 }
 
@@ -71,6 +77,8 @@ void Player::updateBallVelocity()  {
     if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
     if (m_keyRightPressed) XVelocity = BALL_VELOCITY;
     if (m_keyLeftPressed)  XVelocity = -BALL_VELOCITY;
+
+    XVelocity < 0 ? setWalkingDirection(WALKING_LEFT) : setWalkingDirection(WALKING_RIGHT);
 
     m_ballVelocity = QPoint(XVelocity, YVelocity);
 }
@@ -88,12 +96,16 @@ void Player::setWalkingDirection(WalkingDirection newWalkingDirection) {
     }
 }
 
-void Player::configureTransformationMatrix() {
+void Player::updateRotation() {
     // Préparation d'une matrice de transformation pour faire un miroir du marcheur
     QGraphicsScale* pHorizontalFlip = new QGraphicsScale(this);
     pHorizontalFlip->setOrigin(QVector3D(this->width()/2,0,0));
-    pHorizontalFlip->setXScale(-1);
-    m_transformsForFlip << pHorizontalFlip;
+    pHorizontalFlip->setXScale(m_walkingDirection);
+
+    QList<QGraphicsTransform*> transformations;
+    transformations << pHorizontalFlip;
+
+    this->setTransformations(transformations);
 }
 /**
 void Player::init(){
@@ -102,7 +114,7 @@ void Player::init(){
 **/
 void Player::configureAnimation() {
     for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
-        this->addAnimationFrame(QString(GameFramework::imagesPath() + "personnage/tile0%1.png").arg(FrameNumber));
+        this->addAnimationFrame(QString(GameFramework::imagesPath() + "personnage/tile%1.png").arg(FrameNumber));
     }
     this->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
     this->startAnimation();

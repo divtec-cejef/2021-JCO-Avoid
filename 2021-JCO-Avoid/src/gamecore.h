@@ -79,7 +79,7 @@ private:
 
     const int LARGEUR_MINIMUM = 1;
     const int LARGEUR_MAX = 1150;
-    const int APPARITION_BONUS = 15;
+    const int APPARITION_BONUS = 5;
 
 
 private slots:

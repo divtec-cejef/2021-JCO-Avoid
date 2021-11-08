@@ -14,6 +14,7 @@
 
 #include "sprite.h"
 #include "gamescene.h"
+#include "player.h"
 
 bool RandomMoveTickHandler::s_seeded = false;
 
@@ -132,6 +133,8 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         // deleteLater() permet d'efface le sprite plus tard, une fois que le code qui le concerne a été
         // complètement exécuté.
         m_pParentSprite->deleteLater();
+        m_pParentSprite->parentScene()->sprites().first()->deleteLater();
+
     }
 }
 

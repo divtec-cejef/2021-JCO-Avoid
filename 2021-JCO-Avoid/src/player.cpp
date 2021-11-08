@@ -30,7 +30,6 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
 
     // Calcul de la distance parcourue par la balle, selon sa vitesse et le temps écoulé.
     QPointF ballDistance = elapsedTimeInMilliseconds * m_ballVelocity / 1000.;
-
     // Positionne la bounding box de la balle à sa prochaine position.
     QRectF nextRect = this->globalBoundingBox().translated(ballDistance);
 
@@ -39,6 +38,7 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     if (this->parentScene()->isInsideScene(nextRect)) {
         this->setPos(this->pos() + ballDistance);
     }
+
 }
 
 //! Une touche a été appuyée.

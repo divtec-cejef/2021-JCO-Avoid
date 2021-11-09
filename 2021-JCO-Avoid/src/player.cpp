@@ -32,6 +32,11 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     QPointF ballDistance = elapsedTimeInMilliseconds * m_ballVelocity / 1000.;
     // Positionne la bounding box de la balle à sa prochaine position.
     QRectF nextRect = this->globalBoundingBox().translated(ballDistance);
+    //Récupère tous les sprites de la scène
+    auto collidingSprites = this->parentScene()->collidingSprites(nextRect);
+    // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
+    collidingSprites.removeAll(this);
+    bool collision = !collidingSprites.isEmpty();
 
     // Si la prochaine position reste dans les limites de la scène, la balle
     // y est positionnée. Sinon, elle reste sur place.
@@ -39,6 +44,9 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
         this->setPos(this->pos() + ballDistance);
     }
 
+    if(collision){
+        emit onplayerDestroyed();
+    }
 }
 
 //! Une touche a été appuyée.

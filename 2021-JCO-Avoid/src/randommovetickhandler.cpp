@@ -133,12 +133,9 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         // provoquerait alors un crash.
         // deleteLater() permet d'efface le sprite plus tard, une fois que le code qui le concerne a été
         // complètement exécuté.
-        m_pParentSprite->parentScene()->sprites().first()->clearAnimations();
-        m_pParentSprite->parentScene()->sprites().first()->stopAnimation();
-        m_pParentSprite->parentScene()->sprites().first()->clearAnimationFrames();
-        configureAnimation();
-        //m_pParentSprite->parentScene()->sprites().first()->deleteLater();
 
+        //m_pParentSprite->parentScene()->sprites().first()->deleteLater();
+        //emit onplayerDestroyed();
 
     }
 }
@@ -152,7 +149,10 @@ void RandomMoveTickHandler::configureAnimation() {
     m_pParentSprite->parentScene()->sprites().first()->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
     m_pParentSprite->parentScene()->sprites().first()->startAnimation();
 }
-
+/**
+void RandomMoveTickHandler::onplayerDestroyed(){
+}
+**/
 //! Change la vitesse de déplacement du sprite.
 //! \param velocityInPixelPerSecond  Nouvelle vitesse de déplacement du sprite.
 void RandomMoveTickHandler::setSpriteVelocity(double velocityInPixelPerSecond) {

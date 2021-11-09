@@ -7,9 +7,9 @@
 
 #ifndef RANDOMMOVETICKHANDLER_H
 #define RANDOMMOVETICKHANDLER_H
-
 #include "spritetickhandler.h"
 #include "player.h"
+
 
 //! \brief Classe qui gère un déplacement aléatoire d'un sprite
 //!
@@ -19,6 +19,10 @@
 //! en cas de collision le sprite est détruit.
 class RandomMoveTickHandler : public SpriteTickHandler
 {
+    //Q_OBJECT
+//signals:
+    //void onplayerDestroyed();
+
 public:
 
     RandomMoveTickHandler(Sprite* pParentSprite = nullptr);

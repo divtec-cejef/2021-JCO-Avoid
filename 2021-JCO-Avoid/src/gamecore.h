@@ -17,6 +17,9 @@
 #include <QTimer>
 #include <QElapsedTimer>
 
+#include "player.h"
+#include "randommovetickhandler.h"
+
 class GameCanvas;
 class GameScene;
 class Sprite;
@@ -69,6 +72,9 @@ private:
     Sprite* pSprite;
     Sprite* m_pPlayer;
 
+    Player* pPlayer;
+
+
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;
 
@@ -80,12 +86,16 @@ private:
 
     const int LARGEUR_MINIMUM = 1;
     const int LARGEUR_MAX = 1150;
-    const int APPARITION_BONUS = 10 ;
+    const int APPARITION_BONUS = 10;
 
 
 private slots:
     void setupObstacle();
     void rotateScreen();
+
+public slots:
+    void stopGame();
+
 };
 
 

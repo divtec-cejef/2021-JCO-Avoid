@@ -51,9 +51,9 @@ public:
     void changeWalkingDirection();
     void setWalkingDirection(WalkingDirection newWalkingDirection);
 
-public slots:
-    void onKeyPressed(int key);
-    void onKeyReleased(int key);
+signals:
+    void onplayerDestroyed();
+
 
 private:
     void updateBallVelocity();
@@ -71,6 +71,9 @@ private:
     bool m_keyLeftPressed;
     bool m_keyRightPressed;
 
+public slots:
+    void onKeyPressed(int key);
+    void onKeyReleased(int key);
 };
 
 #endif // BLUEBALL_H

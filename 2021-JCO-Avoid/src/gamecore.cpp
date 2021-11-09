@@ -52,10 +52,10 @@ const int SCENE_WIDTH = 1280;
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
+    nombreObstacle = 0;
     m_tickTimerObstacle.setSingleShot(false);
     m_tickTimerObstacle.setInterval(SPAWN_INTERVAL);
     m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-
     connect(&m_tickTimerObstacle, SIGNAL(timeout()), this, SLOT(setupObstacle()));
 
     m_tickTimerRetournement.setSingleShot(false);
@@ -76,6 +76,9 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
 
     std::srand(std::time(nullptr));
     // Instancier et initialiser les sprite ici :
+
+
+
     setupPlayer();
     startSpawnObstacleTimer();
     startRetournerEcran();
@@ -112,24 +115,27 @@ void GameCore::setupObstacle(){
         RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
         pTickHandler->setDestroyOnCollisionEnabled(true);
         pObstacle->setTickHandler(pTickHandler);
+        //connect(&pTickHandler,SIGNAL(&RandomMoveTickHandler::onplayerDestroyed()),this,SLOT(GameCore::playerDestroyed()));
         m_pScene->addSpriteToScene(pObstacle);
+
+        //connect(pTickHandler,&RandomMoveTickHandler::onplayerDestroyed() ,this, GameCore::playerDestroyed());
+
         pObstacle->registerForTick();
     }
 
 }
 
 void GameCore::setupBonus(){
-    Sprite* pBonus = new Sprite();
+    Sprite* pBonus = new Sprite(GameFramework::imagesPath() + "Bonus1.png");
     pBonus->setPos(nbGen,0);
     pBonus->setScale(0.25);
 
     // Déplace le sprite aléatoirement, en évitant les collisions.
     // Si une collision à quand-même lieu, le tickhandler se charge
     // de détruire son sprite.GameFramework::imagesPath() + "Bonus1.png"
-    RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
-    pTickHandler->setDestroyOnCollisionEnabled(true);
-    pBonus->setTickHandler(pTickHandler);
-
+    RandomMoveTickHandler* pbTickHandler = new RandomMoveTickHandler;
+    pbTickHandler->setDestroyOnCollisionEnabled(true);
+    pBonus->setTickHandler(pbTickHandler);
 
     m_pScene->addSpriteToScene(pBonus);
     pBonus->registerForTick();
@@ -161,10 +167,12 @@ void GameCore::startRetournerEcran(int tickInterval)  {
     m_tickTimerRetournement.start();
 }
 
+
+
 //! Met en place la démo de la balle bleue.
 void GameCore::setupPlayer() {
+    pPlayer = new Player;
     int ajustementHauteur = 80;
-    Player* pPlayer = new Player;
     pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
     pPlayer->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
     pPlayer->setScale(0.4);
@@ -172,7 +180,15 @@ void GameCore::setupPlayer() {
     pPlayer->registerForTick();
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
+    connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
     m_pPlayer = pPlayer;
+}
+
+void GameCore::stopGame(){
+    pPlayer->deleteLater();
+    m_tickTimerObstacle.stop();
+    m_tickTimerRetournement.stop();
+    m_pGameCanvas->stopTick();
 }
 
 
@@ -223,6 +239,7 @@ void GameCore::keyReleased(int key) {
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
+
 
 }
 

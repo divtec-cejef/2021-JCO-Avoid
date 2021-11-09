@@ -75,6 +75,7 @@ private:
 
     Player* pPlayer;
 
+    bool keyboardDisabled = false;
 
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;

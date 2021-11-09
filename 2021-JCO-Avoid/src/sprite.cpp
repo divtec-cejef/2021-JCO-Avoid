@@ -335,9 +335,9 @@ void Sprite::onNextAnimationFrame() {
     int PreviousAnimationFrame = m_currentAnimationFrame;
     ++m_currentAnimationFrame;
     if (m_currentAnimationFrame >= m_animationList[m_currentAnimationIndex].count()) {
-        m_currentAnimationFrame = 0;
         if (m_emitSignalEOA)
             emit animationFinished();
+        m_currentAnimationFrame = 0;
     }
     if (PreviousAnimationFrame != m_currentAnimationFrame) {
         setPixmap(m_animationList[m_currentAnimationIndex][m_currentAnimationFrame]);

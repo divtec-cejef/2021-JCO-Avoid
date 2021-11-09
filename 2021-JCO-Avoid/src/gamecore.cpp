@@ -185,14 +185,12 @@ void GameCore::setupPlayer() {
 }
 
 void GameCore::stopGame(){
-    m_pAnimMort = new Sprite;
-    m_pAnimMort->setPos(pPlayer->pos());
+    pPlayer->stopAnimation();
+    pPlayer->deathAnimation();
 
-
-
-    pPlayer->deleteLater();
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
+    keyboardDisabled= true;
     m_pGameCanvas->stopTick();
 }
 
@@ -227,7 +225,8 @@ void GameCore::rotateScreen() {
 //! \param key Numéro de la touche (voir les constantes Qt)
 //!
 void GameCore::keyPressed(int key) {
-    emit notifyKeyPressed(key);
+    if (!keyboardDisabled)
+        emit notifyKeyPressed(key);
 }
 
 

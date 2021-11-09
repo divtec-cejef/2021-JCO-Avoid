@@ -45,6 +45,8 @@ public:
         WALKING_LEFT = -1
     };
 
+    void deathAnimation();
+
 
 
     virtual void tick(long long elapsedTimeInMilliseconds);
@@ -58,6 +60,7 @@ signals:
 private:
     void updateBallVelocity();
     void configureAnimation();
+
 
     void updateRotation();
     WalkingDirection m_walkingDirection;
@@ -74,6 +77,7 @@ private:
 public slots:
     void onKeyPressed(int key);
     void onKeyReleased(int key);
+    void onDeathAnimationEnd();
 };
 
 #endif // BLUEBALL_H

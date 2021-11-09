@@ -71,6 +71,7 @@ private:
 
     Sprite* pSprite;
     Sprite* m_pPlayer;
+    Sprite* m_pAnimMort;
 
     Player* pPlayer;
 

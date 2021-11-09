@@ -187,10 +187,13 @@ void GameCore::setupPlayer() {
 void GameCore::stopGame(){
     m_pAnimMort = new Sprite;
     m_pAnimMort->setPos(pPlayer->pos());
-
-
-
+    
+    
     pPlayer->deleteLater();
+    
+    
+    
+    
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
     m_pGameCanvas->stopTick();

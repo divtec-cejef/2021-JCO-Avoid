@@ -56,25 +56,25 @@ const int ACTUALISATION_TEMPS = 100;
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
-    nombreObstacle = 0;
+    //Démarre le timer pour les obstacles
     m_tickTimerObstacle.setSingleShot(false);
     m_tickTimerObstacle.setInterval(SPAWN_INTERVAL);
     m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerObstacle, SIGNAL(timeout()), this, SLOT(setupObstacle()));
-
+    //Démarre le timer pour le retournement de l'écran
     m_tickTimerRetournement.setSingleShot(false);
     m_tickTimerRetournement.setInterval(RETOURNEMENT_INTERVAL);
     m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
-
+    //Démarre le timer pour diminution de la barre de progression
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), this, SLOT(loseEndurance()));
-
+    //Démarre le timer de la partie
     m_tickTimerPartie.setSingleShot(false);
     m_tickTimerPartie.setInterval(ACTUALISATION_TEMPS);
-    m_tickTimerPartie.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    m_tickTimerPartie.setTimerType(Qt::PreciseTimer); // Important pour avoir une précision suffisante sous Windows
     connect(&m_tickTimerPartie, SIGNAL(timeout()), this, SLOT(timerPartie()));
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
@@ -88,8 +88,8 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_pScene->addRect(m_pScene->sceneRect(), QPen(Qt::white));
 
     std::srand(std::time(nullptr));
-    // Instancier et initialiser les sprite ici :
 
+    // Instancier et initialiser les sprite ici :
     setupPlayer();
     setupProgressBar();
     setupTimerPartie();
@@ -112,7 +112,7 @@ GameCore::~GameCore() {
 }
 /**
  * @brief GameCore::setupObstacle
- * Met en place un obtsacle sur la scene
+ * Met en place un obtsacle
  */
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
@@ -143,7 +143,7 @@ void GameCore::setupObstacle(){
 }
 //!
 //! \brief GameCore::setupBonus
-//! met en place le bonus sur la scene
+//! met en place le bonus
 //!
 void GameCore::setupBonus(){
     pBonus = new Sprite(GameFramework::imagesPath() + "Bonus.png");
@@ -151,9 +151,9 @@ void GameCore::setupBonus(){
     pBonus->setScale(0.25);
     pBonus->setData(0, "bonus");
 
-    // Déplace le sprite aléatoirement, en évitant les collisions.
-    // Si une collision à quand-même lieu, le tickhandler se charge
-    // de détruire son sprite.GameFramework::imagesPath() + "Bonus1.png"
+
+    //déplace l'obstacle vers le bas
+    //détruit l'obstacle lorsqu'il touche le sol
     RandomMoveTickHandler* pbTickHandler = new RandomMoveTickHandler;
     pbTickHandler->setDestroyOnCollisionEnabled(true);
     pBonus->setTickHandler(pbTickHandler);
@@ -162,13 +162,20 @@ void GameCore::setupBonus(){
     pBonus->registerForTick();
 }
 
-
+/**
+ * Met en place le timer et son text
+ * @brief GameCore::setupTimerPartie
+ */
 void GameCore::setupTimerPartie(){
     m_textTimer = "0";
     m_objetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 70);
     m_objetTimer->setOpacity(0.5);
 }
 
+/**
+ * Met en place la progression de la barre
+ * @brief GameCore::setupProgressBar
+ */
 void GameCore::setupProgressBar() {
     double screenXCenter = m_pScene->width() / 2;
     m_ProgressBarBorder = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::white), QBrush(Qt::black));
@@ -180,14 +187,26 @@ void GameCore::setupProgressBar() {
     m_tickTimerLoseEndurance.start();
 }
 
+/**
+ * Met la barre a 100%
+ * @brief GameCore::fillProgressBar
+ */
 void GameCore::fillProgressBar() {
     setProgressBarPercentage(100);
 }
 
+/**
+ * Baisse la progression de la barre
+ * @brief GameCore::loseEndurance
+ */
 void GameCore::loseEndurance() {
     setProgressBarPercentage(getProgressBarPercentage()-0.5);
 }
 
+/**
+  Met à jour la progression de la barre
+ * @brief GameCore::updateProgressBar
+ */
 void GameCore::updateProgressBar() {
     double newWidth = PROGRESSBAR_WIDTH / 100 * progressBarPercentage;
     double screenXCenter = m_pScene->width() / 2;
@@ -205,24 +224,32 @@ void GameCore::updateProgressBar() {
         stopGame();
     }
 }
-//modifie la progression de la bar
+/**
+ * Stop la progresson de la barre si elle dépasse 100 ou 0
+ * @brief GameCore::setProgressBarPercentage
+ * @param percentage
+ */
 void GameCore::setProgressBarPercentage(double percentage) {
     if (percentage > 100 ) percentage = 100;
     else if (percentage < 0) percentage = 0;
 
     progressBarPercentage = percentage;
 }
-//Donne la progression de la bar de en pourcent
+/**
+ * donne la progression de la bar d'avancement
+ * @brief GameCore::getProgressBarPercentage
+ * @return la progression de la bar
+ */
 double GameCore::getProgressBarPercentage() {
     return progressBarPercentage;
 }
 
-//!
-//! Démarre la génération d'un tick sur une base de temps régulière,
-//! donnée en paramètre.
-//! \param tickInterval  Intervalle de temps (en millisecondes) entre chaque tick. Si cette valeur est
-//! inférieure à zéro, l'intervalle de temps précédent est utilisé.
-//!
+
+/**
+ * Configuration timer spawn les obstacles
+ * @brief GameCore::startSpawnObstacleTimer
+ * @param tickInterval
+ */
 void GameCore::startSpawnObstacleTimer(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -233,6 +260,11 @@ void GameCore::startSpawnObstacleTimer(int tickInterval)  {
     m_tickTimerObstacle.start();
 }
 
+/**
+ * Configuration timer pour démarrer le timer de la partie
+ * @brief GameCore::startRetournerEcran
+ * @param tickInterval
+ */
 void GameCore::startTimerPartie(int tickInterval){
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
         m_tickTimerObstacle.setInterval(tickInterval);
@@ -242,7 +274,11 @@ void GameCore::startTimerPartie(int tickInterval){
     m_tickTimerPartie.start();
 }
 
-//Timer pour retourner l'écran
+/**
+ * Configuration timer pour retourner l'écran
+ * @brief GameCore::startRetournerEcran
+ * @param tickInterval
+ */
 void GameCore::startRetournerEcran(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -253,7 +289,11 @@ void GameCore::startRetournerEcran(int tickInterval)  {
     m_tickTimerRetournement.start();
 }
 
-//Timer pour relancer le jeux une fois le personnage mort
+/**
+ * Configuration timer avant le recommencement du jeu
+ * @brief GameCore::startGameTimer
+ * @param tickInterval
+ */
 void GameCore::startGameTimer(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -264,12 +304,16 @@ void GameCore::startGameTimer(int tickInterval)  {
     m_tickTimerRestartGame.start();
 }
 
+/**
+ * Actualise le text timer pour lui ajouter 0,1
+ * @brief GameCore::timerPartie
+ */
 void GameCore::timerPartie(){
     tempsPartie += 0.1;
     m_objetTimer->setText(QString::number(tempsPartie));
 }
 
-//! Met en place la démo de la balle bleue.
+//! Met en place le joueur
 void GameCore::setupPlayer() {
     pPlayer = new Player;
     int ajustementHauteur = 80;
@@ -283,7 +327,10 @@ void GameCore::setupPlayer() {
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
     m_pPlayer = pPlayer;
 }
-//fonction qui arrête le jeux lorsqu'elle et appelé
+/**
+  Arrete le jeux lors de la mort du personnage
+ * @brief GameCore::stopGame
+ */
 void GameCore::stopGame(){
     pPlayer->stopAnimation();
     pPlayer->deathAnimation();
@@ -293,41 +340,20 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
     keyboardDisabled= true;
     m_pGameCanvas->stopTick();
-    /**
-    m_tickTimerRestartGame.setSingleShot(false);
-    m_tickTimerRestartGame.setInterval(TIMER_BEFORE_START);
-    m_tickTimerRestartGame.setTimerType(Qt::PreciseTimer);
-    connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(restartGame()));
-    **/
+
 }
-//fonction qui relance le jeux
+/**
+  Relance le jeux
+ * @brief GameCore::restartGame
+ */
 void GameCore::restartGame(){
     setupPlayer();
     keyboardDisabled= false;
 }
-
-
-//! Met en place la démo des deux marcheurs.
-//! Un marcheur (WalkingMan) hérite de Sprite afin d'y placer la responsabilité
-//! de gérer les images d'animation.
-//! Le déplacement se fait au moyen d'un gestionnaire de tick (SpriteTickHandler).
-//! Deux gestionnaires de tick ont été créés :
-//! - ManualWalkingHandler : déplacement classique en se basant sur la cadence.
-//! - AutomatiqueWalkingHandler : déplacement en préprogrammant une séquence d'animation
-//!   avec QPropertyAnimation.
-void GameCore::setupWalkingMen() {
-    WalkingMan* pAutoWalkingMan = new WalkingMan;
-    pAutoWalkingMan->setPos(10, 100);
-    m_pScene->addSpriteToScene(pAutoWalkingMan);
-    pAutoWalkingMan->setTickHandler(new AutomaticWalkingHandler);
-
-    WalkingMan* pManualWalkingMan = new WalkingMan;
-    pManualWalkingMan ->setPos(30,300);
-    m_pScene->addSpriteToScene(pManualWalkingMan );
-    pManualWalkingMan->setTickHandler(new ManualWalkingHandler);
-    pManualWalkingMan->registerForTick();
-}
-
+/**
+  Retourne l'écran
+ * @brief GameCore::rotateScreen
+ */
 void GameCore::rotateScreen() {
     m_pGameCanvas->rotateView();
 }

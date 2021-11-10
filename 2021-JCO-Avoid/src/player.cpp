@@ -21,6 +21,7 @@ Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "t
     m_keyRightPressed = false;
     m_ballVelocity = QPointF(0,0);
 
+
     connect(this, SIGNAL(animationFinished()), this, SLOT(onDeathAnimationEnd()));
 }
 
@@ -36,6 +37,7 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     auto collidingSprites = this->parentScene()->collidingSprites(nextRect);
     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
     collidingSprites.removeAll(this);
+
     bool collision = !collidingSprites.isEmpty();
 
     // Si la prochaine position reste dans les limites de la scène, la balle
@@ -131,7 +133,7 @@ void Player::configureAnimation() {
 void Player::deathAnimation() {
     this->clearAnimationFrames();
     for (int FrameNumber = 0; FrameNumber <= 15; ++FrameNumber)  {
-        this->addAnimationFrame(QString(GameFramework::imagesPath() + "mort/pngegg_%1.png").arg(FrameNumber));
+        this->addAnimationFrame(QString(GameFramework::imagesPath() + "mort/explosion_%0.png").arg(FrameNumber));
     }
     setEmitSignalEndOfAnimationEnabled(true);
     this->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms

@@ -65,13 +65,15 @@ private:
     void configureAnimation();
     void setupBonus();
     void onSpriteDestroyed(QObject* pSprite);
-
+    void restartGame();
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
 
     Sprite* pSprite;
     Sprite* m_pPlayer;
     Sprite* m_pAnimMort;
+    Sprite* pBonus;
+    Sprite* pObstacle;
 
     Player* pPlayer;
 
@@ -79,6 +81,8 @@ private:
 
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;
+    QTimer m_tickRestartGame;
+
 
     bool m_keepTicking;
     int nombreObstacle = 0;

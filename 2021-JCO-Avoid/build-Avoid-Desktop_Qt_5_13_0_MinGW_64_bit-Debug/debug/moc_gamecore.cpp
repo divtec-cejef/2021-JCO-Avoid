@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_GameCore_t {
-    QByteArrayData data[18];
-    char stringdata0[251];
+    QByteArrayData data[19];
+    char stringdata0[263];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -49,7 +49,8 @@ QT_MOC_LITERAL(13, 187, 12), // "rotateScreen"
 QT_MOC_LITERAL(14, 200, 11), // "restartGame"
 QT_MOC_LITERAL(15, 212, 15), // "fillProgressBar"
 QT_MOC_LITERAL(16, 228, 13), // "loseEndurance"
-QT_MOC_LITERAL(17, 242, 8) // "stopGame"
+QT_MOC_LITERAL(17, 242, 11), // "timerPartie"
+QT_MOC_LITERAL(18, 254, 8) // "stopGame"
 
     },
     "GameCore\0notifyMouseMoved\0\0newMousePosition\0"
@@ -58,7 +59,7 @@ QT_MOC_LITERAL(17, 242, 8) // "stopGame"
     "notifyMouseButtonReleased\0notifyKeyPressed\0"
     "key\0notifyKeyReleased\0setupObstacle\0"
     "rotateScreen\0restartGame\0fillProgressBar\0"
-    "loseEndurance\0stopGame"
+    "loseEndurance\0timerPartie\0stopGame"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +69,7 @@ static const uint qt_meta_data_GameCore[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,19 +77,20 @@ static const uint qt_meta_data_GameCore[] = {
        5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   69,    2, 0x06 /* Public */,
-       4,    2,   72,    2, 0x06 /* Public */,
-       8,    2,   77,    2, 0x06 /* Public */,
-       9,    1,   82,    2, 0x06 /* Public */,
-      11,    1,   85,    2, 0x06 /* Public */,
+       1,    1,   74,    2, 0x06 /* Public */,
+       4,    2,   77,    2, 0x06 /* Public */,
+       8,    2,   82,    2, 0x06 /* Public */,
+       9,    1,   87,    2, 0x06 /* Public */,
+      11,    1,   90,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,   88,    2, 0x08 /* Private */,
-      13,    0,   89,    2, 0x08 /* Private */,
-      14,    0,   90,    2, 0x08 /* Private */,
-      15,    0,   91,    2, 0x08 /* Private */,
-      16,    0,   92,    2, 0x08 /* Private */,
-      17,    0,   93,    2, 0x0a /* Public */,
+      12,    0,   93,    2, 0x08 /* Private */,
+      13,    0,   94,    2, 0x08 /* Private */,
+      14,    0,   95,    2, 0x08 /* Private */,
+      15,    0,   96,    2, 0x08 /* Private */,
+      16,    0,   97,    2, 0x08 /* Private */,
+      17,    0,   98,    2, 0x08 /* Private */,
+      18,    0,   99,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QPointF,    3,
@@ -98,6 +100,7 @@ static const uint qt_meta_data_GameCore[] = {
     QMetaType::Void, QMetaType::Int,   10,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -124,7 +127,8 @@ void GameCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 7: _t->restartGame(); break;
         case 8: _t->fillProgressBar(); break;
         case 9: _t->loseEndurance(); break;
-        case 10: _t->stopGame(); break;
+        case 10: _t->timerPartie(); break;
+        case 11: _t->stopGame(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -196,13 +200,13 @@ int GameCore::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

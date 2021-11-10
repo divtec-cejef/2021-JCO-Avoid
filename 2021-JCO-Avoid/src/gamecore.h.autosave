@@ -79,6 +79,7 @@ private:
     QGraphicsRectItem* m_ProgressBarFill;
 
     QString m_textTimer;
+    qint64 m_Timer;
 
     Sprite* pSprite;
     Sprite* m_pPlayer;

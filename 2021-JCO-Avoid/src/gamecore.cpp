@@ -50,6 +50,7 @@ const int LOSE_ENDURANCE_INTERVAL = 100;
 const int TIMER_BEFORE_START = 3000;
 const int SCENE_WIDTH = 1280;
 const int PROGRESSBAR_WIDTH = 500;
+const int ACTUALISATION_TEMPS = 100;
 
 //! Initialise le contrôleur de jeu.
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
@@ -71,6 +72,11 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), this, SLOT(loseEndurance()));
 
+    m_tickTimerPartie.setSingleShot(false);
+    m_tickTimerPartie.setInterval(ACTUALISATION_TEMPS);
+    m_tickTimerPartie.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    connect(&m_tickTimerPartie, SIGNAL(timeout()), this, SLOT(loseEndurance()));
+
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
 
@@ -86,8 +92,10 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
 
     setupPlayer();
     setupProgressBar();
+    setupTimerPartie();
     startSpawnObstacleTimer();
     startRetournerEcran();
+
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
@@ -101,7 +109,10 @@ GameCore::~GameCore() {
     delete m_pScene;
     m_pScene = nullptr;
 }
-
+/**
+ * @brief GameCore::setupObstacle
+ * Met en place un obtsacle sur la scene
+ */
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
     nombreObstacle++;
@@ -129,7 +140,10 @@ void GameCore::setupObstacle(){
     }
 
 }
-
+//!
+//! \brief GameCore::setupBonus
+//! met en place le bonus sur la scene
+//!
 void GameCore::setupBonus(){
     pBonus = new Sprite(GameFramework::imagesPath() + "Bonus.png");
     pBonus->setPos(nbGen,0);
@@ -145,6 +159,12 @@ void GameCore::setupBonus(){
 
     m_pScene->addSpriteToScene(pBonus);
     pBonus->registerForTick();
+}
+
+
+void GameCore::setupTimerPartie(){
+    m_objetTimer = m_pScene->createText(QPointF(300,600), m_textTimer, 70);
+    m_objetTimer->setOpacity(0.5);
 }
 
 void GameCore::setupProgressBar() {
@@ -183,14 +203,14 @@ void GameCore::updateProgressBar() {
         stopGame();
     }
 }
-
+//modifie la progression de la bar
 void GameCore::setProgressBarPercentage(double percentage) {
     if (percentage > 100 ) percentage = 100;
     else if (percentage < 0) percentage = 0;
 
     progressBarPercentage = percentage;
 }
-
+//Donne la progression de la bar de en pourcent
 double GameCore::getProgressBarPercentage() {
     return progressBarPercentage;
 }
@@ -211,6 +231,16 @@ void GameCore::startSpawnObstacleTimer(int tickInterval)  {
     m_tickTimerObstacle.start();
 }
 
+void GameCore::startTimerPartie(int tickInterval){
+    if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
+        m_tickTimerObstacle.setInterval(tickInterval);
+
+    m_keepTicking = true;
+    m_lastUpdateTime.start();
+    m_tickTimerPartie.start();
+}
+
+//Timer pour retourner l'écran
 void GameCore::startRetournerEcran(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -221,6 +251,7 @@ void GameCore::startRetournerEcran(int tickInterval)  {
     m_tickTimerRetournement.start();
 }
 
+//Timer pour relancer le jeux une fois le personnage mort
 void GameCore::startGameTimer(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -231,6 +262,10 @@ void GameCore::startGameTimer(int tickInterval)  {
     m_tickTimerRestartGame.start();
 }
 
+void GameCore::timerPartie(){
+    int tempsPartie = 0;
+    tempsPartie += 0.1;
+}
 
 //! Met en place la démo de la balle bleue.
 void GameCore::setupPlayer() {
@@ -262,11 +297,10 @@ void GameCore::stopGame(){
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(restartGame()));
     **/
 }
-//fonctio qui relance le jeux
+//fonction qui relance le jeux
 void GameCore::restartGame(){
     setupPlayer();
     keyboardDisabled= false;
-
 }
 
 
@@ -309,7 +343,6 @@ void GameCore::keyPressed(int key) {
 //! \param key Numéro de la touche (voir les constantes Qt)
 void GameCore::keyReleased(int key) {
     emit notifyKeyReleased(key);
-
 }
 
 

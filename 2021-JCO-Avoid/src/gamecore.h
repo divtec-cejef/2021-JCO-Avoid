@@ -78,6 +78,9 @@ private:
     QGraphicsRectItem* m_ProgressBarBorder;
     QGraphicsRectItem* m_ProgressBarFill;
 
+    QGraphicsSimpleTextItem* m_objetTimer;
+    double tempsPartie = 0;
+
     QString m_textTimer;
 
     Sprite* pSprite;

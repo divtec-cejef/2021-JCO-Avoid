@@ -75,7 +75,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerPartie.setSingleShot(false);
     m_tickTimerPartie.setInterval(ACTUALISATION_TEMPS);
     m_tickTimerPartie.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimerPartie, SIGNAL(timeout()), this, SLOT(loseEndurance()));
+    connect(&m_tickTimerPartie, SIGNAL(timeout()), this, SLOT(timerPartie()));
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
@@ -101,6 +101,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
     // déplacements, surtout si le déboggueur est démarré.
 
+    m_tickTimerPartie.start();
     m_pGameCanvas->startTick();
 }
 
@@ -163,7 +164,8 @@ void GameCore::setupBonus(){
 
 
 void GameCore::setupTimerPartie(){
-    m_objetTimer = m_pScene->createText(QPointF(300,600), m_textTimer, 70);
+    m_textTimer = "0";
+    m_objetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 70);
     m_objetTimer->setOpacity(0.5);
 }
 
@@ -263,8 +265,8 @@ void GameCore::startGameTimer(int tickInterval)  {
 }
 
 void GameCore::timerPartie(){
-    int tempsPartie = 0;
     tempsPartie += 0.1;
+    m_objetTimer->setText(QString::number(tempsPartie));
 }
 
 //! Met en place la démo de la balle bleue.
@@ -286,6 +288,7 @@ void GameCore::stopGame(){
     pPlayer->stopAnimation();
     pPlayer->deathAnimation();
 
+    m_tickTimerPartie.stop();
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
     keyboardDisabled= true;

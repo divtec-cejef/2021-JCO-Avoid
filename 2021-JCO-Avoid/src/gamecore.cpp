@@ -246,7 +246,7 @@ void GameCore::setupPlayer() {
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
     m_pPlayer = pPlayer;
 }
-
+//fonction qui arrête le jeux lorsqu'elle et appelé
 void GameCore::stopGame(){
     pPlayer->stopAnimation();
     pPlayer->deathAnimation();

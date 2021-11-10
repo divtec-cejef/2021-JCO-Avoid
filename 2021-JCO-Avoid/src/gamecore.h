@@ -45,6 +45,7 @@ public:
 
     void startSpawnObstacleTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
     void startRetournerEcran(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
+    void startGameTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
     void mouseMoved(QPointF newMousePosition);
     void mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
     void mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
@@ -65,7 +66,6 @@ private:
     void configureAnimation();
     void setupBonus();
     void onSpriteDestroyed(QObject* pSprite);
-    void restartGame();
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
 
@@ -81,7 +81,7 @@ private:
 
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;
-    QTimer m_tickRestartGame;
+    QTimer m_tickTimerRestartGame;
 
 
     bool m_keepTicking;
@@ -98,6 +98,7 @@ private:
 private slots:
     void setupObstacle();
     void rotateScreen();
+    void restartGame();
 
 public slots:
     void stopGame();

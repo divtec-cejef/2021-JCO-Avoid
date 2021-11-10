@@ -30,13 +30,21 @@ Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "t
 void Player::tick(long long elapsedTimeInMilliseconds) {
 
     // Calcul de la distance parcourue par la balle, selon sa vitesse et le temps écoulé.
-    QPointF ballDistance = elapsedTimeInMilliseconds * m_ballVelocity / 1000.;
+    QPointF ballDistance = elapsedTimeInMilliseconds * m_ballVelocity / 1000;
     // Positionne la bounding box de la balle à sa prochaine position.
     QRectF nextRect = this->globalBoundingBox().translated(ballDistance);
     //Récupère tous les sprites de la scène
     auto collidingSprites = this->parentScene()->collidingSprites(nextRect);
     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
     collidingSprites.removeAll(this);
+
+    Sprite* bonus = nullptr;
+    for (Sprite* sprite : collidingSprites) {
+        if (sprite->data(0).toString() == "bonus") {
+            bonus = sprite;
+        }
+    }
+
 
     bool collision = !collidingSprites.isEmpty();
 
@@ -46,7 +54,9 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
         this->setPos(this->pos() + ballDistance);
     }
 
-    if(collision){
+    if (bonus != nullptr) {
+        bonus->deleteLater();
+    } else if(collision){
         emit onplayerDestroyed();
     }
 }

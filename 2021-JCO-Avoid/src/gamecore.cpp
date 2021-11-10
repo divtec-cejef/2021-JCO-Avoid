@@ -46,6 +46,7 @@
 
 const int SPAWN_INTERVAL = 170;
 const int RETOURNEMENT_INTERVAL = 10000;
+const int TIMER_BEFORE_START = 3000;
 const int SCENE_WIDTH = 1280;
 
 //! Initialise le contrôleur de jeu.
@@ -61,7 +62,6 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerRetournement.setSingleShot(false);
     m_tickTimerRetournement.setInterval(RETOURNEMENT_INTERVAL);
     m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
 
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
@@ -123,9 +123,10 @@ void GameCore::setupObstacle(){
 }
 
 void GameCore::setupBonus(){
-    pBonus = new Sprite(GameFramework::imagesPath() + "Bonus1.png");
+    pBonus = new Sprite(GameFramework::imagesPath() + "Bonus.png");
     pBonus->setPos(nbGen,0);
     pBonus->setScale(0.25);
+    pBonus->setData(0, "bonus");
 
     // Déplace le sprite aléatoirement, en évitant les collisions.
     // Si une collision à quand-même lieu, le tickhandler se charge
@@ -164,6 +165,15 @@ void GameCore::startRetournerEcran(int tickInterval)  {
     m_tickTimerRetournement.start();
 }
 
+void GameCore::startGameTimer(int tickInterval)  {
+
+    if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
+        m_tickTimerRestartGame.setInterval(tickInterval);
+
+    m_keepTicking = true;
+    m_lastUpdateTime.start();
+    m_tickTimerRestartGame.start();
+}
 
 
 //! Met en place la démo de la balle bleue.
@@ -178,7 +188,6 @@ void GameCore::setupPlayer() {
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
-    connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::restartGame);
     m_pPlayer = pPlayer;
 }
 
@@ -190,16 +199,19 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
     keyboardDisabled= true;
     m_pGameCanvas->stopTick();
-
-
+/**
+    m_tickTimerRestartGame.setSingleShot(false);
+    m_tickTimerRestartGame.setInterval(TIMER_BEFORE_START);
+    m_tickTimerRestartGame.setTimerType(Qt::PreciseTimer);
+    connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(restartGame()));
+    **/
 }
 
 void GameCore::restartGame(){
     setupPlayer();
+    keyboardDisabled= false;
 
 }
-
-
 
 
 //! Met en place la démo des deux marcheurs.
@@ -249,8 +261,6 @@ void GameCore::keyReleased(int key) {
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
-
-
 }
 
 //! La souris a été déplacée.

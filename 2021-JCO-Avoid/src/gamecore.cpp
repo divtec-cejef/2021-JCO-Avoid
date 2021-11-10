@@ -77,9 +77,12 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     std::srand(std::time(nullptr));
     // Instancier et initialiser les sprite ici :
 
+
+
     setupPlayer();
     startSpawnObstacleTimer();
     startRetournerEcran();
+
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
@@ -102,7 +105,7 @@ void GameCore::setupObstacle(){
         setupBonus();
         nombreObstacle = 0;
     }else{
-        pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
+        Sprite* pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
         pObstacle->setPos(nbGen,0);
         pObstacle->setScale(0.1);
 
@@ -123,7 +126,7 @@ void GameCore::setupObstacle(){
 }
 
 void GameCore::setupBonus(){
-    pBonus = new Sprite(GameFramework::imagesPath() + "Bonus1.png");
+    Sprite* pBonus = new Sprite(GameFramework::imagesPath() + "Bonus1.png");
     pBonus->setPos(nbGen,0);
     pBonus->setScale(0.25);
 
@@ -178,7 +181,6 @@ void GameCore::setupPlayer() {
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
-    connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::restartGame);
     m_pPlayer = pPlayer;
 }
 
@@ -190,15 +192,7 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
     keyboardDisabled= true;
     m_pGameCanvas->stopTick();
-
-
 }
-
-void GameCore::restartGame(){
-    setupPlayer();
-
-}
-
 
 
 

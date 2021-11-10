@@ -38,6 +38,7 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
     collidingSprites.removeAll(this);
 
+    //trie les bonus des obstacles
     Sprite* bonus = nullptr;
     for (Sprite* sprite : collidingSprites) {
         if (sprite->data(0).toString() == "bonus") {
@@ -56,6 +57,7 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
 
     if (bonus != nullptr) {
         bonus->deleteLater();
+        emit onBonusHit();
     } else if(collision){
         emit onplayerDestroyed();
     }

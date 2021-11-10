@@ -55,6 +55,7 @@ public:
 
 signals:
     void onplayerDestroyed();
+    void onBonusHit();
 
 
 private:

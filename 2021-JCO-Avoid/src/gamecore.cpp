@@ -46,8 +46,10 @@
 
 const int SPAWN_INTERVAL = 170;
 const int RETOURNEMENT_INTERVAL = 10000;
+const int LOSE_ENDURANCE_INTERVAL = 100;
 const int TIMER_BEFORE_START = 3000;
 const int SCENE_WIDTH = 1280;
+const int PROGRESSBAR_WIDTH = 500;
 
 //! Initialise le contrôleur de jeu.
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
@@ -64,6 +66,11 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
 
+    m_tickTimerLoseEndurance.setSingleShot(false);
+    m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
+    m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), this, SLOT(loseEndurance()));
+
     // Mémorise l'accès au canvas (qui gère le tick et l'affichage d'une scène)
     m_pGameCanvas = pGameCanvas;
 
@@ -78,6 +85,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Instancier et initialiser les sprite ici :
 
     setupPlayer();
+    setupProgressBar();
     startSpawnObstacleTimer();
     startRetournerEcran();
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
@@ -137,6 +145,54 @@ void GameCore::setupBonus(){
 
     m_pScene->addSpriteToScene(pBonus);
     pBonus->registerForTick();
+}
+
+void GameCore::setupProgressBar() {
+    double screenXCenter = m_pScene->width() / 2;
+    m_ProgressBarBorder = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::white), QBrush(Qt::black));
+    m_ProgressBarBorder->setZValue(1);
+    m_ProgressBarFill = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::transparent), QBrush(Qt::green));
+    m_ProgressBarFill->setZValue(1);
+
+    connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(fillProgressBar()));
+    m_tickTimerLoseEndurance.start();
+}
+
+void GameCore::fillProgressBar() {
+    setProgressBarPercentage(100);
+}
+
+void GameCore::loseEndurance() {
+    setProgressBarPercentage(getProgressBarPercentage()-0.5);
+}
+
+void GameCore::updateProgressBar() {
+    double newWidth = PROGRESSBAR_WIDTH / 100 * progressBarPercentage;
+    double screenXCenter = m_pScene->width() / 2;
+    m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth,50);
+
+    if (progressBarPercentage > 100/3*2) {
+        m_ProgressBarFill->setBrush(QBrush(Qt::green));
+    } else if (progressBarPercentage > 100 / 3) {
+        m_ProgressBarFill->setBrush(QBrush(Qt::yellow));
+    } else {
+        m_ProgressBarFill->setBrush(QBrush(Qt::red));
+    }
+
+    if (progressBarPercentage <= 0) {
+        stopGame();
+    }
+}
+
+void GameCore::setProgressBarPercentage(double percentage) {
+    if (percentage > 100 ) percentage = 100;
+    else if (percentage < 0) percentage = 0;
+
+    progressBarPercentage = percentage;
+}
+
+double GameCore::getProgressBarPercentage() {
+    return progressBarPercentage;
 }
 
 //!
@@ -199,7 +255,7 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
     keyboardDisabled= true;
     m_pGameCanvas->stopTick();
-/**
+    /**
     m_tickTimerRestartGame.setSingleShot(false);
     m_tickTimerRestartGame.setInterval(TIMER_BEFORE_START);
     m_tickTimerRestartGame.setTimerType(Qt::PreciseTimer);
@@ -261,6 +317,7 @@ void GameCore::keyReleased(int key) {
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
+    updateProgressBar();
 }
 
 //! La souris a été déplacée.

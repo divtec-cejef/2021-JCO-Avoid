@@ -37,7 +37,8 @@ public:
     explicit GameCore(GameCanvas* pGameCanvas, QObject *parent = nullptr);
     ~GameCore();
 
-
+    void setProgressBarPercentage(double percentage);
+    double getProgressBarPercentage();
 
     void keyPressed(int key);
     void keyReleased(int key);
@@ -69,6 +70,12 @@ private:
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
 
+    void setupProgressBar();
+    void updateProgressBar();
+    double progressBarPercentage = 100;
+    QGraphicsRectItem* m_ProgressBarBorder;
+    QGraphicsRectItem* m_ProgressBarFill;
+
     Sprite* pSprite;
     Sprite* m_pPlayer;
     Sprite* m_pAnimMort;
@@ -82,6 +89,7 @@ private:
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;
     QTimer m_tickTimerRestartGame;
+    QTimer m_tickTimerLoseEndurance;
 
 
     bool m_keepTicking;
@@ -99,6 +107,8 @@ private slots:
     void setupObstacle();
     void rotateScreen();
     void restartGame();
+    void fillProgressBar();
+    void loseEndurance();
 
 public slots:
     void stopGame();

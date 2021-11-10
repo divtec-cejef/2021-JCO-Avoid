@@ -262,7 +262,7 @@ void GameCore::stopGame(){
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(restartGame()));
     **/
 }
-
+//fonctio qui relance le jeux
 void GameCore::restartGame(){
     setupPlayer();
     keyboardDisabled= false;

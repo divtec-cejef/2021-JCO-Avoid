@@ -99,8 +99,11 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
-    // déplacements, surtout si le déboggueur est démarré.
+    // déplacements, surtout si le déboggueur est démarré
 
+
+
+    //Démarre la partie et son tick
     m_tickTimerPartie.start();
     m_pGameCanvas->startTick();
 }
@@ -210,7 +213,7 @@ void GameCore::loseEndurance() {
 void GameCore::updateProgressBar() {
     double newWidth = PROGRESSBAR_WIDTH / 100 * progressBarPercentage;
     double screenXCenter = m_pScene->width() / 2;
-    m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth,50);
+    m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
 
     if (progressBarPercentage > 100/3*2) {
         m_ProgressBarFill->setBrush(QBrush(Qt::green));
@@ -232,7 +235,6 @@ void GameCore::updateProgressBar() {
 void GameCore::setProgressBarPercentage(double percentage) {
     if (percentage > 100 ) percentage = 100;
     else if (percentage < 0) percentage = 0;
-
     progressBarPercentage = percentage;
 }
 /**

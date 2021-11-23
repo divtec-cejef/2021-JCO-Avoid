@@ -357,9 +357,15 @@ void GameCore::restartGame(){
  * @brief GameCore::rotateScreen
  */
 void GameCore::rotateScreen() {
+
     m_pGameCanvas->rotateView();
-    m_objetTimer->setTransformOriginPoint(m_objetTimer->boundingRect().width() /2, m_objetTimer->boundingRect().height() /2);
-    m_objetTimer->setRotation(180);
+    m_objetTimer->setTransformOriginPoint(m_objetTimer->boundingRect().center());
+
+    if(m_objetTimer->rotation() > 1){
+        m_objetTimer->setRotation(0);
+    } else{
+        m_objetTimer->setRotation(180);
+    }
 
 }
 
@@ -386,6 +392,7 @@ void GameCore::keyReleased(int key) {
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
     updateProgressBar();
 }
+
 
 //! La souris a été déplacée.
 //! Pour que cet événement soit pris en compte, la propriété MouseTracking de GameView

@@ -334,13 +334,13 @@ void GameCore::setupPlayer() {
  * @brief GameCore::stopGame
  */
 void GameCore::stopGame(){
+    keyboardDisabled = true;
     pPlayer->stopAnimation();
     pPlayer->deathAnimation();
 
     m_tickTimerPartie.stop();
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
-    keyboardDisabled= true;
     m_pGameCanvas->stopTick();
 
 }
@@ -358,6 +358,9 @@ void GameCore::restartGame(){
  */
 void GameCore::rotateScreen() {
     m_pGameCanvas->rotateView();
+    m_objetTimer->setTransformOriginPoint(m_objetTimer->boundingRect().width() /2, m_objetTimer->boundingRect().height() /2);
+    m_objetTimer->setRotation(180);
+
 }
 
 //! Traite la pression d'une touche.

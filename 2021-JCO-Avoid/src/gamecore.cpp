@@ -175,6 +175,12 @@ void GameCore::setupTimerPartie(){
     m_objetTimer->setOpacity(0.5);
 }
 
+void GameCore::setupResultat(){
+    m_objetResultat = m_pScene->createText(QPointF(m_pScene->width() / 2,m_pScene->height() / 2), m_textResultat, 70);
+    m_objetTimer->setOpacity(0.5);
+    m_objetTimer->setPos(m_pScene->width() / 2 + 80,m_pScene->height() / 2);
+}
+
 /**
  * Met en place la progression de la barre
  * @brief GameCore::setupProgressBar
@@ -342,6 +348,7 @@ void GameCore::stopGame(){
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
     m_pGameCanvas->stopTick();
+    setupResultat();
 
 }
 /**

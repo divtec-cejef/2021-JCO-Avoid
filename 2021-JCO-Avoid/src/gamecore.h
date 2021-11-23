@@ -74,14 +74,18 @@ private:
 
     void setupProgressBar();
     void updateProgressBar();
+
+    void setupResultat();
     double progressBarPercentage = 100;
     QGraphicsRectItem* m_ProgressBarBorder;
     QGraphicsRectItem* m_ProgressBarFill;
 
     QGraphicsSimpleTextItem* m_objetTimer;
+    QGraphicsSimpleTextItem* m_objetResultat;
     double tempsPartie = 0;
 
     QString m_textTimer;
+    QString m_textResultat = "Voici votre score : ";
 
     Sprite* pSprite;
     Sprite* m_pPlayer;

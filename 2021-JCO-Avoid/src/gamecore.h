@@ -103,7 +103,6 @@ private:
     QTimer m_tickTimerLoseEndurance;
     QTimer m_tickTimerPartie;
 
-
     bool m_keepTicking;
     int nombreObstacle = 0;
     int nbGen;
@@ -127,6 +126,7 @@ public slots:
     void stopGame();
 
 };
+
 
 
 #endif // GAMECORE_H

@@ -179,6 +179,9 @@ void GameCore::setupResultat(){
     m_objetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 315,m_pScene->height() / 2), m_textResultat, 70);
     m_objetTimer->setOpacity(0.5);
     m_objetTimer->setPos(m_pScene->width() / 2 + 300,m_pScene->height() / 2);
+    m_objetTimer->setOpacity(1);
+    m_objetTimer->setZValue(1);
+
 }
 
 /**
@@ -367,11 +370,13 @@ void GameCore::rotateScreen() {
 
     m_pGameCanvas->rotateView();
     m_objetTimer->setTransformOriginPoint(m_objetTimer->boundingRect().center());
+    m_objetResultat->setTransformOriginPoint(m_objetResultat->boundingRect().center());
 
     if(m_objetTimer->rotation() > 1){
         m_objetTimer->setRotation(0);
     } else{
         m_objetTimer->setRotation(180);
+        //m_objetResultat->setRotation(180);
     }
 
 }

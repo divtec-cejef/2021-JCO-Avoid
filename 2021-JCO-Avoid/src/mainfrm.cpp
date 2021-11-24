@@ -24,6 +24,7 @@ MainFrm::MainFrm(QWidget *pParent) : QWidget(pParent), ui(new Ui::MainFrm) {
 
     ui->txtResultat->setAlignment(Qt::AlignCenter);
     ui->txtResultat->setHidden(true);
+    ui->txtResultat->setHidden(true);
 
 }
 
@@ -32,6 +33,5 @@ MainFrm::~MainFrm() {
     // Effacer le GameCanvas AVANT l'UI, donc avant la destruction de GameView
     delete m_pGameCanvas;
     m_pGameCanvas = nullptr;
-
     delete ui;
 }

@@ -19,11 +19,30 @@
      <property name="maximumSize">
       <size>
        <width>150</width>
-       <height>16777201</height>
+       <height>16777215</height>
       </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>OCR A Extended</family>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Rejouer</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="txtResultat">
+     <property name="font">
+      <font>
+       <family>OCR A Extended</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Votre Temps : </string>
      </property>
     </widget>
    </item>

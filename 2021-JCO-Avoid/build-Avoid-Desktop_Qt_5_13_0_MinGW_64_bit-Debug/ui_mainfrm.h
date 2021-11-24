@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -23,6 +24,7 @@ class Ui_MainFrm
 public:
     QVBoxLayout *verticalLayout;
     QPushButton *btRejouer;
+    QLabel *txtResultat;
     GameView *grvGame;
 
     void setupUi(QWidget *MainFrm)
@@ -36,9 +38,19 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         btRejouer = new QPushButton(MainFrm);
         btRejouer->setObjectName(QString::fromUtf8("btRejouer"));
-        btRejouer->setMaximumSize(QSize(150, 16777201));
+        btRejouer->setMaximumSize(QSize(150, 16777215));
+        QFont font;
+        font.setFamily(QString::fromUtf8("OCR A Extended"));
+        font.setPointSize(14);
+        btRejouer->setFont(font);
 
         verticalLayout->addWidget(btRejouer);
+
+        txtResultat = new QLabel(MainFrm);
+        txtResultat->setObjectName(QString::fromUtf8("txtResultat"));
+        txtResultat->setFont(font);
+
+        verticalLayout->addWidget(txtResultat);
 
         grvGame = new GameView(MainFrm);
         grvGame->setObjectName(QString::fromUtf8("grvGame"));
@@ -55,6 +67,7 @@ public:
     {
         MainFrm->setWindowTitle(QCoreApplication::translate("MainFrm", "Game Framework", nullptr));
         btRejouer->setText(QCoreApplication::translate("MainFrm", "Rejouer", nullptr));
+        txtResultat->setText(QCoreApplication::translate("MainFrm", "Votre Temps : ", nullptr));
     } // retranslateUi
 
 };

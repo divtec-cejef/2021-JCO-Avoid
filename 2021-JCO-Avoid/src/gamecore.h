@@ -85,7 +85,7 @@ private:
     double tempsPartie = 0;
 
     QString m_textTimer;
-    QString m_textResultat = "Voici votre score : ";
+    QString m_textResultat = "Voici votre temps : ";
 
     Sprite* pSprite;
     Sprite* m_pPlayer;

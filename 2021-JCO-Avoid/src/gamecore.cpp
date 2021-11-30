@@ -208,7 +208,7 @@ void GameCore::setupProgressBar() {
  * @brief GameCore::fillProgressBar
  */
 void GameCore::fillProgressBar() {
-    setProgressBarPercentage(100);
+    setProgressBarPercentage(getProgressBarPercentage() + 30);
 }
 
 /**

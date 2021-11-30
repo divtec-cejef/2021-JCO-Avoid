@@ -76,6 +76,7 @@ private:
 
     void setupProgressBar();
     void updateProgressBar();
+    void gainEndurance();
 
     void setupResultat();
     double progressBarPercentage = 100;

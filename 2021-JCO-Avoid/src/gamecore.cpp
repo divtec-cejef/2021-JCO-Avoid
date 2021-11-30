@@ -119,7 +119,7 @@ GameCore::~GameCore() {
  * Met en place un obtsacle
  */
 void GameCore::setupObstacle(){
-    nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;    //génère un chiffre aléatoire entre 1 et 1150
+    nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
     nombreObstacle++;
 
     if(nombreObstacle == APPARITION_BONUS){
@@ -199,7 +199,7 @@ void GameCore::setupProgressBar() {
     m_ProgressBarFill = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::transparent), QBrush(Qt::green));
     m_ProgressBarFill->setZValue(1);
 
-    connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(fillProgressBar()));
+    connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
     m_tickTimerLoseEndurance.start();
 }
 
@@ -207,7 +207,7 @@ void GameCore::setupProgressBar() {
  * Met la barre a 100%
  * @brief GameCore::fillProgressBar
  */
-void GameCore::fillProgressBar() {
+void GameCore::upProgressBar() {
     setProgressBarPercentage(getProgressBarPercentage() + 30);
 }
 
@@ -355,6 +355,9 @@ void GameCore::stopGame(){
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
     m_pGameCanvas->stopTick();
+
+    m_pScene->removeSpriteFromScene(pObstacle);
+
     setupResultat();
 
 }
@@ -381,6 +384,7 @@ void GameCore::rotateScreen() {
     } else{
         m_objetTimer->setRotation(180);
         m_objetTimer->setX(50);
+
     }
 
 }

@@ -124,7 +124,7 @@ private slots:
     void setupObstacle();
     void rotateScreen();
     void restartGame();
-    void fillProgressBar();
+    void upProgressBar();
     void loseEndurance();
     void timerPartie();
 

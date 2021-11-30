@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_GameCore_t {
     QByteArrayData data[19];
-    char stringdata0[263];
+    char stringdata0[261];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,10 +47,10 @@ QT_MOC_LITERAL(11, 155, 17), // "notifyKeyReleased"
 QT_MOC_LITERAL(12, 173, 13), // "setupObstacle"
 QT_MOC_LITERAL(13, 187, 12), // "rotateScreen"
 QT_MOC_LITERAL(14, 200, 11), // "restartGame"
-QT_MOC_LITERAL(15, 212, 15), // "fillProgressBar"
-QT_MOC_LITERAL(16, 228, 13), // "loseEndurance"
-QT_MOC_LITERAL(17, 242, 11), // "timerPartie"
-QT_MOC_LITERAL(18, 254, 8) // "stopGame"
+QT_MOC_LITERAL(15, 212, 13), // "upProgressBar"
+QT_MOC_LITERAL(16, 226, 13), // "loseEndurance"
+QT_MOC_LITERAL(17, 240, 11), // "timerPartie"
+QT_MOC_LITERAL(18, 252, 8) // "stopGame"
 
     },
     "GameCore\0notifyMouseMoved\0\0newMousePosition\0"
@@ -58,7 +58,7 @@ QT_MOC_LITERAL(18, 254, 8) // "stopGame"
     "Qt::MouseButtons\0buttons\0"
     "notifyMouseButtonReleased\0notifyKeyPressed\0"
     "key\0notifyKeyReleased\0setupObstacle\0"
-    "rotateScreen\0restartGame\0fillProgressBar\0"
+    "rotateScreen\0restartGame\0upProgressBar\0"
     "loseEndurance\0timerPartie\0stopGame"
 };
 #undef QT_MOC_LITERAL
@@ -125,7 +125,7 @@ void GameCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 5: _t->setupObstacle(); break;
         case 6: _t->rotateScreen(); break;
         case 7: _t->restartGame(); break;
-        case 8: _t->fillProgressBar(); break;
+        case 8: _t->upProgressBar(); break;
         case 9: _t->loseEndurance(); break;
         case 10: _t->timerPartie(); break;
         case 11: _t->stopGame(); break;

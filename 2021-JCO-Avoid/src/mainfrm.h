@@ -27,8 +27,9 @@ class MainFrm : public QWidget
     Q_OBJECT
 
 public:
-    explicit MainFrm(QWidget* pParent = nullptr);
+    explicit MainFrm(QWidget* ppParent = nullptr);
     ~MainFrm();
+
 
 private:
     Ui::MainFrm *ui;

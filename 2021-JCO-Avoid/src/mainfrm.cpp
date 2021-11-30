@@ -24,7 +24,10 @@ MainFrm::MainFrm(QWidget *pParent) : QWidget(pParent), ui(new Ui::MainFrm) {
 
     ui->txtResultat->setAlignment(Qt::AlignCenter);
     ui->txtResultat->setHidden(true);
-    ui->txtResultat->setHidden(true);
+
+    ui->btRejouer->setHidden(false);
+
+
 
 }
 

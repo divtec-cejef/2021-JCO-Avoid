@@ -19,6 +19,7 @@ class GameView;
 class QGraphicsSceneMouseEvent;
 class QGraphicsTextItem;
 class QKeyEvent;
+class mainframe;
 
 //! \brief Classe de gestion des scènes du jeu et de sa cadence.
 //!

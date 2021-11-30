@@ -19,6 +19,8 @@
 
 #include "player.h"
 #include "randommovetickhandler.h"
+#include "mainfrm.h"
+#include "ui_mainfrm.h"
 
 class GameCanvas;
 class GameScene;
@@ -87,6 +89,7 @@ private:
     QString m_textTimer;
     QString m_textResultat = "Voici votre temps : ";
 
+
     Sprite* pSprite;
     Sprite* m_pPlayer;
     Sprite* m_pAnimMort;
@@ -106,6 +109,8 @@ private:
     bool m_keepTicking;
     int nombreObstacle = 0;
     int nbGen;
+
+    Ui::MainFrm *ui;
 
     QElapsedTimer m_lastUpdateTime;
 

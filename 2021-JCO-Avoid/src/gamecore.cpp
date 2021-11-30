@@ -42,7 +42,8 @@
 #include "walkingman.h"
 #include "playertickhandler.h"
 #include "obstacle.h"
-
+#include "mainfrm.h"
+#include "ui_mainfrm.h"
 
 const int SPAWN_INTERVAL = 170;
 const int RETOURNEMENT_INTERVAL = 10000;
@@ -376,8 +377,10 @@ void GameCore::rotateScreen() {
 
     if(m_objetTimer->rotation() > 1){
         m_objetTimer->setRotation(0);
+        m_objetTimer->setX(0);
     } else{
         m_objetTimer->setRotation(180);
+        m_objetTimer->setX(50);
     }
 
 }

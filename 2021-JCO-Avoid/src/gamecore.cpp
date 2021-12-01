@@ -357,6 +357,7 @@ void GameCore::stopGame(){
     setProgressBarPercentage(getProgressBarPercentage() - 100);
     setupResultat();
     deleteAllSprite();
+    setupBouton();
 
 }
 
@@ -364,11 +365,10 @@ void GameCore::stopGame(){
 void GameCore::setupBouton(){
     pBouton = new Bouton;
 
-    pBouton->setPos(m_pScene->width() / 2 + 20,m_pScene->height() / 2 - 100);
-
-
-
-}
+    pBouton->setPos(m_pScene->width() / 2, m_pScene->height() / 2 + 120);
+    pBouton->setScale(0.1);
+    m_pScene->addSpriteToScene(pBouton);
+    }
 
 void GameCore::deleteAllSprite(){
     //supprime tous les srpites de la scène
@@ -381,7 +381,6 @@ void GameCore::deleteAllSprite(){
 }
 
 /**
-
   Relance le jeux
  * @brief GameCore::restartGame
  */
@@ -443,7 +442,20 @@ void GameCore::mouseMoved(QPointF newMousePosition) {
 //! Traite l'appui sur un bouton de la souris.
 void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons) {
     emit notifyMouseButtonPressed(mousePosition, buttons);
+
+    // Si le bouton droite est cliqué et que le clip n'a pas déjà démarré,
+    // on démarre le clip de la balle qui tombe et rebondit sur le sol.
+    if (buttons.testFlag(Qt::LeftButton)) {
+        // bouton gauche cliqué : on vérifie si le sprite en dessous peut être shooté.
+        Sprite* pTargetSprite = m_pScene->spriteAt(mousePosition);
+        if (pTargetSprite == pBouton) {
+            // Le sprite est une tête à tirer : elle est détruite et explose
+            restartGame();
+        }
+    }
 }
+
+
 
 //! Traite le relâchement d'un bouton de la souris.
 void GameCore::mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons) {

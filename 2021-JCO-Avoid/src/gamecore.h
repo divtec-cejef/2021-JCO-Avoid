@@ -102,6 +102,7 @@ private:
 
     Player* pPlayer;
     Bouton* pBouton;
+    Bouton* pBoutonVise;
     MainFrm* pMainFrm;
 
     bool keyboardDisabled = false;

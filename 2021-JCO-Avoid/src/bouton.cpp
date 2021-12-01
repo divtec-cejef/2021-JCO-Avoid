@@ -6,9 +6,13 @@
 
 
 
-Bouton::Bouton(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "tile19.png", pParent)
+Bouton::Bouton(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "replay.png", pParent)
 {
 
 }
+
+
+//! Traite le clique de la souris.
+
 
 

@@ -75,6 +75,8 @@ private:
     bool m_keyLeftPressed;
     bool m_keyRightPressed;
 
+    bool m_playerAlive = true;
+
 public slots:
     void onKeyPressed(int key);
     void onKeyReleased(int key);

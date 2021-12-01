@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "gameview.h"
@@ -22,7 +21,6 @@ class Ui_MainFrm
 {
 public:
     QVBoxLayout *verticalLayout;
-    QPushButton *btRejouer;
     GameView *grvGame;
 
     void setupUi(QWidget *MainFrm)
@@ -34,16 +32,6 @@ public:
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        btRejouer = new QPushButton(MainFrm);
-        btRejouer->setObjectName(QString::fromUtf8("btRejouer"));
-        btRejouer->setMaximumSize(QSize(150, 16777215));
-        QFont font;
-        font.setFamily(QString::fromUtf8("OCR A Extended"));
-        font.setPointSize(14);
-        btRejouer->setFont(font);
-
-        verticalLayout->addWidget(btRejouer, 0, Qt::AlignHCenter);
-
         grvGame = new GameView(MainFrm);
         grvGame->setObjectName(QString::fromUtf8("grvGame"));
 
@@ -58,7 +46,6 @@ public:
     void retranslateUi(QWidget *MainFrm)
     {
         MainFrm->setWindowTitle(QCoreApplication::translate("MainFrm", "Game Framework", nullptr));
-        btRejouer->setText(QCoreApplication::translate("MainFrm", "Rejouer", nullptr));
     } // retranslateUi
 
 };

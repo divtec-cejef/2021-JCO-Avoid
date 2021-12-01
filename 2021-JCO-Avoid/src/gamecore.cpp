@@ -44,6 +44,7 @@
 #include "obstacle.h"
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
+#include "bouton.h"
 
 const int SPAWN_INTERVAL = 170;
 const int RETOURNEMENT_INTERVAL = 10000;
@@ -359,6 +360,16 @@ void GameCore::stopGame(){
 
 }
 
+
+void GameCore::setupBouton(){
+    pBouton = new Bouton;
+
+    pBouton->setPos(m_pScene->width() / 2 + 20,m_pScene->height() / 2 - 100);
+
+
+
+}
+
 void GameCore::deleteAllSprite(){
     //supprime tous les srpites de la scène
     for (Sprite* sprite : m_pScene->sprites()) {
@@ -369,8 +380,8 @@ void GameCore::deleteAllSprite(){
     }
 }
 
-
 /**
+
   Relance le jeux
  * @brief GameCore::restartGame
  */

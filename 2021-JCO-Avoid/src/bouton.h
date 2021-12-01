@@ -10,11 +10,10 @@ class Bouton : public Sprite
     Q_OBJECT
 
 public:
-    Bouton();
 
     Bouton(QGraphicsItem* pParent = nullptr);
 
-    onRealesed();
+    void onRealesed();
 
 
 };

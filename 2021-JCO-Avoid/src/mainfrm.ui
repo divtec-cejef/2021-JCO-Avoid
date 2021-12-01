@@ -14,25 +14,6 @@
    <string>Game Framework</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <item alignment="Qt::AlignHCenter">
-    <widget class="QPushButton" name="btRejouer">
-     <property name="maximumSize">
-      <size>
-       <width>150</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>OCR A Extended</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Rejouer</string>
-     </property>
-    </widget>
-   </item>
    <item>
     <widget class="GameView" name="grvGame"/>
    </item>

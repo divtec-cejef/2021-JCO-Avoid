@@ -58,7 +58,8 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     if (bonus != nullptr) {
         bonus->deleteLater();
         emit onBonusHit();
-    } else if(collision){
+    } else if(collision && m_playerAlive){
+        m_playerAlive = false;
         emit onplayerDestroyed();
     }
 }
@@ -143,12 +144,14 @@ void Player::configureAnimation() {
 }
 
 void Player::deathAnimation() {
+    this->stopAnimation();
     this->clearAnimationFrames();
-    for (int FrameNumber = 0; FrameNumber <= 15; ++FrameNumber)  {
-        this->addAnimationFrame(QString(GameFramework::imagesPath() + "mort/explosion_%0.png").arg(FrameNumber));
+    for (int FrameNumber = 0; FrameNumber <= 19; FrameNumber++)  {
+        this->addAnimationFrame(QString(GameFramework::imagesPath() + "explosion/tile00%0.png").arg(FrameNumber));
+        qDebug() << QString("explosion/tile%1.png").arg(FrameNumber);
     }
     setEmitSignalEndOfAnimationEnabled(true);
-    this->setAnimationSpeed(100);  // Passe à la prochaine image de la marche toutes les 100 ms
+    this->setAnimationSpeed(10);
     this->startAnimation();
 
 }

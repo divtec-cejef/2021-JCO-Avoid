@@ -46,11 +46,11 @@ QT_MOC_LITERAL(10, 151, 3), // "key"
 QT_MOC_LITERAL(11, 155, 17), // "notifyKeyReleased"
 QT_MOC_LITERAL(12, 173, 13), // "setupObstacle"
 QT_MOC_LITERAL(13, 187, 12), // "rotateScreen"
-QT_MOC_LITERAL(14, 200, 11), // "restartGame"
-QT_MOC_LITERAL(15, 212, 13), // "upProgressBar"
-QT_MOC_LITERAL(16, 226, 13), // "loseEndurance"
-QT_MOC_LITERAL(17, 240, 11), // "timerPartie"
-QT_MOC_LITERAL(18, 252, 8) // "stopGame"
+QT_MOC_LITERAL(14, 200, 13), // "upProgressBar"
+QT_MOC_LITERAL(15, 214, 13), // "loseEndurance"
+QT_MOC_LITERAL(16, 228, 11), // "timerPartie"
+QT_MOC_LITERAL(17, 240, 8), // "stopGame"
+QT_MOC_LITERAL(18, 249, 11) // "restartGame"
 
     },
     "GameCore\0notifyMouseMoved\0\0newMousePosition\0"
@@ -58,8 +58,8 @@ QT_MOC_LITERAL(18, 252, 8) // "stopGame"
     "Qt::MouseButtons\0buttons\0"
     "notifyMouseButtonReleased\0notifyKeyPressed\0"
     "key\0notifyKeyReleased\0setupObstacle\0"
-    "rotateScreen\0restartGame\0upProgressBar\0"
-    "loseEndurance\0timerPartie\0stopGame"
+    "rotateScreen\0upProgressBar\0loseEndurance\0"
+    "timerPartie\0stopGame\0restartGame"
 };
 #undef QT_MOC_LITERAL
 
@@ -89,7 +89,7 @@ static const uint qt_meta_data_GameCore[] = {
       14,    0,   95,    2, 0x08 /* Private */,
       15,    0,   96,    2, 0x08 /* Private */,
       16,    0,   97,    2, 0x08 /* Private */,
-      17,    0,   98,    2, 0x08 /* Private */,
+      17,    0,   98,    2, 0x0a /* Public */,
       18,    0,   99,    2, 0x0a /* Public */,
 
  // signals: parameters
@@ -124,11 +124,11 @@ void GameCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 4: _t->notifyKeyReleased((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->setupObstacle(); break;
         case 6: _t->rotateScreen(); break;
-        case 7: _t->restartGame(); break;
-        case 8: _t->upProgressBar(); break;
-        case 9: _t->loseEndurance(); break;
-        case 10: _t->timerPartie(); break;
-        case 11: _t->stopGame(); break;
+        case 7: _t->upProgressBar(); break;
+        case 8: _t->loseEndurance(); break;
+        case 9: _t->timerPartie(); break;
+        case 10: _t->stopGame(); break;
+        case 11: _t->restartGame(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

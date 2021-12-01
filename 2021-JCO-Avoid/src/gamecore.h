@@ -98,6 +98,7 @@ private:
     Sprite* pObstacle;
 
     Player* pPlayer;
+    MainFrm* pMainFrm;
 
     bool keyboardDisabled = false;
 
@@ -123,13 +124,13 @@ private:
 private slots:
     void setupObstacle();
     void rotateScreen();
-    void restartGame();
     void upProgressBar();
     void loseEndurance();
     void timerPartie();
 
 public slots:
     void stopGame();
+    void restartGame();
 
 };
 

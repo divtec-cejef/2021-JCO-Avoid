@@ -9,6 +9,7 @@
 #include "ui_mainfrm.h"
 
 #include "gamecanvas.h"
+#include "gamecore.h"
 
 //! Construit la fenêtre principale.
 MainFrm::MainFrm(QWidget *pParent) : QWidget(pParent), ui(new Ui::MainFrm) {
@@ -22,12 +23,9 @@ MainFrm::MainFrm(QWidget *pParent) : QWidget(pParent), ui(new Ui::MainFrm) {
     // Pour supprimer les marges de la zone de jeu
     ui->verticalLayout->setContentsMargins(QMargins(0,0,0,0));
 
-    ui->txtResultat->setAlignment(Qt::AlignCenter);
-    ui->txtResultat->setHidden(true);
-
     ui->btRejouer->setHidden(false);
 
-
+    connect(ui->btRejouer, &QPushButton::clicked, pGameCore, &GameCore::restartGame);
 
 }
 

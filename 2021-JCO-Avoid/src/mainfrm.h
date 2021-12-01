@@ -15,7 +15,7 @@ class MainFrm;
 }
 
 class GameCanvas;
-
+class GameCore;
 //! \brief Fenêtre principale.
 //!
 //! MainFrm représente la fenêtre principale, dans laquelle est placé
@@ -33,8 +33,9 @@ public:
 
 private:
     Ui::MainFrm *ui;
-
+    GameCore* pGameCore;
     GameCanvas* m_pGameCanvas;
+
 };
 
 #endif // WIDGET_H

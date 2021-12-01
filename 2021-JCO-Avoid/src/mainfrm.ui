@@ -14,7 +14,7 @@
    <string>Game Framework</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
+   <item alignment="Qt::AlignHCenter">
     <widget class="QPushButton" name="btRejouer">
      <property name="maximumSize">
       <size>
@@ -30,19 +30,6 @@
      </property>
      <property name="text">
       <string>Rejouer</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="txtResultat">
-     <property name="font">
-      <font>
-       <family>OCR A Extended</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Votre Temps : </string>
      </property>
     </widget>
    </item>

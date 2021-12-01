@@ -96,6 +96,7 @@ private:
     QImage* m_pBackgroundImage;
     QList<Sprite*> m_registeredForTickSpriteList;
 
+
 private slots:
     void onSpriteDestroyed(QObject* pSprite);
 };

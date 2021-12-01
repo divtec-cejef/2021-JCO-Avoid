@@ -24,8 +24,8 @@ MainFrm::MainFrm(QWidget *pParent) : QWidget(pParent), ui(new Ui::MainFrm) {
     ui->verticalLayout->setContentsMargins(QMargins(0,0,0,0));
 
     ui->btRejouer->setHidden(false);
-
-    connect(ui->btRejouer, &QPushButton::clicked, pGameCore, &GameCore::restartGame);
+    GameCore* gamecore = m_pGameCanvas->getGameCore();
+    //connect(ui->btRejouer, &QPushButton::released, gamecore, &GameCore::restartGame);
 
 }
 

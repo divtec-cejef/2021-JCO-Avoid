@@ -65,6 +65,7 @@ signals:
 
 private:
 
+    void deleteAllSprite();
     void setupPlayer();
     void setupTimerPartie();
     void setupWalkingMen();

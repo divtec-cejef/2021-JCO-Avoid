@@ -33,7 +33,6 @@ public:
 
 private:
     Ui::MainFrm *ui;
-    GameCore* pGameCore;
     GameCanvas* m_pGameCanvas;
 
 };

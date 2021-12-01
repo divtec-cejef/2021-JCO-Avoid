@@ -98,14 +98,10 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     startSpawnObstacleTimer();
     startRetournerEcran();
 
-
-
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
     // déplacements, surtout si le déboggueur est démarré
-
-
 
     //Démarre la partie et son tick
     m_tickTimerPartie.start();
@@ -358,17 +354,24 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
 
     setProgressBarPercentage(getProgressBarPercentage() - 100);
-
-    //supprime tous les srpites de la scène
-    for (Sprite* sprite : m_pScene->sprites()) {
-        m_pScene->removeSpriteFromScene(sprite);
-    }
-    m_pScene->sprites().clear();
     setupResultat();
-
-
+    deleteAllSprite();
 
 }
+
+void GameCore::deleteAllSprite(){
+    //supprime tous les srpites de la scène
+    for (Sprite* sprite : m_pScene->sprites()) {
+
+        if(sprite != m_pPlayer){
+            m_pScene->removeSpriteFromScene(sprite);
+        }
+
+    }
+    //m_pScene->sprites().clear();
+}
+
+
 /**
   Relance le jeux
  * @brief GameCore::restartGame
@@ -392,9 +395,7 @@ void GameCore::rotateScreen() {
     } else{
         m_objetTimer->setRotation(180);
         m_objetTimer->setX(50);
-
     }
-
 }
 
 //! Traite la pression d'une touche.

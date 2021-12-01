@@ -66,6 +66,7 @@ public:
     void stopTick();
 
     void rotateView();
+    GameCore* getGameCore();
 
     void startMouseTracking();
     void stopMouseTracking();

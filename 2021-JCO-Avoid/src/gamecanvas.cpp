@@ -256,3 +256,7 @@ void GameCanvas::onTick() {
 void GameCanvas::rotateView() {
     m_pView->rotateScreen();
 }
+
+GameCore* GameCanvas::getGameCore() {
+    return m_pGameCore;
+}

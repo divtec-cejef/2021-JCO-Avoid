@@ -366,9 +366,7 @@ void GameCore::deleteAllSprite(){
         if(sprite != m_pPlayer){
             m_pScene->removeSpriteFromScene(sprite);
         }
-
     }
-    //m_pScene->sprites().clear();
 }
 
 
@@ -377,6 +375,7 @@ void GameCore::deleteAllSprite(){
  * @brief GameCore::restartGame
  */
 void GameCore::restartGame(){
+    m_pScene->sprites().clear();
     setupPlayer();
     keyboardDisabled= false;
 }

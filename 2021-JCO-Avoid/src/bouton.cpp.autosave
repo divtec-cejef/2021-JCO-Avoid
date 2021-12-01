@@ -1,0 +1,13 @@
+#include "bouton.h"
+
+#include "resources.h"
+#include <QDebug>
+
+
+
+Bouton::Bouton(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "tile19.png", pParent)
+{
+
+}
+
+

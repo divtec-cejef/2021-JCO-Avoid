@@ -356,8 +356,11 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
     m_pGameCanvas->stopTick();
 
-    m_pScene->removeSpriteFromScene(pObstacle);
-
+    //supprime tous les srpites de la scène
+    for (Sprite* sprite : m_pScene->sprites()) {
+        m_pScene->removeSpriteFromScene(sprite);
+    }
+    m_pScene->sprites().clear();
     setupResultat();
 
 }

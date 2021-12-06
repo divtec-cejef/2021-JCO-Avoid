@@ -143,6 +143,7 @@ void Player::configureAnimation() {
     this->startAnimation();
 }
 
+
 void Player::deathAnimation() {
     this->stopAnimation();
     this->clearAnimationFrames();

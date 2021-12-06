@@ -199,6 +199,7 @@ void GameCore::setupProgressBar() {
 
     connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
     m_tickTimerLoseEndurance.start();
+    setProgressBarPercentage(100);
 }
 
 /**
@@ -332,7 +333,7 @@ void GameCore::setupPlayer() {
     pPlayer = new Player;
     int ajustementHauteur = 80;
     pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
-    pPlayer->setZValue(1);      // Passe devant tous les autres sprites (sauf la sphère bleue)
+    pPlayer->setZValue(1);    // Passe devant tous les autres sprites (sauf la sphère bleue)
     pPlayer->setScale(0.4);
     m_pScene->addSpriteToScene(pPlayer);
     pPlayer->registerForTick();
@@ -354,18 +355,19 @@ void GameCore::stopGame(){
     m_tickTimerPartie.stop();
     m_tickTimerObstacle.stop();
     m_tickTimerRetournement.stop();
+    m_tickTimerLoseEndurance.stop();
 
-    setProgressBarPercentage(getProgressBarPercentage() - 100);
+    m_pScene->removeItem(m_ProgressBarFill);
+    m_pScene->removeItem(m_ProgressBarBorder);
+
     setupResultat();
     deleteAllSprite();
     setupBouton();
-
 }
 
 
 void GameCore::setupBouton(){
     pBouton = new Bouton;
-
     pBouton->setPos(m_pScene->width() / 2, m_pScene->height() / 2 + 120);
     pBouton->setScale(0.1);
     m_pScene->addSpriteToScene(pBouton);
@@ -377,6 +379,7 @@ void GameCore::deleteAllSprite(){
     for (Sprite* sprite : m_pScene->sprites()) {
         if(sprite != m_pPlayer){
             m_pScene->removeSpriteFromScene(sprite);
+            sprite->deleteLater();
         }
     }
 }
@@ -387,16 +390,14 @@ void GameCore::deleteAllSprite(){
  */
 void GameCore::restartGame(){
     m_pScene->removeSpriteFromScene(m_pPlayer);
-    m_pPlayer->deleteLater();
-    m_pGameCanvas->stopTick();
     m_pScene->removeSpriteFromScene(pBouton);
     m_pScene->removeItem(m_objetTimer);
     m_pScene->removeItem(m_objetResultat);
 
-    m_pGameCanvas->startTick();
     setupProgressBar();
     setupPlayer();
     setupTimerPartie();
+    m_tickTimerPartie.start();
     startSpawnObstacleTimer();
     startRetournerEcran();
     keyboardDisabled = false;

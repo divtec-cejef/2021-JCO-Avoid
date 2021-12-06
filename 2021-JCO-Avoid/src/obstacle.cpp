@@ -14,7 +14,7 @@ const int BALL_VELOCITY = 200; // pixels par seconde
 
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
-Obstacle::Obstacle(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "obastacle.png", pParent) {
+Obstacle::Obstacle(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "obstacle.png", pParent) {
     configureAnimation();
     m_keyUpPressed    = false;
     m_keyDownPressed  = false;

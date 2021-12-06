@@ -121,7 +121,6 @@ GameCore::~GameCore() {
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
 
-
     if(jeuTermine == true){
         if(nombreObstacle == APPARITION_BONUS){
             setupBonus();
@@ -263,7 +262,6 @@ double GameCore::getProgressBarPercentage() {
     return progressBarPercentage;
 }
 
-
 /**
  * Configuration timer spawn les obstacles
  * @brief GameCore::startSpawnObstacleTimer
@@ -337,14 +335,17 @@ void GameCore::timerPartie(){
 void GameCore::setupPlayer() {
     pPlayer = new Player;
     int ajustementHauteur = 80;
+
     pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
     pPlayer->setZValue(1);    // Passe devant tous les autres sprites (sauf la sphère bleue)
     pPlayer->setScale(0.4);
     m_pScene->addSpriteToScene(pPlayer);
     pPlayer->registerForTick();
+
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
+
     m_pPlayer = pPlayer;
 }
 
@@ -386,6 +387,10 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
     m_tickTimerLoseEndurance.stop();
 
+    if(m_objetTimer->rotation() > 1) {
+          m_pGameCanvas->rotateView();
+          m_objetTimer->setRotation(0);
+    }
 
     setupResultat();
     deleteAllSprite();
@@ -397,18 +402,21 @@ void GameCore::stopGame(){
  * @brief GameCore::restartGame
  */
 void GameCore::restartGame(){
-    setProgressBarPercentage(1);
+    setProgressBarPercentage(100);
+
     m_pScene->removeSpriteFromScene(m_pPlayer);
     m_pScene->removeSpriteFromScene(pBouton);
 
-    m_pScene->removeItem(m_objetTimer);
     m_pScene->removeItem(m_objetResultat);
+    m_pScene->removeItem(m_objetTimer);
 
     m_tickTimerPartie.start();
+    m_tickTimerLoseEndurance.start();
 
     jeuTermine = true;
     keyboardDisabled = false;
 
+    setupTimerPartie();
     setupPlayer();
 }
 
@@ -437,7 +445,6 @@ void GameCore::keyPressed(int key) {
     if (!keyboardDisabled)
         emit notifyKeyPressed(key);
 }
-
 
 
 //! Traite le relâchement d'une touche.

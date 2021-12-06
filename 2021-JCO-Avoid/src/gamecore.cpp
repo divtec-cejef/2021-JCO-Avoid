@@ -113,8 +113,6 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
 GameCore::~GameCore() {
     delete m_pScene;
     m_pScene = nullptr;
-
-
 }
 /**
  * @brief GameCore::setupObstacle
@@ -122,30 +120,32 @@ GameCore::~GameCore() {
  */
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
-    nombreObstacle++;
 
-    if(nombreObstacle == APPARITION_BONUS){
-        setupBonus();
-        nombreObstacle = 0;
-    }else{
-        pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
-        pObstacle->setPos(nbGen,0);
-        pObstacle->setScale(0.1);
 
-        // Déplace le sprite aléatoirement, en évitant les collisions.
-        // Si une collision à quand-même lieu, le tickhandler se charge
-        // de détruire son sprite.
-        RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
-        pTickHandler->setDestroyOnCollisionEnabled(true);
-        pObstacle->setTickHandler(pTickHandler);
-        //connect(&pTickHandler,SIGNAL(&RandomMoveTickHandler::onplayerDestroyed()),this,SLOT(GameCore::playerDestroyed()));
-        m_pScene->addSpriteToScene(pObstacle);
+    if(jeuTermine == true){
+        if(nombreObstacle == APPARITION_BONUS){
+            setupBonus();
+            nombreObstacle = 0;
+        }else{
+            nombreObstacle++;
+            pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
+            pObstacle->setPos(nbGen,0);
+            pObstacle->setScale(0.1);
 
-        //connect(pTickHandler,&RandomMoveTickHandler::onplayerDestroyed() ,this, GameCore::playerDestroyed());
+            // Déplace le sprite aléatoirement, en évitant les collisions.
+            // Si une collision à quand-même lieu, le tickhandler se charge
+            // de détruire son sprite.
+            RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
+            pTickHandler->setDestroyOnCollisionEnabled(true);
+            pObstacle->setTickHandler(pTickHandler);
+            //connect(&pTickHandler,SIGNAL(&RandomMoveTickHandler::onplayerDestroyed()),this,SLOT(GameCore::playerDestroyed()));
+            m_pScene->addSpriteToScene(pObstacle);
 
-        pObstacle->registerForTick();
+            //connect(pTickHandler,&RandomMoveTickHandler::onplayerDestroyed() ,this, GameCore::playerDestroyed());
+
+            pObstacle->registerForTick();
+        }
     }
-
 }
 //!
 //! \brief GameCore::setupBonus
@@ -224,21 +224,25 @@ void GameCore::loseEndurance() {
  * @brief GameCore::updateProgressBar
  */
 void GameCore::updateProgressBar() {
-    double newWidth = PROGRESSBAR_WIDTH / 100 * progressBarPercentage;
-    double screenXCenter = m_pScene->width() / 2;
-    m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
 
-    if (progressBarPercentage > 100/3*2) {
-        m_ProgressBarFill->setBrush(QBrush(Qt::green));
-    } else if (progressBarPercentage > 100 / 3) {
-        m_ProgressBarFill->setBrush(QBrush(Qt::yellow));
-    } else {
-        m_ProgressBarFill->setBrush(QBrush(Qt::red));
+    if(jeuTermine == true){
+        double newWidth = PROGRESSBAR_WIDTH / 100 * progressBarPercentage;
+        double screenXCenter = m_pScene->width() / 2;
+        m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
+
+        if (progressBarPercentage > 100/3*2) {
+            m_ProgressBarFill->setBrush(QBrush(Qt::green));
+        } else if (progressBarPercentage > 100 / 3) {
+            m_ProgressBarFill->setBrush(QBrush(Qt::yellow));
+        } else {
+            m_ProgressBarFill->setBrush(QBrush(Qt::red));
+        }
+
+        if (progressBarPercentage <= 0) {
+            stopGame();
+        }
     }
 
-    if (progressBarPercentage <= 0) {
-        stopGame();
-    }
 }
 /**
  * Stop la progresson de la barre si elle dépasse 100 ou 0
@@ -344,45 +348,48 @@ void GameCore::setupPlayer() {
     m_pPlayer = pPlayer;
 }
 
-/**
-  Arrete le jeux lors de la mort du personnage
- * @brief GameCore::stopGame
- */
-void GameCore::stopGame(){
-    keyboardDisabled = true;
-    pPlayer->stopAnimation();
-    pPlayer->deathAnimation();
-
-    m_tickTimerPartie.stop();
-    m_tickTimerObstacle.disconnect();
-    m_tickTimerRetournement.stop();
-    m_tickTimerLoseEndurance.stop();
-
-    m_pScene->removeItem(m_ProgressBarFill);
-    m_pScene->removeItem(m_ProgressBarBorder);
-
-    setupResultat();
-    deleteAllSprite();
-    setupBouton();
-}
-
-
 void GameCore::setupBouton(){
     pBouton = new Bouton;
     pBouton->setPos(m_pScene->width() / 2, m_pScene->height() / 2 + 120);
     pBouton->setScale(0.1);
+
     m_pScene->addSpriteToScene(pBouton);
+
     }
 
 void GameCore::deleteAllSprite(){
     //supprime tous les srpites de la scène
 
     for (Sprite* sprite : m_pScene->sprites()) {
+
         if(sprite != m_pPlayer){
+
             m_pScene->removeSpriteFromScene(sprite);
+
             sprite->deleteLater();
         }
     }
+}
+
+/**
+  Arrete le jeux lors de la mort du personnage
+ * @brief GameCore::stopGame
+ */
+void GameCore::stopGame(){
+    keyboardDisabled = true;
+    jeuTermine = false;
+
+    pPlayer->stopAnimation();
+    pPlayer->deathAnimation();
+
+    m_tickTimerPartie.stop();
+    m_tickTimerRetournement.stop();
+    m_tickTimerLoseEndurance.stop();
+
+
+    setupResultat();
+    deleteAllSprite();
+    setupBouton();
 }
 
 /**
@@ -390,18 +397,19 @@ void GameCore::deleteAllSprite(){
  * @brief GameCore::restartGame
  */
 void GameCore::restartGame(){
+    setProgressBarPercentage(1);
     m_pScene->removeSpriteFromScene(m_pPlayer);
     m_pScene->removeSpriteFromScene(pBouton);
+
     m_pScene->removeItem(m_objetTimer);
     m_pScene->removeItem(m_objetResultat);
 
-    setupProgressBar();
-    setupPlayer();
-    setupTimerPartie();
     m_tickTimerPartie.start();
-    startSpawnObstacleTimer();
-    startRetournerEcran();
+
+    jeuTermine = true;
     keyboardDisabled = false;
+
+    setupPlayer();
 }
 
 /**
@@ -413,10 +421,10 @@ void GameCore::rotateScreen() {
     m_pGameCanvas->rotateView();
     m_objetTimer->setTransformOriginPoint(m_objetTimer->boundingRect().center());
 
-    if(m_objetTimer->rotation() > 1){
+    if(m_objetTimer->rotation() > 1) {
         m_objetTimer->setRotation(0);
         m_objetTimer->setX(0);
-    } else{
+    } else {
         m_objetTimer->setRotation(180);
         m_objetTimer->setX(50);
     }

@@ -106,6 +106,7 @@ private:
     MainFrm* pMainFrm;
 
     bool keyboardDisabled = false;
+    bool jeuTermine = true;
 
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;

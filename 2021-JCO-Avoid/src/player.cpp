@@ -149,7 +149,6 @@ void Player::deathAnimation() {
     this->clearAnimationFrames();
     for (int FrameNumber = 0; FrameNumber <= 19; FrameNumber++)  {
         this->addAnimationFrame(QString(GameFramework::imagesPath() + "explosion/tile00%0.png").arg(FrameNumber));
-        qDebug() << QString("explosion/tile%1.png").arg(FrameNumber);
     }
     setEmitSignalEndOfAnimationEnabled(true);
     this->setAnimationSpeed(10);

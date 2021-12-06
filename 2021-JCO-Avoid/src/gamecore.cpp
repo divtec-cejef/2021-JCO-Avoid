@@ -332,7 +332,7 @@ void GameCore::setupPlayer() {
     pPlayer = new Player;
     int ajustementHauteur = 80;
     pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
-    pPlayer->setZValue(1);          // Passe devant tous les autres sprites (sauf la sphère bleue)
+    pPlayer->setZValue(1);      // Passe devant tous les autres sprites (sauf la sphère bleue)
     pPlayer->setScale(0.4);
     m_pScene->addSpriteToScene(pPlayer);
     pPlayer->registerForTick();
@@ -341,6 +341,7 @@ void GameCore::setupPlayer() {
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
     m_pPlayer = pPlayer;
 }
+
 /**
   Arrete le jeux lors de la mort du personnage
  * @brief GameCore::stopGame
@@ -372,8 +373,8 @@ void GameCore::setupBouton(){
 
 void GameCore::deleteAllSprite(){
     //supprime tous les srpites de la scène
-    for (Sprite* sprite : m_pScene->sprites()) {
 
+    for (Sprite* sprite : m_pScene->sprites()) {
         if(sprite != m_pPlayer){
             m_pScene->removeSpriteFromScene(sprite);
         }
@@ -385,10 +386,22 @@ void GameCore::deleteAllSprite(){
  * @brief GameCore::restartGame
  */
 void GameCore::restartGame(){
-    m_pScene->sprites().clear();
+    m_pScene->removeSpriteFromScene(m_pPlayer);
+    m_pPlayer->deleteLater();
+    m_pGameCanvas->stopTick();
+    m_pScene->removeSpriteFromScene(pBouton);
+    m_pScene->removeItem(m_objetTimer);
+    m_pScene->removeItem(m_objetResultat);
+
+    m_pGameCanvas->startTick();
+    setupProgressBar();
     setupPlayer();
-    keyboardDisabled= false;
+    setupTimerPartie();
+    startSpawnObstacleTimer();
+    startRetournerEcran();
+    keyboardDisabled = false;
 }
+
 /**
   Retourne l'écran
  * @brief GameCore::rotateScreen

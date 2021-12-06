@@ -173,6 +173,7 @@ void GameCore::setupBonus(){
  * @brief GameCore::setupTimerPartie
  */
 void GameCore::setupTimerPartie(){
+    tempsPartie = 0;
     m_textTimer = "0";
     m_objetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 70);
     m_objetTimer->setOpacity(0.5);
@@ -353,7 +354,7 @@ void GameCore::stopGame(){
     pPlayer->deathAnimation();
 
     m_tickTimerPartie.stop();
-    m_tickTimerObstacle.stop();
+    m_tickTimerObstacle.disconnect();
     m_tickTimerRetournement.stop();
     m_tickTimerLoseEndurance.stop();
 

@@ -80,12 +80,16 @@ void Player::onKeyPressed(int key) {
 //! Une touche a été relâchée.
 //! \param key Code de la touche relâchée.
 void Player::onKeyReleased(int key) {
-    switch (key)  {
-    //case Qt::Key_Up:    m_keyUpPressed    = false;  break;
-    //case Qt::Key_Down:  m_keyDownPressed  = false;  break;
-    case Qt::Key_Right: m_keyRightPressed = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
-    case Qt::Key_Left:  m_keyLeftPressed  = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
-    }
+
+    if(keyPressed){
+        switch (key)  {
+        //case Qt::Key_Up:    m_keyUpPressed    = false;  break;
+        //case Qt::Key_Down:  m_keyDownPressed  = false;  break;
+        case Qt::Key_Right: m_keyRightPressed = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
+        case Qt::Key_Left:  m_keyLeftPressed  = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
+        }
+}
+
 
     updateBallVelocity();
 
@@ -144,18 +148,20 @@ void Player::configureAnimation() {
 
 
 void Player::deathAnimation() {
+    keyPressed = false;
     this->stopAnimation();
     this->clearAnimationFrames();
-    for (int FrameNumber = 0; FrameNumber <= 19; FrameNumber++)  {
-        this->addAnimationFrame(QString(GameFramework::imagesPath() + "explosion/tile00%0.png").arg(FrameNumber));
+    for (int FrameNumber = 0; FrameNumber <= 24; FrameNumber++)  {
+        this->addAnimationFrame(QString(GameFramework::imagesPath() + "explosion/tile%0.png").arg(FrameNumber));
     }
     setEmitSignalEndOfAnimationEnabled(true);
-    this->setAnimationSpeed(10);
+    this->setAnimationSpeed(100);
     this->startAnimation();
 
 }
 
 void Player::onDeathAnimationEnd() {
+
     this->stopAnimation();
 }
 

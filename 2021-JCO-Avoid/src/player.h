@@ -74,6 +74,7 @@ private:
     bool m_keyDownPressed;
     bool m_keyLeftPressed;
     bool m_keyRightPressed;
+    bool keyPressed = true;
 
     bool m_playerAlive = true;
 

@@ -155,7 +155,7 @@ void Player::deathAnimation() {
         this->addAnimationFrame(QString(GameFramework::imagesPath() + "explosion/tile%0.png").arg(FrameNumber));
     }
     setEmitSignalEndOfAnimationEnabled(true);
-    this->setAnimationSpeed(100);
+    this->setAnimationSpeed(50);
     this->startAnimation();
 
 }

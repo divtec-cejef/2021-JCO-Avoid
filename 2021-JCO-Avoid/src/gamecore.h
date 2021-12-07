@@ -66,6 +66,8 @@ signals:
 
 private:
 
+    const int SCENE_WIDTH = 1920;
+
     void deleteAllSprite();
     void setupPlayer();
     void setupTimerPartie();
@@ -117,13 +119,14 @@ private:
     bool m_keepTicking;
     int nombreObstacle = 0;
     int nbGen;
+    int nbGenObstacle;
 
     Ui::MainFrm *ui;
 
     QElapsedTimer m_lastUpdateTime;
 
-    const int LARGEUR_MINIMUM = 1;
-    const int LARGEUR_MAX = 1150;
+    const int LARGEUR_MINIMUM = - SCENE_WIDTH / 50;
+    const int LARGEUR_MAX = SCENE_WIDTH - SCENE_WIDTH / 50;
     const int APPARITION_BONUS = 10;
 
 

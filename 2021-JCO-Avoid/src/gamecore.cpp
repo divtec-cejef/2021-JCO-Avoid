@@ -50,7 +50,7 @@ const int SPAWN_INTERVAL = 170;
 const int RETOURNEMENT_INTERVAL = 10000;
 const int LOSE_ENDURANCE_INTERVAL = 100;
 const int TIMER_BEFORE_START = 3000;
-const int SCENE_WIDTH = 1280;
+
 const int PROGRESSBAR_WIDTH = 500;
 const int ACTUALISATION_TEMPS = 100;
 
@@ -87,8 +87,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_pScene = pGameCanvas->createScene(0, 0, SCENE_WIDTH, SCENE_WIDTH / GameFramework::screenRatio());
     pGameCanvas->setCurrentScene(m_pScene);
 
-    // Trace un rectangle blanc tout autour des limites de la scène.
-    m_pScene->addRect(m_pScene->sceneRect(), QPen(Qt::white));
+    m_pScene->setBackgroundImage(QImage(GameFramework::imagesPath() + "background.png"));
 
     std::srand(std::time(nullptr));
 
@@ -120,7 +119,7 @@ GameCore::~GameCore() {
  */
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
-
+    nbGenObstacle = rand()%1+36;
     if(jeuTermine == true){
         if(nombreObstacle == APPARITION_BONUS){
             setupBonus();
@@ -451,6 +450,9 @@ void GameCore::keyPressed(int key) {
 //! Traite le relâchement d'une touche.
 //! \param key Numéro de la touche (voir les constantes Qt)
 void GameCore::keyReleased(int key) {
+    if (key == Qt::Key_Escape) {
+        int quit = 1/0;
+    }
     emit notifyKeyReleased(key);
 }
 

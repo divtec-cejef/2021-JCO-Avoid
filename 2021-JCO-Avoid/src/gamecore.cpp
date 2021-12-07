@@ -15,6 +15,7 @@
 #include <chrono>
 #include <thread>
 #include <functional>
+#include<QFontDatabase>
 
 #include <QDebug>
 #include <QGraphicsBlurEffect>
@@ -120,7 +121,7 @@ GameCore::~GameCore() {
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
 
-    nbGenObstacle = rand()%(36 - 1) + 1;
+    nbGenObstacle = rand()%(17 - 1) + 1;
 
     if(jeuTermine == true){
         if(nombreObstacle == APPARITION_BONUS){
@@ -175,8 +176,13 @@ void GameCore::setupBonus(){
 void GameCore::setupTimerPartie(){
     tempsPartie = 0;
     m_textTimer = "0";
-    m_objetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 70);
-    m_objetTimer->setOpacity(0.5);
+    m_objetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 700);
+    int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
+    QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont mana(familiy);
+    mana.setPointSize(100);
+
+    m_objetTimer->setFont(mana);
 }
 
 void GameCore::setupResultat(){

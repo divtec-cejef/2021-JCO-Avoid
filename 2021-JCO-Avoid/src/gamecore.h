@@ -23,6 +23,7 @@
 #include "ui_mainfrm.h"
 #include "bouton.h"
 
+#include<QFontDatabase>
 class GameCanvas;
 class GameScene;
 class Sprite;

@@ -88,7 +88,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_pScene = pGameCanvas->createScene(0, 0, SCENE_WIDTH, SCENE_WIDTH / GameFramework::screenRatio());
     pGameCanvas->setCurrentScene(m_pScene);
 
-    m_pScene->setBackgroundImage(QImage(GameFramework::imagesPath() + "background.png"));
+    m_pScene->setBackgroundImage(QImage(GameFramework::imagesPath() + "background2.png"));
 
     std::srand(std::time(nullptr));
 
@@ -121,7 +121,7 @@ GameCore::~GameCore() {
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
 
-    nbGenObstacle = rand()%(17 - 1) + 1;
+    nbGenObstacle = rand()%(6 - 1) + 1;
 
     if(jeuTermine == true){
         if(nombreObstacle == APPARITION_BONUS){
@@ -180,17 +180,24 @@ void GameCore::setupTimerPartie(){
     int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
     QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont mana(familiy);
-    mana.setPointSize(100);
+    mana.setPointSize(50);
 
     m_objetTimer->setFont(mana);
 }
 
 void GameCore::setupResultat(){
-    m_objetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 315,m_pScene->height() / 2), m_textResultat, 70);
+    m_objetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 495,m_pScene->height() / 2), m_textResultat, 70);
     m_objetTimer->setOpacity(0.5);
     m_objetTimer->setPos(m_pScene->width() / 2 + 300,m_pScene->height() / 2);
     m_objetTimer->setOpacity(1);
     m_objetTimer->setZValue(1);
+
+    int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
+    QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont mana(familiy);
+    mana.setPointSize(50);
+
+    m_objetResultat->setFont(mana);
 }
 
 /**

@@ -46,7 +46,6 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
         }
     }
 
-
     bool collision = !collidingSprites.isEmpty();
 
     // Si la prochaine position reste dans les limites de la scène, la balle

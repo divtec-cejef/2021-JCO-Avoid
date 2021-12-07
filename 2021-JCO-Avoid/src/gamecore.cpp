@@ -197,7 +197,7 @@ void GameCore::setupProgressBar() {
     m_ProgressBarFill = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::transparent), QBrush(Qt::green));
     m_ProgressBarFill->setZValue(1);
 
-    connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
+    //connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
     m_tickTimerLoseEndurance.start();
     setProgressBarPercentage(100);
 }
@@ -344,6 +344,8 @@ void GameCore::setupPlayer() {
 
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
+
+    connect(pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
 
     m_pPlayer = pPlayer;
@@ -385,7 +387,7 @@ void GameCore::stopGame(){
 
     m_tickTimerPartie.stop();
     m_tickTimerRetournement.stop();
-    m_tickTimerLoseEndurance.stop();
+    //m_tickTimerLoseEndurance.stop();
 
     if(m_objetTimer->rotation() > 1) {
           m_pGameCanvas->rotateView();
@@ -411,7 +413,9 @@ void GameCore::restartGame(){
     m_pScene->removeItem(m_objetTimer);
 
     m_tickTimerPartie.start();
-    m_tickTimerLoseEndurance.start();
+
+    //connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
+    //m_tickTimerLoseEndurance.start();
 
     jeuTermine = true;
     keyboardDisabled = false;

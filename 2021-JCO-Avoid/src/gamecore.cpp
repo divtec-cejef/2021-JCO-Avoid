@@ -119,16 +119,18 @@ GameCore::~GameCore() {
  */
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre 1 et 1150
-    nbGenObstacle = rand()%1+36;
+
+    nbGenObstacle = rand()%(36 - 1) + 1;
+
     if(jeuTermine == true){
         if(nombreObstacle == APPARITION_BONUS){
             setupBonus();
             nombreObstacle = 0;
         }else{
             nombreObstacle++;
-            pObstacle = new Sprite(GameFramework::imagesPath() + "obstacle.png");
+            pObstacle = new Sprite(QString(GameFramework::imagesPath() + "obstacle/%0.png").arg(nbGenObstacle));
             pObstacle->setPos(nbGen,0);
-            pObstacle->setScale(0.1);
+            pObstacle->setScale(0.5);
 
             // Déplace le sprite aléatoirement, en évitant les collisions.
             // Si une collision à quand-même lieu, le tickhandler se charge

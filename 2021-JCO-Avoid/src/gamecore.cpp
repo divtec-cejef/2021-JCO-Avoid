@@ -387,7 +387,6 @@ void GameCore::stopGame(){
 
     m_tickTimerPartie.stop();
     m_tickTimerRetournement.stop();
-    //m_tickTimerLoseEndurance.stop();
 
     if(m_objetTimer->rotation() > 1) {
           m_pGameCanvas->rotateView();
@@ -413,9 +412,7 @@ void GameCore::restartGame(){
     m_pScene->removeItem(m_objetTimer);
 
     m_tickTimerPartie.start();
-
-    //connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
-    //m_tickTimerLoseEndurance.start();
+    m_tickTimerRetournement.start();
 
     jeuTermine = true;
     keyboardDisabled = false;

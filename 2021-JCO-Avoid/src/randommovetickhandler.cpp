@@ -24,12 +24,13 @@
 #include "gamecore.h"
 #include "resources.h"
 bool RandomMoveTickHandler::s_seeded = false;
+qreal RandomMoveTickHandler::s_vitesseObtsacle = 7;
 
 const double DEFAULT_SPRITE_VELOCITY = 250.0;
 const int MOVE_MINIMAL_DURATION = 400;
 const int MOVE_MAXIMAL_DURATION = 2000;
 const int MAXIMAL_ANGLE_CHANGE = 120; // Changement de direction maximal autorisé
-const int AUGMENTATION_VITESSE_INTERVAL = 500;
+const int AUGMENTATION_VITESSE_INTERVAL = 1000;
 
 //! Constructeur.
 //! \param pParentSprite Sprite dont le déplacement doit être géré.
@@ -41,12 +42,12 @@ RandomMoveTickHandler::RandomMoveTickHandler(Sprite* pParentSprite) : SpriteTick
         s_seeded = true;
     }
 
-
     //Démarre le timer pour l'augmentation de la vitesse des obstacles
     m_tickTimerAugmentationObstacle.setSingleShot(false);
     m_tickTimerAugmentationObstacle.setInterval(AUGMENTATION_VITESSE_INTERVAL);
     m_tickTimerAugmentationObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerAugmentationObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
+    m_tickTimerAugmentationObstacle.start();
 
 
     m_spriteVelocity = DEFAULT_SPRITE_VELOCITY;
@@ -68,24 +69,23 @@ void RandomMoveTickHandler::init() {
 
 //! Cadence : détermine le mouvement que fait le sprite durant le temps écoulé.
 void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
-
-     // Création d'un vecteur de déplacement du sprite.
-     QPointF spriteMovement(0, 7);
-     // Détermine la prochaine position du sprite
-     QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
-     // Récupère tous les sprites de la scène que toucherait ce sprite à sa prochaine position
-     auto collidingSprites = m_pParentSprite->parentScene()->collidingSprites(nextSpriteRect);
-     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
-     collidingSprites.removeAll(m_pParentSprite);
-     bool collision = !collidingSprites.isEmpty();
-     // Si la prochaine position du sprite n'est pas comprise au sein de la scène,
-     // ou s’il y a collision, le sprite n’est pas déplacé et change de direction
-     if (!m_pParentSprite->parentScene()->isInsideScene(nextSpriteRect))
-     m_pParentSprite->deleteLater();
-     else
-     // S'il n'y a pas de collision et que le sprite ne sort pas de la scène, on le déplace
-     // (en lui appliquant le vecteur de déplacement)
-     m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
+    // Création d'un vecteur de déplacement du sprite.
+    QPointF spriteMovement(0, s_vitesseObtsacle);
+    // Détermine la prochaine position du sprite
+    QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
+    // Récupère tous les sprites de la scène que toucherait ce sprite à sa prochaine position
+    auto collidingSprites = m_pParentSprite->parentScene()->collidingSprites(nextSpriteRect);
+    // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
+    collidingSprites.removeAll(m_pParentSprite);
+    bool collision = !collidingSprites.isEmpty();
+    // Si la prochaine position du sprite n'est pas comprise au sein de la scène,
+    // ou s’il y a collision, le sprite n’est pas déplacé et change de direction
+    if (!m_pParentSprite->parentScene()->isInsideScene(nextSpriteRect))
+        m_pParentSprite->deleteLater();
+    else
+        // S'il n'y a pas de collision et que le sprite ne sort pas de la scène, on le déplace
+        // (en lui appliquant le vecteur de déplacement)
+        m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
 
     //QPointF spriteMovement = m_spriteVelocity * elapsedTimeInMilliseconds / 1000.;
 
@@ -154,6 +154,26 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         //emit onplayerDestroyed();
 
     }
+}
+
+/**
+ * Configuration timer pour gérer la vitesse de spawn des obtsacles
+ * @brief GameCore::startSpawnObstacleTimer
+ * @param tickInterval
+ */
+void RandomMoveTickHandler::startTimerVitesseObstacle(int tickInterval)  {
+
+    if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
+        m_tickTimerAugmentationObstacle.setInterval(tickInterval);
+
+    m_keepTicking = true;
+    m_lastUpdateTime.start();
+    m_tickTimerAugmentationObstacle.start();
+}
+
+void RandomMoveTickHandler::augmentationVitesseObstacle(){
+    qDebug() << s_vitesseObtsacle;
+    s_vitesseObtsacle+=0.1;
 }
 
 //! Charge les différentes images qui composent l'animation du marcheur et

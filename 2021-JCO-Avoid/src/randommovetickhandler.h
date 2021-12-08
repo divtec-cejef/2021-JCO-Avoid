@@ -7,6 +7,7 @@
 
 #ifndef RANDOMMOVETICKHANDLER_H
 #define RANDOMMOVETICKHANDLER_H
+#include <QElapsedTimer>
 #include <QObject>
 #include "spritetickhandler.h"
 #include "player.h"
@@ -18,13 +19,15 @@
 //!
 //! Si la destruction sur collision est activée (setDestroyOnCollisionEnabled),
 //! en cas de collision le sprite est détruit.
-class RandomMoveTickHandler : public SpriteTickHandler, public QObject
+class RandomMoveTickHandler : public QObject, public SpriteTickHandler
 {
 
+    Q_OBJECT
 //signals:
     //void onplayerDestroyed();
 
 public:
+    enum { KEEP_PREVIOUS_TICK_INTERVAL = -1  };
 
     RandomMoveTickHandler(Sprite* pParentSprite = nullptr);
     RandomMoveTickHandler(bool ignoreCollision, bool destroyOnCollision, Sprite* pParentSprite = nullptr);
@@ -37,13 +40,19 @@ public:
     bool isIgnoreCollisionEnable() const;
     void setDestroyOnCollisionEnabled(bool destroyOnCollision);
     bool isDestroyedOnCollision() const;
+    void startTimerVitesseObstacle(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
 
 private:
     void initNextMove();
 
     static bool s_seeded;
+    static qreal s_vitesseObtsacle;
 
     void configureAnimation();
+
+    bool m_keepTicking;
+    QElapsedTimer m_lastUpdateTime;
+
 
     bool m_ignoreCollision = false;
     bool m_destroyOnCollision = false;

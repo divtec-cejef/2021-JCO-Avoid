@@ -48,10 +48,11 @@ RandomMoveTickHandler::RandomMoveTickHandler(Sprite* pParentSprite) : SpriteTick
     m_tickTimerAugmentationObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerAugmentationObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
     m_tickTimerAugmentationObstacle.start();
-
+    m_pPlayer = new Player;
 
     m_spriteVelocity = DEFAULT_SPRITE_VELOCITY;
 }
+
 
 //! Constructeur.
 //! \param ignoreCollision      Indique si le déplacement n'a pas à éviter les collisions.
@@ -87,60 +88,7 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         // (en lui appliquant le vecteur de déplacement)
         m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
 
-    //QPointF spriteMovement = m_spriteVelocity * elapsedTimeInMilliseconds / 1000.;
 
-    // Détermine la prochaine position du sprite
-    //QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
-
-
-
-
-
-    // Calcul de la distance parcourue par le sprite, selon sa vitesse et le temps écoulé.
-    //double distance = elapsedTimeInMilliseconds * m_spriteVelocity / 1000.;
-
-    //m_pParentSprite->setY(m_pParentSprite->y() + distance);
-
-
-    // Détermine, selon l'angle, le déplacement en x et en y
-    //double moveX = qCos(m_moveAngle) * distance;
-    //double moveX = 0;
-    //double moveY = 1 * distance;
-
-    //QPointF spriteMovement(moveX, moveY);
-
-    //bool collision = false;
-
-    // Détermine la prochaine position du sprite
-    //QRectF nextSpriteRect = m_pParentSprite->globalBoundingBox().translated(spriteMovement);
-
-
-    /**
-    // Si les collisions ne sont pas ignorées, on vérifie si le déplacement provoquerait une
-    // collision afin de modifier la trajectoire le cas échéant.
-    if (!m_ignoreCollision) {
-
-        // Récupère tous les sprites de la scène que toucherait ce sprite à sa prochaine position
-        auto collidingSprites = m_pParentSprite->parentScene()->collidingSprites(nextSpriteRect);
-
-        // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
-        collidingSprites.removeAll(m_pParentSprite);
-
-        collision = !collidingSprites.isEmpty();
-    }
-    **/
-    /**
-    m_moveDuration -= elapsedTimeInMilliseconds;
-
-    if (m_moveDuration < 0 ||
-        !m_pParentSprite->parentScene()->isInsideScene(nextSpriteRect) ||
-        collision) {
-        initNextMove();
-
-    } else {
-        m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
-    }
-    **/
     // Si la destruction sur collision est activée, on vérifie si le sprite
     // est en collision. Si c'est le cas, on le détruit.
     if (m_destroyOnCollision && !m_pParentSprite->parentScene()->collidingSprites(m_pParentSprite).isEmpty()) {
@@ -152,7 +100,6 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
 
         //m_pParentSprite->parentScene()->sprites().first()->deleteLater();
         //emit onplayerDestroyed();
-
     }
 }
 

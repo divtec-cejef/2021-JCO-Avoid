@@ -65,6 +65,7 @@ signals:
     void notifyKeyPressed(int key);
     void notifyKeyReleased(int key);
 
+
 private:
 
     const int SCENE_WIDTH = 1920;
@@ -83,6 +84,8 @@ private:
     void updateProgressBar();
     void gainEndurance();
     void setupBouton();
+
+    RandomMoveTickHandler* pTickHandler;
 
     void setupResultat();
     double progressBarPercentage = 100;

@@ -139,7 +139,7 @@ void GameCore::setupObstacle(){
             // Déplace le sprite aléatoirement, en évitant les collisions.
             // Si une collision à quand-même lieu, le tickhandler se charge
             // de détruire son sprite.
-            RandomMoveTickHandler* pTickHandler = new RandomMoveTickHandler;
+            pTickHandler = new RandomMoveTickHandler;
             pTickHandler->setDestroyOnCollisionEnabled(true);
             pObstacle->setTickHandler(pTickHandler);
             //connect(&pTickHandler,SIGNAL(&RandomMoveTickHandler::onplayerDestroyed()),this,SLOT(GameCore::playerDestroyed()));
@@ -502,6 +502,7 @@ void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons button
         Sprite* pTargetSprite = m_pScene->spriteAt(mousePosition);
         if (pTargetSprite == pBouton) {
             // Le sprite est une tête à tirer : elle est détruite et explose
+            pTickHandler->s_vitesseObtsacle = 7;
             restartGame();
         }
     }

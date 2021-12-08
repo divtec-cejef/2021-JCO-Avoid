@@ -42,11 +42,13 @@ public:
     bool isDestroyedOnCollision() const;
     void startTimerVitesseObstacle(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
 
+
+    static qreal s_vitesseObtsacle;
 private:
     void initNextMove();
 
     static bool s_seeded;
-    static qreal s_vitesseObtsacle;
+
 
     void configureAnimation();
 
@@ -58,6 +60,7 @@ private:
     bool m_destroyOnCollision = false;
     Player* m_pPlayer;
     Sprite* m_pMort;
+
 
     QTimer m_tickTimerAugmentationObstacle;
 

@@ -65,16 +65,19 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerObstacle.setInterval(SPAWN_INTERVAL);
     m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerObstacle, SIGNAL(timeout()), this, SLOT(setupObstacle()));
+
     //Démarre le timer pour le retournement de l'écran
     m_tickTimerRetournement.setSingleShot(false);
     m_tickTimerRetournement.setInterval(RETOURNEMENT_INTERVAL);
     m_tickTimerRetournement.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerRetournement, SIGNAL(timeout()), this, SLOT(rotateScreen()));
+
     //Démarre le timer pour diminution de la barre de progression
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), this, SLOT(loseEndurance()));
+
     //Démarre le timer de la partie
     m_tickTimerPartie.setSingleShot(false);
     m_tickTimerPartie.setInterval(ACTUALISATION_TEMPS);
@@ -88,7 +91,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_pScene = pGameCanvas->createScene(0, 0, SCENE_WIDTH, SCENE_WIDTH / GameFramework::screenRatio());
     pGameCanvas->setCurrentScene(m_pScene);
 
-    m_pScene->setBackgroundImage(QImage(GameFramework::imagesPath() + "background1.jpg"));
+    m_pScene->setBackgroundImage(QImage(GameFramework::imagesPath() + "background1.png"));
 
     std::srand(std::time(nullptr));
 
@@ -147,6 +150,7 @@ void GameCore::setupObstacle(){
             pObstacle->registerForTick();
         }
     }
+
 }
 //!
 //! \brief GameCore::setupBonus
@@ -186,7 +190,7 @@ void GameCore::setupTimerPartie(){
 }
 
 void GameCore::setupResultat(){
-    m_objetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 520,m_pScene->height() / 2), m_textResultat, 70);
+    m_objetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 620,m_pScene->height() / 2), m_textResultat, 70);
     m_objetTimer->setOpacity(0.5);
     m_objetTimer->setPos(m_pScene->width() / 2 + 300,m_pScene->height() / 2);
     m_objetTimer->setOpacity(1);

@@ -7,6 +7,7 @@
 
 #ifndef RANDOMMOVETICKHANDLER_H
 #define RANDOMMOVETICKHANDLER_H
+#include <QObject>
 #include "spritetickhandler.h"
 #include "player.h"
 
@@ -17,9 +18,9 @@
 //!
 //! Si la destruction sur collision est activée (setDestroyOnCollisionEnabled),
 //! en cas de collision le sprite est détruit.
-class RandomMoveTickHandler : public SpriteTickHandler
+class RandomMoveTickHandler : public SpriteTickHandler, public QObject
 {
-    //Q_OBJECT
+
 //signals:
     //void onplayerDestroyed();
 
@@ -49,10 +50,15 @@ private:
     Player* m_pPlayer;
     Sprite* m_pMort;
 
+    QTimer m_tickTimerAugmentationObstacle;
+
     long m_moveDuration = 0; // en millisecondes
     double m_moveAngle = 0;  // en radians
     double m_spriteVelocity; // en pixels/seconde
     int m_playerDirection = 1;
+
+private slots:
+    void augmentationVitesseObstacle();
 
 };
 

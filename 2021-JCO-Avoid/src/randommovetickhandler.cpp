@@ -11,6 +11,12 @@
 #include <QtMath>
 #include <QPointF>
 #include <QRectF>
+#include <QTime>
+#include <QTimer>
+#include <time.h>
+
+#include <chrono>
+#include <thread>
 
 #include "sprite.h"
 #include "gamescene.h"
@@ -23,6 +29,7 @@ const double DEFAULT_SPRITE_VELOCITY = 250.0;
 const int MOVE_MINIMAL_DURATION = 400;
 const int MOVE_MAXIMAL_DURATION = 2000;
 const int MAXIMAL_ANGLE_CHANGE = 120; // Changement de direction maximal autorisé
+const int AUGMENTATION_VITESSE_INTERVAL = 500;
 
 //! Constructeur.
 //! \param pParentSprite Sprite dont le déplacement doit être géré.
@@ -33,6 +40,14 @@ RandomMoveTickHandler::RandomMoveTickHandler(Sprite* pParentSprite) : SpriteTick
         std::srand(std::time(nullptr));
         s_seeded = true;
     }
+
+
+    //Démarre le timer pour l'augmentation de la vitesse des obstacles
+    m_tickTimerAugmentationObstacle.setSingleShot(false);
+    m_tickTimerAugmentationObstacle.setInterval(AUGMENTATION_VITESSE_INTERVAL);
+    m_tickTimerAugmentationObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    connect(&m_tickTimerAugmentationObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
+
 
     m_spriteVelocity = DEFAULT_SPRITE_VELOCITY;
 }
@@ -53,6 +68,7 @@ void RandomMoveTickHandler::init() {
 
 //! Cadence : détermine le mouvement que fait le sprite durant le temps écoulé.
 void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
+
      // Création d'un vecteur de déplacement du sprite.
      QPointF spriteMovement(0, 7);
      // Détermine la prochaine position du sprite

@@ -67,8 +67,6 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
 //! \param key Code de la touche appuyée.
 void Player::onKeyPressed(int key) {
     switch (key)  {
-    //case Qt::Key_Up:    m_keyUpPressed    = true;  updateBallVelocity(); break;
-    //case Qt::Key_Down:  m_keyDownPressed  = true;  updateBallVelocity(); break;
     case Qt::Key_Right: m_keyRightPressed = true;  configureAnimation(); break;
     case Qt::Key_Left:  m_keyLeftPressed  = true;  configureAnimation(); break;
     }
@@ -83,13 +81,10 @@ void Player::onKeyReleased(int key) {
 
     if(keyPressed){
         switch (key)  {
-        //case Qt::Key_Up:    m_keyUpPressed    = false;  break;
-        //case Qt::Key_Down:  m_keyDownPressed  = false;  break;
         case Qt::Key_Right: m_keyRightPressed = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
         case Qt::Key_Left:  m_keyLeftPressed  = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
         }
 }
-
 
     updateBallVelocity();
 
@@ -133,11 +128,8 @@ void Player::updateRotation() {
 
     this->setTransformations(transformations);
 }
-/**
-void Player::init(){
-    configureTransformationMatrix();
-}
-**/
+
+
 void Player::configureAnimation() {
     for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
         this->addAnimationFrame(QString(GameFramework::imagesPath() + "personnage/tile%1.png").arg(FrameNumber));

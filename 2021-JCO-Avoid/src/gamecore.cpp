@@ -29,9 +29,7 @@
 #include <QTime>
 #include <QTimer>
 
-#include "automaticwalkinghandler.h"
 #include "player.h"
-#include "bouncingspritehandler.h"
 #include "gamescene.h"
 #include "gamecanvas.h"
 #include "manualwalkinghandler.h"
@@ -40,18 +38,10 @@
 #include "sprite.h"
 #include "utilities.h"
 #include "walkingman.h"
-#include "playertickhandler.h"
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
 #include "bouton.h"
 
-const int SPAWN_INTERVAL = 170;
-const int RETOURNEMENT_INTERVAL = 10000;
-const int LOSE_ENDURANCE_INTERVAL = 100;
-const int TIMER_BEFORE_START = 3000;
-
-const int PROGRESSBAR_WIDTH = 500;
-const int ACTUALISATION_TEMPS = 100;
 
 //! Initialise le contrôleur de jeu.
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.

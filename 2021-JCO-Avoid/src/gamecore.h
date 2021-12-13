@@ -56,6 +56,14 @@ public:
     void mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
     void startTimerPartie(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
 
+    const int SPAWN_INTERVAL = 170;
+    const int RETOURNEMENT_INTERVAL = 10000;
+    const int LOSE_ENDURANCE_INTERVAL = 100;
+    const int TIMER_BEFORE_START = 3000;
+
+    const int PROGRESSBAR_WIDTH = 500;
+    const int ACTUALISATION_TEMPS = 100;
+
     void tick(long long elapsedTimeInMilliseconds);
 
 signals:

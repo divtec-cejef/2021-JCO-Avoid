@@ -15,6 +15,8 @@ public:
 
     void onRealesed();
 
+    void onButtonPressed();
+
 
 
 };

@@ -32,12 +32,10 @@
 #include "player.h"
 #include "gamescene.h"
 #include "gamecanvas.h"
-#include "manualwalkinghandler.h"
 #include "randommovetickhandler.h"
 #include "resources.h"
 #include "sprite.h"
 #include "utilities.h"
-#include "walkingman.h"
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
 #include "bouton.h"
@@ -364,7 +362,7 @@ void GameCore::setupBouton(){
 
     m_pScene->addSpriteToScene(pBouton);
 
-    }
+}
 
 void GameCore::deleteAllSprite(){
     //supprime tous les srpites de la scène
@@ -395,8 +393,8 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
 
     if(m_objetTimer->rotation() > 1) {
-          m_pGameCanvas->rotateView();
-          m_objetTimer->setRotation(0);
+        m_pGameCanvas->rotateView();
+        m_objetTimer->setRotation(0);
     }
 
     setupResultat();
@@ -472,12 +470,19 @@ void GameCore::tick(long long elapsedTimeInMilliseconds) {
 }
 
 
+
 //! La souris a été déplacée.
 //! Pour que cet événement soit pris en compte, la propriété MouseTracking de GameView
 //! doit être enclenchée avec GameCanvas::startMouseTracking().
 void GameCore::mouseMoved(QPointF newMousePosition) {
     emit notifyMouseMoved(newMousePosition);
 }
+
+//! Traite le relâchement d'un bouton de la souris.
+void GameCore::mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons) {
+    emit notifyMouseButtonReleased(mousePosition, buttons);
+}
+
 
 //! Traite l'appui sur un bouton de la souris.
 void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons) {
@@ -498,10 +503,7 @@ void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons button
 
 
 
-//! Traite le relâchement d'un bouton de la souris.
-void GameCore::mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons) {
-    emit notifyMouseButtonReleased(mousePosition, buttons);
-}
+
 
 
 

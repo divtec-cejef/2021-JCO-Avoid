@@ -47,13 +47,15 @@ public:
     void keyPressed(int key);
     void keyReleased(int key);
 
+    void mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
+    void mouseMoved(QPointF newMousePosition);
+    void mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
+
 
     void startSpawnObstacleTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
     void startRetournerEcran(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
     void startGameTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
-    void mouseMoved(QPointF newMousePosition);
-    void mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
-    void mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
+
     void startTimerPartie(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
 
     const int SPAWN_INTERVAL = 170;
@@ -67,12 +69,12 @@ public:
     void tick(long long elapsedTimeInMilliseconds);
 
 signals:
-    void notifyMouseMoved(QPointF newMousePosition);
-    void notifyMouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
-    void notifyMouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
     void notifyKeyPressed(int key);
     void notifyKeyReleased(int key);
 
+    void notifyMouseMoved(QPointF newMousePosition);
+    void notifyMouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
+    void notifyMouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
 
 private:
 
@@ -84,6 +86,7 @@ private:
     void setupWalkingMen();
     void configureAnimation();
     void setupBonus();
+    void btnAppuye();
     void onSpriteDestroyed(QObject* pSprite);
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;

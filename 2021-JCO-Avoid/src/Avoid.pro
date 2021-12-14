@@ -29,9 +29,7 @@ SOURCES += main.cpp\
     gameview.cpp \
     utilities.cpp \
     gamecanvas.cpp \
-    walkingman.cpp \
-    spritetickhandler.cpp \
-    manualwalkinghandler.cpp
+    spritetickhandler.cpp
 
 HEADERS  += mainfrm.h \
     bouton.h \
@@ -45,8 +43,6 @@ HEADERS  += mainfrm.h \
     gameview.h \
     utilities.h \
     gamecanvas.h \
-    walkingman.h \
-    spritetickhandler.h \
-    manualwalkinghandler.h
+    spritetickhandler.h
 
 FORMS    += mainfrm.ui

@@ -11,9 +11,7 @@ release/resources.o
 release/gameview.o
 release/utilities.o
 release/gamecanvas.o
-release/walkingman.o
 release/spritetickhandler.o
-release/manualwalkinghandler.o
 release/moc_mainfrm.o
 release/moc_bouton.o
 release/moc_gamescene.o
@@ -23,4 +21,3 @@ release/moc_randommovetickhandler.o
 release/moc_sprite.o
 release/moc_gamecore.o
 release/moc_gamecanvas.o
-release/moc_walkingman.o

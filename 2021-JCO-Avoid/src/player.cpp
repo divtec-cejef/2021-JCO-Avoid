@@ -19,7 +19,7 @@ Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "t
     m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
     m_keyRightPressed = false;
-    m_ballVelocity = QPointF(0,0);
+    m_playerVelocity = QPointF(0,0);
 
 
     connect(this, SIGNAL(animationFinished()), this, SLOT(onDeathAnimationEnd()));
@@ -30,7 +30,7 @@ Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "t
 void Player::tick(long long elapsedTimeInMilliseconds) {
 
     // Calcul de la distance parcourue par la balle, selon sa vitesse et le temps écoulé.
-    QPointF ballDistance = elapsedTimeInMilliseconds * m_ballVelocity / 1000;
+    QPointF ballDistance = elapsedTimeInMilliseconds * m_playerVelocity / 1000;
     // Positionne la bounding box de la balle à sa prochaine position.
     QRectF nextRect = this->globalBoundingBox().translated(ballDistance);
     //Récupère tous les sprites de la scène
@@ -71,7 +71,7 @@ void Player::onKeyPressed(int key) {
     case Qt::Key_Left:  m_keyLeftPressed  = true;  configureAnimation(); break;
     }
 
-    updateBallVelocity();
+    updatePlayerVelocity();
     updateRotation();
 }
 
@@ -86,12 +86,12 @@ void Player::onKeyReleased(int key) {
         }
 }
 
-    updateBallVelocity();
+    updatePlayerVelocity();
 
 }
 
 //! Met à jour le vecteur de vitesse de la balle en fonction des touches appuyées.
-void Player::updateBallVelocity()  {
+void Player::updatePlayerVelocity()  {
     int XVelocity = 0;
     int YVelocity = 0;
     if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
@@ -101,7 +101,7 @@ void Player::updateBallVelocity()  {
 
     XVelocity < 0 ? setWalkingDirection(WALKING_LEFT) : setWalkingDirection(WALKING_RIGHT);
 
-    m_ballVelocity = QPoint(XVelocity, YVelocity);
+    m_playerVelocity = QPoint(XVelocity, YVelocity);
 }
 
 //! \return la direction de marche.

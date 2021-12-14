@@ -11,9 +11,7 @@ debug/resources.o
 debug/gameview.o
 debug/utilities.o
 debug/gamecanvas.o
-debug/walkingman.o
 debug/spritetickhandler.o
-debug/manualwalkinghandler.o
 debug/moc_mainfrm.o
 debug/moc_bouton.o
 debug/moc_gamescene.o
@@ -23,4 +21,3 @@ debug/moc_randommovetickhandler.o
 debug/moc_sprite.o
 debug/moc_gamecore.o
 debug/moc_gamecanvas.o
-debug/moc_walkingman.o

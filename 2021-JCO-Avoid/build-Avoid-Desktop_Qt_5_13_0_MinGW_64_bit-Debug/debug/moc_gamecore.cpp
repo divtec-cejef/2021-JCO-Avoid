@@ -33,17 +33,17 @@ struct qt_meta_stringdata_GameCore_t {
 static const qt_meta_stringdata_GameCore_t qt_meta_stringdata_GameCore = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "GameCore"
-QT_MOC_LITERAL(1, 9, 16), // "notifyMouseMoved"
+QT_MOC_LITERAL(1, 9, 16), // "notifyKeyPressed"
 QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 16), // "newMousePosition"
-QT_MOC_LITERAL(4, 44, 24), // "notifyMouseButtonPressed"
-QT_MOC_LITERAL(5, 69, 13), // "mousePosition"
-QT_MOC_LITERAL(6, 83, 16), // "Qt::MouseButtons"
-QT_MOC_LITERAL(7, 100, 7), // "buttons"
-QT_MOC_LITERAL(8, 108, 25), // "notifyMouseButtonReleased"
-QT_MOC_LITERAL(9, 134, 16), // "notifyKeyPressed"
-QT_MOC_LITERAL(10, 151, 3), // "key"
-QT_MOC_LITERAL(11, 155, 17), // "notifyKeyReleased"
+QT_MOC_LITERAL(3, 27, 3), // "key"
+QT_MOC_LITERAL(4, 31, 17), // "notifyKeyReleased"
+QT_MOC_LITERAL(5, 49, 16), // "notifyMouseMoved"
+QT_MOC_LITERAL(6, 66, 16), // "newMousePosition"
+QT_MOC_LITERAL(7, 83, 24), // "notifyMouseButtonPressed"
+QT_MOC_LITERAL(8, 108, 13), // "mousePosition"
+QT_MOC_LITERAL(9, 122, 16), // "Qt::MouseButtons"
+QT_MOC_LITERAL(10, 139, 7), // "buttons"
+QT_MOC_LITERAL(11, 147, 25), // "notifyMouseButtonReleased"
 QT_MOC_LITERAL(12, 173, 13), // "setupObstacle"
 QT_MOC_LITERAL(13, 187, 12), // "rotateScreen"
 QT_MOC_LITERAL(14, 200, 13), // "upProgressBar"
@@ -53,11 +53,11 @@ QT_MOC_LITERAL(17, 240, 8), // "stopGame"
 QT_MOC_LITERAL(18, 249, 11) // "restartGame"
 
     },
-    "GameCore\0notifyMouseMoved\0\0newMousePosition\0"
-    "notifyMouseButtonPressed\0mousePosition\0"
-    "Qt::MouseButtons\0buttons\0"
-    "notifyMouseButtonReleased\0notifyKeyPressed\0"
-    "key\0notifyKeyReleased\0setupObstacle\0"
+    "GameCore\0notifyKeyPressed\0\0key\0"
+    "notifyKeyReleased\0notifyMouseMoved\0"
+    "newMousePosition\0notifyMouseButtonPressed\0"
+    "mousePosition\0Qt::MouseButtons\0buttons\0"
+    "notifyMouseButtonReleased\0setupObstacle\0"
     "rotateScreen\0upProgressBar\0loseEndurance\0"
     "timerPartie\0stopGame\0restartGame"
 };
@@ -78,10 +78,10 @@ static const uint qt_meta_data_GameCore[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   74,    2, 0x06 /* Public */,
-       4,    2,   77,    2, 0x06 /* Public */,
-       8,    2,   82,    2, 0x06 /* Public */,
-       9,    1,   87,    2, 0x06 /* Public */,
-      11,    1,   90,    2, 0x06 /* Public */,
+       4,    1,   77,    2, 0x06 /* Public */,
+       5,    1,   80,    2, 0x06 /* Public */,
+       7,    2,   83,    2, 0x06 /* Public */,
+      11,    2,   88,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
       12,    0,   93,    2, 0x08 /* Private */,
@@ -93,11 +93,11 @@ static const uint qt_meta_data_GameCore[] = {
       18,    0,   99,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QPointF,    3,
-    QMetaType::Void, QMetaType::QPointF, 0x80000000 | 6,    5,    7,
-    QMetaType::Void, QMetaType::QPointF, 0x80000000 | 6,    5,    7,
-    QMetaType::Void, QMetaType::Int,   10,
-    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::QPointF,    6,
+    QMetaType::Void, QMetaType::QPointF, 0x80000000 | 9,    8,   10,
+    QMetaType::Void, QMetaType::QPointF, 0x80000000 | 9,    8,   10,
 
  // slots: parameters
     QMetaType::Void,
@@ -117,11 +117,11 @@ void GameCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<GameCore *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->notifyMouseMoved((*reinterpret_cast< QPointF(*)>(_a[1]))); break;
-        case 1: _t->notifyMouseButtonPressed((*reinterpret_cast< QPointF(*)>(_a[1])),(*reinterpret_cast< Qt::MouseButtons(*)>(_a[2]))); break;
-        case 2: _t->notifyMouseButtonReleased((*reinterpret_cast< QPointF(*)>(_a[1])),(*reinterpret_cast< Qt::MouseButtons(*)>(_a[2]))); break;
-        case 3: _t->notifyKeyPressed((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->notifyKeyReleased((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->notifyKeyPressed((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->notifyKeyReleased((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->notifyMouseMoved((*reinterpret_cast< QPointF(*)>(_a[1]))); break;
+        case 3: _t->notifyMouseButtonPressed((*reinterpret_cast< QPointF(*)>(_a[1])),(*reinterpret_cast< Qt::MouseButtons(*)>(_a[2]))); break;
+        case 4: _t->notifyMouseButtonReleased((*reinterpret_cast< QPointF(*)>(_a[1])),(*reinterpret_cast< Qt::MouseButtons(*)>(_a[2]))); break;
         case 5: _t->setupObstacle(); break;
         case 6: _t->rotateScreen(); break;
         case 7: _t->upProgressBar(); break;
@@ -134,36 +134,36 @@ void GameCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (GameCore::*)(QPointF );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyMouseMoved)) {
-                *result = 0;
-                return;
-            }
-        }
-        {
-            using _t = void (GameCore::*)(QPointF , Qt::MouseButtons );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyMouseButtonPressed)) {
-                *result = 1;
-                return;
-            }
-        }
-        {
-            using _t = void (GameCore::*)(QPointF , Qt::MouseButtons );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyMouseButtonReleased)) {
-                *result = 2;
-                return;
-            }
-        }
-        {
             using _t = void (GameCore::*)(int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyKeyPressed)) {
-                *result = 3;
+                *result = 0;
                 return;
             }
         }
         {
             using _t = void (GameCore::*)(int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyKeyReleased)) {
+                *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (GameCore::*)(QPointF );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyMouseMoved)) {
+                *result = 2;
+                return;
+            }
+        }
+        {
+            using _t = void (GameCore::*)(QPointF , Qt::MouseButtons );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyMouseButtonPressed)) {
+                *result = 3;
+                return;
+            }
+        }
+        {
+            using _t = void (GameCore::*)(QPointF , Qt::MouseButtons );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&GameCore::notifyMouseButtonReleased)) {
                 *result = 4;
                 return;
             }
@@ -212,37 +212,37 @@ int GameCore::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void GameCore::notifyMouseMoved(QPointF _t1)
+void GameCore::notifyKeyPressed(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void GameCore::notifyMouseButtonPressed(QPointF _t1, Qt::MouseButtons _t2)
+void GameCore::notifyKeyReleased(int _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
-void GameCore::notifyMouseButtonReleased(QPointF _t1, Qt::MouseButtons _t2)
+void GameCore::notifyMouseMoved(QPointF _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
-void GameCore::notifyKeyPressed(int _t1)
+void GameCore::notifyMouseButtonPressed(QPointF _t1, Qt::MouseButtons _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
-void GameCore::notifyKeyReleased(int _t1)
+void GameCore::notifyMouseButtonReleased(QPointF _t1, Qt::MouseButtons _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_WARNING_POP

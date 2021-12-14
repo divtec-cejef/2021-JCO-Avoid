@@ -59,7 +59,7 @@ signals:
 
 
 private:
-    void updateBallVelocity();
+    void updatePlayerVelocity();
     void configureAnimation();
 
 
@@ -69,7 +69,7 @@ private:
     int m_walkingSpeed;
 
 
-    QPointF m_ballVelocity;
+    QPointF m_playerVelocity;
     bool m_keyUpPressed;
     bool m_keyDownPressed;
     bool m_keyLeftPressed;

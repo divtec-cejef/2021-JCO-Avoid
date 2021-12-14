@@ -31,5 +31,4 @@ namespace GameFramework {
         qApp->restoreOverrideCursor();
     }
 
-
 }

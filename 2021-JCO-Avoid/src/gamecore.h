@@ -151,8 +151,6 @@ private:
 private slots:
     void setupObstacle();
     void rotateScreen();
-    void upProgressBar();
-    void loseEndurance();
     void timerPartie();
 
 public slots:

@@ -65,7 +65,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), m_progressBar, SLOT(m_progressBar->loseEndurance()));
+
 
 
     //Démarre le timer de la partie
@@ -86,8 +86,9 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     std::srand(std::time(nullptr));
 
     // Instancier et initialiser les sprite ici :
-    setupPlayer();
     setupProgressBar();
+    connect(&m_tickTimerLoseEndurance, &QTimer::timeout, m_progressBar, &progressBar::loseEndurance);
+    setupPlayer();
     setupTimerPartie();
     startSpawnObstacleTimer();
     startRetournerEcran();
@@ -209,23 +210,6 @@ void GameCore::setupProgressBar() {
     m_progressBar->setProgressBarProcent(100);
 }
 
-/**
- * Met la barre a 100%
- * @brief GameCore::fillProgressBar
- */
-void GameCore::upProgressBar() {
-    //setProgressBarPercentage(getProgressBarPercentage() + 30);
-    //m_progressBar->setProgressBarProcent(m_progressBar->getProgressbarProcent() + 30);
-}
-
-/**
- * Baisse la progression de la barre
- * @brief GameCore::loseEndurance
- */
-void GameCore::loseEndurance() {
-    //setProgressBarPercentage(getProgressBarPercentage()-0.5);
-    //m_progressBar->setProgressBarProcent(m_progressBar->getProgressbarProcent() -0.5);
-}
 
 /**
   Met à jour la progression de la barre
@@ -336,7 +320,7 @@ void GameCore::setupPlayer() {
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
 
-    connect(pPlayer, SIGNAL(onBonusHit()), m_progressBar, SLOT(m_progressBar->upEndurance()));
+    connect(pPlayer, &Player::onBonusHit, m_progressBar, &progressBar::upEndurance);
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
 
     m_pPlayer = pPlayer;

@@ -121,7 +121,7 @@ private:
     Sprite* pObstacle;
 
     Player* pPlayer;
-    Bouton* pBouton;
+    Sprite* pBouton;
     Bouton* pBoutonVise;
     MainFrm* pMainFrm;
 

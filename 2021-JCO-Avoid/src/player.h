@@ -12,7 +12,7 @@
 #include <QGraphicsTransform>
 #include <QList>
 
-//! \brief Classe qui gère la balle bleue.
+//! \brief Classe qui gère le joueur.
 //!
 //! Cette classe démontre les fonctionnalités suivantes :
 //!
@@ -70,8 +70,6 @@ private:
 
 
     QPointF m_playerVelocity;
-    bool m_keyUpPressed;
-    bool m_keyDownPressed;
     bool m_keyLeftPressed;
     bool m_keyRightPressed;
     bool keyPressed = true;

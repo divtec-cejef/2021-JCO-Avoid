@@ -15,8 +15,6 @@ const int PLAYER_VELOCITY = 600; // pixels par seconde
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
 Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "tile19.png", pParent) {
-    m_keyUpPressed    = false;
-    m_keyDownPressed  = false;
     m_keyLeftPressed  = false;
     m_keyRightPressed = false;
     m_playerVelocity = QPointF(0,0);

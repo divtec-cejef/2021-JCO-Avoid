@@ -133,15 +133,12 @@ void GameCore::setupObstacle(){
             pTickHandler = new RandomMoveTickHandler;
             pTickHandler->setDestroyOnCollisionEnabled(true);
             pObstacle->setTickHandler(pTickHandler);
-            //connect(&pTickHandler,SIGNAL(&RandomMoveTickHandler::onplayerDestroyed()),this,SLOT(GameCore::playerDestroyed()));
-            m_pScene->addSpriteToScene(pObstacle);
 
-            //connect(pTickHandler,&RandomMoveTickHandler::onplayerDestroyed() ,this, GameCore::playerDestroyed());
+            m_pScene->addSpriteToScene(pObstacle);
 
             pObstacle->registerForTick();
         }
     }
-
 }
 //!
 //! \brief GameCore::setupBonus
@@ -327,7 +324,8 @@ void GameCore::setupPlayer() {
 }
 
 void GameCore::setupBouton(){
-    pBouton = new Bouton;
+    pBouton = new Sprite(GameFramework::imagesPath() + "replay.png");
+
     pBouton->setPos(m_pScene->width() / 2, m_pScene->height() / 2 + 120);
     pBouton->setScale(0.1);
 
@@ -428,7 +426,7 @@ void GameCore::keyPressed(int key) {
 //! \param key Numéro de la touche (voir les constantes Qt)
 void GameCore::keyReleased(int key) {
     if (key == Qt::Key_Escape) {
-        int quit = 1/0;
+        exit(0);
     }
     emit notifyKeyReleased(key);
 }

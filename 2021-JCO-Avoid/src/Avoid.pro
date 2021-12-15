@@ -17,7 +17,6 @@ TEMPLATE = app
 #DEFINES += DEPLOY # Pour une compilation dans un but de déploiement
 
 SOURCES += main.cpp\
-    bouton.cpp \
     keytickhandler.cpp \
         mainfrm.cpp \
     gamescene.cpp \
@@ -33,7 +32,6 @@ SOURCES += main.cpp\
     spritetickhandler.cpp
 
 HEADERS  += mainfrm.h \
-    bouton.h \
     gamescene.h \
     keytickhandler.h \
     player.h \

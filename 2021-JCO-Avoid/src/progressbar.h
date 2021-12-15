@@ -3,7 +3,11 @@
 
 #include <QObject>
 
-
+/**
+ * @brief classe qui gère le pourcentage de la barre de progression
+ *
+ * Augmente ou diminiue la barre de progression
+ */
 class progressBar : public QObject
 {
 

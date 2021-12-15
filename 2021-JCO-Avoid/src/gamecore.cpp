@@ -32,7 +32,7 @@
 #include "player.h"
 #include "gamescene.h"
 #include "gamecanvas.h"
-#include "randommovetickhandler.h"
+#include "objettickhandler.h"
 #include "resources.h"
 #include "sprite.h"
 #include "utilities.h"
@@ -129,7 +129,7 @@ void GameCore::setupObstacle(){
             // Déplace le sprite aléatoirement, en évitant les collisions.
             // Si une collision à quand-même lieu, le tickhandler se charge
             // de détruire son sprite.
-            pTickHandler = new RandomMoveTickHandler;
+            pTickHandler = new ObjetTickHandler;
             pTickHandler->setDestroyOnCollisionEnabled(true);
             pObstacle->setTickHandler(pTickHandler);
 
@@ -152,7 +152,7 @@ void GameCore::setupBonus(){
 
     //déplace l'obstacle vers le bas
     //détruit l'obstacle lorsqu'il touche le sol
-    RandomMoveTickHandler* pbTickHandler = new RandomMoveTickHandler;
+    ObjetTickHandler* pbTickHandler = new ObjetTickHandler;
     pbTickHandler->setDestroyOnCollisionEnabled(true);
     pBonus->setTickHandler(pbTickHandler);
 
@@ -375,7 +375,6 @@ void GameCore::stopGame(){
  * @brief GameCore::restartGame
  */
 void GameCore::restartGame(){
-    //setProgressBarPercentage(100);
     m_progressBar->setProgressBarProcent(100);
 
     m_pScene->removeSpriteFromScene(m_pPlayer);

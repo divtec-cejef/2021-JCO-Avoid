@@ -18,7 +18,7 @@
 #include <QElapsedTimer>
 
 #include "player.h"
-#include "randommovetickhandler.h"
+#include "objettickhandler.h"
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
 #include "progressbar.h"
@@ -96,7 +96,7 @@ private:
     void gainEndurance();
     void setupBouton();
 
-    RandomMoveTickHandler* pTickHandler;
+    ObjetTickHandler* pTickHandler;
 
     void setupResultat();
 

@@ -1,5 +1,4 @@
 release/main.o
-release/bouton.o
 release/keytickhandler.o
 release/mainfrm.o
 release/gamescene.o
@@ -14,7 +13,6 @@ release/utilities.o
 release/gamecanvas.o
 release/spritetickhandler.o
 release/moc_mainfrm.o
-release/moc_bouton.o
 release/moc_gamescene.o
 release/moc_keytickhandler.o
 release/moc_player.o

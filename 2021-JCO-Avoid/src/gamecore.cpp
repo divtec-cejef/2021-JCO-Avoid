@@ -15,8 +15,8 @@
 #include <chrono>
 #include <thread>
 #include <functional>
-#include<QFontDatabase>
 
+#include<QFontDatabase>
 #include <QDebug>
 #include <QGraphicsBlurEffect>
 #include <QGraphicsScale>
@@ -38,7 +38,6 @@
 #include "utilities.h"
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
-#include "bouton.h"
 #include "progressbar.h"
 
 

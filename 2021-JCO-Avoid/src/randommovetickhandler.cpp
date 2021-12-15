@@ -79,7 +79,7 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
     auto collidingSprites = m_pParentSprite->parentScene()->collidingSprites(nextSpriteRect);
     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
     collidingSprites.removeAll(m_pParentSprite);
-    bool collision = !collidingSprites.isEmpty();
+    //bool collision = !collidingSprites.isEmpty();
     // Si la prochaine position du sprite n'est pas comprise au sein de la scène,
     // ou s’il y a collision, le sprite n’est pas déplacé et change de direction
     if (!m_pParentSprite->parentScene()->isInsideScene(nextSpriteRect))

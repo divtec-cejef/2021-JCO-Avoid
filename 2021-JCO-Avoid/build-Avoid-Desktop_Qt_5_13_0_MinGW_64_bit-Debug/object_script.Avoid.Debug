@@ -1,5 +1,4 @@
 debug/main.o
-debug/bouton.o
 debug/keytickhandler.o
 debug/mainfrm.o
 debug/gamescene.o
@@ -14,7 +13,6 @@ debug/utilities.o
 debug/gamecanvas.o
 debug/spritetickhandler.o
 debug/moc_mainfrm.o
-debug/moc_bouton.o
 debug/moc_gamescene.o
 debug/moc_keytickhandler.o
 debug/moc_player.o

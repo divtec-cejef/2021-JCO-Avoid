@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QPointF>
 #include <iostream>
-#include <chrono>-
+#include <chrono>
 #include <thread>
 #include <functional>
 #include <QTime>
@@ -21,7 +21,6 @@
 #include "randommovetickhandler.h"
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
-#include "bouton.h"
 #include "progressbar.h"
 
 #include<QFontDatabase>
@@ -122,7 +121,6 @@ private:
 
     Player* pPlayer;
     Sprite* pBouton;
-    Bouton* pBoutonVise;
     MainFrm* pMainFrm;
 
     bool keyboardDisabled = false;

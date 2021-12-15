@@ -20,9 +20,9 @@ SOURCES += main.cpp\
     keytickhandler.cpp \
         mainfrm.cpp \
     gamescene.cpp \
+    objettickhandler.cpp \
     player.cpp \
     progressbar.cpp \
-    randommovetickhandler.cpp \
     sprite.cpp \
     gamecore.cpp \
     resources.cpp \
@@ -34,9 +34,9 @@ SOURCES += main.cpp\
 HEADERS  += mainfrm.h \
     gamescene.h \
     keytickhandler.h \
+    objettickhandler.h \
     player.h \
     progressbar.h \
-    randommovetickhandler.h \
     sprite.h \
     gamecore.h \
     resources.h \

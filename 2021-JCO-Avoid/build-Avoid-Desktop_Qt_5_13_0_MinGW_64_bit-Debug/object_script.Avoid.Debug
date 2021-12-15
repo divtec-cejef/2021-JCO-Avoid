@@ -4,6 +4,7 @@ debug/keytickhandler.o
 debug/mainfrm.o
 debug/gamescene.o
 debug/player.o
+debug/progressbar.o
 debug/randommovetickhandler.o
 debug/sprite.o
 debug/gamecore.o
@@ -17,6 +18,7 @@ debug/moc_bouton.o
 debug/moc_gamescene.o
 debug/moc_keytickhandler.o
 debug/moc_player.o
+debug/moc_progressbar.o
 debug/moc_randommovetickhandler.o
 debug/moc_sprite.o
 debug/moc_gamecore.o

@@ -47,6 +47,7 @@ RandomMoveTickHandler::RandomMoveTickHandler(Sprite* pParentSprite) : SpriteTick
     m_tickTimerAugmentationObstacle.setInterval(AUGMENTATION_VITESSE_INTERVAL);
     m_tickTimerAugmentationObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerAugmentationObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
+
     m_tickTimerAugmentationObstacle.start();
     m_pPlayer = new Player;
 
@@ -88,19 +89,6 @@ void RandomMoveTickHandler::tick(long long elapsedTimeInMilliseconds) {
         // (en lui appliquant le vecteur de déplacement)
         m_pParentSprite->setPos(m_pParentSprite->pos() + spriteMovement);
 
-
-    // Si la destruction sur collision est activée, on vérifie si le sprite
-    // est en collision. Si c'est le cas, on le détruit.
-    if (m_destroyOnCollision && !m_pParentSprite->parentScene()->collidingSprites(m_pParentSprite).isEmpty()) {
-        // Il ne faut en aucun cas effacer immédiatement le sprite avec delete, car l'effacement immédiat du
-        // sprite provoque la destruction immédiate de ce handler, alors qu'il est en cours d'exécution. Cela
-        // provoquerait alors un crash.
-        // deleteLater() permet d'efface le sprite plus tard, une fois que le code qui le concerne a été
-        // complètement exécuté.
-
-        //m_pParentSprite->parentScene()->sprites().first()->deleteLater();
-        //emit onplayerDestroyed();
-    }
 }
 
 /**
@@ -119,7 +107,6 @@ void RandomMoveTickHandler::startTimerVitesseObstacle(int tickInterval)  {
 }
 
 void RandomMoveTickHandler::augmentationVitesseObstacle(){
-    qDebug() << s_vitesseObtsacle;
     s_vitesseObtsacle+=0.1;
 }
 

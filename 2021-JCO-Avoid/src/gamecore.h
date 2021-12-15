@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QPointF>
 #include <iostream>
-#include <chrono>
+#include <chrono>-
 #include <thread>
 #include <functional>
 #include <QTime>
@@ -22,6 +22,7 @@
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
 #include "bouton.h"
+#include "progressbar.h"
 
 #include<QFontDatabase>
 class GameCanvas;
@@ -99,6 +100,7 @@ private:
     RandomMoveTickHandler* pTickHandler;
 
     void setupResultat();
+
     double progressBarPercentage = 100;
     QGraphicsRectItem* m_ProgressBarBorder;
     QGraphicsRectItem* m_ProgressBarFill;
@@ -110,6 +112,7 @@ private:
     QString m_textTimer;
     QString m_textResultat = "Voici votre temps : ";
 
+    progressBar* m_progressBar;
 
     Sprite* pSprite;
     Sprite* m_pPlayer;

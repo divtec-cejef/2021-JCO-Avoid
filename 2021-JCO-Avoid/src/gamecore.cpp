@@ -39,12 +39,15 @@
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
 #include "bouton.h"
+#include "progressbar.h"
 
 
 //! Initialise le contrôleur de jeu.
 //! \param pGameCanvas  GameCanvas pour lequel cet objet travaille.
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
+
+    m_progressBar = new progressBar;
 
     //Démarre le timer pour les obstacles
     m_tickTimerObstacle.setSingleShot(false);
@@ -62,7 +65,8 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), this, SLOT(loseEndurance()));
+    connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), m_progressBar, SLOT(m_progressBar->loseEndurance()));
+
 
     //Démarre le timer de la partie
     m_tickTimerPartie.setSingleShot(false);
@@ -201,9 +205,8 @@ void GameCore::setupProgressBar() {
     m_ProgressBarFill = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::transparent), QBrush(Qt::green));
     m_ProgressBarFill->setZValue(1);
 
-    //connect(m_pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
     m_tickTimerLoseEndurance.start();
-    setProgressBarPercentage(100);
+    m_progressBar->setProgressBarProcent(100);
 }
 
 /**
@@ -211,7 +214,8 @@ void GameCore::setupProgressBar() {
  * @brief GameCore::fillProgressBar
  */
 void GameCore::upProgressBar() {
-    setProgressBarPercentage(getProgressBarPercentage() + 30);
+    //setProgressBarPercentage(getProgressBarPercentage() + 30);
+    //m_progressBar->setProgressBarProcent(m_progressBar->getProgressbarProcent() + 30);
 }
 
 /**
@@ -219,7 +223,8 @@ void GameCore::upProgressBar() {
  * @brief GameCore::loseEndurance
  */
 void GameCore::loseEndurance() {
-    setProgressBarPercentage(getProgressBarPercentage()-0.5);
+    //setProgressBarPercentage(getProgressBarPercentage()-0.5);
+    //m_progressBar->setProgressBarProcent(m_progressBar->getProgressbarProcent() -0.5);
 }
 
 /**
@@ -229,41 +234,23 @@ void GameCore::loseEndurance() {
 void GameCore::updateProgressBar() {
 
     if(jeuTermine == true){
-        double newWidth = PROGRESSBAR_WIDTH / 100 * progressBarPercentage;
+        double newWidth = PROGRESSBAR_WIDTH / 100 * m_progressBar->progressBarPercentage;
         double screenXCenter = m_pScene->width() / 2;
         m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
 
-        if (progressBarPercentage > 100/3*2) {
+        if (m_progressBar->progressBarPercentage > 100/3*2) {
             m_ProgressBarFill->setBrush(QBrush(Qt::green));
-        } else if (progressBarPercentage > 100 / 3) {
+        } else if (m_progressBar->progressBarPercentage > 100 / 3) {
             m_ProgressBarFill->setBrush(QBrush(Qt::yellow));
         } else {
             m_ProgressBarFill->setBrush(QBrush(Qt::red));
         }
 
-        if (progressBarPercentage <= 0) {
+        if (m_progressBar->progressBarPercentage <= 0) {
             stopGame();
         }
     }
 
-}
-/**
- * Stop la progresson de la barre si elle dépasse 100 ou 0
- * @brief GameCore::setProgressBarPercentage
- * @param percentage
- */
-void GameCore::setProgressBarPercentage(double percentage) {
-    if (percentage > 100 ) percentage = 100;
-    else if (percentage < 0) percentage = 0;
-    progressBarPercentage = percentage;
-}
-/**
- * donne la progression de la bar d'avancement
- * @brief GameCore::getProgressBarPercentage
- * @return la progression de la bar
- */
-double GameCore::getProgressBarPercentage() {
-    return progressBarPercentage;
 }
 
 /**
@@ -349,7 +336,7 @@ void GameCore::setupPlayer() {
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
 
-    connect(pPlayer, SIGNAL(onBonusHit()), this, SLOT(upProgressBar()));
+    connect(pPlayer, SIGNAL(onBonusHit()), m_progressBar, SLOT(m_progressBar->upEndurance()));
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
 
     m_pPlayer = pPlayer;
@@ -407,7 +394,8 @@ void GameCore::stopGame(){
  * @brief GameCore::restartGame
  */
 void GameCore::restartGame(){
-    setProgressBarPercentage(100);
+    //setProgressBarPercentage(100);
+    m_progressBar->setProgressBarProcent(100);
 
     m_pScene->removeSpriteFromScene(m_pPlayer);
     m_pScene->removeSpriteFromScene(pBouton);

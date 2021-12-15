@@ -10,7 +10,7 @@
 
 #include <QDebug>
 
-const int BALL_VELOCITY = 600; // pixels par seconde
+const int PLAYER_VELOCITY = 600; // pixels par seconde
 
 //! Construit et initialise une balle bleue.
 //! \param pParent  Objet propiétaire de cet objet.
@@ -94,10 +94,8 @@ void Player::onKeyReleased(int key) {
 void Player::updatePlayerVelocity()  {
     int XVelocity = 0;
     int YVelocity = 0;
-    if (m_keyUpPressed)    YVelocity = -BALL_VELOCITY;
-    if (m_keyDownPressed)  YVelocity = BALL_VELOCITY;
-    if (m_keyRightPressed) XVelocity = BALL_VELOCITY;
-    if (m_keyLeftPressed)  XVelocity = -BALL_VELOCITY;
+    if (m_keyRightPressed) XVelocity = PLAYER_VELOCITY;
+    if (m_keyLeftPressed)  XVelocity = -PLAYER_VELOCITY;
 
     XVelocity < 0 ? setWalkingDirection(WALKING_LEFT) : setWalkingDirection(WALKING_RIGHT);
 

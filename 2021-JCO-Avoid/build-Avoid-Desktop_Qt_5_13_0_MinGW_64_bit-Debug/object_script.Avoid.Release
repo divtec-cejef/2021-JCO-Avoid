@@ -4,6 +4,7 @@ release/keytickhandler.o
 release/mainfrm.o
 release/gamescene.o
 release/player.o
+release/progressbar.o
 release/randommovetickhandler.o
 release/sprite.o
 release/gamecore.o
@@ -17,6 +18,7 @@ release/moc_bouton.o
 release/moc_gamescene.o
 release/moc_keytickhandler.o
 release/moc_player.o
+release/moc_progressbar.o
 release/moc_randommovetickhandler.o
 release/moc_sprite.o
 release/moc_gamecore.o

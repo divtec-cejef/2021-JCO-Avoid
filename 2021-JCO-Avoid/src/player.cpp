@@ -19,7 +19,6 @@ Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "t
     m_keyRightPressed = false;
     m_playerVelocity = QPointF(0,0);
 
-
     connect(this, SIGNAL(animationFinished()), this, SLOT(onDeathAnimationEnd()));
 }
 

@@ -85,8 +85,8 @@ static const uint qt_meta_data_GameCore[] = {
       12,    0,   83,    2, 0x08 /* Private */,
       13,    0,   84,    2, 0x08 /* Private */,
       14,    0,   85,    2, 0x08 /* Private */,
-      15,    0,   86,    2, 0x0a /* Public */,
-      16,    0,   87,    2, 0x0a /* Public */,
+      15,    0,   86,    2, 0x08 /* Private */,
+      16,    0,   87,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,

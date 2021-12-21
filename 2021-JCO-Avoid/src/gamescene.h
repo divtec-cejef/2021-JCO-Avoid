@@ -17,7 +17,7 @@ class QPainter;
 
 //! \brief Représente l'espace 2D du jeu.
 //!
-//! GameScene représente une scène utilisée par l'interface graphique pour afficher une espace 2D du jeu dans un objet QGameView.
+//! GameScene représente une scène utilisée par l'interface graphique pour afficher un espace 2D du jeu dans un objet QGameView.
 //!
 //! La taille de l'espace de jeu (appelé une *scene*) peut être spécifié avec les méthodes setWidth() et setHeight().
 //!

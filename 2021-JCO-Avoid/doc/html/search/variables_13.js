@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_5ftype_0',['value_type',['http://qt-project.org/doc/qt-5/qjsonarray.html#value_type-typedef',1,'QJsonArray::value_type()'],['http://qt-project.org/doc/qt-5/qfuture-const-iterator.html#value_type-typedef',1,'QFuture::const_iterator::value_type()'],['http://qt-project.org/doc/qt-5/qlinkedlist.html#value_type-typedef',1,'QLinkedList::value_type()'],['http://qt-project.org/doc/qt-5/qlist.html#value_type-typedef',1,'QList::value_type()'],['http://qt-project.org/doc/qt-5/qset.html#value_type-typedef',1,'QSet::value_type()'],['http://qt-project.org/doc/qt-5/qstring.html#value_type-typedef',1,'QString::value_type()'],['http://qt-project.org/doc/qt-5/qvarlengtharray.html#value_type-typedef',1,'QVarLengthArray::value_type()'],['http://qt-project.org/doc/qt-5/qvector.html#value_type-typedef',1,'QVector::value_type()']]],
-  ['viewitemfeatures_1',['ViewItemFeatures',['http://qt-project.org/doc/qt-5/qstyleoptionviewitem.html#ViewItemFeature-enum',1,'QStyleOptionViewItem']]]
+  ['ui_0',['ui',['../class_main_frm.html#ad86dd2d3242805b9d6a8414001bee63c',1,'MainFrm']]],
+  ['userinputresolutionoptions_1',['UserInputResolutionOptions',['http://qt-project.org/doc/qt-5/qurl.html#UserInputResolutionOption-enum',1,'QUrl']]]
 ];

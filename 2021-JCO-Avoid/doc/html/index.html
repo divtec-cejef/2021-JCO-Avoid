@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GameFramework: Game Framework</title>
+<title>Avoid: Game Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GameFramework<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">Avoid<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Avoid est un jeux où il faut escquiver les plateforme qui tombe avec un personnage qui se déplace latéralement</div>
   </td>
@@ -73,13 +73,13 @@ Introduction</h1>
 <p >Il prend en charge l'organisation des classes nécessaires à l'affichage d'une surface de jeu en deux dimensions.</p>
 <p >En plus de fournir l'architecture de base, ce projet démontre quelques fonctionnalités rudimentaires :</p>
 <ul>
-<li>Déplacement d'un sprite animé (un marcheur) en modifiant sa position x grâce à <a class="elRef" href="http://qt-project.org/doc/qt-5/qpropertyanimation.html">QPropertyAnimation</a> (voir <a class="el" href="class_game_core.html#walking_man">L'homme qui marche</a>).</li>
-<li>Déplacement d'un sprite animé (un marcheur) sur la base d'une cadence (voir <a class="el" href="class_game_core.html#walking_man">L'homme qui marche</a>).</li>
-<li>Déplacement d'un sprite (une balle) avec les touches du clavier (voir <a class="el" href="class_game_core.html#blue_orb">La sphère bleue</a>).</li>
-<li>Déplacement d'un sprite au moyen d'un gestionnaire de mouvement (voir <a class="el" href="class_game_core.html#tennis_ball">La balle qui rebondi</a>).</li>
-<li>Recherche d'un sprite en fonction de son type exact et changement de son opacité (<a class="el" href="class_game_core.html#abbe3d363b3b09d70135eb33b9c4424e3">GameCore::reduceWalkingManOpacity()</a>).</li>
-<li>Destruction d'un sprite (<a class="el" href="class_game_core.html#a1633136eccfea0c76585712fb19c64fd" title="Détruit la balle et affiche un texte qui indique que cela a été fait.">GameCore::removeBall()</a>) et auto-destruction d'un sprite (voir <a class="el" href="class_game_core.html#head_shot">Viser la tête</a>).</li>
-<li>Détection de collisions (voir par exemple <a class="el" href="class_bouncing_sprite_handler.html" title="Classe qui gère le déplacement par rebond d&#39;un sprite.">BouncingSpriteHandler</a> et <a class="el" href="class_manual_walking_handler.html" title="Gestionnaire de déplacement manuel.">ManualWalkingHandler</a>).</li>
+<li>Déplacement d'un sprite animé (un marcheur) en modifiant sa position x grâce à <a class="elRef" href="http://qt-project.org/doc/qt-5/qpropertyanimation.html">QPropertyAnimation</a> (voir walking_man).</li>
+<li>Déplacement d'un sprite animé (un marcheur) sur la base d'une cadence (voir walking_man).</li>
+<li>Déplacement d'un sprite (une balle) avec les touches du clavier (voir blue_orb).</li>
+<li>Déplacement d'un sprite au moyen d'un gestionnaire de mouvement (voir tennis_ball).</li>
+<li>Recherche d'un sprite en fonction de son type exact et changement de son opacité (GameCore::reduceWalkingManOpacity()).</li>
+<li>Destruction d'un sprite (GameCore::removeBall()) et auto-destruction d'un sprite (voir head_shot).</li>
+<li>Détection de collisions (voir par exemple BouncingSpriteHandler et ManualWalkingHandler).</li>
 <li>Utilisation de plusieurs scènes (surfaces de jeu), au moyen de <a class="el" href="class_game_canvas.html#ab207f2189a7a28a7024f8c05e6254451">GameCanvas::createScene()</a> et <a class="el" href="class_game_canvas.html#a326898c390ed700b827c33cf08e25009" title="Change la scène de jeu actuellement affichée.">GameCanvas::setCurrentScene()</a>.</li>
 </ul>
 <p >Ces différentes fonctionnalités sont décrites dans <a class="el" href="class_game_core.html" title="Classe qui gère la logique du jeu.">GameCore</a>.</p>
@@ -166,8 +166,8 @@ Les modes d'affichage</h1>
 </ul>
 <p >Indépendamment de ces modes, deux réglages peuvent également être faits :</p>
 <ul>
-<li>Faire que la surface de jeu affichée se dimensionne automatiquement en fonction de la taille de l'écran (la taille de le scène n'est pas modifiée). Pour cela, ajouter dans <a class="el" href="class_main_frm.html#a2554d892285ba0f95c33a7f6b0089297" title="Construit la fenêtre principale.">MainFrm::MainFrm()</a> la ligne de code <code>ui-&gt;grvGame-&gt;setFitToScreenEnabled(true);</code>.</li>
-<li>Supprimer les marges de l'affichage de la surface de jeu. Pour cela, ajouter dans <a class="el" href="class_main_frm.html#a2554d892285ba0f95c33a7f6b0089297" title="Construit la fenêtre principale.">MainFrm::MainFrm()</a> la ligne de code <code>ui-&gt;verticalLayout-&gt;setContentsMargins(QMargins(0,0,0,0));</code>.</li>
+<li>Faire que la surface de jeu affichée se dimensionne automatiquement en fonction de la taille de l'écran (la taille de le scène n'est pas modifiée). Pour cela, ajouter dans <a class="el" href="class_main_frm.html#ad414fc65fc5592d92e203f57ffc69b25" title="Construit la fenêtre principale.">MainFrm::MainFrm()</a> la ligne de code <code>ui-&gt;grvGame-&gt;setFitToScreenEnabled(true);</code>.</li>
+<li>Supprimer les marges de l'affichage de la surface de jeu. Pour cela, ajouter dans <a class="el" href="class_main_frm.html#ad414fc65fc5592d92e203f57ffc69b25" title="Construit la fenêtre principale.">MainFrm::MainFrm()</a> la ligne de code <code>ui-&gt;verticalLayout-&gt;setContentsMargins(QMargins(0,0,0,0));</code>.</li>
 </ul>
 <h1><a class="anchor" id="utilities"></a>
 Les fonctions utilitaires</h1>
@@ -177,7 +177,7 @@ Les fonctions utilitaires</h1>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 26 Octobre 2021 13:19:37 pour GameFramework par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Généré le Mardi 21 Décembre 2021 09:53:43 pour Avoid par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
 </small></address>
 </body>
 </html>

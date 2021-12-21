@@ -15,7 +15,7 @@
 
 //! \brief Classe qui gère le déplacement vers le bas des sprites
 //!
-//! Le sprite s'occupe seulement de se déplacer vers le bas
+//! Le sprite s'occupe de se déplacer vers le bas et de détecter les collisions
 //!
 //! en cas de collision avec le bord bas de la scène le sprite est détruit
 class ObjetTickHandler : public QObject, public SpriteTickHandler
@@ -40,7 +40,7 @@ private:
 
     bool m_keepTicking;
     QElapsedTimer m_lastUpdateTime;
-    QTimer m_tickTimerAugmentationObstacle;
+    QTimer m_tickTimerAugmentationVitesseObstacle;
 
 private slots:
     void augmentationVitesseObstacle();

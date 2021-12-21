@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GameFramework:  Fichier source de playertickhandler.cpp</title>
+<title>Avoid:  Fichier source de playertickhandler.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GameFramework<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">Avoid<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Avoid est un jeux où il faut escquiver les plateforme qui tombe avec un personnage qui se déplace latéralement</div>
   </td>
@@ -66,71 +66,59 @@ $(function() {
   <div class="headertitle"><div class="title">playertickhandler.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="playertickhandler_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="playertickhandler_8h.html">playertickhandler.h</a>&quot;</span></div>
+<a href="playertickhandler_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;playertickhandler.h&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="sprite_8h.html">sprite.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="gamescene_8h.html">gamescene.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="playertickhandler_8cpp.html#a9173d4f85bd7a9c891bc2eec694ee9a5">    6</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="playertickhandler_8cpp.html#a9173d4f85bd7a9c891bc2eec694ee9a5">PLAYER_SPEED</a> = 200;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_player_tick_handler.html#a46e2352e4f58de4917873690cb2b6c98">    8</a></span><a class="code hl_function" href="class_player_tick_handler.html#a46e2352e4f58de4917873690cb2b6c98">PlayerTickHandler::PlayerTickHandler</a>(<a class="code hl_class" href="class_sprite.html">Sprite</a>* pParentSprite) : <a class="code hl_class" href="class_sprite_tick_handler.html">SpriteTickHandler</a>(pParentSprite)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>PlayerTickHandler::PlayerTickHandler(<a class="code hl_class" href="class_sprite.html">Sprite</a>* pParentSprite) : <a class="code hl_class" href="class_sprite_tick_handler.html">SpriteTickHandler</a>(pParentSprite)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_player_tick_handler.html#a0fcee5401f964210652441a36f8d7dbd">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_player_tick_handler.html#a0fcee5401f964210652441a36f8d7dbd">PlayerTickHandler::init</a>() {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_variable" href="class_player_tick_handler.html#a5d860db2182d09a342bcbdf124589ab8">m_initialPos</a> = <a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>-&gt;<a class="code hl_property" href="class_sprite.html#a310ef946cb04bfaf2074da2e91afd082">pos</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> PlayerTickHandler::init() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    m_initialPos = m_pParentSprite-&gt;pos();</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_player_tick_handler.html#a16e58204d789a59838d87e3d20d9b602">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_player_tick_handler.html#a16e58204d789a59838d87e3d20d9b602">PlayerTickHandler::tick</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> elapsedTimeInMilliseconds) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">double</span> distance = <a class="code hl_variable" href="class_player_tick_handler.html#a4307fd9b5fae4671774c10db943d2e19">m_playerDirection</a> * <a class="code hl_variable" href="playertickhandler_8cpp.html#a9173d4f85bd7a9c891bc2eec694ee9a5">PLAYER_SPEED</a> * elapsedTimeInMilliseconds / 1000.;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> PlayerTickHandler::tick(<span class="keywordtype">long</span> <span class="keywordtype">long</span> elapsedTimeInMilliseconds) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">double</span> distance = m_playerDirection * <a class="code hl_variable" href="playertickhandler_8cpp.html#a9173d4f85bd7a9c891bc2eec694ee9a5">PLAYER_SPEED</a> * elapsedTimeInMilliseconds / 1000.;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> spriteMovement(distance, 0.0);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Détermine la prochaine position du sprite</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qrectf.html">QRectF</a> nextSpriteRect = <a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>-&gt;<a class="code hl_function" href="class_sprite.html#a24c4aba05249876976039fe1ec5e0b43">globalBoundingBox</a>().<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qrectf.html#translated">translated</a>(spriteMovement);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qrectf.html">QRectF</a> nextSpriteRect = m_pParentSprite-&gt;globalBoundingBox().<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qrectf.html#translated">translated</a>(spriteMovement);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Récupère tous les sprites de la scène que toucherait ce sprite à sa prochaine position</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> collidingSprites = <a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>-&gt;<a class="code hl_function" href="class_sprite.html#a62f3d63b0ce906fa1caa71efd847ffec">parentScene</a>()-&gt;<a class="code hl_function" href="class_game_scene.html#a1afbea38eb709b51019dcb1214446dc8">collidingSprites</a>(nextSpriteRect);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> collidingSprites = m_pParentSprite-&gt;parentScene()-&gt;collidingSprites(nextSpriteRect);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    collidingSprites.removeAll(<a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    collidingSprites.removeAll(m_pParentSprite);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> collision = !collidingSprites.isEmpty();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> collision = !collidingSprites.<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qrectf.html#isEmpty">isEmpty</a>();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Si les bords sont atteints ou s’il y a collision : le sprite change de direction</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>-&gt;<a class="code hl_function" href="class_sprite.html#a62f3d63b0ce906fa1caa71efd847ffec">parentScene</a>()-&gt;<a class="code hl_function" href="class_game_scene.html#a2cd089fb5992b2686c7b99989bdd0d45">isInsideScene</a>(nextSpriteRect) ||</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!m_pParentSprite-&gt;parentScene()-&gt;isInsideScene(nextSpriteRect) ||</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        collision)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_variable" href="class_player_tick_handler.html#a4307fd9b5fae4671774c10db943d2e19">m_playerDirection</a> *= -1;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        m_playerDirection *= -1;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>-&gt;<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#setPos">setPos</a>(<a class="code hl_variable" href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">m_pParentSprite</a>-&gt;<a class="code hl_property" href="class_sprite.html#a310ef946cb04bfaf2074da2e91afd082">pos</a>() + spriteMovement);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        m_pParentSprite-&gt;setPos(m_pParentSprite-&gt;pos() + spriteMovement);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
-<div class="ttc" id="aclass_game_scene_html_a1afbea38eb709b51019dcb1214446dc8"><div class="ttname"><a href="class_game_scene.html#a1afbea38eb709b51019dcb1214446dc8">GameScene::collidingSprites</a></div><div class="ttdeci">QList&lt; Sprite * &gt; collidingSprites(const Sprite *pSprite) const</div><div class="ttdef"><b>Definition:</b> <a href="gamescene_8cpp_source.html#l00098">gamescene.cpp:98</a></div></div>
-<div class="ttc" id="aclass_game_scene_html_a2cd089fb5992b2686c7b99989bdd0d45"><div class="ttname"><a href="class_game_scene.html#a2cd089fb5992b2686c7b99989bdd0d45">GameScene::isInsideScene</a></div><div class="ttdeci">bool isInsideScene(const QPointF &amp;rPosition) const</div><div class="ttdef"><b>Definition:</b> <a href="gamescene_8cpp_source.html#l00228">gamescene.cpp:228</a></div></div>
-<div class="ttc" id="aclass_player_tick_handler_html_a0fcee5401f964210652441a36f8d7dbd"><div class="ttname"><a href="class_player_tick_handler.html#a0fcee5401f964210652441a36f8d7dbd">PlayerTickHandler::init</a></div><div class="ttdeci">virtual void init()</div><div class="ttdef"><b>Definition:</b> <a href="playertickhandler_8cpp_source.html#l00013">playertickhandler.cpp:13</a></div></div>
-<div class="ttc" id="aclass_player_tick_handler_html_a16e58204d789a59838d87e3d20d9b602"><div class="ttname"><a href="class_player_tick_handler.html#a16e58204d789a59838d87e3d20d9b602">PlayerTickHandler::tick</a></div><div class="ttdeci">virtual void tick(long long elapsedTimeInMilliseconds)</div><div class="ttdef"><b>Definition:</b> <a href="playertickhandler_8cpp_source.html#l00017">playertickhandler.cpp:17</a></div></div>
-<div class="ttc" id="aclass_player_tick_handler_html_a4307fd9b5fae4671774c10db943d2e19"><div class="ttname"><a href="class_player_tick_handler.html#a4307fd9b5fae4671774c10db943d2e19">PlayerTickHandler::m_playerDirection</a></div><div class="ttdeci">int m_playerDirection</div><div class="ttdef"><b>Definition:</b> <a href="playertickhandler_8h_source.html#l00016">playertickhandler.h:16</a></div></div>
-<div class="ttc" id="aclass_player_tick_handler_html_a46e2352e4f58de4917873690cb2b6c98"><div class="ttname"><a href="class_player_tick_handler.html#a46e2352e4f58de4917873690cb2b6c98">PlayerTickHandler::PlayerTickHandler</a></div><div class="ttdeci">PlayerTickHandler(Sprite *pParentSprite=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="playertickhandler_8cpp_source.html#l00008">playertickhandler.cpp:8</a></div></div>
-<div class="ttc" id="aclass_player_tick_handler_html_a5d860db2182d09a342bcbdf124589ab8"><div class="ttname"><a href="class_player_tick_handler.html#a5d860db2182d09a342bcbdf124589ab8">PlayerTickHandler::m_initialPos</a></div><div class="ttdeci">QPointF m_initialPos</div><div class="ttdef"><b>Definition:</b> <a href="playertickhandler_8h_source.html#l00017">playertickhandler.h:17</a></div></div>
 <div class="ttc" id="aclass_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdoc">Classe qui représente un élément d'animation graphique 2D.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00090">sprite.h:91</a></div></div>
-<div class="ttc" id="aclass_sprite_html_a24c4aba05249876976039fe1ec5e0b43"><div class="ttname"><a href="class_sprite.html#a24c4aba05249876976039fe1ec5e0b43">Sprite::globalBoundingBox</a></div><div class="ttdeci">QRectF globalBoundingBox() const</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00129">sprite.h:129</a></div></div>
-<div class="ttc" id="aclass_sprite_html_a310ef946cb04bfaf2074da2e91afd082"><div class="ttname"><a href="class_sprite.html#a310ef946cb04bfaf2074da2e91afd082">Sprite::pos</a></div><div class="ttdeci">QPointF pos</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00001">sprite.h:96</a></div></div>
-<div class="ttc" id="aclass_sprite_html_a62f3d63b0ce906fa1caa71efd847ffec"><div class="ttname"><a href="class_sprite.html#a62f3d63b0ce906fa1caa71efd847ffec">Sprite::parentScene</a></div><div class="ttdeci">GameScene * parentScene() const</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8cpp_source.html#l00243">sprite.cpp:243</a></div></div>
 <div class="ttc" id="aclass_sprite_tick_handler_html"><div class="ttname"><a href="class_sprite_tick_handler.html">SpriteTickHandler</a></div><div class="ttdoc">Classe abstraite qui représente un gestionnaire de tick pour un sprite.</div><div class="ttdef"><b>Definition:</b> <a href="spritetickhandler_8h_source.html#l00024">spritetickhandler.h:25</a></div></div>
-<div class="ttc" id="aclass_sprite_tick_handler_html_a4d7b77faf3fc09ca63767f5cb1afcc90"><div class="ttname"><a href="class_sprite_tick_handler.html#a4d7b77faf3fc09ca63767f5cb1afcc90">SpriteTickHandler::m_pParentSprite</a></div><div class="ttdeci">Sprite * m_pParentSprite</div><div class="ttdef"><b>Definition:</b> <a href="spritetickhandler_8h_source.html#l00037">spritetickhandler.h:37</a></div></div>
 <div class="ttc" id="agamescene_8h_html"><div class="ttname"><a href="gamescene_8h.html">gamescene.h</a></div><div class="ttdoc">Déclaration de la classe GameScene.</div></div>
 <div class="ttc" id="aplayertickhandler_8cpp_html_a9173d4f85bd7a9c891bc2eec694ee9a5"><div class="ttname"><a href="playertickhandler_8cpp.html#a9173d4f85bd7a9c891bc2eec694ee9a5">PLAYER_SPEED</a></div><div class="ttdeci">const int PLAYER_SPEED</div><div class="ttdef"><b>Definition:</b> <a href="playertickhandler_8cpp_source.html#l00006">playertickhandler.cpp:6</a></div></div>
-<div class="ttc" id="aplayertickhandler_8h_html"><div class="ttname"><a href="playertickhandler_8h.html">playertickhandler.h</a></div></div>
-<div class="ttc" id="aqgraphicsitem_html_setPos"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#setPos">QGraphicsItem::setPos</a></div><div class="ttdeci">void setPos(const QPointF &amp;pos)</div></div>
 <div class="ttc" id="aqpointf_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a></div></div>
 <div class="ttc" id="aqrectf_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qrectf.html">QRectF</a></div></div>
+<div class="ttc" id="aqrectf_html_isEmpty"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qrectf.html#isEmpty">QRectF::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div></div>
 <div class="ttc" id="aqrectf_html_translated"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qrectf.html#translated">QRectF::translated</a></div><div class="ttdeci">QRectF translated(qreal dx, qreal dy) const</div></div>
 <div class="ttc" id="asprite_8h_html"><div class="ttname"><a href="sprite_8h.html">sprite.h</a></div><div class="ttdoc">Déclaration de la classe Sprite.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 26 Octobre 2021 13:19:35 pour GameFramework par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Généré le Mardi 21 Décembre 2021 09:53:37 pour Avoid par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
 </small></address>
 </body>
 </html>

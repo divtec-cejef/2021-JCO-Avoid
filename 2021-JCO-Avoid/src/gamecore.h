@@ -16,6 +16,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QElapsedTimer>
+#include<QFontDatabase>
 
 #include "player.h"
 #include "objettickhandler.h"
@@ -23,7 +24,6 @@
 #include "ui_mainfrm.h"
 #include "progressbar.h"
 
-#include<QFontDatabase>
 class GameCanvas;
 class GameScene;
 class Sprite;
@@ -35,14 +35,12 @@ class Sprite;
 class GameCore : public QObject
 {
     Q_OBJECT
+
 public:
     enum { KEEP_PREVIOUS_TICK_INTERVAL = -1  };
 
     explicit GameCore(GameCanvas* pGameCanvas, QObject *parent = nullptr);
     ~GameCore();
-
-    void setProgressBarPercentage(double percentage);
-    double getProgressBarPercentage();
 
     void keyPressed(int key);
     void keyReleased(int key);
@@ -50,21 +48,6 @@ public:
     void mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons);
     void mouseMoved(QPointF newMousePosition);
     void mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons);
-
-
-    void startSpawnObstacleTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
-    void startRetournerEcran(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
-    void startGameTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
-
-    void startTimerPartie(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
-
-    const int SPAWN_INTERVAL = 170;
-    const int RETOURNEMENT_INTERVAL = 10000;
-    const int LOSE_ENDURANCE_INTERVAL = 100;
-    const int TIMER_BEFORE_START = 3000;
-
-    const int PROGRESSBAR_WIDTH = 500;
-    const int ACTUALISATION_TEMPS = 100;
 
     void tick(long long elapsedTimeInMilliseconds);
 
@@ -78,53 +61,42 @@ signals:
 
 private:
 
-    const int SCENE_WIDTH = 1920;
+    void startSpawnObstacleTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
+    void startRetournerEcran(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
+    void startGameTimer(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
+    void startTimerPartie(int tickInterval = KEEP_PREVIOUS_TICK_INTERVAL);
 
-    void deleteAllSprite();
+    const int SPAWN_INTERVAL = 170;
+    const int RETOURNEMENT_INTERVAL = 10000;
+    const int LOSE_ENDURANCE_INTERVAL = 100;
+    const int PROGRESSBAR_WIDTH = 500;
+    const int ACTUALISATION_TEMPS = 100;
+    const int APPARITION_BONUS = 10;
+
+    const int SCENE_WIDTH = 1920;
+    const int LARGEUR_MINIMUM = - SCENE_WIDTH / 50;
+    const int LARGEUR_MAX = SCENE_WIDTH - SCENE_WIDTH / 50;
+
     void setupPlayer();
     void setupTimerPartie();
     void setupWalkingMen();
-    void configureAnimation();
     void setupBonus();
-    void btnAppuye();
-    void onSpriteDestroyed(QObject* pSprite);
-    GameCanvas* m_pGameCanvas;
-    GameScene* m_pScene;
-
     void setupProgressBar();
-    void updateProgressBar();
-    void gainEndurance();
     void setupBouton();
-
-    ObjetTickHandler* pTickHandler;
-
     void setupResultat();
 
-    double progressBarPercentage = 100;
-    QGraphicsRectItem* m_ProgressBarBorder;
-    QGraphicsRectItem* m_ProgressBarFill;
+    void deleteAllSprite();
+    void configureAnimation();
+    void btnAppuye();
+    void onSpriteDestroyed(QObject* pSprite);
+    void updateProgressBar();
+    void gainEndurance();
 
-    QGraphicsSimpleTextItem* m_objetTimer;
-    QGraphicsSimpleTextItem* m_objetResultat;
-    double tempsPartie = 0;
-
-    QString m_textTimer;
-    QString m_textResultat = "Voici votre temps : ";
-
-    progressBar* m_progressBar;
-
-    Sprite* pSprite;
-    Sprite* m_pPlayer;
-    Sprite* m_pAnimMort;
-    Sprite* pBonus;
-    Sprite* pObstacle;
-
-    Player* pPlayer;
-    Sprite* pBouton;
+    GameCanvas* m_pGameCanvas;
+    GameScene* m_pScene;
     MainFrm* pMainFrm;
 
-    bool keyboardDisabled = false;
-    bool jeuTermine = true;
+    ObjetTickHandler* pTickHandler;
 
     QTimer m_tickTimerObstacle;
     QTimer m_tickTimerRetournement;
@@ -132,29 +104,43 @@ private:
     QTimer m_tickTimerLoseEndurance;
     QTimer m_tickTimerPartie;
 
+    Sprite* pSprite;
+    Sprite* m_pPlayer;
+    Sprite* m_pAnimMort;
+    Sprite* pBonus;
+    Sprite* pObstacle;
+    Sprite* pBouton;
+
+    Player* pPlayer;
+
+    progressBar* m_progressBar;
+
+    QGraphicsRectItem* m_ProgressBarBorder;
+    QGraphicsRectItem* m_ProgressBarFill;
+    QGraphicsSimpleTextItem* m_objetTimer;
+    QGraphicsSimpleTextItem* m_objetResultat;
+
+    QString m_textTimer;
+    QString m_textResultat = "Voici votre temps : ";
+
+    bool keyboardDisabled = false;
+    bool jeuTermine = true;
     bool m_keepTicking;
+
     int nombreObstacle = 0;
     int nbGen;
     int nbGenObstacle;
 
-    Ui::MainFrm *ui;
+    double tempsPartie = 0;
 
     QElapsedTimer m_lastUpdateTime;
-
-    const int LARGEUR_MINIMUM = - SCENE_WIDTH / 50;
-    const int LARGEUR_MAX = SCENE_WIDTH - SCENE_WIDTH / 50;
-    const int APPARITION_BONUS = 10;
-
 
 private slots:
     void setupObstacle();
     void rotateScreen();
     void timerPartie();
-
-public slots:
     void stopGame();
     void restartGame();
-
 };
 
 

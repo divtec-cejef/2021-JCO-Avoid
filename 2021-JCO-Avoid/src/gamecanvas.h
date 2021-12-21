@@ -49,7 +49,9 @@ class GameCanvas : public QObject
 {
     Q_OBJECT
 public:
-    enum { KEEP_PREVIOUS_TICK_INTERVAL = -1  };
+    enum {
+        KEEP_PREVIOUS_TICK_INTERVAL = -1
+    };
 
     explicit GameCanvas(GameView* pView, QObject* pParent = nullptr);
     ~GameCanvas();

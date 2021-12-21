@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sprite_5ftype_5fkey_0',['SPRITE_TYPE_KEY',['../gamecore_8cpp.html#ad4de2fb9bc41f6d43213ddbf6761d89aa77bf746b5afce7e6850fbe763f7d4518',1,'gamecore.cpp']]],
-  ['spriteitemtype_1',['SpriteItemType',['../class_sprite.html#a61d6eda483981d43f257dc1c6ab38f46a75dfef17b8e0cd586a855b94b25ee67c',1,'Sprite']]]
+  ['walking_5fleft_0',['WALKING_LEFT',['../class_player.html#a5c499323dc2c6eb8532aa03a0b70d207adc7a09c230f161408feecb35b7d1cda1',1,'Player']]],
+  ['walking_5fright_1',['WALKING_RIGHT',['../class_player.html#a5c499323dc2c6eb8532aa03a0b70d207a115d520bace63c66f1f79f470261be3e',1,'Player']]]
 ];

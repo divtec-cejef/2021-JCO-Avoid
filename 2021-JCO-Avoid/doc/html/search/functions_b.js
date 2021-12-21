@@ -126,8 +126,9 @@ var searchData=
   ['longmonthname_123',['longMonthName',['http://qt-project.org/doc/qt-5/qdate.html#longMonthName',1,'QDate']]],
   ['lookat_124',['lookAt',['http://qt-project.org/doc/qt-5/qmatrix4x4.html#lookAt',1,'QMatrix4x4']]],
   ['loopcount_125',['loopCount',['http://qt-project.org/doc/qt-5/qabstractanimation.html#loopCount-prop',1,'QAbstractAnimation::loopCount()'],['http://qt-project.org/doc/qt-5/qtimeline.html#loopCount-prop',1,'QTimeLine::loopCount()'],['http://qt-project.org/doc/qt-5/qimageiohandler.html#loopCount',1,'QImageIOHandler::loopCount()'],['http://qt-project.org/doc/qt-5/qimagereader.html#loopCount',1,'QImageReader::loopCount()'],['http://qt-project.org/doc/qt-5/qmovie.html#loopCount',1,'QMovie::loopCount()']]],
-  ['lostfocus_126',['lostFocus',['http://qt-project.org/doc/qt-5/qfocusevent.html#lostFocus',1,'QFocusEvent']]],
-  ['lower_127',['lower',['http://qt-project.org/doc/qt-5/qwindow.html#lower',1,'QWindow::lower()'],['http://qt-project.org/doc/qt-5/qwidget.html#lower',1,'QWidget::lower()']]],
-  ['lowerbound_128',['lowerBound',['http://qt-project.org/doc/qt-5/qmap.html#lowerBound',1,'QMap::lowerBound(const Key &amp;key)'],['http://qt-project.org/doc/qt-5/qmap.html#lowerBound-2',1,'QMap::lowerBound(const Key &amp;key) const']]],
-  ['lowsurrogate_129',['lowSurrogate',['http://qt-project.org/doc/qt-5/qchar.html#lowSurrogate',1,'QChar']]]
+  ['loseendurance_126',['loseEndurance',['../classprogress_bar.html#aaaa72de5b3c839b65665330f0a93c5fa',1,'progressBar']]],
+  ['lostfocus_127',['lostFocus',['http://qt-project.org/doc/qt-5/qfocusevent.html#lostFocus',1,'QFocusEvent']]],
+  ['lower_128',['lower',['http://qt-project.org/doc/qt-5/qwindow.html#lower',1,'QWindow::lower()'],['http://qt-project.org/doc/qt-5/qwidget.html#lower',1,'QWidget::lower()']]],
+  ['lowerbound_129',['lowerBound',['http://qt-project.org/doc/qt-5/qmap.html#lowerBound',1,'QMap::lowerBound(const Key &amp;key)'],['http://qt-project.org/doc/qt-5/qmap.html#lowerBound-2',1,'QMap::lowerBound(const Key &amp;key) const']]],
+  ['lowsurrogate_130',['lowSurrogate',['http://qt-project.org/doc/qt-5/qchar.html#lowSurrogate',1,'QChar']]]
 ];

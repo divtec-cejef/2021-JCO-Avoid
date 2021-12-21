@@ -214,19 +214,19 @@ void GameCore::setupProgressBar() {
 void GameCore::updateProgressBar() {
 
     if(jeuTermine == true){
-        double newWidth = PROGRESSBAR_WIDTH / 100 * m_progressBar->progressBarPercentage;
+        double newWidth = PROGRESSBAR_WIDTH / 100 * m_progressBar->getProgressbarProcent();
         double screenXCenter = m_pScene->width() / 2;
         m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
 
-        if (m_progressBar->progressBarPercentage > 100/3*2) {
+        if (m_progressBar->getProgressbarProcent() > 100/3*2) {
             m_ProgressBarFill->setBrush(QBrush(Qt::green));
-        } else if (m_progressBar->progressBarPercentage > 100 / 3) {
+        } else if (m_progressBar->getProgressbarProcent() > 100 / 3) {
             m_ProgressBarFill->setBrush(QBrush(Qt::yellow));
         } else {
             m_ProgressBarFill->setBrush(QBrush(Qt::red));
         }
 
-        if (m_progressBar->progressBarPercentage <= 0) {
+        if (m_progressBar->getProgressbarProcent() <= 0) {
             stopGame();
         }
     }

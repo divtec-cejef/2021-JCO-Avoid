@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GameFramework:  Fichier source de spinningpinwheel.cpp</title>
+<title>Avoid:  Fichier source de spinningpinwheel.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GameFramework<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">Avoid<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Avoid est un jeux où il faut escquiver les plateforme qui tombe avec un personnage qui se déplace latéralement</div>
   </td>
@@ -67,7 +67,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="spinningpinwheel_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="spinningpinwheel_8h.html">spinningpinwheel.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;spinningpinwheel.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="resources_8h.html">resources.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
@@ -78,21 +78,21 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">   15</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a> = 0.5F;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_spinning_pinwheel.html#a2cb4407ce9722f010e32672a23c26de5">   20</a></span><a class="code hl_function" href="class_spinning_pinwheel.html#a2cb4407ce9722f010e32672a23c26de5">SpinningPinwheel::SpinningPinwheel</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a>* pParent): <a class="code hl_class" href="class_sprite.html">Sprite</a>(pParent) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_spinning_pinwheel.html#a4ed6badc5fd730e91ff225b127b52912">configureAnimation</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>SpinningPinwheel::SpinningPinwheel(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a>* pParent): <a class="code hl_class" href="class_sprite.html">Sprite</a>(pParent) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    configureAnimation();</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// Calcul du décalage par rapport aux coordonnées de la souris pour que</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// le centre de la roue se trouve sous le pointeur.</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="class_spinning_pinwheel.html#a936c60e5daa2f071c5774db4f02ddd82">m_wheelShifting</a> = <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a>(<a class="code hl_variable" href="spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb">FRAME_WIDTH</a> * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a> / 2.,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    m_wheelShifting = <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a>(<a class="code hl_variable" href="spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb">FRAME_WIDTH</a> * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a> / 2.,</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                              <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a51f854cccc79cb38663ab9df81542fa8">FRAME_HEIGHT</a> * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a> / 2.);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_spinning_pinwheel.html#af000eb49e02fd3f276e9077cca30f078">   30</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_spinning_pinwheel.html#af000eb49e02fd3f276e9077cca30f078">SpinningPinwheel::onMouseMove</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> newMousePosition) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#isVisible">isVisible</a>())</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        this-&gt;<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#setPos">setPos</a>(newMousePosition - <a class="code hl_variable" href="class_spinning_pinwheel.html#a936c60e5daa2f071c5774db4f02ddd82">m_wheelShifting</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> SpinningPinwheel::onMouseMove(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> newMousePosition) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (this-&gt;isVisible())</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        this-&gt;setPos(newMousePosition - m_wheelShifting);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_spinning_pinwheel.html#a4ed6badc5fd730e91ff225b127b52912">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_spinning_pinwheel.html#a4ed6badc5fd730e91ff225b127b52912">SpinningPinwheel::configureAnimation</a>() {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> SpinningPinwheel::configureAnimation() {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Chargement de la spritesheet</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qimage.html">QImage</a> spriteSheet(<a class="code hl_function" href="namespace_game_framework.html#ad9258f3ab92cd03e443344a86166140a">GameFramework::imagesPath</a>() + <span class="stringliteral">&quot;spinningwheel.png&quot;</span>);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
@@ -102,47 +102,35 @@ $(function() {
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                                         (frameIndex / <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a5a453206c2b942b1b430a91fcc211520">COLUMN_COUNT</a>) * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a51f854cccc79cb38663ab9df81542fa8">FRAME_HEIGHT</a>,</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                                         <a class="code hl_variable" href="spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb">FRAME_WIDTH</a>, <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a51f854cccc79cb38663ab9df81542fa8">FRAME_HEIGHT</a>);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        this-&gt;<a class="code hl_function" href="class_sprite.html#ad382222eee275aa4bf98bdbeb6b0fc66">addAnimationFrame</a>(<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qpixmap.html#fromImage">QPixmap::fromImage</a>(sprite.<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qimage.html#scaled-2">scaled</a>(<a class="code hl_variable" href="spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb">FRAME_WIDTH</a> * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        this-&gt;addAnimationFrame(<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qpixmap.html#fromImage">QPixmap::fromImage</a>(sprite.<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qimage.html#scaled-2">scaled</a>(<a class="code hl_variable" href="spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb">FRAME_WIDTH</a> * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a>,</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                                                 <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a51f854cccc79cb38663ab9df81542fa8">FRAME_HEIGHT</a> * <a class="code hl_variable" href="spinningpinwheel_8cpp.html#a22c33237b3bddd1e90a5d4622b8ef042">SCALE_RATIO</a>,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                                                 Qt::IgnoreAspectRatio,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                                                 Qt::SmoothTransformation)));</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    this-&gt;<a class="code hl_function" href="class_sprite.html#aa27e28e0a1ed0153f4fcc9a9a3402e0f">setAnimationSpeed</a>(15);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="class_spinning_pinwheel.html#aba18d1341961e990931acb1cd1eb1b92">updateAnimationState</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    this-&gt;setAnimationSpeed(15);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    updateAnimationState();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_spinning_pinwheel.html#aba18d1341961e990931acb1cd1eb1b92">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_spinning_pinwheel.html#aba18d1341961e990931acb1cd1eb1b92">SpinningPinwheel::updateAnimationState</a>() {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#isVisible">isVisible</a>()) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        this-&gt;<a class="code hl_function" href="class_sprite.html#ac7d053af8f5cf1221d3cf016a4c65874">startAnimation</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> SpinningPinwheel::updateAnimationState() {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (this-&gt;isVisible()) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        this-&gt;startAnimation();</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        this-&gt;<a class="code hl_function" href="class_sprite.html#a7fc484c57aa07b95311eacf27d789a0c">stopAnimation</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        this-&gt;stopAnimation();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_spinning_pinwheel.html#a9e4ce9d580b75cf1d437fdfe4548b2ca">   68</a></span><a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qvariant.html">QVariant</a> <a class="code hl_function" href="class_spinning_pinwheel.html#a9e4ce9d580b75cf1d437fdfe4548b2ca">SpinningPinwheel::itemChange</a>(GraphicsItemChange change, <span class="keyword">const</span> <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qvariant.html">QVariant</a>&amp; rValue) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qvariant.html">QVariant</a> SpinningPinwheel::itemChange(GraphicsItemChange change, <span class="keyword">const</span> <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qvariant.html">QVariant</a>&amp; rValue) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (change == ItemVisibleHasChanged) {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">// rValue indique s&#39;il est visible ou pas.</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_function" href="class_spinning_pinwheel.html#aba18d1341961e990931acb1cd1eb1b92">updateAnimationState</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        updateAnimationState();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> <a class="code hl_functionRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#itemChange">Sprite::itemChange</a>(change, rValue);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-<div class="ttc" id="aclass_spinning_pinwheel_html_a2cb4407ce9722f010e32672a23c26de5"><div class="ttname"><a href="class_spinning_pinwheel.html#a2cb4407ce9722f010e32672a23c26de5">SpinningPinwheel::SpinningPinwheel</a></div><div class="ttdeci">SpinningPinwheel(QGraphicsItem *pParent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00020">spinningpinwheel.cpp:20</a></div></div>
-<div class="ttc" id="aclass_spinning_pinwheel_html_a4ed6badc5fd730e91ff225b127b52912"><div class="ttname"><a href="class_spinning_pinwheel.html#a4ed6badc5fd730e91ff225b127b52912">SpinningPinwheel::configureAnimation</a></div><div class="ttdeci">void configureAnimation()</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00037">spinningpinwheel.cpp:37</a></div></div>
-<div class="ttc" id="aclass_spinning_pinwheel_html_a936c60e5daa2f071c5774db4f02ddd82"><div class="ttname"><a href="class_spinning_pinwheel.html#a936c60e5daa2f071c5774db4f02ddd82">SpinningPinwheel::m_wheelShifting</a></div><div class="ttdeci">QPointF m_wheelShifting</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8h_source.html#l00040">spinningpinwheel.h:40</a></div></div>
-<div class="ttc" id="aclass_spinning_pinwheel_html_a9e4ce9d580b75cf1d437fdfe4548b2ca"><div class="ttname"><a href="class_spinning_pinwheel.html#a9e4ce9d580b75cf1d437fdfe4548b2ca">SpinningPinwheel::itemChange</a></div><div class="ttdeci">QVariant itemChange(GraphicsItemChange change, const QVariant &amp;rValue)</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00068">spinningpinwheel.cpp:68</a></div></div>
-<div class="ttc" id="aclass_spinning_pinwheel_html_aba18d1341961e990931acb1cd1eb1b92"><div class="ttname"><a href="class_spinning_pinwheel.html#aba18d1341961e990931acb1cd1eb1b92">SpinningPinwheel::updateAnimationState</a></div><div class="ttdeci">void updateAnimationState()</div><div class="ttdoc">Active ou désactive l'animation selon si la roue est visible ou non.</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00058">spinningpinwheel.cpp:58</a></div></div>
-<div class="ttc" id="aclass_spinning_pinwheel_html_af000eb49e02fd3f276e9077cca30f078"><div class="ttname"><a href="class_spinning_pinwheel.html#af000eb49e02fd3f276e9077cca30f078">SpinningPinwheel::onMouseMove</a></div><div class="ttdeci">void onMouseMove(QPointF newMousePosition)</div><div class="ttdoc">Traite le déplacement de la souris.</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00030">spinningpinwheel.cpp:30</a></div></div>
 <div class="ttc" id="aclass_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdoc">Classe qui représente un élément d'animation graphique 2D.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00090">sprite.h:91</a></div></div>
-<div class="ttc" id="aclass_sprite_html_a7fc484c57aa07b95311eacf27d789a0c"><div class="ttname"><a href="class_sprite.html#a7fc484c57aa07b95311eacf27d789a0c">Sprite::stopAnimation</a></div><div class="ttdeci">void stopAnimation()</div><div class="ttdoc">Arrête l'animation.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8cpp_source.html#l00100">sprite.cpp:100</a></div></div>
-<div class="ttc" id="aclass_sprite_html_aa27e28e0a1ed0153f4fcc9a9a3402e0f"><div class="ttname"><a href="class_sprite.html#aa27e28e0a1ed0153f4fcc9a9a3402e0f">Sprite::setAnimationSpeed</a></div><div class="ttdeci">void setAnimationSpeed(int frameDuration)</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8cpp_source.html#l00090">sprite.cpp:90</a></div></div>
-<div class="ttc" id="aclass_sprite_html_ac7d053af8f5cf1221d3cf016a4c65874"><div class="ttname"><a href="class_sprite.html#ac7d053af8f5cf1221d3cf016a4c65874">Sprite::startAnimation</a></div><div class="ttdeci">void startAnimation()</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8cpp_source.html#l00107">sprite.cpp:107</a></div></div>
-<div class="ttc" id="aclass_sprite_html_ad382222eee275aa4bf98bdbeb6b0fc66"><div class="ttname"><a href="class_sprite.html#ad382222eee275aa4bf98bdbeb6b0fc66">Sprite::addAnimationFrame</a></div><div class="ttdeci">void addAnimationFrame(const QPixmap &amp;rPixmap)</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8cpp_source.html#l00051">sprite.cpp:51</a></div></div>
 <div class="ttc" id="anamespace_game_framework_html_ad9258f3ab92cd03e443344a86166140a"><div class="ttname"><a href="namespace_game_framework.html#ad9258f3ab92cd03e443344a86166140a">GameFramework::imagesPath</a></div><div class="ttdeci">QString imagesPath()</div><div class="ttdef"><b>Definition:</b> <a href="resources_8cpp_source.html#l00092">resources.cpp:92</a></div></div>
 <div class="ttc" id="aqgraphicsitem_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a></div></div>
-<div class="ttc" id="aqgraphicsitem_html_isVisible"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#isVisible">QGraphicsItem::isVisible</a></div><div class="ttdeci">bool isVisible() const</div></div>
 <div class="ttc" id="aqgraphicsitem_html_itemChange"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#itemChange">QGraphicsItem::itemChange</a></div><div class="ttdeci">virtual QVariant itemChange(GraphicsItemChange change, const QVariant &amp;value)</div></div>
-<div class="ttc" id="aqgraphicsitem_html_setPos"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#setPos">QGraphicsItem::setPos</a></div><div class="ttdeci">void setPos(const QPointF &amp;pos)</div></div>
 <div class="ttc" id="aqimage_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qimage.html">QImage</a></div></div>
 <div class="ttc" id="aqimage_html_copy"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qimage.html#copy">QImage::copy</a></div><div class="ttdeci">QImage copy(const QRect &amp;rectangle) const</div></div>
 <div class="ttc" id="aqimage_html_scaled-2"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qimage.html#scaled-2">QImage::scaled</a></div><div class="ttdeci">QImage scaled(int width, int height, Qt::AspectRatioMode aspectRatioMode, Qt::TransformationMode transformMode) const</div></div>
@@ -155,11 +143,10 @@ $(function() {
 <div class="ttc" id="aspinningpinwheel_8cpp_html_a572277ede3a2bd8a792f6df9cfd60de7"><div class="ttname"><a href="spinningpinwheel_8cpp.html#a572277ede3a2bd8a792f6df9cfd60de7">FRAME_COUNT</a></div><div class="ttdeci">const int FRAME_COUNT</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00013">spinningpinwheel.cpp:13</a></div></div>
 <div class="ttc" id="aspinningpinwheel_8cpp_html_a5a453206c2b942b1b430a91fcc211520"><div class="ttname"><a href="spinningpinwheel_8cpp.html#a5a453206c2b942b1b430a91fcc211520">COLUMN_COUNT</a></div><div class="ttdeci">const int COLUMN_COUNT</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00014">spinningpinwheel.cpp:14</a></div></div>
 <div class="ttc" id="aspinningpinwheel_8cpp_html_ac96a9c046b50ebf22c37b3cf79c02ddb"><div class="ttname"><a href="spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb">FRAME_WIDTH</a></div><div class="ttdeci">const int FRAME_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="spinningpinwheel_8cpp_source.html#l00011">spinningpinwheel.cpp:11</a></div></div>
-<div class="ttc" id="aspinningpinwheel_8h_html"><div class="ttname"><a href="spinningpinwheel_8h.html">spinningpinwheel.h</a></div><div class="ttdoc">Déclaration de la classe SpinningPinwheel.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 26 Octobre 2021 13:19:35 pour GameFramework par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Généré le Mardi 21 Décembre 2021 09:53:38 pour Avoid par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
 </small></address>
 </body>
 </html>

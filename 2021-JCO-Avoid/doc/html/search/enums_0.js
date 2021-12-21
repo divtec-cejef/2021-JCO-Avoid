@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_5fanimation_0',['Player_Animation',['../player_8cpp.html#a93f890e1e79788e671bacfa40cb3bdf6',1,'player.cpp']]]
+  ['walkingdirection_0',['WalkingDirection',['../class_player.html#a5c499323dc2c6eb8532aa03a0b70d207',1,'Player']]]
 ];

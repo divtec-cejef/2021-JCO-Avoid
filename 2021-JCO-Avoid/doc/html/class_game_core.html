@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GameFramework: Référence de la classe GameCore</title>
+<title>Avoid: Référence de la classe GameCore</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GameFramework<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">Avoid<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Avoid est un jeux où il faut escquiver les plateforme qui tombe avec un personnage qui se déplace latéralement</div>
   </td>
@@ -64,6 +64,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Types publics</a> &#124;
 <a href="#signals">Signaux</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="#pri-slots">Connecteurs privés</a> &#124;
@@ -89,18 +90,24 @@ Graphe d'héritage de GameCore:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Types publics</h2></td></tr>
+<tr class="memitem:a8ea0f771a166e15da9afe949c8a65713"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a> = -1
+ }</td></tr>
+<tr class="separator:a8ea0f771a166e15da9afe949c8a65713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signaux</h2></td></tr>
+<tr class="memitem:a462fb6cd594ca9ab4e2513b43c8597b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a462fb6cd594ca9ab4e2513b43c8597b7">notifyKeyPressed</a> (int key)</td></tr>
+<tr class="separator:a462fb6cd594ca9ab4e2513b43c8597b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363b48fcc2f71e52894c5eaf064fd1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a363b48fcc2f71e52894c5eaf064fd1b3">notifyKeyReleased</a> (int key)</td></tr>
+<tr class="separator:a363b48fcc2f71e52894c5eaf064fd1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9697026190c472aa7d634e24b35bfcc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a9697026190c472aa7d634e24b35bfcc9">notifyMouseMoved</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> newMousePosition)</td></tr>
 <tr class="separator:a9697026190c472aa7d634e24b35bfcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdb106ea6ea488b1a519e4f7a112abf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#abdb106ea6ea488b1a519e4f7a112abf4">notifyMouseButtonPressed</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> mousePosition, <a class="elRef" href="http://qt-project.org/doc/qt-5/qt.html#MouseButton-enum">Qt::MouseButtons</a> buttons)</td></tr>
 <tr class="separator:abdb106ea6ea488b1a519e4f7a112abf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9e9f62de0187bc449e1e6360e574a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a2d9e9f62de0187bc449e1e6360e574a7">notifyMouseButtonReleased</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> mousePosition, <a class="elRef" href="http://qt-project.org/doc/qt-5/qt.html#MouseButton-enum">Qt::MouseButtons</a> buttons)</td></tr>
 <tr class="separator:a2d9e9f62de0187bc449e1e6360e574a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462fb6cd594ca9ab4e2513b43c8597b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a462fb6cd594ca9ab4e2513b43c8597b7">notifyKeyPressed</a> (int key)</td></tr>
-<tr class="separator:a462fb6cd594ca9ab4e2513b43c8597b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a363b48fcc2f71e52894c5eaf064fd1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a363b48fcc2f71e52894c5eaf064fd1b3">notifyKeyReleased</a> (int key)</td></tr>
-<tr class="separator:a363b48fcc2f71e52894c5eaf064fd1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9697026190c472aa7d634e24b35bfcc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a9697026190c472aa7d634e24b35bfcc9">notifyMouseMoved</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> newMousePosition)</td></tr>
 <tr class="separator:a9697026190c472aa7d634e24b35bfcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdb106ea6ea488b1a519e4f7a112abf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#abdb106ea6ea488b1a519e4f7a112abf4">notifyMouseButtonPressed</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> mousePosition, <a class="elRef" href="http://qt-project.org/doc/qt-5/qt.html#MouseButton-enum">Qt::MouseButtons</a> buttons)</td></tr>
@@ -123,11 +130,11 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:af7d1e03d52e81d846e5733d970120655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e03c88acaf04467fc3213e09c58a441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a3e03c88acaf04467fc3213e09c58a441">keyReleased</a> (int key)</td></tr>
 <tr class="separator:a3e03c88acaf04467fc3213e09c58a441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb7e3ffb6923257ae234c274b2a2a2fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#acb7e3ffb6923257ae234c274b2a2a2fc">mouseMoved</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> newMousePosition)</td></tr>
-<tr class="separator:acb7e3ffb6923257ae234c274b2a2a2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1433068a5dcf2e4f7ddb7aee8475043b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a1433068a5dcf2e4f7ddb7aee8475043b">mouseButtonPressed</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> mousePosition, <a class="elRef" href="http://qt-project.org/doc/qt-5/qt.html#MouseButton-enum">Qt::MouseButtons</a> buttons)</td></tr>
 <tr class="memdesc:a1433068a5dcf2e4f7ddb7aee8475043b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traite l'appui sur un bouton de la souris.  <a href="class_game_core.html#a1433068a5dcf2e4f7ddb7aee8475043b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1433068a5dcf2e4f7ddb7aee8475043b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7e3ffb6923257ae234c274b2a2a2fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#acb7e3ffb6923257ae234c274b2a2a2fc">mouseMoved</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> newMousePosition)</td></tr>
+<tr class="separator:acb7e3ffb6923257ae234c274b2a2a2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95621dec286dce595fd65418fbcee04a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a95621dec286dce595fd65418fbcee04a">mouseButtonReleased</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> mousePosition, <a class="elRef" href="http://qt-project.org/doc/qt-5/qt.html#MouseButton-enum">Qt::MouseButtons</a> buttons)</td></tr>
 <tr class="memdesc:a95621dec286dce595fd65418fbcee04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traite le relâchement d'un bouton de la souris.  <a href="class_game_core.html#a95621dec286dce595fd65418fbcee04a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a95621dec286dce595fd65418fbcee04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,79 +232,150 @@ Fonctions membres publiques</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Connecteurs privés</h2></td></tr>
-<tr class="memitem:adf1e2219d58ceefe79ac56740a0bafe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#adf1e2219d58ceefe79ac56740a0bafe1">onClipVanishFinished</a> ()</td></tr>
-<tr class="memdesc:adf1e2219d58ceefe79ac56740a0bafe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le clip de la balle de foot qui tombe est terminé : les sprites sont effacés.  <a href="class_game_core.html#adf1e2219d58ceefe79ac56740a0bafe1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:adf1e2219d58ceefe79ac56740a0bafe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0975a7ecc5384e91bf04875083310e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a0975a7ecc5384e91bf04875083310e8f">onSpriteDestroyed</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qobject.html">QObject</a> *<a class="el" href="class_game_core.html#a8398191f80cd9716eebee764dc0115be">pSprite</a>)</td></tr>
-<tr class="separator:a0975a7ecc5384e91bf04875083310e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e6047cca879c89d0dfc9629a95eea35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a0e6047cca879c89d0dfc9629a95eea35">setupObstacle</a> ()</td></tr>
+<tr class="memdesc:a0e6047cca879c89d0dfc9629a95eea35"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#a0e6047cca879c89d0dfc9629a95eea35" title="GameCore::setupObstacle Met en place un obtsacle.">GameCore::setupObstacle</a> Met en place un obtsacle.  <a href="class_game_core.html#a0e6047cca879c89d0dfc9629a95eea35">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0e6047cca879c89d0dfc9629a95eea35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dc7af81558c1f54c96889e90eee2eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ad4dc7af81558c1f54c96889e90eee2eb">rotateScreen</a> ()</td></tr>
+<tr class="memdesc:ad4dc7af81558c1f54c96889e90eee2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#ad4dc7af81558c1f54c96889e90eee2eb" title="GameCore::rotateScreen.">GameCore::rotateScreen</a>.  <a href="class_game_core.html#ad4dc7af81558c1f54c96889e90eee2eb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad4dc7af81558c1f54c96889e90eee2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a93739d535bd40ad545e66c2bcba3b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a3a93739d535bd40ad545e66c2bcba3b5">timerPartie</a> ()</td></tr>
+<tr class="memdesc:a3a93739d535bd40ad545e66c2bcba3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#a3a93739d535bd40ad545e66c2bcba3b5" title="GameCore::timerPartie.">GameCore::timerPartie</a>.  <a href="class_game_core.html#a3a93739d535bd40ad545e66c2bcba3b5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3a93739d535bd40ad545e66c2bcba3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae44fca69650cd2b971ae3e6b430533e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ae44fca69650cd2b971ae3e6b430533e3">stopGame</a> ()</td></tr>
+<tr class="memdesc:ae44fca69650cd2b971ae3e6b430533e3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#ae44fca69650cd2b971ae3e6b430533e3" title="GameCore::stopGame.">GameCore::stopGame</a>.  <a href="class_game_core.html#ae44fca69650cd2b971ae3e6b430533e3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae44fca69650cd2b971ae3e6b430533e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8e6a4d28bd4b06fa976fe8f1db17e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a8a8e6a4d28bd4b06fa976fe8f1db17e5">restartGame</a> ()</td></tr>
+<tr class="memdesc:a8a8e6a4d28bd4b06fa976fe8f1db17e5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#a8a8e6a4d28bd4b06fa976fe8f1db17e5" title="GameCore::restartGame.">GameCore::restartGame</a>.  <a href="class_game_core.html#a8a8e6a4d28bd4b06fa976fe8f1db17e5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8a8e6a4d28bd4b06fa976fe8f1db17e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
+<tr class="memitem:ae372f4d6748b5ec6a166cecca12524ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ae372f4d6748b5ec6a166cecca12524ee">startSpawnObstacleTimer</a> (int tickInterval=<a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a>)</td></tr>
+<tr class="memdesc:ae372f4d6748b5ec6a166cecca12524ee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#ae372f4d6748b5ec6a166cecca12524ee" title="GameCore::startSpawnObstacleTimer.">GameCore::startSpawnObstacleTimer</a>.  <a href="class_game_core.html#ae372f4d6748b5ec6a166cecca12524ee">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae372f4d6748b5ec6a166cecca12524ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070cd34b46dcf987327f4b7dc849a6f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a070cd34b46dcf987327f4b7dc849a6f5">startRetournerEcran</a> (int tickInterval=<a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a>)</td></tr>
+<tr class="memdesc:a070cd34b46dcf987327f4b7dc849a6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#a070cd34b46dcf987327f4b7dc849a6f5" title="GameCore::startRetournerEcran.">GameCore::startRetournerEcran</a>.  <a href="class_game_core.html#a070cd34b46dcf987327f4b7dc849a6f5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a070cd34b46dcf987327f4b7dc849a6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a89da444e6665874308979222da838"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aa1a89da444e6665874308979222da838">startGameTimer</a> (int tickInterval=<a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a>)</td></tr>
+<tr class="memdesc:aa1a89da444e6665874308979222da838"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#aa1a89da444e6665874308979222da838" title="GameCore::startGameTimer.">GameCore::startGameTimer</a>.  <a href="class_game_core.html#aa1a89da444e6665874308979222da838">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa1a89da444e6665874308979222da838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56886be7212b4ef118147243705f2ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a56886be7212b4ef118147243705f2ad9">startTimerPartie</a> (int tickInterval=<a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a>)</td></tr>
+<tr class="memdesc:a56886be7212b4ef118147243705f2ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#a070cd34b46dcf987327f4b7dc849a6f5" title="GameCore::startRetournerEcran.">GameCore::startRetournerEcran</a>.  <a href="class_game_core.html#a56886be7212b4ef118147243705f2ad9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a56886be7212b4ef118147243705f2ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a08af410bd56c921326d0407cb0e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ad4a08af410bd56c921326d0407cb0e56">setupPlayer</a> ()</td></tr>
+<tr class="memdesc:ad4a08af410bd56c921326d0407cb0e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met en place le joueur.  <a href="class_game_core.html#ad4a08af410bd56c921326d0407cb0e56">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad4a08af410bd56c921326d0407cb0e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e800e9d76d7e6f1c84d6d92d21cf55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#af4e800e9d76d7e6f1c84d6d92d21cf55">setupTimerPartie</a> ()</td></tr>
+<tr class="memdesc:af4e800e9d76d7e6f1c84d6d92d21cf55"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#af4e800e9d76d7e6f1c84d6d92d21cf55" title="GameCore::setupTimerPartie.">GameCore::setupTimerPartie</a>.  <a href="class_game_core.html#af4e800e9d76d7e6f1c84d6d92d21cf55">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af4e800e9d76d7e6f1c84d6d92d21cf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e36d87c9f427730970a2459f2ad1df7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a5e36d87c9f427730970a2459f2ad1df7">setupWalkingMen</a> ()</td></tr>
 <tr class="separator:a5e36d87c9f427730970a2459f2ad1df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed26b3d98d2f6dee9538ec240ee1d257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aed26b3d98d2f6dee9538ec240ee1d257">setupBouncingArea</a> ()</td></tr>
-<tr class="memdesc:aed26b3d98d2f6dee9538ec240ee1d257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit la zone de rebond, ainsi que la balle de tennis qui va s'y déplacer.  <a href="class_game_core.html#aed26b3d98d2f6dee9538ec240ee1d257">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aed26b3d98d2f6dee9538ec240ee1d257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44935473663d1193331e28e21adbd66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ad44935473663d1193331e28e21adbd66">setupBlueBall</a> ()</td></tr>
-<tr class="memdesc:ad44935473663d1193331e28e21adbd66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met en place la démo de la balle bleue.  <a href="class_game_core.html#ad44935473663d1193331e28e21adbd66">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad44935473663d1193331e28e21adbd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1835af9afc5064884daed817f5240c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ac1835af9afc5064884daed817f5240c8">setupSpinningWheel</a> ()</td></tr>
-<tr class="memdesc:ac1835af9afc5064884daed817f5240c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met en place la roue tournante.  <a href="class_game_core.html#ac1835af9afc5064884daed817f5240c8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ac1835af9afc5064884daed817f5240c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae5b20e1b9e4b34c8501a67f51b7aa35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aae5b20e1b9e4b34c8501a67f51b7aa35">setupCirclingEarth</a> ()</td></tr>
-<tr class="separator:aae5b20e1b9e4b34c8501a67f51b7aa35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4364e05ccd3b8ec9bc0928705ab319da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a4364e05ccd3b8ec9bc0928705ab319da">setupHeadToShoot</a> ()</td></tr>
-<tr class="separator:a4364e05ccd3b8ec9bc0928705ab319da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4a08af410bd56c921326d0407cb0e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ad4a08af410bd56c921326d0407cb0e56">setupPlayer</a> ()</td></tr>
-<tr class="separator:ad4a08af410bd56c921326d0407cb0e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a204f3b6f09f420552f3df296d4884f24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a204f3b6f09f420552f3df296d4884f24">createAlternativeScene</a> ()</td></tr>
-<tr class="memdesc:a204f3b6f09f420552f3df296d4884f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une scène alternative qui contiendra un élément SVG.  <a href="class_game_core.html#a204f3b6f09f420552f3df296d4884f24">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a204f3b6f09f420552f3df296d4884f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d6d99977a676c7f1b29ce6d08b284a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a40d6d99977a676c7f1b29ce6d08b284a">configureWalking</a> (<a class="el" href="class_sprite.html">Sprite</a> *<a class="el" href="class_game_core.html#a8398191f80cd9716eebee764dc0115be">pSprite</a>)</td></tr>
-<tr class="separator:a40d6d99977a676c7f1b29ce6d08b284a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbe3d363b3b09d70135eb33b9c4424e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#abbe3d363b3b09d70135eb33b9c4424e3">reduceWalkingManOpacity</a> ()</td></tr>
-<tr class="separator:abbe3d363b3b09d70135eb33b9c4424e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1633136eccfea0c76585712fb19c64fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a1633136eccfea0c76585712fb19c64fd">removeBall</a> ()</td></tr>
-<tr class="memdesc:a1633136eccfea0c76585712fb19c64fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit la balle et affiche un texte qui indique que cela a été fait.  <a href="class_game_core.html#a1633136eccfea0c76585712fb19c64fd">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1633136eccfea0c76585712fb19c64fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b51cd6ecb9e7731af6566de86f0c886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a2b51cd6ecb9e7731af6566de86f0c886">swapScenes</a> ()</td></tr>
-<tr class="memdesc:a2b51cd6ecb9e7731af6566de86f0c886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Echange la scène affichée avec l'autre scène.  <a href="class_game_core.html#a2b51cd6ecb9e7731af6566de86f0c886">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2b51cd6ecb9e7731af6566de86f0c886"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a311f7570772353799d1f23ccad8c9653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a311f7570772353799d1f23ccad8c9653">displaySpriteDebugInfos</a> ()</td></tr>
-<tr class="separator:a311f7570772353799d1f23ccad8c9653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23614c8cffaef9728cac11186c93ed35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a23614c8cffaef9728cac11186c93ed35">createFootBallClip</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> position)</td></tr>
-<tr class="separator:a23614c8cffaef9728cac11186c93ed35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b27bfc4ab603f9e0900b9e5f72f2d54"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qabstractanimation.html">QAbstractAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a3b27bfc4ab603f9e0900b9e5f72f2d54">createVanishAnimation</a> (<a class="el" href="class_sprite.html">Sprite</a> *<a class="el" href="class_game_core.html#a8398191f80cd9716eebee764dc0115be">pSprite</a>)</td></tr>
-<tr class="separator:a3b27bfc4ab603f9e0900b9e5f72f2d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f6fbd6f8df564b8e8ad7221141de70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a50f6fbd6f8df564b8e8ad7221141de70">toggleSpinningWheel</a> ()</td></tr>
-<tr class="separator:a50f6fbd6f8df564b8e8ad7221141de70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9196ef3293f643078d9121881f5d737f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a9196ef3293f643078d9121881f5d737f">createExplosion</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> pos)</td></tr>
-<tr class="separator:a9196ef3293f643078d9121881f5d737f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade58076ba1c8021998c6e1a52e933ca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ade58076ba1c8021998c6e1a52e933ca5">setupBonus</a> ()</td></tr>
+<tr class="memdesc:ade58076ba1c8021998c6e1a52e933ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#ade58076ba1c8021998c6e1a52e933ca5" title="GameCore::setupBonus met en place le bonus.">GameCore::setupBonus</a> met en place le bonus.  <a href="class_game_core.html#ade58076ba1c8021998c6e1a52e933ca5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ade58076ba1c8021998c6e1a52e933ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbee2fccb2e7d2fed53950b0cd5bc79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a2fbee2fccb2e7d2fed53950b0cd5bc79">setupProgressBar</a> ()</td></tr>
+<tr class="memdesc:a2fbee2fccb2e7d2fed53950b0cd5bc79"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#a2fbee2fccb2e7d2fed53950b0cd5bc79" title="GameCore::setupProgressBar.">GameCore::setupProgressBar</a>.  <a href="class_game_core.html#a2fbee2fccb2e7d2fed53950b0cd5bc79">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2fbee2fccb2e7d2fed53950b0cd5bc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c70b8061d7cda8b86759bab7262297"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a38c70b8061d7cda8b86759bab7262297">setupBouton</a> ()</td></tr>
+<tr class="separator:a38c70b8061d7cda8b86759bab7262297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14edca51dfa6c4478685ac5289d6d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ad14edca51dfa6c4478685ac5289d6d6a">setupResultat</a> ()</td></tr>
+<tr class="separator:ad14edca51dfa6c4478685ac5289d6d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2868bccee9f05be4f25c57b5e8b02a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ae2868bccee9f05be4f25c57b5e8b02a1">deleteAllSprite</a> ()</td></tr>
+<tr class="separator:ae2868bccee9f05be4f25c57b5e8b02a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57766a19b72c22e48c5d8a611504255d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a57766a19b72c22e48c5d8a611504255d">configureAnimation</a> ()</td></tr>
+<tr class="separator:a57766a19b72c22e48c5d8a611504255d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16af8e64cc2e04284b08763de973367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ab16af8e64cc2e04284b08763de973367">btnAppuye</a> ()</td></tr>
+<tr class="separator:ab16af8e64cc2e04284b08763de973367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0975a7ecc5384e91bf04875083310e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a0975a7ecc5384e91bf04875083310e8f">onSpriteDestroyed</a> (<a class="elRef" href="http://qt-project.org/doc/qt-5/qobject.html">QObject</a> *<a class="el" href="class_game_core.html#a8398191f80cd9716eebee764dc0115be">pSprite</a>)</td></tr>
+<tr class="separator:a0975a7ecc5384e91bf04875083310e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af208ae7badc00212711b96cf885d6c7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#af208ae7badc00212711b96cf885d6c7f">updateProgressBar</a> ()</td></tr>
+<tr class="memdesc:af208ae7badc00212711b96cf885d6c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_core.html#af208ae7badc00212711b96cf885d6c7f" title="GameCore::updateProgressBar.">GameCore::updateProgressBar</a>.  <a href="class_game_core.html#af208ae7badc00212711b96cf885d6c7f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af208ae7badc00212711b96cf885d6c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f712513284d56c295dcd6fafa774d3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a6f712513284d56c295dcd6fafa774d3f">gainEndurance</a> ()</td></tr>
+<tr class="separator:a6f712513284d56c295dcd6fafa774d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
+<tr class="memitem:a6a4125905422e82b3707064d0c340547"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a6a4125905422e82b3707064d0c340547">SPAWN_INTERVAL</a> = 170</td></tr>
+<tr class="separator:a6a4125905422e82b3707064d0c340547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b983bced61b44907667f1eaa24c011d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a9b983bced61b44907667f1eaa24c011d">RETOURNEMENT_INTERVAL</a> = 10000</td></tr>
+<tr class="separator:a9b983bced61b44907667f1eaa24c011d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece2c3ae36796edda8d88bff024c0c19"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aece2c3ae36796edda8d88bff024c0c19">LOSE_ENDURANCE_INTERVAL</a> = 100</td></tr>
+<tr class="separator:aece2c3ae36796edda8d88bff024c0c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e5fa8859cd22021fede68d51cfcf88"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ab3e5fa8859cd22021fede68d51cfcf88">PROGRESSBAR_WIDTH</a> = 500</td></tr>
+<tr class="separator:ab3e5fa8859cd22021fede68d51cfcf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa099ce7ff2e564cb0791776344e420cb"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aa099ce7ff2e564cb0791776344e420cb">ACTUALISATION_TEMPS</a> = 100</td></tr>
+<tr class="separator:aa099ce7ff2e564cb0791776344e420cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69072758a1b0b618165d3d6256bcb96c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a69072758a1b0b618165d3d6256bcb96c">APPARITION_BONUS</a> = 10</td></tr>
+<tr class="separator:a69072758a1b0b618165d3d6256bcb96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd01305969247946af947e941e2963b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> = 1920</td></tr>
+<tr class="separator:adcd01305969247946af947e941e2963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b8abeae38d9dc463447281d7acaa74"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ae2b8abeae38d9dc463447281d7acaa74">LARGEUR_MINIMUM</a> = - <a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> / 50</td></tr>
+<tr class="separator:ae2b8abeae38d9dc463447281d7acaa74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff7bc3a227b527283956c21bd0d835b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#afff7bc3a227b527283956c21bd0d835b">LARGEUR_MAX</a> = <a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> - <a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> / 50</td></tr>
+<tr class="separator:afff7bc3a227b527283956c21bd0d835b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a8fc73eba3d4f8a753a34ae5f02b41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_canvas.html">GameCanvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a76a8fc73eba3d4f8a753a34ae5f02b41">m_pGameCanvas</a></td></tr>
 <tr class="separator:a76a8fc73eba3d4f8a753a34ae5f02b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e5a586044575807a373bb51541e38b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_scene.html">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ab3e5a586044575807a373bb51541e38b">m_pScene</a></td></tr>
 <tr class="separator:ab3e5a586044575807a373bb51541e38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee36021400d4e79aadfdd0528ed913fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_scene.html">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aee36021400d4e79aadfdd0528ed913fd">m_pAlternativeScene</a></td></tr>
-<tr class="separator:aee36021400d4e79aadfdd0528ed913fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccab34965e8a80318a7885a0ad53215"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a0ccab34965e8a80318a7885a0ad53215">m_pBall</a></td></tr>
-<tr class="separator:a0ccab34965e8a80318a7885a0ad53215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69f825120eb72df2bc79634cbd2bc7b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a69f825120eb72df2bc79634cbd2bc7b2">m_pSpinningWheel</a></td></tr>
-<tr class="separator:a69f825120eb72df2bc79634cbd2bc7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacccc805427053cbfd37a9ff5bd981e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aacccc805427053cbfd37a9ff5bd981e4">m_pEarth</a></td></tr>
-<tr class="separator:aacccc805427053cbfd37a9ff5bd981e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a634ff7ec1865f254f9d764d52e7c071e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a634ff7ec1865f254f9d764d52e7c071e">m_pPlayer</a></td></tr>
-<tr class="separator:a634ff7ec1865f254f9d764d52e7c071e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd167003d3809f1b2b573a8bc8ed1f9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_main_frm.html">MainFrm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#abd167003d3809f1b2b573a8bc8ed1f9d">pMainFrm</a></td></tr>
+<tr class="separator:abd167003d3809f1b2b573a8bc8ed1f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e73cff065740bdd505c9a44236a6fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_objet_tick_handler.html">ObjetTickHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aa1e73cff065740bdd505c9a44236a6fa">pTickHandler</a></td></tr>
+<tr class="separator:aa1e73cff065740bdd505c9a44236a6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9529bf5a83b4fe5455f4ee7ac6d8afe6"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a9529bf5a83b4fe5455f4ee7ac6d8afe6">m_tickTimerObstacle</a></td></tr>
+<tr class="separator:a9529bf5a83b4fe5455f4ee7ac6d8afe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96932cb297a8ddc0f8197c07e35c533a"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a96932cb297a8ddc0f8197c07e35c533a">m_tickTimerRetournement</a></td></tr>
+<tr class="separator:a96932cb297a8ddc0f8197c07e35c533a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ac4b3f5bf6120d86f67e1db33c386a"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a08ac4b3f5bf6120d86f67e1db33c386a">m_tickTimerRestartGame</a></td></tr>
+<tr class="separator:a08ac4b3f5bf6120d86f67e1db33c386a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee1ca7d9d59a46a13cfd597927157952"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aee1ca7d9d59a46a13cfd597927157952">m_tickTimerLoseEndurance</a></td></tr>
+<tr class="separator:aee1ca7d9d59a46a13cfd597927157952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3147bbd738cadd38b2e84718273f795"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ae3147bbd738cadd38b2e84718273f795">m_tickTimerPartie</a></td></tr>
+<tr class="separator:ae3147bbd738cadd38b2e84718273f795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8398191f80cd9716eebee764dc0115be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a8398191f80cd9716eebee764dc0115be">pSprite</a></td></tr>
 <tr class="separator:a8398191f80cd9716eebee764dc0115be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c4a7e495c3d4a2d92094bf766dbe6d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a8c4a7e495c3d4a2d92094bf766dbe6d2">m_playerDirection</a> = 1</td></tr>
-<tr class="separator:a8c4a7e495c3d4a2d92094bf766dbe6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee48672d388ed370fda643d6a2a6fa5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qlist.html">QList</a>&lt; <a class="el" href="class_sprite.html">Sprite</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a7ee48672d388ed370fda643d6a2a6fa5">m_footballClipSpriteList</a></td></tr>
-<tr class="separator:a7ee48672d388ed370fda643d6a2a6fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38e35ef21137f97dcc8d32f748bb3de2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a38e35ef21137f97dcc8d32f748bb3de2">m_footballClipRunning</a></td></tr>
-<tr class="separator:a38e35ef21137f97dcc8d32f748bb3de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634ff7ec1865f254f9d764d52e7c071e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a634ff7ec1865f254f9d764d52e7c071e">m_pPlayer</a></td></tr>
+<tr class="separator:a634ff7ec1865f254f9d764d52e7c071e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a6a93f402ae0e4642e774b5acea36f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a10a6a93f402ae0e4642e774b5acea36f">m_pAnimMort</a></td></tr>
+<tr class="separator:a10a6a93f402ae0e4642e774b5acea36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24fb8308825903f56e495cfef07ebf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#af24fb8308825903f56e495cfef07ebf4">pBonus</a></td></tr>
+<tr class="separator:af24fb8308825903f56e495cfef07ebf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee93367f28e44c6a8b9b14dc08b2500"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a9ee93367f28e44c6a8b9b14dc08b2500">pObstacle</a></td></tr>
+<tr class="separator:a9ee93367f28e44c6a8b9b14dc08b2500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915eaf3f7227b062f239a3cd0d0925b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a915eaf3f7227b062f239a3cd0d0925b7">pBouton</a></td></tr>
+<tr class="separator:a915eaf3f7227b062f239a3cd0d0925b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82bdccd53f1128753ad8326428f0bcbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a82bdccd53f1128753ad8326428f0bcbd">pPlayer</a></td></tr>
+<tr class="separator:a82bdccd53f1128753ad8326428f0bcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1998e970e3a4045528a6afba5e0cee62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprogress_bar.html">progressBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a1998e970e3a4045528a6afba5e0cee62">m_progressBar</a></td></tr>
+<tr class="separator:a1998e970e3a4045528a6afba5e0cee62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6143e090b5cc97a23148cb574b4e4207"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsrectitem.html">QGraphicsRectItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a6143e090b5cc97a23148cb574b4e4207">m_ProgressBarBorder</a></td></tr>
+<tr class="separator:a6143e090b5cc97a23148cb574b4e4207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8337595b59db474f0ee7170a783a274"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsrectitem.html">QGraphicsRectItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aa8337595b59db474f0ee7170a783a274">m_ProgressBarFill</a></td></tr>
+<tr class="separator:aa8337595b59db474f0ee7170a783a274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3746147605b1ff1b0ac2f877ec7519b"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#ac3746147605b1ff1b0ac2f877ec7519b">m_objetTimer</a></td></tr>
+<tr class="separator:ac3746147605b1ff1b0ac2f877ec7519b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6951b4acedea32f3505840b82f287fa2"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a6951b4acedea32f3505840b82f287fa2">m_objetResultat</a></td></tr>
+<tr class="separator:a6951b4acedea32f3505840b82f287fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3ee7c27770d3d6a7f0e74a5d861da1"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qstring.html">QString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#aee3ee7c27770d3d6a7f0e74a5d861da1">m_textTimer</a></td></tr>
+<tr class="separator:aee3ee7c27770d3d6a7f0e74a5d861da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9516f316c82d0f9ef30d0d958721c0"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qstring.html">QString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#abf9516f316c82d0f9ef30d0d958721c0">m_textResultat</a> = &quot;Voici votre temps : &quot;</td></tr>
+<tr class="separator:abf9516f316c82d0f9ef30d0d958721c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367343e0f0a4c795afdbb5cf7a091de6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a367343e0f0a4c795afdbb5cf7a091de6">keyboardDisabled</a> = false</td></tr>
+<tr class="separator:a367343e0f0a4c795afdbb5cf7a091de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504f549a87beec616c2a4fbc4d0102c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a504f549a87beec616c2a4fbc4d0102c6">jeuTermine</a> = true</td></tr>
+<tr class="separator:a504f549a87beec616c2a4fbc4d0102c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72da9b6df708792a5a1279e9ba0012d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a72da9b6df708792a5a1279e9ba0012d8">m_keepTicking</a></td></tr>
+<tr class="separator:a72da9b6df708792a5a1279e9ba0012d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc9a6c47d66c16251e9327717b87737"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a0dc9a6c47d66c16251e9327717b87737">nombreObstacle</a> = 0</td></tr>
+<tr class="separator:a0dc9a6c47d66c16251e9327717b87737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147339a8ba02e37a7caccef4def90443"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a147339a8ba02e37a7caccef4def90443">nbGen</a></td></tr>
+<tr class="separator:a147339a8ba02e37a7caccef4def90443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b70314c155518dbad2941ad23ea1dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a02b70314c155518dbad2941ad23ea1dd">nbGenObstacle</a></td></tr>
+<tr class="separator:a02b70314c155518dbad2941ad23ea1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affce4ab25fab11eb03f9c9d6545c6787"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#affce4ab25fab11eb03f9c9d6545c6787">tempsPartie</a> = 0</td></tr>
+<tr class="separator:affce4ab25fab11eb03f9c9d6545c6787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4925dc38162d6f1d073e5bddb717c27b"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://qt-project.org/doc/qt-5/qelapsedtimer.html">QElapsedTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_core.html#a4925dc38162d6f1d073e5bddb717c27b">m_lastUpdateTime</a></td></tr>
+<tr class="separator:a4925dc38162d6f1d073e5bddb717c27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
@@ -349,89 +427,30 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p >Classe qui gère la logique du jeu. </p>
-<p >Dans son état actuel, cette classe met en place différents éléments de démonstration des différentes possibilités à disposition pour animer et interagir avec la zone de jeu.</p>
-<h1><a class="anchor" id="earth"></a>
-La Terre</h1>
-<p >Démontre une façon (la moins "orientée-objet") de déplacer un sprite, tout en utilisant le mécanisme de mémorisation de données de <a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a> (dont hérite la classe <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a>).</p>
-<p >Il y a principalement deux autres façons de déplacer un sprite :</p><ul>
-<li>Créer une nouvelle classe qui hérite de <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a>, comme démontré avec la roue tournante (<a class="el" href="class_game_core.html#mouse_move_detection">La roue tournante</a>).</li>
-<li>Affecter à un sprite un gestionnaire de tick (<a class="el" href="class_sprite_tick_handler.html" title="Classe abstraite qui représente un gestionnaire de tick pour un sprite.">SpriteTickHandler</a>), comme démontré avec la balle qui rebondit (<a class="el" href="class_game_core.html#tennis_ball">La balle qui rebondi</a>) ou l'homme qui marche (<a class="el" href="class_game_core.html#walking_man">L'homme qui marche</a>) ou encore viser la tête (<a class="el" href="class_game_core.html#head_shot">Viser la tête</a>).</li>
-</ul>
-<h1><a class="anchor" id="walking_man"></a>
-L'homme qui marche</h1>
-<p >Démontre les fonctionnalités suivantes :</p>
-<ul>
-<li>Spécialisation de la classe <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a> avec la classe <a class="el" href="class_walking_man.html" title="Classe qui gère un homme qui marche.">WalkingMan</a> afin d'y placer la responsabilité de gérer les images d'animation.</li>
-<li>Déplacer un sprite au moyen d'un gestionnaire de tick (<a class="el" href="class_sprite_tick_handler.html" title="Classe abstraite qui représente un gestionnaire de tick pour un sprite.">SpriteTickHandler</a>) en se basant sur la cadence (<a class="el" href="class_manual_walking_handler.html" title="Gestionnaire de déplacement manuel.">ManualWalkingHandler</a>) ou en préprogrammant une séquence d'animation avec <a class="elRef" href="http://qt-project.org/doc/qt-5/qpropertyanimation.html">QPropertyAnimation</a> (<a class="el" href="class_automatic_walking_handler.html" title="Gestionnaire de déplacement manuel.">AutomaticWalkingHandler</a>).</li>
-<li>Retrouver parmi tous les sprites présents sur la scène, les sprites d'un type spécifique (<a class="el" href="class_game_core.html#abbe3d363b3b09d70135eb33b9c4424e3">reduceWalkingManOpacity()</a>).</li>
-</ul>
-<h1><a class="anchor" id="blue_orb"></a>
-La sphère bleue</h1>
-<p >Démontre les fonctionnalités suivantes :</p>
-<ul>
-<li>Au moyen de la classe <a class="el" href="class_blue_ball.html" title="Classe qui gère la balle bleue.">BlueBall</a>, comment spécialiser la classe <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a> pour réagir aux événements clavier.</li>
-<li>Gérer l'ordre d'affichage des éléments graphiques lorsqu'ils sont superposés en utilisant la méthode <a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#setZValue">Sprite::setZValue()</a>. Le sprite qui a la Z value la plus élevée apparaît devant les autres.</li>
-</ul>
-<p >Les flèches permettent de déplacer la sphère.</p>
-<h1><a class="anchor" id="tennis_ball"></a>
-La balle qui rebondi</h1>
-<p >Démontre les fonctionnalités suivantes :</p>
-<ul>
-<li>Attribuer à un sprite un gestionnaire de mouvement (<a class="el" href="class_sprite_tick_handler.html" title="Classe abstraite qui représente un gestionnaire de tick pour un sprite.">SpriteTickHandler</a>) pour gérer le déplacement d'un sprite sur chaque tick.</li>
-<li><p class="startli">Détecter une collision entre un sprite et d'autres sprites <em>avant</em> de déplacer le sprite, en calculant la boîte d'encombrement (BoundingBox) qui contiendra la balle lorqu'elle se <em>sera</em> déplacée, et de tester si cette surface entre en collision. Si c'est le cas, un rebond est calculé et la balle est déplacée dans une autre direction. Tout ce mécanisme est implémenté dans la classe <a class="el" href="class_bouncing_sprite_handler.html" title="Classe qui gère le déplacement par rebond d&#39;un sprite.">BouncingSpriteHandler</a>, un gestionnaire qui spécialise la classe <a class="el" href="class_sprite_tick_handler.html" title="Classe abstraite qui représente un gestionnaire de tick pour un sprite.">SpriteTickHandler</a>.</p>
-<p class="startli">Donc, contrairement à la détection de collision réalisée pour le marcheur (<a class="el" href="class_manual_walking_handler.html" title="Gestionnaire de déplacement manuel.">ManualWalkingHandler</a>), où la détection est faite <em>après</em> le déplacement du marcheur, ici on vérifie si le déplacement de la balle provoque une collision <em>avant</em> de la déplacer.</p>
-</li>
-</ul>
-<h1><a class="anchor" id="mouse_click_detection"></a>
-La balle de foot qui tombe</h1>
-<p >Démontre les fonctionnalités suivantes :</p>
-<ul>
-<li>Détecter le clic sur la souris (fonction <a class="el" href="class_game_core.html#a1433068a5dcf2e4f7ddb7aee8475043b" title="Traite l&#39;appui sur un bouton de la souris.">mouseButtonPressed()</a>), en l'occurrence le clic droit.</li>
-<li>Créer une animation avec des courbes de mouvement (<a class="elRef" href="http://qt-project.org/doc/qt-5/qeasingcurve.html">QEasingCurve</a>), en particulier celle provoquant un rebond (QEasingCurve::OutBounce), dans la fonction <a class="el" href="class_game_core.html#a23614c8cffaef9728cac11186c93ed35">createFootBallClip()</a>.</li>
-<li>Créer une animation d'un effet de flou (<a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsblureffect.html">QGraphicsBlurEffect</a>) et appliquer cet effet à un sprite, dans la fonction <a class="el" href="class_game_core.html#a3b27bfc4ab603f9e0900b9e5f72f2d54">createVanishAnimation()</a>.</li>
-<li>Créer une animation de disparition en faisant varier l'opacité d'un sprite, dans la fonction <a class="el" href="class_game_core.html#a3b27bfc4ab603f9e0900b9e5f72f2d54">createVanishAnimation()</a>.</li>
-<li>Combiner différentes animations en les séquençant (<a class="elRef" href="http://qt-project.org/doc/qt-5/qsequentialanimationgroup.html">QSequentialAnimationGroup</a>) ou en les parallélisant (<a class="elRef" href="http://qt-project.org/doc/qt-5/qparallelanimationgroup.html">QParallelAnimationGroup</a>), dans la fonction <a class="el" href="class_game_core.html#a23614c8cffaef9728cac11186c93ed35">createFootBallClip()</a>.</li>
-</ul>
-<p >À noter que le fichier <a class="el" href="utilities_8h.html" title="Méthodes utilitaires diverses.">utilities.h</a> met à disposition des fonctions utilitaires permettant de cacher (<a class="el" href="namespace_game_framework.html#aa9d3b3bf5f16a48a45b31e98b731b2f4">GameFramework::hideMouseCursor()</a> le curseur de la souris.</p>
-<p >Un clic droit démarre l'animation de la balle.</p>
-<h1><a class="anchor" id="mouse_move_detection"></a>
-La roue tournante</h1>
-<p >Démontre les fonctionnalités suivantes :</p>
-<ul>
-<li>Démarrer/arrêter le suivi de la souris avec <a class="el" href="class_game_canvas.html#a7736798ad6218b4329bf4b29064f7d6a" title="Enclenche le suivi du déplacement de la souris.">GameCanvas::startMouseTracking()</a> et <a class="el" href="class_game_canvas.html#ae345211fcf3ad4e35b154c52ed963357" title="Déclenche le suivi du déplacement de la souris.">GameCanvas::stopMouseTracking()</a></li>
-<li>Au moyen de la classe <a class="el" href="class_spinning_pinwheel.html" title="Démontre le suivi de la souris.">SpinningPinwheel</a>, comment spécialiser la classe <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a> pour réagir aux événements de la souris.</li>
-<li>Comment savoir si un sprite est visible ou non (avec <a class="el" href="class_spinning_pinwheel.html#a9e4ce9d580b75cf1d437fdfe4548b2ca">SpinningPinwheel::itemChange()</a>), afin d'éviter de faire des traitements inutiles si un sprite n'est pas visible.</li>
-</ul>
-<p >La touche m démarre le suivi de la souris.</p>
-<h1><a class="anchor" id="head_shot"></a>
-Viser la tête</h1>
-<p >Démontre les fonctionnalités suivantes :</p>
-<ul>
-<li>Réagir à la destruction d'un sprite, en connectant le signal <a class="elRef" href="http://qt-project.org/doc/qt-5/qobject.html#destroyed">destroyed()</a> à un slot (<a class="el" href="class_game_core.html#a0975a7ecc5384e91bf04875083310e8f">onSpriteDestroyed()</a>).</li>
-<li>Afficher une animation temporaire au moyen d'un sprite : lorsque le sprite <em>Tête à tirer</em> est détruit, une explosion est affichée à son emplacement (<a class="el" href="class_game_core.html#a9196ef3293f643078d9121881f5d737f">createExplosion()</a>).</li>
-<li>Attribuer à un sprite un gestionnaire de mouvement (<a class="el" href="class_sprite_tick_handler.html" title="Classe abstraite qui représente un gestionnaire de tick pour un sprite.">SpriteTickHandler</a>) pour gérer le déplacement d'un sprite sur chaque tick. Le gestionnaire de mouvement est <a class="el" href="class_random_move_tick_handler.html" title="Classe qui gère un déplacement aléatoire d&#39;un sprite.">RandomMoveTickHandler</a>.</li>
-<li>Ce gestionnaire de mouvement déplace aléatoirement son sprite, tout en évitant les collisions. Toutefois, si une collision a quand-même lieu, le gestionnaire de mouvement provoque la destruction du sprite (ce qui démontre la nécessité d'utiliser dans ce genre de situation QObject::deleleLater()).</li>
-<li>Détecter le clic sur la souris (fonction <a class="el" href="class_game_core.html#a1433068a5dcf2e4f7ddb7aee8475043b" title="Traite l&#39;appui sur un bouton de la souris.">mouseButtonPressed()</a>), en l'occurrence le clic gauche. Si c'est le sprite <em>Tête à tirer</em> qui est visé par la souris, celui-ci est détruit.</li>
-<li>Utiliser le mécanisme de mémorisation de données de <a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a> (dont hérite la classe <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a>) avec setData() et data() pour distinguer le sprite <em>Tête à tirer</em> des autres.</li>
-</ul>
-<h1><a class="anchor" id="text"></a>
-Texte simple</h1>
-<p >Démontre comment afficher un texte simple sur une scène, en utilisant la fonction <a class="el" href="class_game_scene.html#ae454327f278da29222a78a20e2c16571">GameScene::createText()</a>.</p>
-<h1><a class="anchor" id="multi_scene"></a>
-Plusieurs scènes</h1>
-<p >L'appui sur la touche X permet d'alterner la scène visible, en vérifiant quelle scène est actuellement visible (<a class="el" href="class_game_canvas.html#a7897fa78ef39001d1c7c37d737179647">GameCanvas::currentScene()</a>) puis on affichant l'autre (<a class="el" href="class_game_canvas.html#a326898c390ed700b827c33cf08e25009" title="Change la scène de jeu actuellement affichée.">GameCanvas::setCurrentScene()</a>). Cela est fait dans la fonction <a class="el" href="class_game_core.html#a2b51cd6ecb9e7731af6566de86f0c886" title="Echange la scène affichée avec l&#39;autre scène.">swapScenes()</a>.</p>
-<h1><a class="anchor" id="others"></a>
-Autres</h1>
-<ul>
-<li>La touche Q supprime la sphère bleue.</li>
-<li>La touche "espace" rend le marcheur de plus en plus transparent.</li>
-<li>La touche t crée une nouvelle tête à tirer.</li>
-<li>La touche I affiche des informations de debug concernant le sprite se trouvant sous le curseur de la souris.</li>
-</ul>
 <p >Dans son état actuel, cette classe crée une scène vide, délimite sa surface avec une ligne blanche puis démarre la cadence du jeu. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00137">137</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
-</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00035">35</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+</div><h2 class="groupheader">Documentation des énumérations membres</h2>
+<a id="a8ea0f771a166e15da9afe949c8a65713" name="a8ea0f771a166e15da9afe949c8a65713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea0f771a166e15da9afe949c8a65713">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792" name="a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792"></a>KEEP_PREVIOUS_TICK_INTERVAL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00040">40</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a2b255aa441e1bc57ee7666a5c56307b0" name="a2b255aa441e1bc57ee7666a5c56307b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b255aa441e1bc57ee7666a5c56307b0">&#9670;&nbsp;</a></span>GameCore() <span class="overload">[1/2]</span></h2>
 
@@ -465,7 +484,17 @@ Autres</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Initialise le contrôleur de jeu. </p><dl class="params"><dt>Paramètres</dt><dd>
+<p >Fichier qui contient toute la logique du jeu.</p>
+<dl class="section author"><dt>Auteur</dt><dd>PAPEFAB </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>novembre 2021 Initialise le contrôleur de jeu. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pGameCanvas</td><td><a class="el" href="class_game_canvas.html" title="Classe de gestion des scènes du jeu et de sa cadence.">GameCanvas</a> pour lequel cet objet travaille. </td></tr>
+    <tr><td class="paramname">pParent</td><td>Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initialise le contrôleur de jeu. </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">pGameCanvas</td><td><a class="el" href="class_game_canvas.html" title="Classe de gestion des scènes du jeu et de sa cadence.">GameCanvas</a> pour lequel cet objet travaille. </td></tr>
     <tr><td class="paramname">pParent</td><td>Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet). </td></tr>
@@ -473,7 +502,7 @@ Autres</h1>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00063">63</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00047">47</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -494,7 +523,7 @@ Autres</h1>
 
 <p>Destructeur de <a class="el" href="class_game_core.html" title="Classe qui gère la logique du jeu.">GameCore</a> : efface les scènes. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00157">157</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00106">106</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,8 +581,8 @@ Autres</h1>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a40d6d99977a676c7f1b29ce6d08b284a" name="a40d6d99977a676c7f1b29ce6d08b284a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40d6d99977a676c7f1b29ce6d08b284a">&#9670;&nbsp;</a></span>configureWalking()</h2>
+<a id="ab16af8e64cc2e04284b08763de973367" name="ab16af8e64cc2e04284b08763de973367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16af8e64cc2e04284b08763de973367">&#9670;&nbsp;</a></span>btnAppuye()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -562,33 +591,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::configureWalking </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td>
-          <td class="paramname"><em>pSprite</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a204f3b6f09f420552f3df296d4884f24" name="a204f3b6f09f420552f3df296d4884f24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a204f3b6f09f420552f3df296d4884f24">&#9670;&nbsp;</a></span>createAlternativeScene()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameCore::createAlternativeScene </td>
+          <td class="memname">void GameCore::btnAppuye </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -601,14 +604,10 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p>Construit une scène alternative qui contiendra un élément SVG. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00408">408</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a9196ef3293f643078d9121881f5d737f" name="a9196ef3293f643078d9121881f5d737f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9196ef3293f643078d9121881f5d737f">&#9670;&nbsp;</a></span>createExplosion()</h2>
+<a id="a57766a19b72c22e48c5d8a611504255d" name="a57766a19b72c22e48c5d8a611504255d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57766a19b72c22e48c5d8a611504255d">&#9670;&nbsp;</a></span>configureAnimation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,104 +616,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::createExplosion </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a>&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Affiche une explosion à la position donnée. Cette méthode démontre comment créer un sprite qui affiche une animation et qui se détruit automatiquement dès que l'animation est terminée. </p><dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>Position de l'explosion. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00570">570</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a23614c8cffaef9728cac11186c93ed35" name="a23614c8cffaef9728cac11186c93ed35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23614c8cffaef9728cac11186c93ed35">&#9670;&nbsp;</a></span>createFootBallClip()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameCore::createFootBallClip </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a>&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Créé le petit clip de la balle de football, qui démontre l'utilisation d'une animation (<a class="elRef" href="http://qt-project.org/doc/qt-5/qpropertyanimation.html">QPropertyAnimation</a>) avec courbes de vitesse, ainsi que le Z-Order. </p><dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">position</td><td>Position où le clip doit être créé. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00473">473</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3b27bfc4ab603f9e0900b9e5f72f2d54" name="a3b27bfc4ab603f9e0900b9e5f72f2d54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b27bfc4ab603f9e0900b9e5f72f2d54">&#9670;&nbsp;</a></span>createVanishAnimation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qabstractanimation.html">QAbstractAnimation</a> * GameCore::createVanishAnimation </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_sprite.html">Sprite</a> *&#160;</td>
-          <td class="paramname"><em>pSprite</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Construit une animation qui fait disparaitre le sprite donné, en jouant sur son opacité et un flou de plus en plus marqué. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00525">525</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a311f7570772353799d1f23ccad8c9653" name="a311f7570772353799d1f23ccad8c9653"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a311f7570772353799d1f23ccad8c9653">&#9670;&nbsp;</a></span>displaySpriteDebugInfos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameCore::displaySpriteDebugInfos </td>
+          <td class="memname">void GameCore::configureAnimation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -726,9 +628,58 @@ Autres</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Affiche en tant qu'informations de déboguage des informations sur le sprite pointé par la souris. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00459">459</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+</div>
+</div>
+<a id="ae2868bccee9f05be4f25c57b5e8b02a1" name="ae2868bccee9f05be4f25c57b5e8b02a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2868bccee9f05be4f25c57b5e8b02a1">&#9670;&nbsp;</a></span>deleteAllSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::deleteAllSprite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00335">335</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6f712513284d56c295dcd6fafa774d3f" name="a6f712513284d56c295dcd6fafa774d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f712513284d56c295dcd6fafa774d3f">&#9670;&nbsp;</a></span>gainEndurance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::gainEndurance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -754,7 +705,7 @@ Autres</h1>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00417">417</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -798,7 +749,7 @@ Autres</h1>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00207">207</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00425">425</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -847,9 +798,8 @@ Autres</h1>
 </div><div class="memdoc">
 
 <p>Traite l'appui sur un bouton de la souris. </p>
-<p >Traite l'appui sur un bouton de la souris. Fait apparaître le clip de la balle de foot qui tombe et rebondi. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00270">270</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00456">456</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -909,7 +859,7 @@ Autres</h1>
 
 <p>Traite le relâchement d'un bouton de la souris. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00290">290</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00450">450</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -958,7 +908,7 @@ Autres</h1>
 </div><div class="memdoc">
 <p >La souris a été déplacée. Pour que cet événement soit pris en compte, la propriété MouseTracking de <a class="el" href="class_game_view.html" title="Classe de visualisation d&#39;un espace 2D de jeu.">GameView</a> doit être enclenchée avec <a class="el" href="class_game_canvas.html#a7736798ad6218b4329bf4b29064f7d6a" title="Enclenche le suivi du déplacement de la souris.">GameCanvas::startMouseTracking()</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00264">264</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00445">445</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -1280,37 +1230,8 @@ Autres</h1>
 
 </div>
 </div>
-<a id="adf1e2219d58ceefe79ac56740a0bafe1" name="adf1e2219d58ceefe79ac56740a0bafe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf1e2219d58ceefe79ac56740a0bafe1">&#9670;&nbsp;</a></span>onClipVanishFinished</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameCore::onClipVanishFinished </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Le clip de la balle de foot qui tombe est terminé : les sprites sont effacés. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00602">602</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a0975a7ecc5384e91bf04875083310e8f" name="a0975a7ecc5384e91bf04875083310e8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0975a7ecc5384e91bf04875083310e8f">&#9670;&nbsp;</a></span>onSpriteDestroyed</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0975a7ecc5384e91bf04875083310e8f">&#9670;&nbsp;</a></span>onSpriteDestroyed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1328,18 +1249,45 @@ Autres</h1>
       </table>
   </td>
   <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a8e6a4d28bd4b06fa976fe8f1db17e5" name="a8a8e6a4d28bd4b06fa976fe8f1db17e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8e6a4d28bd4b06fa976fe8f1db17e5">&#9670;&nbsp;</a></span>restartGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::restartGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Un sprite a été détruit (en l'occurrence, une <em>tête à tirer</em>). Une explosion est affichée à sa position. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00610">610</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p><a class="el" href="class_game_core.html#a8a8e6a4d28bd4b06fa976fe8f1db17e5" title="GameCore::restartGame.">GameCore::restartGame</a>. </p>
+<p >Relance le jeux </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00377">377</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
-<a id="abbe3d363b3b09d70135eb33b9c4424e3" name="abbe3d363b3b09d70135eb33b9c4424e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbe3d363b3b09d70135eb33b9c4424e3">&#9670;&nbsp;</a></span>reduceWalkingManOpacity()</h2>
+<a id="ad4dc7af81558c1f54c96889e90eee2eb" name="ad4dc7af81558c1f54c96889e90eee2eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4dc7af81558c1f54c96889e90eee2eb">&#9670;&nbsp;</a></span>rotateScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1348,7 +1296,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::reduceWalkingManOpacity </td>
+          <td class="memname">void GameCore::rotateScreen </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1356,18 +1304,20 @@ Autres</h1>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Réduit l'opacité du marcheur. Si celle-ci devient négative, le marcheur redevient opaque. Cette fonction démontre la façon de retrouver des sprites d'une classe spécifique. Pour que qobject_cast fonctionne, la classe dérivée recherchée <em>doit</em> implémenter la macro Q_OBJECT. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00427">427</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p><a class="el" href="class_game_core.html#ad4dc7af81558c1f54c96889e90eee2eb" title="GameCore::rotateScreen.">GameCore::rotateScreen</a>. </p>
+<p >Retourne l'écran </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00400">400</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1633136eccfea0c76585712fb19c64fd" name="a1633136eccfea0c76585712fb19c64fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1633136eccfea0c76585712fb19c64fd">&#9670;&nbsp;</a></span>removeBall()</h2>
+<a id="ade58076ba1c8021998c6e1a52e933ca5" name="ade58076ba1c8021998c6e1a52e933ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade58076ba1c8021998c6e1a52e933ca5">&#9670;&nbsp;</a></span>setupBonus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1376,36 +1326,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::removeBall </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Détruit la balle et affiche un texte qui indique que cela a été fait. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00440">440</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad44935473663d1193331e28e21adbd66" name="ad44935473663d1193331e28e21adbd66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad44935473663d1193331e28e21adbd66">&#9670;&nbsp;</a></span>setupBlueBall()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameCore::setupBlueBall </td>
+          <td class="memname">void GameCore::setupBonus </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1418,14 +1339,14 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p>Met en place la démo de la balle bleue. </p>
+<p><a class="el" href="class_game_core.html#ade58076ba1c8021998c6e1a52e933ca5" title="GameCore::setupBonus met en place le bonus.">GameCore::setupBonus</a> met en place le bonus. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00332">332</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00146">146</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aed26b3d98d2f6dee9538ec240ee1d257" name="aed26b3d98d2f6dee9538ec240ee1d257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed26b3d98d2f6dee9538ec240ee1d257">&#9670;&nbsp;</a></span>setupBouncingArea()</h2>
+<a id="a38c70b8061d7cda8b86759bab7262297" name="a38c70b8061d7cda8b86759bab7262297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c70b8061d7cda8b86759bab7262297">&#9670;&nbsp;</a></span>setupBouton()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1434,7 +1355,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::setupBouncingArea </td>
+          <td class="memname">void GameCore::setupBouton </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1447,14 +1368,12 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p>Construit la zone de rebond, ainsi que la balle de tennis qui va s'y déplacer. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00295">295</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00325">325</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aae5b20e1b9e4b34c8501a67f51b7aa35" name="aae5b20e1b9e4b34c8501a67f51b7aa35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae5b20e1b9e4b34c8501a67f51b7aa35">&#9670;&nbsp;</a></span>setupCirclingEarth()</h2>
+<a id="a0e6047cca879c89d0dfc9629a95eea35" name="a0e6047cca879c89d0dfc9629a95eea35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e6047cca879c89d0dfc9629a95eea35">&#9670;&nbsp;</a></span>setupObstacle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1463,7 +1382,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::setupCirclingEarth </td>
+          <td class="memname">void GameCore::setupObstacle </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1471,41 +1390,14 @@ Autres</h1>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Met en place la Terre qui tourne en cercle. Démontre comment un sprite peut être mis en mouvement en le déplaçant dans la fonction <a class="el" href="class_game_core.html#a012c0e539d2110f68a6dc187f6a2af0b">tick()</a>. Démontre également comment mémoriser des données spécifiques à un sprite en utilisant <a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#setData">QGraphicsItem::setData()</a> et <a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html#data">QGraphicsItem::data()</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00358">358</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p><a class="el" href="class_game_core.html#a0e6047cca879c89d0dfc9629a95eea35" title="GameCore::setupObstacle Met en place un obtsacle.">GameCore::setupObstacle</a> Met en place un obtsacle. </p>
 
-</div>
-</div>
-<a id="a4364e05ccd3b8ec9bc0928705ab319da" name="a4364e05ccd3b8ec9bc0928705ab319da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4364e05ccd3b8ec9bc0928705ab319da">&#9670;&nbsp;</a></span>setupHeadToShoot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameCore::setupHeadToShoot </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Ajoute à la scène une <em>tête à tirer</em>. Démontre comment détruire un sprite sans provoquer de crash, et comment réagir à sa destruction, par exemple en affichant une explosion. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00373">373</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00114">114</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -1532,10 +1424,14 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
+<p>Met en place le joueur. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00306">306</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
 </div>
 </div>
-<a id="ac1835af9afc5064884daed817f5240c8" name="ac1835af9afc5064884daed817f5240c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1835af9afc5064884daed817f5240c8">&#9670;&nbsp;</a></span>setupSpinningWheel()</h2>
+<a id="a2fbee2fccb2e7d2fed53950b0cd5bc79" name="a2fbee2fccb2e7d2fed53950b0cd5bc79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbee2fccb2e7d2fed53950b0cd5bc79">&#9670;&nbsp;</a></span>setupProgressBar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1544,7 +1440,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::setupSpinningWheel </td>
+          <td class="memname">void GameCore::setupProgressBar </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1557,9 +1453,67 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p>Met en place la roue tournante. </p>
+<p><a class="el" href="class_game_core.html#a2fbee2fccb2e7d2fed53950b0cd5bc79" title="GameCore::setupProgressBar.">GameCore::setupProgressBar</a>. </p>
+<p >Met en place la progression de la barre </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00344">344</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00198">198</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad14edca51dfa6c4478685ac5289d6d6a" name="ad14edca51dfa6c4478685ac5289d6d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad14edca51dfa6c4478685ac5289d6d6a">&#9670;&nbsp;</a></span>setupResultat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::setupResultat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00179">179</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af4e800e9d76d7e6f1c84d6d92d21cf55" name="af4e800e9d76d7e6f1c84d6d92d21cf55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e800e9d76d7e6f1c84d6d92d21cf55">&#9670;&nbsp;</a></span>setupTimerPartie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::setupTimerPartie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_core.html#af4e800e9d76d7e6f1c84d6d92d21cf55" title="GameCore::setupTimerPartie.">GameCore::setupTimerPartie</a>. </p>
+<p >Met en place le timer et son text </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00167">167</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -1585,17 +1539,11 @@ Autres</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Met en place la démo des deux marcheurs. Un marcheur (<a class="el" href="class_walking_man.html" title="Classe qui gère un homme qui marche.">WalkingMan</a>) hérite de <a class="el" href="class_sprite.html" title="Classe qui représente un élément d&#39;animation graphique 2D.">Sprite</a> afin d'y placer la responsabilité de gérer les images d'animation. Le déplacement se fait au moyen d'un gestionnaire de tick (<a class="el" href="class_sprite_tick_handler.html" title="Classe abstraite qui représente un gestionnaire de tick pour un sprite.">SpriteTickHandler</a>). Deux gestionnaires de tick ont été créés :</p><ul>
-<li><a class="el" href="class_manual_walking_handler.html" title="Gestionnaire de déplacement manuel.">ManualWalkingHandler</a> : déplacement classique en se basant sur la cadence.</li>
-<li>AutomatiqueWalkingHandler : déplacement en préprogrammant une séquence d'animation avec <a class="elRef" href="http://qt-project.org/doc/qt-5/qpropertyanimation.html">QPropertyAnimation</a>. </li>
-</ul>
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00248">248</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2b51cd6ecb9e7731af6566de86f0c886" name="a2b51cd6ecb9e7731af6566de86f0c886"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b51cd6ecb9e7731af6566de86f0c886">&#9670;&nbsp;</a></span>swapScenes()</h2>
+<a id="aa1a89da444e6665874308979222da838" name="aa1a89da444e6665874308979222da838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1a89da444e6665874308979222da838">&#9670;&nbsp;</a></span>startGameTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1604,9 +1552,10 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::swapScenes </td>
+          <td class="memname">void GameCore::startGameTimer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tickInterval</em> = <code><a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1617,9 +1566,153 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p>Echange la scène affichée avec l'autre scène. </p>
+<p><a class="el" href="class_game_core.html#aa1a89da444e6665874308979222da838" title="GameCore::startGameTimer.">GameCore::startGameTimer</a>. </p>
+<p >Configuration timer avant le recommencement du jeu </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tickInterval</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00450">450</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00285">285</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a070cd34b46dcf987327f4b7dc849a6f5" name="a070cd34b46dcf987327f4b7dc849a6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a070cd34b46dcf987327f4b7dc849a6f5">&#9670;&nbsp;</a></span>startRetournerEcran()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::startRetournerEcran </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tickInterval</em> = <code><a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_core.html#a070cd34b46dcf987327f4b7dc849a6f5" title="GameCore::startRetournerEcran.">GameCore::startRetournerEcran</a>. </p>
+<p >Configuration timer pour retourner l'écran </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tickInterval</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00270">270</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae372f4d6748b5ec6a166cecca12524ee" name="ae372f4d6748b5ec6a166cecca12524ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae372f4d6748b5ec6a166cecca12524ee">&#9670;&nbsp;</a></span>startSpawnObstacleTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::startSpawnObstacleTimer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tickInterval</em> = <code><a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_core.html#ae372f4d6748b5ec6a166cecca12524ee" title="GameCore::startSpawnObstacleTimer.">GameCore::startSpawnObstacleTimer</a>. </p>
+<p >Configuration timer spawn les obstacles </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tickInterval</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00241">241</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a56886be7212b4ef118147243705f2ad9" name="a56886be7212b4ef118147243705f2ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56886be7212b4ef118147243705f2ad9">&#9670;&nbsp;</a></span>startTimerPartie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::startTimerPartie </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tickInterval</em> = <code><a class="el" href="class_game_core.html#a8ea0f771a166e15da9afe949c8a65713a294b894fbecda5ceb355bb33474a6792">KEEP_PREVIOUS_TICK_INTERVAL</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_core.html#a070cd34b46dcf987327f4b7dc849a6f5" title="GameCore::startRetournerEcran.">GameCore::startRetournerEcran</a>. </p>
+<p >Configuration timer pour démarrer le timer de la partie </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tickInterval</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00256">256</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae44fca69650cd2b971ae3e6b430533e3" name="ae44fca69650cd2b971ae3e6b430533e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44fca69650cd2b971ae3e6b430533e3">&#9670;&nbsp;</a></span>stopGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::stopGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_core.html#ae44fca69650cd2b971ae3e6b430533e3" title="GameCore::stopGame.">GameCore::stopGame</a>. </p>
+<p >Arrete le jeux lors de la mort du personnage </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00353">353</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -1645,7 +1738,7 @@ Autres</h1>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00215">215</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00436">436</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
@@ -1667,8 +1760,8 @@ Autres</h1>
 
 </div>
 </div>
-<a id="a50f6fbd6f8df564b8e8ad7221141de70" name="a50f6fbd6f8df564b8e8ad7221141de70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50f6fbd6f8df564b8e8ad7221141de70">&#9670;&nbsp;</a></span>toggleSpinningWheel()</h2>
+<a id="a3a93739d535bd40ad545e66c2bcba3b5" name="a3a93739d535bd40ad545e66c2bcba3b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a93739d535bd40ad545e66c2bcba3b5">&#9670;&nbsp;</a></span>timerPartie</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1677,7 +1770,37 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameCore::toggleSpinningWheel </td>
+          <td class="memname">void GameCore::timerPartie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_core.html#a3a93739d535bd40ad545e66c2bcba3b5" title="GameCore::timerPartie.">GameCore::timerPartie</a>. </p>
+<p >Actualise le text timer pour lui ajouter 0,1 </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00299">299</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af208ae7badc00212711b96cf885d6c7f" name="af208ae7badc00212711b96cf885d6c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af208ae7badc00212711b96cf885d6c7f">&#9670;&nbsp;</a></span>updateProgressBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameCore::updateProgressBar </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1689,15 +1812,17 @@ Autres</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Montre ou cache la roue tournant qui suit la souris. Si elle est cachée, le suivi de la souris est stoppé (<a class="el" href="class_game_canvas.html#ae345211fcf3ad4e35b154c52ed963357" title="Déclenche le suivi du déplacement de la souris.">GameCanvas::stopMouseTracking()</a>, afin de limiter l'impact sur les performances. Si elle est montrée, le suivi de la souris est enclenché (<a class="el" href="class_game_canvas.html#a7736798ad6218b4329bf4b29064f7d6a" title="Enclenche le suivi du déplacement de la souris.">GameCanvas::startMouseTracking()</a>) et un signal de suivi de souris est émis, afin de pouvoir mettra à jour la position de la roue tournante par rapport à la position actuelle de la souris. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00553">553</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
+<p><a class="el" href="class_game_core.html#af208ae7badc00212711b96cf885d6c7f" title="GameCore::updateProgressBar.">GameCore::updateProgressBar</a>. </p>
+<p >Met à jour la progression de la barre </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8cpp_source.html#l00214">214</a> du fichier <a class="el" href="gamecore_8cpp_source.html">gamecore.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
-<a id="a38e35ef21137f97dcc8d32f748bb3de2" name="a38e35ef21137f97dcc8d32f748bb3de2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38e35ef21137f97dcc8d32f748bb3de2">&#9670;&nbsp;</a></span>m_footballClipRunning</h2>
+<a id="aa099ce7ff2e564cb0791776344e420cb" name="aa099ce7ff2e564cb0791776344e420cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa099ce7ff2e564cb0791776344e420cb">&#9670;&nbsp;</a></span>ACTUALISATION_TEMPS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1706,7 +1831,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GameCore::m_footballClipRunning</td>
+          <td class="memname">const int GameCore::ACTUALISATION_TEMPS = 100</td>
         </tr>
       </table>
   </td>
@@ -1716,12 +1841,12 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00196">196</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00073">73</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
-<a id="a7ee48672d388ed370fda643d6a2a6fa5" name="a7ee48672d388ed370fda643d6a2a6fa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ee48672d388ed370fda643d6a2a6fa5">&#9670;&nbsp;</a></span>m_footballClipSpriteList</h2>
+<a id="a69072758a1b0b618165d3d6256bcb96c" name="a69072758a1b0b618165d3d6256bcb96c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69072758a1b0b618165d3d6256bcb96c">&#9670;&nbsp;</a></span>APPARITION_BONUS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1730,7 +1855,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qlist.html">QList</a>&lt;<a class="el" href="class_sprite.html">Sprite</a>*&gt; GameCore::m_footballClipSpriteList</td>
+          <td class="memname">const int GameCore::APPARITION_BONUS = 10</td>
         </tr>
       </table>
   </td>
@@ -1740,12 +1865,12 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00194">194</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00074">74</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
-<a id="aee36021400d4e79aadfdd0528ed913fd" name="aee36021400d4e79aadfdd0528ed913fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee36021400d4e79aadfdd0528ed913fd">&#9670;&nbsp;</a></span>m_pAlternativeScene</h2>
+<a id="a504f549a87beec616c2a4fbc4d0102c6" name="a504f549a87beec616c2a4fbc4d0102c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504f549a87beec616c2a4fbc4d0102c6">&#9670;&nbsp;</a></span>jeuTermine</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1754,7 +1879,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_game_scene.html">GameScene</a>* GameCore::m_pAlternativeScene</td>
+          <td class="memname">bool GameCore::jeuTermine = true</td>
         </tr>
       </table>
   </td>
@@ -1764,12 +1889,12 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00185">185</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00127">127</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
-<a id="a0ccab34965e8a80318a7885a0ad53215" name="a0ccab34965e8a80318a7885a0ad53215"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ccab34965e8a80318a7885a0ad53215">&#9670;&nbsp;</a></span>m_pBall</h2>
+<a id="a367343e0f0a4c795afdbb5cf7a091de6" name="a367343e0f0a4c795afdbb5cf7a091de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367343e0f0a4c795afdbb5cf7a091de6">&#9670;&nbsp;</a></span>keyboardDisabled</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1778,7 +1903,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::m_pBall</td>
+          <td class="memname">bool GameCore::keyboardDisabled = false</td>
         </tr>
       </table>
   </td>
@@ -1788,12 +1913,12 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00187">187</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00126">126</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
-<a id="aacccc805427053cbfd37a9ff5bd981e4" name="aacccc805427053cbfd37a9ff5bd981e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacccc805427053cbfd37a9ff5bd981e4">&#9670;&nbsp;</a></span>m_pEarth</h2>
+<a id="afff7bc3a227b527283956c21bd0d835b" name="afff7bc3a227b527283956c21bd0d835b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff7bc3a227b527283956c21bd0d835b">&#9670;&nbsp;</a></span>LARGEUR_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1802,7 +1927,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::m_pEarth</td>
+          <td class="memname">const int GameCore::LARGEUR_MAX = <a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> - <a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> / 50</td>
         </tr>
       </table>
   </td>
@@ -1812,7 +1937,175 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00189">189</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00078">78</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="ae2b8abeae38d9dc463447281d7acaa74" name="ae2b8abeae38d9dc463447281d7acaa74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b8abeae38d9dc463447281d7acaa74">&#9670;&nbsp;</a></span>LARGEUR_MINIMUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameCore::LARGEUR_MINIMUM = - <a class="el" href="class_game_core.html#adcd01305969247946af947e941e2963b">SCENE_WIDTH</a> / 50</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00077">77</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="aece2c3ae36796edda8d88bff024c0c19" name="aece2c3ae36796edda8d88bff024c0c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece2c3ae36796edda8d88bff024c0c19">&#9670;&nbsp;</a></span>LOSE_ENDURANCE_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameCore::LOSE_ENDURANCE_INTERVAL = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00071">71</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a72da9b6df708792a5a1279e9ba0012d8" name="a72da9b6df708792a5a1279e9ba0012d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72da9b6df708792a5a1279e9ba0012d8">&#9670;&nbsp;</a></span>m_keepTicking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameCore::m_keepTicking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00128">128</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a4925dc38162d6f1d073e5bddb717c27b" name="a4925dc38162d6f1d073e5bddb717c27b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4925dc38162d6f1d073e5bddb717c27b">&#9670;&nbsp;</a></span>m_lastUpdateTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qelapsedtimer.html">QElapsedTimer</a> GameCore::m_lastUpdateTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00136">136</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a6951b4acedea32f3505840b82f287fa2" name="a6951b4acedea32f3505840b82f287fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6951b4acedea32f3505840b82f287fa2">&#9670;&nbsp;</a></span>m_objetResultat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a>* GameCore::m_objetResultat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00121">121</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3746147605b1ff1b0ac2f877ec7519b" name="ac3746147605b1ff1b0ac2f877ec7519b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3746147605b1ff1b0ac2f877ec7519b">&#9670;&nbsp;</a></span>m_objetTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a>* GameCore::m_objetTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00120">120</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a10a6a93f402ae0e4642e774b5acea36f" name="a10a6a93f402ae0e4642e774b5acea36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a6a93f402ae0e4642e774b5acea36f">&#9670;&nbsp;</a></span>m_pAnimMort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::m_pAnimMort</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00109">109</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
@@ -1836,31 +2129,7 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00183">183</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
-
-</div>
-</div>
-<a id="a8c4a7e495c3d4a2d92094bf766dbe6d2" name="a8c4a7e495c3d4a2d92094bf766dbe6d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c4a7e495c3d4a2d92094bf766dbe6d2">&#9670;&nbsp;</a></span>m_playerDirection</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameCore::m_playerDirection = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00192">192</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00095">95</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
@@ -1884,7 +2153,79 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00190">190</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00108">108</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a1998e970e3a4045528a6afba5e0cee62" name="a1998e970e3a4045528a6afba5e0cee62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1998e970e3a4045528a6afba5e0cee62">&#9670;&nbsp;</a></span>m_progressBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprogress_bar.html">progressBar</a>* GameCore::m_progressBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00116">116</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a6143e090b5cc97a23148cb574b4e4207" name="a6143e090b5cc97a23148cb574b4e4207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6143e090b5cc97a23148cb574b4e4207">&#9670;&nbsp;</a></span>m_ProgressBarBorder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsrectitem.html">QGraphicsRectItem</a>* GameCore::m_ProgressBarBorder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00118">118</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="aa8337595b59db474f0ee7170a783a274" name="aa8337595b59db474f0ee7170a783a274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8337595b59db474f0ee7170a783a274">&#9670;&nbsp;</a></span>m_ProgressBarFill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qgraphicsrectitem.html">QGraphicsRectItem</a>* GameCore::m_ProgressBarFill</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00119">119</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
@@ -1908,12 +2249,12 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00184">184</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00096">96</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
-<a id="a69f825120eb72df2bc79634cbd2bc7b2" name="a69f825120eb72df2bc79634cbd2bc7b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69f825120eb72df2bc79634cbd2bc7b2">&#9670;&nbsp;</a></span>m_pSpinningWheel</h2>
+<a id="abf9516f316c82d0f9ef30d0d958721c0" name="abf9516f316c82d0f9ef30d0d958721c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9516f316c82d0f9ef30d0d958721c0">&#9670;&nbsp;</a></span>m_textResultat</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1922,7 +2263,7 @@ Autres</h1>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::m_pSpinningWheel</td>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qstring.html">QString</a> GameCore::m_textResultat = &quot;Voici votre temps : &quot;</td>
         </tr>
       </table>
   </td>
@@ -1932,7 +2273,367 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00188">188</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00124">124</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="aee3ee7c27770d3d6a7f0e74a5d861da1" name="aee3ee7c27770d3d6a7f0e74a5d861da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee3ee7c27770d3d6a7f0e74a5d861da1">&#9670;&nbsp;</a></span>m_textTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qstring.html">QString</a> GameCore::m_textTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00123">123</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="aee1ca7d9d59a46a13cfd597927157952" name="aee1ca7d9d59a46a13cfd597927157952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1ca7d9d59a46a13cfd597927157952">&#9670;&nbsp;</a></span>m_tickTimerLoseEndurance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a> GameCore::m_tickTimerLoseEndurance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00104">104</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a9529bf5a83b4fe5455f4ee7ac6d8afe6" name="a9529bf5a83b4fe5455f4ee7ac6d8afe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9529bf5a83b4fe5455f4ee7ac6d8afe6">&#9670;&nbsp;</a></span>m_tickTimerObstacle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a> GameCore::m_tickTimerObstacle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00101">101</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="ae3147bbd738cadd38b2e84718273f795" name="ae3147bbd738cadd38b2e84718273f795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3147bbd738cadd38b2e84718273f795">&#9670;&nbsp;</a></span>m_tickTimerPartie</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a> GameCore::m_tickTimerPartie</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00105">105</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a08ac4b3f5bf6120d86f67e1db33c386a" name="a08ac4b3f5bf6120d86f67e1db33c386a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ac4b3f5bf6120d86f67e1db33c386a">&#9670;&nbsp;</a></span>m_tickTimerRestartGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a> GameCore::m_tickTimerRestartGame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00103">103</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a96932cb297a8ddc0f8197c07e35c533a" name="a96932cb297a8ddc0f8197c07e35c533a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96932cb297a8ddc0f8197c07e35c533a">&#9670;&nbsp;</a></span>m_tickTimerRetournement</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a> GameCore::m_tickTimerRetournement</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00102">102</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a147339a8ba02e37a7caccef4def90443" name="a147339a8ba02e37a7caccef4def90443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147339a8ba02e37a7caccef4def90443">&#9670;&nbsp;</a></span>nbGen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameCore::nbGen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00131">131</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a02b70314c155518dbad2941ad23ea1dd" name="a02b70314c155518dbad2941ad23ea1dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b70314c155518dbad2941ad23ea1dd">&#9670;&nbsp;</a></span>nbGenObstacle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameCore::nbGenObstacle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00132">132</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a0dc9a6c47d66c16251e9327717b87737" name="a0dc9a6c47d66c16251e9327717b87737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc9a6c47d66c16251e9327717b87737">&#9670;&nbsp;</a></span>nombreObstacle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameCore::nombreObstacle = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00130">130</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="af24fb8308825903f56e495cfef07ebf4" name="af24fb8308825903f56e495cfef07ebf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24fb8308825903f56e495cfef07ebf4">&#9670;&nbsp;</a></span>pBonus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::pBonus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00110">110</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a915eaf3f7227b062f239a3cd0d0925b7" name="a915eaf3f7227b062f239a3cd0d0925b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a915eaf3f7227b062f239a3cd0d0925b7">&#9670;&nbsp;</a></span>pBouton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::pBouton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00112">112</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="abd167003d3809f1b2b573a8bc8ed1f9d" name="abd167003d3809f1b2b573a8bc8ed1f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd167003d3809f1b2b573a8bc8ed1f9d">&#9670;&nbsp;</a></span>pMainFrm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_main_frm.html">MainFrm</a>* GameCore::pMainFrm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00097">97</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ee93367f28e44c6a8b9b14dc08b2500" name="a9ee93367f28e44c6a8b9b14dc08b2500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ee93367f28e44c6a8b9b14dc08b2500">&#9670;&nbsp;</a></span>pObstacle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sprite.html">Sprite</a>* GameCore::pObstacle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00111">111</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a82bdccd53f1128753ad8326428f0bcbd" name="a82bdccd53f1128753ad8326428f0bcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82bdccd53f1128753ad8326428f0bcbd">&#9670;&nbsp;</a></span>pPlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html">Player</a>* GameCore::pPlayer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00114">114</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3e5fa8859cd22021fede68d51cfcf88" name="ab3e5fa8859cd22021fede68d51cfcf88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e5fa8859cd22021fede68d51cfcf88">&#9670;&nbsp;</a></span>PROGRESSBAR_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameCore::PROGRESSBAR_WIDTH = 500</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00072">72</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
@@ -1956,7 +2657,127 @@ Autres</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00191">191</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00107">107</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1e73cff065740bdd505c9a44236a6fa" name="aa1e73cff065740bdd505c9a44236a6fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e73cff065740bdd505c9a44236a6fa">&#9670;&nbsp;</a></span>pTickHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_objet_tick_handler.html">ObjetTickHandler</a>* GameCore::pTickHandler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00099">99</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b983bced61b44907667f1eaa24c011d" name="a9b983bced61b44907667f1eaa24c011d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b983bced61b44907667f1eaa24c011d">&#9670;&nbsp;</a></span>RETOURNEMENT_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameCore::RETOURNEMENT_INTERVAL = 10000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00070">70</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="adcd01305969247946af947e941e2963b" name="adcd01305969247946af947e941e2963b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd01305969247946af947e941e2963b">&#9670;&nbsp;</a></span>SCENE_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameCore::SCENE_WIDTH = 1920</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00076">76</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="a6a4125905422e82b3707064d0c340547" name="a6a4125905422e82b3707064d0c340547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a4125905422e82b3707064d0c340547">&#9670;&nbsp;</a></span>SPAWN_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GameCore::SPAWN_INTERVAL = 170</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00069">69</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
+
+</div>
+</div>
+<a id="affce4ab25fab11eb03f9c9d6545c6787" name="affce4ab25fab11eb03f9c9d6545c6787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affce4ab25fab11eb03f9c9d6545c6787">&#9670;&nbsp;</a></span>tempsPartie</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GameCore::tempsPartie = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="gamecore_8h_source.html#l00134">134</a> du fichier <a class="el" href="gamecore_8h_source.html">gamecore.h</a>.</p>
 
 </div>
 </div>
@@ -1969,7 +2790,7 @@ Autres</h1>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 26 Octobre 2021 13:19:36 pour GameFramework par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Généré le Mardi 21 Décembre 2021 09:53:40 pour Avoid par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
 </small></address>
 </body>
 </html>

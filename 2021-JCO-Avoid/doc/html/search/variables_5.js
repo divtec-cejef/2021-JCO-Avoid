@@ -11,8 +11,8 @@ var searchData=
   ['fontfilters_8',['FontFilters',['http://qt-project.org/doc/qt-5/qfontcombobox.html#FontFilter-enum',1,'QFontComboBox']]],
   ['formatoptions_9',['FormatOptions',['http://qt-project.org/doc/qt-5/qsurfaceformat.html#FormatOption-enum',1,'QSurfaceFormat']]],
   ['formattingoptions_10',['FormattingOptions',['http://qt-project.org/doc/qt-5/qurl.html#UrlFormattingOption-enum',1,'QUrl']]],
-  ['frame_5fcount_11',['FRAME_COUNT',['../player_8cpp.html#a572277ede3a2bd8a792f6df9cfd60de7',1,'FRAME_COUNT():&#160;player.cpp'],['../spinningpinwheel_8cpp.html#a572277ede3a2bd8a792f6df9cfd60de7',1,'FRAME_COUNT():&#160;spinningpinwheel.cpp']]],
-  ['frame_5fheight_12',['FRAME_HEIGHT',['../player_8cpp.html#a51f854cccc79cb38663ab9df81542fa8',1,'FRAME_HEIGHT():&#160;player.cpp'],['../spinningpinwheel_8cpp.html#a51f854cccc79cb38663ab9df81542fa8',1,'FRAME_HEIGHT():&#160;spinningpinwheel.cpp']]],
-  ['frame_5fwidth_13',['FRAME_WIDTH',['../player_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb',1,'FRAME_WIDTH():&#160;player.cpp'],['../spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb',1,'FRAME_WIDTH():&#160;spinningpinwheel.cpp']]],
+  ['frame_5fcount_11',['FRAME_COUNT',['../spinningpinwheel_8cpp.html#a572277ede3a2bd8a792f6df9cfd60de7',1,'spinningpinwheel.cpp']]],
+  ['frame_5fheight_12',['FRAME_HEIGHT',['../spinningpinwheel_8cpp.html#a51f854cccc79cb38663ab9df81542fa8',1,'spinningpinwheel.cpp']]],
+  ['frame_5fwidth_13',['FRAME_WIDTH',['../spinningpinwheel_8cpp.html#ac96a9c046b50ebf22c37b3cf79c02ddb',1,'spinningpinwheel.cpp']]],
   ['framefeatures_14',['FrameFeatures',['http://qt-project.org/doc/qt-5/qstyleoptionframe.html#FrameFeature-enum',1,'QStyleOptionFrame']]]
 ];

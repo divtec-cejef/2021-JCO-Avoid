@@ -33,12 +33,12 @@ ObjetTickHandler::ObjetTickHandler(Sprite* pParentSprite) : SpriteTickHandler (p
 {
 
     //Démarre le timer pour l'augmentation de la vitesse des sprite
-    m_tickTimerAugmentationObstacle.setSingleShot(false);
-    m_tickTimerAugmentationObstacle.setInterval(AUGMENTATION_VITESSE_INTERVAL);
-    m_tickTimerAugmentationObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimerAugmentationObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
+    m_tickTimerAugmentationVitesseObstacle.setSingleShot(false);
+    m_tickTimerAugmentationVitesseObstacle.setInterval(AUGMENTATION_VITESSE_INTERVAL);
+    m_tickTimerAugmentationVitesseObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
+    connect(&m_tickTimerAugmentationVitesseObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
 
-    m_tickTimerAugmentationObstacle.start();
+    m_tickTimerAugmentationVitesseObstacle.start();
 
 }
 
@@ -72,11 +72,11 @@ void ObjetTickHandler::tick(long long elapsedTimeInMilliseconds) {
 void ObjetTickHandler::startTimerVitesseObstacle(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
-        m_tickTimerAugmentationObstacle.setInterval(tickInterval);
+        m_tickTimerAugmentationVitesseObstacle.setInterval(tickInterval);
 
     m_keepTicking = true;
     m_lastUpdateTime.start();
-    m_tickTimerAugmentationObstacle.start();
+    m_tickTimerAugmentationVitesseObstacle.start();
 }
 
 //Augmente la vitesse de déplacements des sprite

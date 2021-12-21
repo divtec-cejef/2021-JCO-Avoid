@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keep_5fprevious_5ftick_5finterval_0',['KEEP_PREVIOUS_TICK_INTERVAL',['../class_game_canvas.html#adb7601674515e62b496d57d87c6803e4ac04e11b3b4fa2170d115c93bd63bd0dd',1,'GameCanvas']]]
+  ['spriteitemtype_0',['SpriteItemType',['../class_sprite.html#a805e5f7c5a0b04529212ccd93da86120a75dfef17b8e0cd586a855b94b25ee67c',1,'Sprite']]]
 ];

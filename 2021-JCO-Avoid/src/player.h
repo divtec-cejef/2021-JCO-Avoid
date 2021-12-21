@@ -4,8 +4,8 @@
   \author   JCO
   \date     septembre 2018
 */
-#ifndef BLUEBALL_H
-#define BLUEBALL_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include "sprite.h"
 
@@ -18,17 +18,20 @@
 //!
 //! - Spécialiser la classe Sprite pour y ajouter une gestion des touches du clavier.
 //! - Réagir aux événements clavier pour mémoriser l'état des touches, afin de
-//!   déplacer correctement la balle.
+//!   déplacer correctement le joueur.
 //!   Pour que les fonctions onKeyPressed() et onKeyReleased() soient appelées lorsqu'une
-//!   touche est appuyée, il faut que l'objet qui crée une instance de BlueBall se
+//!   touche est appuyée, il faut que l'objet qui crée une instance de player se
 //!   charge de les connecter aux signaux GameCore::notifyKeyPressed() et
 //!   GameCore::notifyKeyReleased().
-//! - Lors du tick(), déterminer la nouvelle position de la boule selon les touches
+//! - Lors du tick(), déterminer la nouvelle position du joueur selon les touches
 //!   du clavier qui sont appuyées.
 //! - Récupérer la bounding box (boîte d'encombrement) du sprite dans le système de
 //!   coordonnées global avec globalBoundingBox() et déplacement à la future position
-//!   de la balle (avec translated()) pour vérifier qu'elle soit toujours
+//!   du joueur (avec translated()) pour vérifier qu'elle soit toujours
 //!   incluse dans les limites de la surface de la scène.
+//! - Animer le personnage lorsqu'il se déplace avec configureAnimation(),
+//!   en fonction de la direction du personnage une martice de droit est appliqué avec updateRotation(),
+//!   lorsque le personnage meurt la fonction deathAnimation() est lancé.
 //!
 class Player : public Sprite
 {
@@ -38,6 +41,7 @@ class Player : public Sprite
 
 public:
     const bool ON_DESTROYED = false;
+
     Player(QGraphicsItem* pParent = nullptr);
 
     enum WalkingDirection {
@@ -47,11 +51,7 @@ public:
 
     void deathAnimation();
 
-
-
     virtual void tick(long long elapsedTimeInMilliseconds);
-    void changeWalkingDirection();
-    void setWalkingDirection(WalkingDirection newWalkingDirection);
 
 signals:
     void onplayerDestroyed();
@@ -61,6 +61,8 @@ signals:
 private:
     void updatePlayerVelocity();
     void configureAnimation();
+    void changeWalkingDirection();
+    void setWalkingDirection(WalkingDirection newWalkingDirection);
 
 
     void updateRotation();
@@ -82,4 +84,4 @@ public slots:
     void onDeathAnimationEnd();
 };
 
-#endif // BLUEBALL_H
+#endif // PLAYER_H

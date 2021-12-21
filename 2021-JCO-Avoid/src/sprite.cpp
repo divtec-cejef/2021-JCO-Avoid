@@ -43,7 +43,6 @@ Sprite::~Sprite() {
         delete m_pTickHandler;
         m_pTickHandler = nullptr;
     }
-
 }
 
 //! Ajoute une image au cycle d'animation.
@@ -80,11 +79,6 @@ void Sprite::clearAnimationFrames() {
     setPixmap(QPixmap()); // On enlève l'image du sprite afin d'éviter toute confusion.
 }
 
-//! Affiche l'image suivante.
-void Sprite::showNextAnimationFrame() {
-    onNextAnimationFrame();
-}
-
 //! Change la vitesse d'animation.
 //! \param frameDuration   Durée d'une image en millisecondes.
 void Sprite::setAnimationSpeed(int frameDuration) {
@@ -118,11 +112,6 @@ void Sprite::startAnimation(int frameDuration)  {
     startAnimation();
 }
 
-//! \return un booléen qui indique si l'animation est en cours.
-bool Sprite::isAnimationRunning() const {
-    return m_animationTimer.isActive();
-}
-
 //! Ajoute une animation supplémentaire à ce sprite.
 //! \see clearAnimations()
 //! \see setActiveAnimation()
@@ -132,30 +121,12 @@ void Sprite::addAnimation() {
 
 }
 
+
 //! Efface toutes les animations d'un sprite mais en préserve une vide.
 void Sprite::clearAnimations() {
     m_animationList.clear();
     addAnimation();
     m_currentAnimationIndex = 0;
-}
-
-//! \return le nombre d'animations que possède ce sprite.
-int Sprite::animationCount() const {
-    return m_animationList.count();
-}
-
-//!
-//! Indique l'animation active utilisée pour l'affichage du sprite.
-//! Si l'index donné est invalide, c'est l'animation par défaut qui
-//! est activée.
-//! \param index Index de l'animation à activer.
-//!
-void Sprite::setActiveAnimation(int index) {
-    if (index < 0 || index >= m_animationList.count())
-        index = 0;
-
-    m_currentAnimationIndex = index;
-    setCurrentAnimationFrame(0);
 }
 
 //! Choisi si le signal animationFinished() doit être émis chaque fois que l'animation
@@ -242,11 +213,6 @@ void Sprite::removeTickHandler() {
 //! \return un pointeur sur la scène à laquelle appartient ce sprite.
 GameScene* Sprite::parentScene() const {
     return m_pParentScene;
-}
-
-//! Affiche dans la sortie de debug le nombre de sprites existants.
-void Sprite::displaySpriteCount() {
-    qDebug() << "Nombre de sprites : " << s_spriteCount;
 }
 
 //! Construit la liste de tous les sprites en collision avec ce sprite.

@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['wflags_0',['WFlags',['http://qt-project.org/doc/qt-5/qt-obsolete.html#WFlags-typedef',1,'Qt']]],
-  ['windowflags_1',['WindowFlags',['http://qt-project.org/doc/qt-5/qt.html#WindowType-enum',1,'Qt']]],
-  ['windowstates_2',['WindowStates',['http://qt-project.org/doc/qt-5/qt.html#WindowState-enum',1,'Qt']]],
-  ['wizardoptions_3',['WizardOptions',['http://qt-project.org/doc/qt-5/qwizard.html#WizardOption-enum',1,'QWizard']]],
-  ['writefunc_4',['WriteFunc',['http://qt-project.org/doc/qt-5/qsettings.html#WriteFunc-typedef',1,'QSettings']]]
+  ['value_5ftype_0',['value_type',['http://qt-project.org/doc/qt-5/qjsonarray.html#value_type-typedef',1,'QJsonArray::value_type()'],['http://qt-project.org/doc/qt-5/qfuture-const-iterator.html#value_type-typedef',1,'QFuture::const_iterator::value_type()'],['http://qt-project.org/doc/qt-5/qlinkedlist.html#value_type-typedef',1,'QLinkedList::value_type()'],['http://qt-project.org/doc/qt-5/qlist.html#value_type-typedef',1,'QList::value_type()'],['http://qt-project.org/doc/qt-5/qset.html#value_type-typedef',1,'QSet::value_type()'],['http://qt-project.org/doc/qt-5/qstring.html#value_type-typedef',1,'QString::value_type()'],['http://qt-project.org/doc/qt-5/qvarlengtharray.html#value_type-typedef',1,'QVarLengthArray::value_type()'],['http://qt-project.org/doc/qt-5/qvector.html#value_type-typedef',1,'QVector::value_type()']]],
+  ['viewitemfeatures_1',['ViewItemFeatures',['http://qt-project.org/doc/qt-5/qstyleoptionviewitem.html#ViewItemFeature-enum',1,'QStyleOptionViewItem']]]
 ];

@@ -49,6 +49,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_progressBar = new progressBar;
 
     //Démarre le timer pour les obstacles
+
     m_tickTimerObstacle.setSingleShot(false);
     m_tickTimerObstacle.setInterval(SPAWN_INTERVAL);
     m_tickTimerObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
@@ -64,7 +65,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-
+    connect(&m_tickTimerLoseEndurance, &QTimer::timeout, m_progressBar, &progressBar::loseEndurance);
 
 
     //Démarre le timer de la partie
@@ -86,7 +87,6 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
 
     // Instancier et initialiser les sprite ici :
     setupProgressBar();
-    connect(&m_tickTimerLoseEndurance, &QTimer::timeout, m_progressBar, &progressBar::loseEndurance);
     setupPlayer();
     setupTimerPartie();
     startSpawnObstacleTimer();
@@ -468,10 +468,3 @@ void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons button
         }
     }
 }
-
-
-
-
-
-
-

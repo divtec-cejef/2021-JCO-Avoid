@@ -11,8 +11,6 @@
 #include <QTime>
 #include <QTimer>
 
-const int RETOURNEMENT_INTERVAL = 10000;
-
 //! Construit une fenêtre de visualisation de la scène de jeu.
 //! \param pParent  Widget parent.
 GameView::GameView(QWidget* pParent) : QGraphicsView(pParent) {

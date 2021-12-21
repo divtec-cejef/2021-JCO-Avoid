@@ -111,17 +111,13 @@ public:
     void setCurrentAnimationFrame(int frameIndex);
     int currentAnimationFrame() const;
     void clearAnimationFrames();
-    void showNextAnimationFrame();
     void setAnimationSpeed(int frameDuration);
     void stopAnimation();
     void startAnimation();
     void startAnimation(int frameDuration);
-    bool isAnimationRunning() const;
 
     void addAnimation();
     void clearAnimations();
-    int animationCount() const;
-    void setActiveAnimation(int index);
 
     void setEmitSignalEndOfAnimationEnabled(bool enabled);
     bool isEmitSignalEndOfAnimationEnabled() const;
@@ -173,7 +169,6 @@ protected:
 
 private:
     static int s_spriteCount;
-    static void displaySpriteCount();
 
     void init();
 

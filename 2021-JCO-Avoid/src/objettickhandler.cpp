@@ -38,7 +38,6 @@ ObjetTickHandler::ObjetTickHandler(Sprite* pParentSprite) : SpriteTickHandler (p
     connect(&m_tickTimerAugmentationVitesseObstacle, SIGNAL(timeout()), this, SLOT(augmentationVitesseObstacle()));
 
     m_tickTimerAugmentationVitesseObstacle.start();
-
 }
 
 //! Cadence : détermine le mouvement que fait le sprite durant le temps écoulé.

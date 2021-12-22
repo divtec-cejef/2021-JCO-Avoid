@@ -27,7 +27,6 @@ void progressBar::setProgressBarProcent(double progressProcent){
 /**
  * @brief augmente de 30% la barre de progression
  */
-
 void progressBar::upEndurance(){
     setProgressBarProcent(getProgressbarProcent() + 30);
 }

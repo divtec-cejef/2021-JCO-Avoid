@@ -63,9 +63,8 @@ private:
     void configureAnimation();
     void changeWalkingDirection();
     void setWalkingDirection(WalkingDirection newWalkingDirection);
-
-
     void updateRotation();
+
     WalkingDirection m_walkingDirection;
     QList<QGraphicsTransform*> m_transformsForFlip;
     int m_walkingSpeed;
@@ -76,7 +75,9 @@ private:
     bool m_keyRightPressed;
     bool keyPressed = true;
 
-    bool m_playerAlive = true;
+    bool playerAlive = true;
+
+    const int PLAYER_VELOCITY = 600;
 
 public slots:
     void onKeyPressed(int key);

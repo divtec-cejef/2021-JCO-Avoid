@@ -4,8 +4,8 @@
 #include <QObject>
 
 /**
- * @brief classe qui gère le pourcentage de la barre de progression
- *
+ * Classe qui gère le pourcentage de la barre de progression
+ * @brief The progressBar class
  * Augmente upEndurance() ou diminiue loseEndurance() le pourcentage de la barre de progression
  */
 class progressBar : public QObject
@@ -28,7 +28,6 @@ public slots:
 private:
 
     double progressBarPercentage = 100;
-
 
 };
 

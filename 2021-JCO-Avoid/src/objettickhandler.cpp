@@ -62,11 +62,9 @@ void ObjetTickHandler::tick(long long elapsedTimeInMilliseconds) {
 
 }
 
-/**
- * Configuration timer pour gérer la vitesse de déplacement des sprite
- * @brief GameCore::startSpawnObstacleTimer
- * @param tickInterval
- */
+//! Configuration timer pour gérer la vitesse de déplacement des sprite
+//! @param tickInterval
+//!
 void ObjetTickHandler::startTimerVitesseObstacle(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -77,10 +75,8 @@ void ObjetTickHandler::startTimerVitesseObstacle(int tickInterval)  {
     m_tickTimerAugmentationVitesseObstacle.start();
 }
 
-/**
- * Augmente la vitesse de l'obstacle
- * @brief ObjetTickHandler::augmentationVitesseObstacle
- */
+//! Augmente la vitesse de l'obstacle
+//!
 void ObjetTickHandler::augmentationVitesseObstacle(){
     s_vitesseObtsacle+=0.1;
 }

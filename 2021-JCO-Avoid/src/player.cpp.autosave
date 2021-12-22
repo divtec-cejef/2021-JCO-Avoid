@@ -10,7 +10,7 @@
 
 #include <QDebug>
 
-//! @brief Construit et initialise le player.
+//! Construit et initialise le player.
 //! \param pParent  Objet propiétaire de cet objet.
 Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "tile19.png", pParent) {
     m_keyLeftPressed  = false;
@@ -60,7 +60,7 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     }
 }
 
-//! @brief Une touche a été appuyée.
+//! Une touche a été appuyée.
 //! \param key Code de la touche appuyée.
 void Player::onKeyPressed(int key) {
     switch (key)  {
@@ -72,7 +72,7 @@ void Player::onKeyPressed(int key) {
     updateRotation();
 }
 
-//! @brief Une touche a été relâchée.
+//! Une touche a été relâchée.
 //! \param key Code de la touche relâchée.
 void Player::onKeyReleased(int key) {
 
@@ -86,7 +86,7 @@ void Player::onKeyReleased(int key) {
 
 }
 
-//! @brief Met à jour le vecteur de vitesse de la balle en fonction des touches appuyées.
+//! Met à jour le vecteur de vitesse de la balle en fonction des touches appuyées.
 void Player::updatePlayerVelocity()  {
     int XVelocity = 0;
     int YVelocity = 0;
@@ -111,7 +111,7 @@ void Player::setWalkingDirection(WalkingDirection newWalkingDirection) {
     }
 }
 
-//! @brief Matrice de transformation pour faire miroir du player
+//! Matrice de transformation pour faire miroir du player
 //!
 void Player::updateRotation() {
     // Préparation d'une matrice de transformation
@@ -125,7 +125,7 @@ void Player::updateRotation() {
     this->setTransformations(transformations);
 }
 
-//! @brief Animation du player qui court
+//! Animation du player qui court
 //!
 void Player::configureAnimation() {
     for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
@@ -135,7 +135,7 @@ void Player::configureAnimation() {
     this->startAnimation();
 }
 
-//! @brief Animation du personnage qui meurt
+//! Animation du personnage qui meurt
 //!
 void Player::deathAnimation() {
     keyPressed = false;
@@ -150,7 +150,7 @@ void Player::deathAnimation() {
 
 }
 
-//! @brief Stop l'animation du personnage
+//! Stop l'animation du personnage
 //!
 
 void Player::onDeathAnimationEnd() {

@@ -71,25 +71,25 @@ que la compilation se fasse en mode *Release* et que le pseudo-constante `DEPLOY
 
 \return une chaîne de caractères contenant le chemin absolu du répertoire res.
 */
-    QString resourcesPath() {
-        QDir resourceDir = QDir(qApp->applicationDirPath());
-        #ifndef DEPLOY
-            #ifdef Q_OS_MAC
-                resourceDir.cdUp(); // Quitte MacOS
-                resourceDir.cdUp(); // Quitte Contents
-                resourceDir.cdUp(); // Quitte GameFramwork.app
-            #endif
-            resourceDir.cdUp(); // Quitte 'debug...' !! ATTENTION : selon la version de QtCreator, cette ligne doit être supprimée.
-            resourceDir.cdUp(); // Quitte 'build...'
-        #endif
-        resourceDir.cd("res");
-        return resourceDir.absolutePath() + QDir::separator();
-    }
+QString resourcesPath() {
+    QDir resourceDir = QDir(qApp->applicationDirPath());
+#ifndef DEPLOY
+#ifdef Q_OS_MAC
+    resourceDir.cdUp(); // Quitte MacOS
+    resourceDir.cdUp(); // Quitte Contents
+    resourceDir.cdUp(); // Quitte GameFramwork.app
+#endif
+    resourceDir.cdUp(); // Quitte 'debug...' !! ATTENTION : selon la version de QtCreator, cette ligne doit être supprimée.
+    resourceDir.cdUp(); // Quitte 'build...'
+#endif
+    resourceDir.cd("res");
+    return resourceDir.absolutePath() + QDir::separator();
+}
 
 /**
  * \return une chaîne de caractères contenant le chemin absolu du répertoire des images.
  */
-    QString imagesPath() {
-        return resourcesPath() + QDir::separator() + QString("images") + QDir::separator();
-    }
+QString imagesPath() {
+    return resourcesPath() + QDir::separator() + QString("images") + QDir::separator();
+}
 }

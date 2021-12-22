@@ -170,8 +170,8 @@ bool GameScene::isInsideScene(const QRectF& rRect) const {
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le tick précédent.
 void GameScene::tick(long long elapsedTimeInMilliseconds) {
     auto spriteListCopy = m_registeredForTickSpriteList; // On travaille sur une copie au cas où
-                                        // la liste originale serait modifiée
-                                        // lors de l'appel de tick auprès d'un sprite.
+    // la liste originale serait modifiée
+    // lors de l'appel de tick auprès d'un sprite.
     for(Sprite* pSprite : spriteListCopy) {
         pSprite->tick(elapsedTimeInMilliseconds);
     }

@@ -202,9 +202,9 @@ void GameCanvas::onTick() {
 
     if (m_pDetailedInfosItem && m_pDetailedInfosItem->isVisible())
         m_pDetailedInfosItem->setPlainText(QString("FPS : %1, Elapsed : %2ms, Tick duration : %3ms")
-                                      .arg(1000/elapsedTime)
-                                      .arg(elapsedTime)
-                                      .arg(m_lastUpdateTime.elapsed()));
+                                           .arg(1000/elapsedTime)
+                                           .arg(elapsedTime)
+                                           .arg(m_lastUpdateTime.elapsed()));
 
     if (m_keepTicking)
         m_tickTimer.start();

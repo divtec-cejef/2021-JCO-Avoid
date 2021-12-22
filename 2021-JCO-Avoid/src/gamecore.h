@@ -1,8 +1,8 @@
 /**
   \file
   \brief    Déclaration de la classe GameCore.
-  \author   JCO
-  \date     septembre 2018
+  \author   PAPEFAB
+  \date     décembre 2021
 */
 #ifndef GAMECORE_H
 #define GAMECORE_H
@@ -16,7 +16,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QElapsedTimer>
-#include<QFontDatabase>
+#include <QFontDatabase>
 
 #include "player.h"
 #include "objettickhandler.h"
@@ -73,13 +73,15 @@ private:
     const int ACTUALISATION_TEMPS = 100;
     const int INTERVAL_APPARITION_BONUS = 10;
 
+    const int INDEX_IMAGE_MAX = 6;
+    const int INDEX_IMAGE_MIN = 1;
+
     const int SCENE_WIDTH = 1920;
     const int LARGEUR_MINIMUM = - SCENE_WIDTH / 50;
     const int LARGEUR_MAX = SCENE_WIDTH - SCENE_WIDTH / 50;
 
     void setupPlayer();
     void setupTimerPartie();
-    void setupWalkingMen();
     void setupBonus();
     void setupProgressBar();
     void setupBouton();
@@ -94,7 +96,6 @@ private:
 
     GameCanvas* m_pGameCanvas;
     GameScene* m_pScene;
-    MainFrm* pMainFrm;
 
     ObjetTickHandler* pTickHandler;
 
@@ -113,12 +114,12 @@ private:
 
     Player* pPlayer;
 
-    progressBar* m_progressBar;
+    progressBar* pProgressBar;
 
-    QGraphicsRectItem* m_ProgressBarBorder;
-    QGraphicsRectItem* m_ProgressBarFill;
-    QGraphicsSimpleTextItem* m_objetTimer;
-    QGraphicsSimpleTextItem* m_objetResultat;
+    QGraphicsRectItem* m_pProgressBarBorder;
+    QGraphicsRectItem* m_pProgressBarFill;
+    QGraphicsSimpleTextItem* m_pObjetTimer;
+    QGraphicsSimpleTextItem* m_pObjetResultat;
 
     QString m_textTimer;
     QString m_textResultat = "Voici votre temps : ";

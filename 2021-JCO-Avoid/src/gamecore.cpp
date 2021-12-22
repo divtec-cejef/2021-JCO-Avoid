@@ -1,10 +1,9 @@
-/**
-  Fichier qui contient toute la logique du jeu.
+//!
+//! Fichier qui contient toute la logique du jeu.
+//! @author   PAPEFAB
+//! @date     décembre 2021
+//!
 
-  @author   PAPEFAB
-  @date     novembre 2021
- */
-#include "gamecore.h"
 
 #include <cmath>
 #include <random>
@@ -39,6 +38,7 @@
 #include "mainfrm.h"
 #include "ui_mainfrm.h"
 #include "progressbar.h"
+#include "gamecore.h"
 
 
 //! Initialise le contrôleur de jeu.
@@ -46,7 +46,7 @@
 //! \param pParent      Pointeur sur le parent (afin d'obtenir une destruction automatique de cet objet).
 GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent) {
 
-    m_progressBar = new progressBar;
+    pProgressBar = new progressBar;
 
     //Mise en place et démarrage du timer pour les obstacles
     m_tickTimerObstacle.setSingleShot(false);
@@ -64,7 +64,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimerLoseEndurance, &QTimer::timeout, m_progressBar, &progressBar::loseEndurance);
+    connect(&m_tickTimerLoseEndurance, &QTimer::timeout, pProgressBar, &progressBar::loseEndurance);
 
 
     //Mise en place et démarrage du timer de la partie
@@ -106,22 +106,20 @@ GameCore::~GameCore() {
     delete m_pScene;
     m_pScene = nullptr;
 }
-/**
- * @brief GameCore::setupObstacle
- * Met en place un obtsacle ou un bonus,
- * à une coordonnée x aléatoire
- */
+
+//! Met en place un obtsacle ou un bonus à une coordonnée x aléatoire
+//!
 void GameCore::setupObstacle(){
     nbGen=rand()%LARGEUR_MAX+LARGEUR_MINIMUM;   //génère un chiffre aléatoire entre la largeur maximal et minimal de l'écran
 
-    nbGenObstacle = rand()%(6 - 1) + 1;
+    nbGenObstacle = rand()%(INDEX_IMAGE_MAX - INDEX_IMAGE_MIN) + INDEX_IMAGE_MIN;
     //Si le jeux n'est pas terminé continue de créer des obstacles et des bonus
     if(jeuTermine == false){
         //Si le nombre d'obstacle apparu après un bonus est égal à l'interval de l'apparition des bonus un bonus est générer
         if(nombreObstacle == INTERVAL_APPARITION_BONUS){
             setupBonus();
             nombreObstacle = 0;
-         //sinon génére un obstacle à une position x aléatoire
+            //sinon génére un obstacle à une position x aléatoire
         }else{
             nombreObstacle++;
             pObstacle = new Sprite(QString(GameFramework::imagesPath() + "obstacle/%0.png").arg(nbGenObstacle));
@@ -141,9 +139,8 @@ void GameCore::setupObstacle(){
         }
     }
 }
-//!
-//! \brief GameCore::setupBonus
-//! met en place le bonus
+
+//! Génère un bonus en le faisant descendre
 //!
 void GameCore::setupBonus(){
     pBonus = new Sprite(GameFramework::imagesPath() + "Bonus.png");
@@ -163,93 +160,82 @@ void GameCore::setupBonus(){
     pBonus->registerForTick();
 }
 
-/**
- * Met en place le timer de la partie et son text
- * @brief GameCore::setupTimerPartie
- */
+//! Met en place le timer de la partie et son text
+//!
 void GameCore::setupTimerPartie(){
     tempsPartie = 0;
     m_textTimer = "0";
-    m_objetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 700);
+    m_pObjetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 700);
     //Applique une police d'écriture au texte du timer
     int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
     QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont mana(familiy);
     mana.setPointSize(50);
 
-    m_objetTimer->setFont(mana);
+    m_pObjetTimer->setFont(mana);
 }
 
-/**
- * Met en place le résultat de la partie
- * @brief GameCore::setupResultat
- */
+//! Met en place le résultat de la partie
+//!
 void GameCore::setupResultat(){
-    m_objetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 620,m_pScene->height() / 2), m_textResultat, 70);
-    m_objetTimer->setOpacity(0.5);
-    m_objetTimer->setPos(m_pScene->width() / 2 + 300,m_pScene->height() / 2);
-    m_objetTimer->setOpacity(1);
-    m_objetTimer->setZValue(1);
+    m_pObjetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 620,m_pScene->height() / 2), m_textResultat, 70);
+    m_pObjetTimer->setOpacity(0.5);
+    m_pObjetTimer->setPos(m_pScene->width() / 2 + 300,m_pScene->height() / 2);
+    m_pObjetTimer->setOpacity(1);
+    m_pObjetTimer->setZValue(1);
     //Applique une police d'écriture au texte du résultat
     int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
     QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont mana(familiy);
     mana.setPointSize(50);
 
-    m_objetResultat->setFont(mana);
+    m_pObjetResultat->setFont(mana);
 }
 
-/**
- * Met en place la barre de progression
- * @brief GameCore::setupProgressBar
- */
+//! Met en place la barre de progression
+//!
 void GameCore::setupProgressBar() {
     double screenXCenter = m_pScene->width() / 2;
-    m_ProgressBarBorder = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::white), QBrush(Qt::black));
-    m_ProgressBarBorder->setZValue(1);
-    m_ProgressBarFill = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::transparent), QBrush(Qt::green));
-    m_ProgressBarFill->setZValue(1);
+    m_pProgressBarBorder = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::white), QBrush(Qt::black));
+    m_pProgressBarBorder->setZValue(1);
+    m_pProgressBarFill = m_pScene->addRect(QRectF(screenXCenter - PROGRESSBAR_WIDTH/2, 10,PROGRESSBAR_WIDTH, 50), QPen(Qt::transparent), QBrush(Qt::green));
+    m_pProgressBarFill->setZValue(1);
 
     m_tickTimerLoseEndurance.start();
-    m_progressBar->setProgressBarProcent(100);
+    pProgressBar->setProgressBarProcent(100);
 }
 
-
-/**
- * Met à jour la progression de la barre,
- * en fonction du pourcentage progression de la barre,
- * elle prend une couleur (vert, orange, rouge)
- * @brief GameCore::updateProgressBar
- */
+//! Met à jour la barre de progression
+//! en fonction du pourcentage progression de la barre,
+//! elle prend une couleur (vert, orange, rouge)
+//!
 void GameCore::updateProgressBar() {
 
     if(jeuTermine == false) {
-        double newWidth = PROGRESSBAR_WIDTH / 100 * m_progressBar->getProgressbarProcent();
+        double newWidth = PROGRESSBAR_WIDTH / 100 * pProgressBar->getProgressbarProcent();
         double screenXCenter = m_pScene->width() / 2;
-        m_ProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
+        m_pProgressBarFill->setRect(screenXCenter - PROGRESSBAR_WIDTH/2, 10, newWidth, 50);
 
         //Si la barre de progression est rempli au plus du 2/3 la barre est verte
-        if (m_progressBar->getProgressbarProcent() > 100/3*2) {
-            m_ProgressBarFill->setBrush(QBrush(Qt::green));
-          //Si la barre de progression est rempli au plus du 1/3 la barre est orange
-        } else if (m_progressBar->getProgressbarProcent() > 100 / 3) {
-            m_ProgressBarFill->setBrush(QBrush(Qt::yellow));
+        if (pProgressBar->getProgressbarProcent() > 100/3*2) {
+            m_pProgressBarFill->setBrush(QBrush(Qt::green));
+            //Si la barre de progression est rempli au plus du 1/3 la barre est orange
+        } else if (pProgressBar->getProgressbarProcent() > 100 / 3) {
+            m_pProgressBarFill->setBrush(QBrush(Qt::yellow));
         } else {
             //Sinon la barre est rouge
-            m_ProgressBarFill->setBrush(QBrush(Qt::red));
+            m_pProgressBarFill->setBrush(QBrush(Qt::red));
         }
         //Si la barre de progression atteint les 0% le jeux est arrêté
-        if (m_progressBar->getProgressbarProcent() <= 0) {
+        if (pProgressBar->getProgressbarProcent() <= 0) {
             stopGame();
         }
     }
 }
 
-/**
- * Configuration timer pour spawn les obstacles
- * @brief GameCore::startSpawnObstacleTimer
- * @param tickInterval
- */
+//! Configuration du timer pour spawn les obstacles
+//! @param tickInterval
+//!
 void GameCore::startSpawnObstacleTimer(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -260,11 +246,9 @@ void GameCore::startSpawnObstacleTimer(int tickInterval)  {
     m_tickTimerObstacle.start();
 }
 
-/**
- * Configuration timer pour démarrer le timer de la partie
- * @brief GameCore::startRetournerEcran
- * @param tickInterval
- */
+//! Configuration timer pour démarrer le timer de la partie
+//! @param tickInterval
+//!
 void GameCore::startTimerPartie(int tickInterval){
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
         m_tickTimerObstacle.setInterval(tickInterval);
@@ -274,11 +258,9 @@ void GameCore::startTimerPartie(int tickInterval){
     m_tickTimerPartie.start();
 }
 
-/**
- * Configuration timer pour retourner l'écran
- * @brief GameCore::startRetournerEcran
- * @param tickInterval
- */
+//! Configuration timer pour retourner l'écran
+//! @param tickInterval
+//!
 void GameCore::startRetournerEcran(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -289,11 +271,9 @@ void GameCore::startRetournerEcran(int tickInterval)  {
     m_tickTimerRetournement.start();
 }
 
-/**
- * Configuration timer avant le recommencement du jeu
- * @brief GameCore::startGameTimer
- * @param tickInterval
- */
+//! Configuration timer avant le recommencement du jeu
+//! @param tickInterval
+//!
 void GameCore::startGameTimer(int tickInterval)  {
 
     if (tickInterval != KEEP_PREVIOUS_TICK_INTERVAL)
@@ -304,17 +284,16 @@ void GameCore::startGameTimer(int tickInterval)  {
     m_tickTimerRestartGame.start();
 }
 
-/**
- * Actualise le text du timer pour lui ajouter 0,1
- * @brief GameCore::timerPartie
- */
+//! Actualise le text du timer pour lui ajouter 0,1
+//!
 void GameCore::timerPartie(){
     tempsPartie += 0.1;
-    m_objetTimer->setText(QString::number(tempsPartie));
+    m_pObjetTimer->setText(QString::number(tempsPartie));
 
 }
 
 //! Met en place le joueur
+//!
 void GameCore::setupPlayer() {
     pPlayer = new Player;
     int ajustementHauteur = 80;
@@ -328,16 +307,14 @@ void GameCore::setupPlayer() {
     connect(this, &GameCore::notifyKeyPressed, pPlayer, &Player::onKeyPressed);
     connect(this, &GameCore::notifyKeyReleased, pPlayer, &Player::onKeyReleased);
 
-    connect(pPlayer, &Player::onBonusHit, m_progressBar, &progressBar::upEndurance);
+    connect(pPlayer, &Player::onBonusHit, pProgressBar, &progressBar::upEndurance);
     connect(pPlayer,&Player::onplayerDestroyed, this, &GameCore::stopGame);
 
     m_pPlayer = pPlayer;
 }
 
-/**
- * Mise en place du bouton de redémarrage
- * @brief GameCore::setupBouton
- */
+//! Mise en place du bouton de redémarrage
+//!
 void GameCore::setupBouton(){
     pBouton = new Sprite(GameFramework::imagesPath() + "replay.png");
 
@@ -348,14 +325,11 @@ void GameCore::setupBouton(){
 
 }
 
-/**
- * Supprimer tout les sprites de la scène,
- * sauf le joueur.
- * @brief GameCore::deleteAllSprite
- */
+//! Supprimer tout les sprites de la scène excepté le joueur
+//!
 void GameCore::deleteAllSprite(){
-    //supprime tous les srpites de la scène
 
+    //supprime tous les srpites de la scène
     for (Sprite* sprite : m_pScene->sprites()) {
 
         if(sprite != m_pPlayer){
@@ -367,11 +341,8 @@ void GameCore::deleteAllSprite(){
     }
 }
 
-/**
- * Met fin à la partie du jeux
- *
- * @brief GameCore::stopGame
- */
+//! Met fin à la partie du jeux
+//!
 void GameCore::stopGame(){
     keyboardDisabled = true;
     jeuTermine = true;
@@ -383,9 +354,9 @@ void GameCore::stopGame(){
     m_tickTimerRetournement.stop();
 
     //Si l'écran est retourné alors le remet en place
-    if(m_objetTimer->rotation() > 1) {
+    if(m_pObjetTimer->rotation() > 1) {
         m_pGameCanvas->rotateView();
-        m_objetTimer->setRotation(0);
+        m_pObjetTimer->setRotation(0);
     }
 
     setupResultat();
@@ -393,18 +364,16 @@ void GameCore::stopGame(){
     setupBouton();
 }
 
-/**
- * lance une nouvelle partie dans le jeux
- * @brief GameCore::restartGame
- */
+//! lance une nouvelle partie dans le jeux
+//!
 void GameCore::restartGame(){
-    m_progressBar->setProgressBarProcent(100);
+    pProgressBar->setProgressBarProcent(100);
 
     m_pScene->removeSpriteFromScene(m_pPlayer);
     m_pScene->removeSpriteFromScene(pBouton);
 
-    m_pScene->removeItem(m_objetResultat);
-    m_pScene->removeItem(m_objetTimer);
+    m_pScene->removeItem(m_pObjetResultat);
+    m_pScene->removeItem(m_pObjetTimer);
 
     m_tickTimerPartie.start();
     m_tickTimerRetournement.start();
@@ -416,22 +385,20 @@ void GameCore::restartGame(){
     setupPlayer();
 }
 
-/**
- * Retourne l'écran de 180 degrés-
- * @brief GameCore::rotateScreen
- */
+//! Retourne l'écran de 180 degrés
+//!
 void GameCore::rotateScreen() {
 
     m_pGameCanvas->rotateView();
-    m_objetTimer->setTransformOriginPoint(m_objetTimer->boundingRect().center());
+    m_pObjetTimer->setTransformOriginPoint(m_pObjetTimer->boundingRect().center());
 
     //Si l'écran est retourné on le remet à 0 degré
-    if(m_objetTimer->rotation() > 1) {
-        m_objetTimer->setRotation(0);
-        m_objetTimer->setX(0);
+    if(m_pObjetTimer->rotation() > 1) {
+        m_pObjetTimer->setRotation(0);
+        m_pObjetTimer->setX(0);
     } else {
-        m_objetTimer->setRotation(180);
-        m_objetTimer->setX(50);
+        m_pObjetTimer->setRotation(180);
+        m_pObjetTimer->setX(50);
     }
 }
 
@@ -443,7 +410,6 @@ void GameCore::keyPressed(int key) {
         emit notifyKeyPressed(key);
 }
 
-
 //! Traite le relâchement d'une touche.
 //! \param key Numéro de la touche (voir les constantes Qt)
 void GameCore::keyReleased(int key) {
@@ -453,15 +419,12 @@ void GameCore::keyReleased(int key) {
     emit notifyKeyReleased(key);
 }
 
-
 //! Cadence.
 //! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
     updateProgressBar();
 }
-
-
 
 //! La souris a été déplacée.
 //! Pour que cet événement soit pris en compte, la propriété MouseTracking de GameView
@@ -474,7 +437,6 @@ void GameCore::mouseMoved(QPointF newMousePosition) {
 void GameCore::mouseButtonReleased(QPointF mousePosition, Qt::MouseButtons buttons) {
     emit notifyMouseButtonReleased(mousePosition, buttons);
 }
-
 
 //! Traite l'appui sur un bouton de la souris.
 void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons buttons) {

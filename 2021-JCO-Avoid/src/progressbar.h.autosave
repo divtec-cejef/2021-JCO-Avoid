@@ -1,3 +1,10 @@
+/**
+  \file
+  \brief    Déclaration de la classe ProgressBar.
+  \author   PAPEFAB
+  \date     décembre 2021
+*/
+
 #ifndef PROGRESSBAR_H
 #define PROGRESSBAR_H
 

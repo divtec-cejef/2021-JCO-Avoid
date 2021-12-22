@@ -1,8 +1,8 @@
 /**
   \file
   \brief    Déclaration de la classe RandomMoveTickHandler.
-  \author   JCO
-  \date     août 2020
+  \author   PAPEFAB
+  \date     décembre
 */
 
 #ifndef OBJETTICKHANDLER_H

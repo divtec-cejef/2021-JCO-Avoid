@@ -1,8 +1,7 @@
 /**
   Déclaration de la classe GameView, qui affiche une scène.
-
-  @author   JCO
-  @date     Janvier 2015
+  @author   PAPEFAB
+  @date     Décembre 2021
  */
 #include "gameview.h"
 

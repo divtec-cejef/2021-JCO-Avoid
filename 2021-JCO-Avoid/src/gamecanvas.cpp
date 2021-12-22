@@ -1,8 +1,8 @@
 /**
   \file
   \brief    Déclaration de la classe GameCanvas.
-  \author   JCO
-  \date     janvier 2015
+  \author   PAPEFAB
+  \date     décembre 2021
 */
 #include "gamecanvas.h"
 #include "gamecore.h"

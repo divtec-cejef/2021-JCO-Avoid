@@ -1,8 +1,8 @@
 /**
   \file
   \brief    Définition de la classe GameScene.
-  \author   JCO
-  \date     janvier 2014
+  \author   PAPEFAB
+  \date     décembre 2021
 */
 #include "gamescene.h"
 

@@ -1,8 +1,8 @@
 /**
 \file
 \brief    Déclaration de la classe Sprite.
-\author   JCO
-\date     janvier 2014
+\author   PAPEFAB
+\date     décembre 2021
 */
 #ifndef SPRITE_H
 #define SPRITE_H

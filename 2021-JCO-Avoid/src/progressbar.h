@@ -1,12 +1,19 @@
+/**
+  \file
+  \brief    Déclaration de la classe ProgressBar
+  \author   PAPEFAB
+  \date     décembre 2021
+*/
+
 #ifndef PROGRESSBAR_H
 #define PROGRESSBAR_H
 
 #include <QObject>
 
-/**
- * @brief Classe qui gère le remplissage de la barre de progression
- * Augmente upEndurance() ou diminiue loseEndurance() le pourcentage de la barre de progression
- */
+//!
+//! @brief Classe qui gère le remplissage de la barre de progression
+//! Augmente upEndurance() ou diminiue loseEndurance() le pourcentage de la barre de progression
+//!
 class progressBar : public QObject
 {
 

@@ -1,8 +1,8 @@
 /**
   \file
-  \brief    Déclaration de la classe BlueBall.
-  \author   JCO
-  \date     septembre 2018
+  \brief    Déclaration de la classe Player.
+  \author   PAPEFAB
+  \date     décembre 2021
 */
 #ifndef PLAYER_H
 #define PLAYER_H

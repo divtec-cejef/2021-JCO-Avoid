@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Avoid:  Fichier source de player.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Avoid<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Avoid est un jeux où il faut escquiver les plateforme qui tombe avec un personnage qui se déplace latéralement</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">player.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="player_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef PLAYER_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define PLAYER_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="sprite_8h.html">sprite.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QGraphicsTransform&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_player.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="class_player.html">Player</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sprite.html">Sprite</a></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Nécessaire de déclarer cette macro pour que la classe puisse</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// bénéficier du mécanisme de signaux/slots.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Q_OBJECT</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_player.html#ac791e6be3ea95fe8c203a2a6cd5dc585">   43</a></span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#ac791e6be3ea95fe8c203a2a6cd5dc585">ON_DESTROYED</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="class_player.html#aeb298e058221c2655fa80ac29e539704">Player</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a>* pParent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207">   47</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207">WalkingDirection</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207a115d520bace63c66f1f79f470261be3e">   48</a></span>        <a class="code hl_enumvalue" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207a115d520bace63c66f1f79f470261be3e">WALKING_RIGHT</a> = 1,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_enumvalue" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207adc7a09c230f161408feecb35b7d1cda1">WALKING_LEFT</a> = -1</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207adc7a09c230f161408feecb35b7d1cda1">   50</a></span>    };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a9139ac026b96418c99ae6dfbefcc3ec6">deathAnimation</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a3f1533a29039e16b2d4da279b874d311">tick</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> elapsedTimeInMilliseconds);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>signals:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_player.html#af7411fc30d280174a572149804b4de24">   57</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_player.html#af7411fc30d280174a572149804b4de24">onplayerDestroyed</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_player.html#abf8dc8817c0f91b77cb254bbe836af4b">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_player.html#abf8dc8817c0f91b77cb254bbe836af4b">onBonusHit</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a4e1287d66f1f74ade684ec1bbc39339a">updatePlayerVelocity</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#afd88854fb84d98583ab2083edca9c2bd">configureAnimation</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a7350e0416680f976e48f617ea92738f6">changeWalkingDirection</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a76f1441f413a475f784824f199feab13">setWalkingDirection</a>(<a class="code hl_enumeration" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207">WalkingDirection</a> newWalkingDirection);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a13b4bc20dd8e661bd091684a77e62762">updateRotation</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_player.html#aea404fcb50845521ef3e201dd92766d5">   68</a></span>    <a class="code hl_enumeration" href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207">WalkingDirection</a> <a class="code hl_variable" href="class_player.html#aea404fcb50845521ef3e201dd92766d5">m_walkingDirection</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_player.html#ac601b766e1868dcaf4d7c526042de2b2">   69</a></span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qlist.html">QList&lt;QGraphicsTransform*&gt;</a> <a class="code hl_variable" href="class_player.html#ac601b766e1868dcaf4d7c526042de2b2">m_transformsForFlip</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_player.html#a14405bf631b89de15d3ef652a4185d14">   70</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_player.html#a14405bf631b89de15d3ef652a4185d14">m_walkingSpeed</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_player.html#a52cc4cca9707c177e623411234f1d87e">   73</a></span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a> <a class="code hl_variable" href="class_player.html#a52cc4cca9707c177e623411234f1d87e">m_playerVelocity</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_player.html#a945f66e1cb8d4ef0e65e6746fb6b1f5c">   74</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#a945f66e1cb8d4ef0e65e6746fb6b1f5c">m_keyLeftPressed</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_player.html#abfa59a954ab1f17099f014a65795741d">   75</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#abfa59a954ab1f17099f014a65795741d">m_keyRightPressed</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_player.html#ad6f064e5e293a5a47cbcbc0d5bd74889">   76</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#ad6f064e5e293a5a47cbcbc0d5bd74889">keyPressed</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_player.html#a8db49e2401e0d63d505469cb3df6444a">   78</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_player.html#a8db49e2401e0d63d505469cb3df6444a">playerAlive</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_player.html#a1a4d69efe58ea9814cddfbe08c213c6b">   80</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_player.html#a1a4d69efe58ea9814cddfbe08c213c6b">PLAYER_VELOCITY</a> = 600;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_player.html#ac3890515bf42426c6478327ab10c2ab7">onKeyPressed</a>(<span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_player.html#a2a5c6492c02cd2091f397817904647b4">onKeyReleased</a>(<span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_player.html#abcb44be6d8e2364e1d5826beb91b8b20">onDeathAnimationEnd</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">// PLAYER_H</span></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Classe qui gère le joueur.</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00036">player.h:37</a></div></div>
+<div class="ttc" id="aclass_player_html_a13b4bc20dd8e661bd091684a77e62762"><div class="ttname"><a href="class_player.html#a13b4bc20dd8e661bd091684a77e62762">Player::updateRotation</a></div><div class="ttdeci">void updateRotation()</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00116">player.cpp:116</a></div></div>
+<div class="ttc" id="aclass_player_html_a14405bf631b89de15d3ef652a4185d14"><div class="ttname"><a href="class_player.html#a14405bf631b89de15d3ef652a4185d14">Player::m_walkingSpeed</a></div><div class="ttdeci">int m_walkingSpeed</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00070">player.h:70</a></div></div>
+<div class="ttc" id="aclass_player_html_a1a4d69efe58ea9814cddfbe08c213c6b"><div class="ttname"><a href="class_player.html#a1a4d69efe58ea9814cddfbe08c213c6b">Player::PLAYER_VELOCITY</a></div><div class="ttdeci">const int PLAYER_VELOCITY</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00080">player.h:80</a></div></div>
+<div class="ttc" id="aclass_player_html_a2a5c6492c02cd2091f397817904647b4"><div class="ttname"><a href="class_player.html#a2a5c6492c02cd2091f397817904647b4">Player::onKeyReleased</a></div><div class="ttdeci">void onKeyReleased(int key)</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00077">player.cpp:77</a></div></div>
+<div class="ttc" id="aclass_player_html_a3f1533a29039e16b2d4da279b874d311"><div class="ttname"><a href="class_player.html#a3f1533a29039e16b2d4da279b874d311">Player::tick</a></div><div class="ttdeci">virtual void tick(long long elapsedTimeInMilliseconds)</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00025">player.cpp:25</a></div></div>
+<div class="ttc" id="aclass_player_html_a4e1287d66f1f74ade684ec1bbc39339a"><div class="ttname"><a href="class_player.html#a4e1287d66f1f74ade684ec1bbc39339a">Player::updatePlayerVelocity</a></div><div class="ttdeci">void updatePlayerVelocity()</div><div class="ttdoc">Met à jour le vecteur de vitesse de la balle en fonction des touches appuyées.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00090">player.cpp:90</a></div></div>
+<div class="ttc" id="aclass_player_html_a52cc4cca9707c177e623411234f1d87e"><div class="ttname"><a href="class_player.html#a52cc4cca9707c177e623411234f1d87e">Player::m_playerVelocity</a></div><div class="ttdeci">QPointF m_playerVelocity</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00073">player.h:73</a></div></div>
+<div class="ttc" id="aclass_player_html_a5c499323dc2c6eb8532aa03a0b70d207"><div class="ttname"><a href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207">Player::WalkingDirection</a></div><div class="ttdeci">WalkingDirection</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00047">player.h:47</a></div></div>
+<div class="ttc" id="aclass_player_html_a5c499323dc2c6eb8532aa03a0b70d207a115d520bace63c66f1f79f470261be3e"><div class="ttname"><a href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207a115d520bace63c66f1f79f470261be3e">Player::WALKING_RIGHT</a></div><div class="ttdeci">@ WALKING_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00048">player.h:48</a></div></div>
+<div class="ttc" id="aclass_player_html_a5c499323dc2c6eb8532aa03a0b70d207adc7a09c230f161408feecb35b7d1cda1"><div class="ttname"><a href="class_player.html#a5c499323dc2c6eb8532aa03a0b70d207adc7a09c230f161408feecb35b7d1cda1">Player::WALKING_LEFT</a></div><div class="ttdeci">@ WALKING_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00050">player.h:49</a></div></div>
+<div class="ttc" id="aclass_player_html_a7350e0416680f976e48f617ea92738f6"><div class="ttname"><a href="class_player.html#a7350e0416680f976e48f617ea92738f6">Player::changeWalkingDirection</a></div><div class="ttdeci">void changeWalkingDirection()</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00102">player.cpp:102</a></div></div>
+<div class="ttc" id="aclass_player_html_a76f1441f413a475f784824f199feab13"><div class="ttname"><a href="class_player.html#a76f1441f413a475f784824f199feab13">Player::setWalkingDirection</a></div><div class="ttdeci">void setWalkingDirection(WalkingDirection newWalkingDirection)</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00108">player.cpp:108</a></div></div>
+<div class="ttc" id="aclass_player_html_a8db49e2401e0d63d505469cb3df6444a"><div class="ttname"><a href="class_player.html#a8db49e2401e0d63d505469cb3df6444a">Player::playerAlive</a></div><div class="ttdeci">bool playerAlive</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00078">player.h:78</a></div></div>
+<div class="ttc" id="aclass_player_html_a9139ac026b96418c99ae6dfbefcc3ec6"><div class="ttname"><a href="class_player.html#a9139ac026b96418c99ae6dfbefcc3ec6">Player::deathAnimation</a></div><div class="ttdeci">void deathAnimation()</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00140">player.cpp:140</a></div></div>
+<div class="ttc" id="aclass_player_html_a945f66e1cb8d4ef0e65e6746fb6b1f5c"><div class="ttname"><a href="class_player.html#a945f66e1cb8d4ef0e65e6746fb6b1f5c">Player::m_keyLeftPressed</a></div><div class="ttdeci">bool m_keyLeftPressed</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00074">player.h:74</a></div></div>
+<div class="ttc" id="aclass_player_html_abcb44be6d8e2364e1d5826beb91b8b20"><div class="ttname"><a href="class_player.html#abcb44be6d8e2364e1d5826beb91b8b20">Player::onDeathAnimationEnd</a></div><div class="ttdeci">void onDeathAnimationEnd()</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00156">player.cpp:156</a></div></div>
+<div class="ttc" id="aclass_player_html_abf8dc8817c0f91b77cb254bbe836af4b"><div class="ttname"><a href="class_player.html#abf8dc8817c0f91b77cb254bbe836af4b">Player::onBonusHit</a></div><div class="ttdeci">void onBonusHit()</div></div>
+<div class="ttc" id="aclass_player_html_abfa59a954ab1f17099f014a65795741d"><div class="ttname"><a href="class_player.html#abfa59a954ab1f17099f014a65795741d">Player::m_keyRightPressed</a></div><div class="ttdeci">bool m_keyRightPressed</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00075">player.h:75</a></div></div>
+<div class="ttc" id="aclass_player_html_ac3890515bf42426c6478327ab10c2ab7"><div class="ttname"><a href="class_player.html#ac3890515bf42426c6478327ab10c2ab7">Player::onKeyPressed</a></div><div class="ttdeci">void onKeyPressed(int key)</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00065">player.cpp:65</a></div></div>
+<div class="ttc" id="aclass_player_html_ac601b766e1868dcaf4d7c526042de2b2"><div class="ttname"><a href="class_player.html#ac601b766e1868dcaf4d7c526042de2b2">Player::m_transformsForFlip</a></div><div class="ttdeci">QList&lt; QGraphicsTransform * &gt; m_transformsForFlip</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00069">player.h:69</a></div></div>
+<div class="ttc" id="aclass_player_html_ac791e6be3ea95fe8c203a2a6cd5dc585"><div class="ttname"><a href="class_player.html#ac791e6be3ea95fe8c203a2a6cd5dc585">Player::ON_DESTROYED</a></div><div class="ttdeci">const bool ON_DESTROYED</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00043">player.h:43</a></div></div>
+<div class="ttc" id="aclass_player_html_ad6f064e5e293a5a47cbcbc0d5bd74889"><div class="ttname"><a href="class_player.html#ad6f064e5e293a5a47cbcbc0d5bd74889">Player::keyPressed</a></div><div class="ttdeci">bool keyPressed</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00076">player.h:76</a></div></div>
+<div class="ttc" id="aclass_player_html_aea404fcb50845521ef3e201dd92766d5"><div class="ttname"><a href="class_player.html#aea404fcb50845521ef3e201dd92766d5">Player::m_walkingDirection</a></div><div class="ttdeci">WalkingDirection m_walkingDirection</div><div class="ttdef"><b>Definition:</b> <a href="player_8h_source.html#l00068">player.h:68</a></div></div>
+<div class="ttc" id="aclass_player_html_aeb298e058221c2655fa80ac29e539704"><div class="ttname"><a href="class_player.html#aeb298e058221c2655fa80ac29e539704">Player::Player</a></div><div class="ttdeci">Player(QGraphicsItem *pParent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00015">player.cpp:15</a></div></div>
+<div class="ttc" id="aclass_player_html_af7411fc30d280174a572149804b4de24"><div class="ttname"><a href="class_player.html#af7411fc30d280174a572149804b4de24">Player::onplayerDestroyed</a></div><div class="ttdeci">void onplayerDestroyed()</div></div>
+<div class="ttc" id="aclass_player_html_afd88854fb84d98583ab2083edca9c2bd"><div class="ttname"><a href="class_player.html#afd88854fb84d98583ab2083edca9c2bd">Player::configureAnimation</a></div><div class="ttdeci">void configureAnimation()</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00130">player.cpp:130</a></div></div>
+<div class="ttc" id="aclass_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdoc">Classe qui représente un élément d'animation graphique 2D.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00090">sprite.h:91</a></div></div>
+<div class="ttc" id="aqgraphicsitem_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsitem.html">QGraphicsItem</a></div></div>
+<div class="ttc" id="aqlist_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qlist.html">QList</a></div></div>
+<div class="ttc" id="aqpointf_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qpointf.html">QPointF</a></div></div>
+<div class="ttc" id="asprite_8h_html"><div class="ttname"><a href="sprite_8h.html">sprite.h</a></div><div class="ttdoc">Déclaration de la classe Sprite.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 22 Décembre 2021 15:44:05 pour Avoid par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

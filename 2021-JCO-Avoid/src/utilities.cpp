@@ -1,3 +1,11 @@
+/**
+  \file
+  \brief    Méthodes utilitaires diverses.
+  \author   PAPEFAB
+  \date     décembre 2021
+  \version  1.0
+*/
+
 #include "utilities.h"
 
 #include <QApplication>

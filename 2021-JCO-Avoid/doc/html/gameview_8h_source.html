@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Avoid:  Fichier source de gameview.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Avoid<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Avoid est un jeux où il faut escquiver les plateforme qui tombe avec un personnage qui se déplace latéralement</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">gameview.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="gameview_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef GAMEVIEW_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define GAMEVIEW_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QGraphicsView&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QTime&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QElapsedTimer&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_game_view.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game_view.html">GameView</a> : <span class="keyword">public</span> <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qgraphicsview.html">QGraphicsView</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_game_view.html#a559a0320eb31e14ad00ebd65c314e305a754ce8624b97d95aa4fa5f126e380544">   27</a></span>    <span class="keyword">enum</span> { <a class="code hl_enumvalue" href="class_game_view.html#a559a0320eb31e14ad00ebd65c314e305a754ce8624b97d95aa4fa5f126e380544">KEEP_PREVIOUS_TICK_INTERVAL</a> = -1  };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="class_game_view.html#aabca3ac6b068f51fa32fd73a6481854a">GameView</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qwidget.html">QWidget</a>* pParent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="class_game_view.html#aabca3ac6b068f51fa32fd73a6481854a">GameView</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qgraphicsscene.html">QGraphicsScene</a>* pScene, <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qwidget.html">QWidget</a>* pParent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_view.html#a01d0a42238c426df5f22245946251d18">setFitToScreenEnabled</a>(<span class="keywordtype">bool</span> fitToScreenEnabled);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_view.html#af6118debe09ef55369b51dae6561a061">isFitToScreenEnabled</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_view.html#ae52d8f4389b8357d4ef53df248c3f300">rotateScreen</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_view.html#a0927a1a8a2a2afc53a0858d54cf88570">resizeEvent</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qresizeevent.html">QResizeEvent</a>* pEvent);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_view.html#a8bfcf485874824351c9fa70bdbf23a49">drawForeground</a>(<a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qpainter.html">QPainter</a>* pPainter, <span class="keyword">const</span> <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qrectf.html">QRectF</a>&amp; rRect);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_view.html#aad3fedb73b58a2623d73292aaf6f8f20">init</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_game_view.html#a83ac585df52f57f750b46e7a03824fdb">   43</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_view.html#a83ac585df52f57f750b46e7a03824fdb">m_fitToScreen</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_game_view.html#aae10b832204bbf30a0ff34bb6590d082">   44</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_view.html#aae10b832204bbf30a0ff34bb6590d082">m_clipScene</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_game_view.html#ad4ac343b433a2503a7990383949697b5">   46</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_view.html#ad4ac343b433a2503a7990383949697b5">m_clippingRectUpToDate</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_game_view.html#a515dd1f2824e900009cadcc2f6853e01">   47</a></span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qrectf.html">QRectF</a> <a class="code hl_variable" href="class_game_view.html#a515dd1f2824e900009cadcc2f6853e01">m_clippingRect</a>[4];</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_game_view.html#a1081239169d9def6f13fe593516b7e65">   48</a></span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a> <a class="code hl_variable" href="class_game_view.html#a1081239169d9def6f13fe593516b7e65">m_tickTimer</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_game_view.html#a345fb7bbf5912b071a3aaf83c9253af0">   49</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_view.html#a345fb7bbf5912b071a3aaf83c9253af0">m_keepTicking</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_game_view.html#ab06ab9537b73ba40d17b6c63e26281a8">   51</a></span>    <a class="code hl_classRef" href="http://qt-project.org/doc/qt-5/qelapsedtimer.html">QElapsedTimer</a> <a class="code hl_variable" href="class_game_view.html#ab06ab9537b73ba40d17b6c63e26281a8">m_lastUpdateTime</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// GAMEVIEW_H</span></div>
+<div class="ttc" id="aclass_game_view_html"><div class="ttname"><a href="class_game_view.html">GameView</a></div><div class="ttdoc">Classe de visualisation d'un espace 2D de jeu.</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00023">gameview.h:24</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a01d0a42238c426df5f22245946251d18"><div class="ttname"><a href="class_game_view.html#a01d0a42238c426df5f22245946251d18">GameView::setFitToScreenEnabled</a></div><div class="ttdeci">void setFitToScreenEnabled(bool fitToScreenEnabled)</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00033">gameview.cpp:33</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a0927a1a8a2a2afc53a0858d54cf88570"><div class="ttname"><a href="class_game_view.html#a0927a1a8a2a2afc53a0858d54cf88570">GameView::resizeEvent</a></div><div class="ttdeci">virtual void resizeEvent(QResizeEvent *pEvent)</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00045">gameview.cpp:45</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a1081239169d9def6f13fe593516b7e65"><div class="ttname"><a href="class_game_view.html#a1081239169d9def6f13fe593516b7e65">GameView::m_tickTimer</a></div><div class="ttdeci">QTimer m_tickTimer</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00048">gameview.h:48</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a345fb7bbf5912b071a3aaf83c9253af0"><div class="ttname"><a href="class_game_view.html#a345fb7bbf5912b071a3aaf83c9253af0">GameView::m_keepTicking</a></div><div class="ttdeci">bool m_keepTicking</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00049">gameview.h:49</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a515dd1f2824e900009cadcc2f6853e01"><div class="ttname"><a href="class_game_view.html#a515dd1f2824e900009cadcc2f6853e01">GameView::m_clippingRect</a></div><div class="ttdeci">QRectF m_clippingRect[4]</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00047">gameview.h:47</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a559a0320eb31e14ad00ebd65c314e305a754ce8624b97d95aa4fa5f126e380544"><div class="ttname"><a href="class_game_view.html#a559a0320eb31e14ad00ebd65c314e305a754ce8624b97d95aa4fa5f126e380544">GameView::KEEP_PREVIOUS_TICK_INTERVAL</a></div><div class="ttdeci">@ KEEP_PREVIOUS_TICK_INTERVAL</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00027">gameview.h:27</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a83ac585df52f57f750b46e7a03824fdb"><div class="ttname"><a href="class_game_view.html#a83ac585df52f57f750b46e7a03824fdb">GameView::m_fitToScreen</a></div><div class="ttdeci">bool m_fitToScreen</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00043">gameview.h:43</a></div></div>
+<div class="ttc" id="aclass_game_view_html_a8bfcf485874824351c9fa70bdbf23a49"><div class="ttname"><a href="class_game_view.html#a8bfcf485874824351c9fa70bdbf23a49">GameView::drawForeground</a></div><div class="ttdeci">virtual void drawForeground(QPainter *pPainter, const QRectF &amp;rRect)</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00059">gameview.cpp:59</a></div></div>
+<div class="ttc" id="aclass_game_view_html_aabca3ac6b068f51fa32fd73a6481854a"><div class="ttname"><a href="class_game_view.html#aabca3ac6b068f51fa32fd73a6481854a">GameView::GameView</a></div><div class="ttdeci">GameView(QWidget *pParent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00017">gameview.cpp:17</a></div></div>
+<div class="ttc" id="aclass_game_view_html_aad3fedb73b58a2623d73292aaf6f8f20"><div class="ttname"><a href="class_game_view.html#aad3fedb73b58a2623d73292aaf6f8f20">GameView::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initialise cette affichage.</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00076">gameview.cpp:76</a></div></div>
+<div class="ttc" id="aclass_game_view_html_aae10b832204bbf30a0ff34bb6590d082"><div class="ttname"><a href="class_game_view.html#aae10b832204bbf30a0ff34bb6590d082">GameView::m_clipScene</a></div><div class="ttdeci">bool m_clipScene</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00044">gameview.h:44</a></div></div>
+<div class="ttc" id="aclass_game_view_html_ab06ab9537b73ba40d17b6c63e26281a8"><div class="ttname"><a href="class_game_view.html#ab06ab9537b73ba40d17b6c63e26281a8">GameView::m_lastUpdateTime</a></div><div class="ttdeci">QElapsedTimer m_lastUpdateTime</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00051">gameview.h:51</a></div></div>
+<div class="ttc" id="aclass_game_view_html_ad4ac343b433a2503a7990383949697b5"><div class="ttname"><a href="class_game_view.html#ad4ac343b433a2503a7990383949697b5">GameView::m_clippingRectUpToDate</a></div><div class="ttdeci">bool m_clippingRectUpToDate</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8h_source.html#l00046">gameview.h:46</a></div></div>
+<div class="ttc" id="aclass_game_view_html_ae52d8f4389b8357d4ef53df248c3f300"><div class="ttname"><a href="class_game_view.html#ae52d8f4389b8357d4ef53df248c3f300">GameView::rotateScreen</a></div><div class="ttdeci">void rotateScreen()</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00085">gameview.cpp:85</a></div></div>
+<div class="ttc" id="aclass_game_view_html_af6118debe09ef55369b51dae6561a061"><div class="ttname"><a href="class_game_view.html#af6118debe09ef55369b51dae6561a061">GameView::isFitToScreenEnabled</a></div><div class="ttdeci">bool isFitToScreenEnabled() const</div><div class="ttdef"><b>Definition:</b> <a href="gameview_8cpp_source.html#l00039">gameview.cpp:39</a></div></div>
+<div class="ttc" id="aqelapsedtimer_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qelapsedtimer.html">QElapsedTimer</a></div></div>
+<div class="ttc" id="aqgraphicsscene_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsscene.html">QGraphicsScene</a></div></div>
+<div class="ttc" id="aqgraphicsview_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qgraphicsview.html">QGraphicsView</a></div></div>
+<div class="ttc" id="aqpainter_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qpainter.html">QPainter</a></div></div>
+<div class="ttc" id="aqrectf_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qrectf.html">QRectF</a></div></div>
+<div class="ttc" id="aqresizeevent_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qresizeevent.html">QResizeEvent</a></div></div>
+<div class="ttc" id="aqtimer_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qtimer.html">QTimer</a></div></div>
+<div class="ttc" id="aqwidget_html"><div class="ttname"><a href="http://qt-project.org/doc/qt-5/qwidget.html">QWidget</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 22 Décembre 2021 15:44:04 pour Avoid par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

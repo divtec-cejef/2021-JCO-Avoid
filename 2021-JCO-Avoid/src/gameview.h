@@ -1,8 +1,8 @@
 /**
   Déclaration de la classe GameView, qui affiche une scène.
 
-  @author   JCO
-  @date     Janvier 2015
+  @author   PAPEFAB
+  @date     décembre 2021
  */
 #ifndef GAMEVIEW_H
 #define GAMEVIEW_H

@@ -20,9 +20,6 @@
 //! Cette classe implémente les fonctionnalités suivantes :
 //! - Possibilité d'adapter l'affichage de la scène à la taille de la fenêtre. Cette possibilité est déclanchée par défaut
 //!   et peut être enclenchée avec setFitToScreenEnabled().
-//! - Possibilité de "clipper" l'affichage de la scène, afin que tout élment en dehors de la surface de la scène soit
-//!   caché. Cette possibilité est déclanchée par défaut et peut être enclenchée avec setClipSceneEnabled().
-//!
 class GameView : public QGraphicsView
 {
 public:
@@ -33,9 +30,6 @@ public:
 
     void setFitToScreenEnabled(bool fitToScreenEnabled);
     bool isFitToScreenEnabled() const;
-
-    void setClipSceneEnabled(bool clipSceneEnabled);
-    bool isClipSceneEnabled() const;
 
     void rotateScreen();
 

@@ -18,6 +18,8 @@
 //! Le sprite s'occupe de se déplacer vers le bas et de détecter les collisions
 //!
 //! en cas de collision avec le bord bas de la scène le sprite est détruit
+//! 
+//! La vitesse des sprite s'accélèrent au fur et à mesure que le temps passe
 class ObjetTickHandler : public QObject, public SpriteTickHandler
 {
 

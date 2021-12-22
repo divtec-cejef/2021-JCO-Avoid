@@ -162,9 +162,6 @@ signals:
     void scaleChanged();
 
 protected:
-    QList<Sprite*> collidingSprites() const;
-    QList<Sprite*> collidingSprites(const QRectF& rRect) const;
-    QList<Sprite*> collidingSprites(const QPainterPath& rShape) const;
     GameScene* m_pParentScene;
 
 private:

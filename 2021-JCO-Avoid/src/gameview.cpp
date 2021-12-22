@@ -11,6 +11,7 @@
 #include <QTime>
 #include <QTimer>
 
+
 //! Construit une fenêtre de visualisation de la scène de jeu.
 //! \param pParent  Widget parent.
 GameView::GameView(QWidget* pParent) : QGraphicsView(pParent) {
@@ -20,7 +21,7 @@ GameView::GameView(QWidget* pParent) : QGraphicsView(pParent) {
 //! Construit une fenêtre de visualisation de la scène de jeu.
 //! \param pScene   Scène affichée par cette vue.
 //! \param pParent  Widget parent.
-GameView::GameView(QGraphicsScene* pScene, QWidget* pParent) : QGraphicsView(pScene, pParent){
+GameView::GameView(QGraphicsScene* pScene, QWidget* pParent) : QGraphicsView(pScene, pParent) {
 
     init();
 }
@@ -37,18 +38,6 @@ void GameView::setFitToScreenEnabled(bool fitToScreenEnabled) {
 //!         enclenché (true) ou non (false).
 bool GameView::isFitToScreenEnabled() const {
     return m_fitToScreen;
-}
-
-//! Enclenche ou déclenche le clipping de la scène.
-//! \param clipSceneEnabled  Indique si le clipping est enclenché (true) ou
-//!                          déclanché (false).
-void GameView::setClipSceneEnabled(bool clipSceneEnabled) {
-    m_clipScene = clipSceneEnabled;
-}
-
-//! \return un booléen indiquant si le clipping de la scène est enclenché ou non.
-bool GameView::isClipSceneEnabled() const {
-    return m_clipScene;
 }
 
 //! Gère le redimensionnement de l'affichage.

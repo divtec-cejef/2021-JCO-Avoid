@@ -78,22 +78,6 @@ void GameScene::removeSpriteFromScene(Sprite* pSprite)
 
 }
 
-//! Construit la liste de tous les sprites en collision avec le sprite donné en
-//! paramètre.
-//! Si la scène contient de nombreux sprites, cette méthode peut prendre du temps.
-//! \param pSprite Sprite pour lequel les collisions doivent être vérifiées.
-//! \return une liste de sprites en collision. Si aucun autre sprite ne collisionne
-//! le sprite donné, la liste retournée est vide.
-QList<Sprite*> GameScene::collidingSprites(const Sprite* pSprite) const {
-    QList<Sprite*> spriteList;
-    const auto collidingItems = pSprite->collidingItems();
-    for(QGraphicsItem* pItem : collidingItems) {
-        if (pItem->type() == Sprite::SpriteItemType)
-            spriteList << static_cast<Sprite*>(pItem);
-    }
-    return spriteList;
-}
-
 //! Construit la liste de tous les sprites en collision avec le rectangle donné
 //! en paramètre.
 //! Si la scène contient de nombreux sprites, cette méthode peut prendre du temps.
@@ -110,21 +94,6 @@ QList<Sprite*> GameScene::collidingSprites(const QRectF &rRect) const  {
     return collidingSpriteList;
 }
 
-//! Construit la liste de tous les sprites en collision avec la forme donnée
-//! en paramètre.
-//! Si la scène contient de nombreux sprites, cette méthode peut prendre du temps.
-//! \param rShape Forme avec laquelle il faut tester les collisions.
-//! \return une liste de sprites en collision.
-QList<Sprite*> GameScene::collidingSprites(const QPainterPath& rShape) const {
-    QList<Sprite*> collidingSpriteList;
-    auto spriteList = collidingSprites(rShape.boundingRect());
-    for(Sprite* pSprite : spriteList)  {
-        if (pSprite->globalShape().intersects(rShape)) {
-            collidingSpriteList << pSprite;
-        }
-    }
-    return collidingSpriteList;
-}
 
 //!
 //! \return la liste des sprites de cette scène (y compris ceux qui ne sont pas visibles).
@@ -138,6 +107,7 @@ QList<Sprite*> GameScene::sprites() const  {
     }
     return spriteList;
 }
+
 
 //! Récupère le sprite visible le plus en avant se trouvant à la position donnée.
 //! \return un pointeur sur le sprite trouvé, ou null si aucun sprite ne se trouve à cette position.
@@ -176,28 +146,6 @@ void GameScene::setBackgroundImage(const QImage& rImage)  {
     m_pBackgroundImage = new QImage(rImage);
 }
 
-//! Défini la couleur de fond de cette scène.
-void GameScene::setBackgroundColor(QColor color) {
-    if (m_pBackgroundImage) {
-        delete m_pBackgroundImage;
-        m_pBackgroundImage = nullptr;
-    }
-
-    this->setBackgroundBrush(QBrush(color));
-}
-
-//! Change la largeur de la scène.
-//! \param sceneWidth   Largeur de la scène en pixels.
-void GameScene::setWidth(int sceneWidth)  {
-    setSceneRect(0,0, sceneWidth, height());
-}
-
-//! Change la hauteur de la scène.
-//! \param sceneHeight   Hauteur de la scène, en pixels.
-void GameScene::setHeight(int sceneHeight)  {
-    setSceneRect(0,0, width(), sceneHeight);
-}
-
 //! Le sprite donné sera informé du tick.
 //! \param pSprite Sprite qui s'enregistre pour le tick.
 void GameScene::registerSpriteForTick(Sprite* pSprite) {
@@ -208,14 +156,6 @@ void GameScene::registerSpriteForTick(Sprite* pSprite) {
 //! \param pSprite Sprite qui démissionne du tick.
 void GameScene::unregisterSpriteFromTick(Sprite* pSprite) {
     m_registeredForTickSpriteList.removeAll(pSprite);
-}
-
-//! Vérifie si la position donnée fait partie de la scène.
-//! \param rPosition Position à vérifier.
-//! \return un booléen à vrai si la position fait partie de la scène, sinon
-//! faux.
-bool GameScene::isInsideScene(const QPointF& rPosition) const {
-    return sceneRect().contains(rPosition);
 }
 
 //! Vérifie si le rectangle donné fait complètement partie de la scène.
@@ -237,6 +177,7 @@ void GameScene::tick(long long elapsedTimeInMilliseconds) {
     }
 }
 
+
 //! Dessine le fond d'écran de la scène.
 //! Si une image à été définie avec setBackgroundImage(), celle-ci est affichée.
 //! Une autre méthode permet de définir une image de fond :
@@ -248,6 +189,7 @@ void GameScene::drawBackground(QPainter* pPainter, const QRectF& rRect)  {
     if (m_pBackgroundImage)
         pPainter->drawImage(0,0, *m_pBackgroundImage);
 }
+
 
 //! Initialise la scène
 void GameScene::init() {

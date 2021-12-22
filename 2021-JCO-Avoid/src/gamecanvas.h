@@ -42,9 +42,6 @@ class mainframe;
 //! à ce que ces classes puissent réagir à la cadence.
 //!
 //! Pour stopper le tick, utiliser la commande stopTick().
-//!
-//! GameCanvas permet également d'enclencher le suivi des déplacements de la souris (startMouseTracking() et de
-//! le stopper (stopMouseTracking()).
 class GameCanvas : public QObject
 {
     Q_OBJECT
@@ -56,9 +53,6 @@ public:
     explicit GameCanvas(GameView* pView, QObject* pParent = nullptr);
     ~GameCanvas();
 
-
-    GameScene* createScene();
-    GameScene* createScene(const QRectF& rSceneRect);
     GameScene* createScene(qreal x, qreal y, qreal width, qreal height);
 
     void setCurrentScene(GameScene* pScene);
@@ -70,8 +64,6 @@ public:
     void rotateView();
     GameCore* getGameCore();
 
-    void startMouseTracking();
-    void stopMouseTracking();
     QPointF currentMousePosition() const;
 
 signals:
@@ -82,7 +74,6 @@ protected:
     bool eventFilter(QObject* pObject, QEvent* pEvent);
 
 private:
-    void initDetailedInfos();
 
     void keyPressed(QKeyEvent* pKeyEvent);
     void keyReleased(QKeyEvent* pKeyEvent);

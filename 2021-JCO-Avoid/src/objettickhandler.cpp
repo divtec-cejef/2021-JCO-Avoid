@@ -25,14 +25,13 @@
 #include "resources.h"
 
 qreal ObjetTickHandler::s_vitesseObtsacle = 7;
-const int AUGMENTATION_VITESSE_INTERVAL = 1000;
 
 //! Constructeur.
 //! \param pParentSprite Sprite dont le déplacement doit être géré.
 ObjetTickHandler::ObjetTickHandler(Sprite* pParentSprite) : SpriteTickHandler (pParentSprite)
 {
 
-    //Démarre le timer pour l'augmentation de la vitesse des sprite
+    //Mise en place et démarrage du timer pour l'augmentation de la vitesse des sprites
     m_tickTimerAugmentationVitesseObstacle.setSingleShot(false);
     m_tickTimerAugmentationVitesseObstacle.setInterval(AUGMENTATION_VITESSE_INTERVAL);
     m_tickTimerAugmentationVitesseObstacle.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
@@ -79,7 +78,10 @@ void ObjetTickHandler::startTimerVitesseObstacle(int tickInterval)  {
     m_tickTimerAugmentationVitesseObstacle.start();
 }
 
-//Augmente la vitesse de déplacements des sprite
+/**
+ * Augmente la vitesse de l'obstacle
+ * @brief ObjetTickHandler::augmentationVitesseObstacle
+ */
 void ObjetTickHandler::augmentationVitesseObstacle(){
     s_vitesseObtsacle+=0.1;
 }

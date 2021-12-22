@@ -215,59 +215,6 @@ GameScene* Sprite::parentScene() const {
     return m_pParentScene;
 }
 
-//! Construit la liste de tous les sprites en collision avec ce sprite.
-//! Si la scène contient de nombreux sprites, cette méthode peut prendre du temps.
-//! \return une liste de sprites en collision. Si aucun autre sprite ne collisionne
-//! avec ce sprite, la liste retournée est vide.
-QList<Sprite*> Sprite::collidingSprites() const {
-    QList<Sprite*> collidingSpriteList;
-
-    if (m_pParentScene != nullptr) {
-        collidingSpriteList = m_pParentScene->collidingSprites(this);
-    } else {
-        qDebug() << "Le sprite ne fait pas partie d'une scène.";
-    }
-    return collidingSpriteList;
-}
-
-//! Construit la liste de tous les sprites en collision avec le rectangle donné
-//! en paramètre, sauf ce sprite-même.
-//! Si la scène contient de nombreux sprites, cette méthode peut prendre du temps.
-//! \param rRect Rectangle avec lequel il faut tester les collisions.
-//! \return une liste de sprites en collision.
-QList<Sprite*> Sprite::collidingSprites(const QRectF& rRect) const {
-    QList<Sprite*> collidingSpriteList;
-
-    if (m_pParentScene != nullptr) {
-        collidingSpriteList = m_pParentScene->collidingSprites(rRect);
-
-        // Ce sprite lui-même collisionne avec le rectangle donné. Il faut donc l'ignorer.
-        collidingSpriteList.removeAll(const_cast<Sprite*>(this));
-    } else {
-        qDebug() << "Le sprite ne fait pas partie d'une scène.";
-    }
-    return collidingSpriteList;
-}
-
-//! Construit la liste de tous les sprites en collision avec la forme donnée
-//! en paramètre, sauf ce sprite-même.
-//! Si la scène contient de nombreux sprites, cette méthode peut prendre du temps.
-//! \param rShape Forme avec laquelle il faut tester les collisions.
-//! \return une liste de sprites en collision.
-QList<Sprite*> Sprite::collidingSprites(const QPainterPath& rShape) const {
-    QList<Sprite*> collidingSpriteList;
-
-    if (m_pParentScene != nullptr) {
-        collidingSpriteList = m_pParentScene->collidingSprites(rShape);
-
-        // Ce sprite lui-même collisionne avec le rectangle donné. Il faut donc l'ignorer.
-        collidingSpriteList.removeAll(const_cast<Sprite*>(this));
-    } else {
-        qDebug() << "Le sprite ne fait pas partie d'une scène.";
-    }
-    return collidingSpriteList;
-}
-
 //! Initialise le sprite.
 void Sprite::init() {
     m_pTickHandler = nullptr;

@@ -10,9 +10,7 @@
 
 #include <QDebug>
 
-const int PLAYER_VELOCITY = 600; // pixels par seconde
-
-//! Construit et initialise une balle bleue.
+//! Construit et initialise le player.
 //! \param pParent  Objet propiétaire de cet objet.
 Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "tile19.png", pParent) {
     m_keyLeftPressed  = false;
@@ -26,10 +24,10 @@ Player::Player(QGraphicsItem* pParent) : Sprite(GameFramework::imagesPath() + "t
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void Player::tick(long long elapsedTimeInMilliseconds) {
 
-    // Calcul de la distance parcourue par la balle, selon sa vitesse et le temps écoulé.
-    QPointF ballDistance = elapsedTimeInMilliseconds * m_playerVelocity / 1000;
-    // Positionne la bounding box de la balle à sa prochaine position.
-    QRectF nextRect = this->globalBoundingBox().translated(ballDistance);
+    // Calcul de la distance parcourue par le player, selon sa vitesse et le temps écoulé.
+    QPointF playerDistance = elapsedTimeInMilliseconds * m_playerVelocity / 1000;
+    // Positionne la bounding box du player à sa prochaine position.
+    QRectF nextRect = this->globalBoundingBox().translated(playerDistance);
     //Récupère tous les sprites de la scène
     auto collidingSprites = this->parentScene()->collidingSprites(nextRect);
     // Supprimer le sprite lui-même, qui collisionne toujours avec sa boundingbox
@@ -48,14 +46,16 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
     // Si la prochaine position reste dans les limites de la scène, la balle
     // y est positionnée. Sinon, elle reste sur place.
     if (this->parentScene()->isInsideScene(nextRect)) {
-        this->setPos(this->pos() + ballDistance);
+        this->setPos(this->pos() + playerDistance);
     }
 
+    //Si le player collisionne avec un bonus, alors le bonus est supprimé
     if (bonus != nullptr) {
         bonus->deleteLater();
         emit onBonusHit();
-    } else if(collision && m_playerAlive){
-        m_playerAlive = false;
+        //Sinon le player meurt
+    } else if(collision && playerAlive){
+        playerAlive = false;
         emit onplayerDestroyed();
     }
 }
@@ -81,8 +81,7 @@ void Player::onKeyReleased(int key) {
         case Qt::Key_Right: m_keyRightPressed = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
         case Qt::Key_Left:  m_keyLeftPressed  = false;  this->stopAnimation(); this->setCurrentAnimationFrame(0); break;
         }
-}
-
+    }
     updatePlayerVelocity();
 
 }
@@ -112,8 +111,12 @@ void Player::setWalkingDirection(WalkingDirection newWalkingDirection) {
     }
 }
 
+/**
+ * Matrice de transformation pour faire miroir du player
+ * @brief Player::updateRotation
+ */
 void Player::updateRotation() {
-    // Préparation d'une matrice de transformation pour faire un miroir du marcheur
+    // Préparation d'une matrice de transformation
     QGraphicsScale* pHorizontalFlip = new QGraphicsScale(this);
     pHorizontalFlip->setOrigin(QVector3D(this->width()/2,0,0));
     pHorizontalFlip->setXScale(m_walkingDirection);
@@ -124,7 +127,10 @@ void Player::updateRotation() {
     this->setTransformations(transformations);
 }
 
-
+/**
+ * Animation du player qui court
+ * @brief Player::configureAnimation
+ */
 void Player::configureAnimation() {
     for (int FrameNumber = 1; FrameNumber <= 7; ++FrameNumber)  {
         this->addAnimationFrame(QString(GameFramework::imagesPath() + "personnage/tile%1.png").arg(FrameNumber));
@@ -133,7 +139,10 @@ void Player::configureAnimation() {
     this->startAnimation();
 }
 
-
+/**
+ * Animation du personnage qui meurt
+ * @brief Player::deathAnimation
+ */
 void Player::deathAnimation() {
     keyPressed = false;
     this->stopAnimation();
@@ -146,6 +155,11 @@ void Player::deathAnimation() {
     this->startAnimation();
 
 }
+
+/**
+ * Stop l'animation du personnage
+ * @brief Player::onDeathAnimationEnd
+ */
 
 void Player::onDeathAnimationEnd() {
 

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_KeyTickHandler_t {
-    QByteArrayData data[5];
-    char stringdata0[47];
+    QByteArrayData data[1];
+    char stringdata0[15];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,15 +32,10 @@ struct qt_meta_stringdata_KeyTickHandler_t {
     )
 static const qt_meta_stringdata_KeyTickHandler_t qt_meta_stringdata_KeyTickHandler = {
     {
-QT_MOC_LITERAL(0, 0, 14), // "KeyTickHandler"
-QT_MOC_LITERAL(1, 15, 12), // "onKeyPressed"
-QT_MOC_LITERAL(2, 28, 0), // ""
-QT_MOC_LITERAL(3, 29, 3), // "key"
-QT_MOC_LITERAL(4, 33, 13) // "onKeyReleased"
+QT_MOC_LITERAL(0, 0, 14) // "KeyTickHandler"
 
     },
-    "KeyTickHandler\0onKeyPressed\0\0key\0"
-    "onKeyReleased"
+    "KeyTickHandler"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,35 +45,22 @@ static const uint qt_meta_data_KeyTickHandler[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       0,    0, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
- // slots: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x08 /* Private */,
-       4,    1,   27,    2, 0x08 /* Private */,
-
- // slots: parameters
-    QMetaType::Void, QMetaType::Int,    3,
-    QMetaType::Void, QMetaType::Int,    3,
-
        0        // eod
 };
 
 void KeyTickHandler::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<KeyTickHandler *>(_o);
-        Q_UNUSED(_t)
-        switch (_id) {
-        case 0: _t->onKeyPressed((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->onKeyReleased((*reinterpret_cast< int(*)>(_a[1]))); break;
-        default: ;
-        }
-    }
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject KeyTickHandler::staticMetaObject = { {
@@ -109,17 +91,6 @@ void *KeyTickHandler::qt_metacast(const char *_clname)
 int KeyTickHandler::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
-    if (_id < 0)
-        return _id;
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
-    }
     return _id;
 }
 QT_WARNING_POP

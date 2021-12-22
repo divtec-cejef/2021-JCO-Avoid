@@ -71,7 +71,7 @@ private:
     const int LOSE_ENDURANCE_INTERVAL = 100;
     const int PROGRESSBAR_WIDTH = 500;
     const int ACTUALISATION_TEMPS = 100;
-    const int APPARITION_BONUS = 10;
+    const int INTERVAL_APPARITION_BONUS = 10;
 
     const int SCENE_WIDTH = 1920;
     const int LARGEUR_MINIMUM = - SCENE_WIDTH / 50;
@@ -124,7 +124,7 @@ private:
     QString m_textResultat = "Voici votre temps : ";
 
     bool keyboardDisabled = false;
-    bool jeuTermine = true;
+    bool jeuTermine = false;
     bool m_keepTicking;
 
     int nombreObstacle = 0;

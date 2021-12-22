@@ -5,7 +5,6 @@
   \date     janvier 2015
 */
 #include "gamecanvas.h"
-
 #include "gamecore.h"
 #include "gamescene.h"
 #include "gameview.h"
@@ -36,8 +35,6 @@ GameCanvas::GameCanvas(GameView* pView, QObject* pParent) : QObject(pParent) {
     m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(onTick()));
 
-    initDetailedInfos();
-
     QTimer::singleShot(0, this, SLOT(onInit()));
 }
 
@@ -48,26 +45,6 @@ GameCanvas::~GameCanvas()
 {
     delete m_pGameCore;
     m_pGameCore = nullptr;
-}
-
-//! Construit une scène de jeu et lui installe un filtre d'événements pour intercepter les
-//! événements clavier et souris.
-//! La scène créée n'est pas automatiquement affichée.
-//! \see setCurrentScene()
-GameScene* GameCanvas::createScene() {
-    GameScene* pScene = new GameScene(this);
-    pScene->installEventFilter(this);
-    return pScene;
-}
-
-//! Construit une scène de jeu et lui installe un filtre d'événements pour intercepter les
-//! événements clavier et souris.
-//! La scène créée n'est pas automatiquement affichée.
-//! \see setCurrentScene()
-GameScene* GameCanvas::createScene(const QRectF& rSceneRect) {
-    GameScene* pScene = new GameScene(rSceneRect, this);
-    pScene->installEventFilter(this);
-    return pScene;
 }
 
 //! Construit une scène de jeu et lui installe un filtre d'événements pour intercepter les
@@ -117,16 +94,6 @@ void GameCanvas::stopTick()  {
     m_tickTimer.stop();
 }
 
-//! Enclenche le suivi du déplacement de la souris.
-void GameCanvas::startMouseTracking() {
-    m_pView->setMouseTracking(true);
-}
-
-//! Déclenche le suivi du déplacement de la souris.
-void GameCanvas::stopMouseTracking() {
-    m_pView->setMouseTracking(false);
-}
-
 //!
 //! \return la position actuelle de la souris, dans le système de coordonnées de la scène actuelle.
 //!
@@ -146,16 +113,6 @@ bool GameCanvas::eventFilter(QObject* pObject, QEvent* pEvent)
     case QEvent::GraphicsSceneMouseRelease: this->mouseButtonReleased(static_cast<QGraphicsSceneMouseEvent*>(pEvent)); return true;
     default : return QObject::eventFilter(pObject, pEvent);
     }
-}
-
-//! Initialise l'affichage des informations détaillées.
-void GameCanvas::initDetailedInfos()
-{
-    m_pDetailedInfosItem = new QGraphicsTextItem("");
-    m_pDetailedInfosItem->setDefaultTextColor(Qt::blue);
-    m_pDetailedInfosItem->setPos(0,20);
-    m_pDetailedInfosItem->setZValue(std::numeric_limits<qreal>::max()); // Toujours devant les autres items
-    m_pDetailedInfosItem->hide();
 }
 
 //! Gère l'appui sur une touche du clavier.

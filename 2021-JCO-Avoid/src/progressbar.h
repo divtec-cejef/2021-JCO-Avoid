@@ -1,6 +1,6 @@
 /**
   \file
-  \brief    Déclaration de la classe ProgressBar
+  \brief    Déclaration de la classe ProgressBar.
   \author   PAPEFAB
   \date     décembre 2021
 */

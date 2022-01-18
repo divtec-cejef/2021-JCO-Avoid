@@ -15,7 +15,7 @@
 #include <thread>
 #include <functional>
 
-#include<QFontDatabase>
+#include <QFontDatabase>
 #include <QDebug>
 #include <QGraphicsBlurEffect>
 #include <QGraphicsScale>
@@ -65,6 +65,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimerLoseEndurance, &QTimer::timeout, pProgressBar, &progressBar::loseEndurance);
+
 
 
     //Mise en place et démarrage du timer de la partie

@@ -1,6 +1,6 @@
-/*! \mainpage Game Framework
+/*! \mainpage Avoid
  *
- * \author JCO
+ * \author PAPEFAB
  * \section intro_sec Introduction
  *
  * Ce projet est une architecture de base en vue de la création d'un jeu simple en 2D.

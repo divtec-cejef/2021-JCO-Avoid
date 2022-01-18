@@ -26,7 +26,6 @@ void progressBar::setProgressBarProcent(double progressProcent){
     if (progressProcent > 100 ) progressProcent = 100;
     else if (progressProcent < 0) progressProcent = 0;
     progressBarPercentage = progressProcent;
-
 }
 
 //! augmente de 30% la barre de progression

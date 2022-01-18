@@ -43,8 +43,8 @@ void Player::tick(long long elapsedTimeInMilliseconds) {
 
     bool collision = !collidingSprites.isEmpty();
 
-    // Si la prochaine position reste dans les limites de la scène, la balle
-    // y est positionnée. Sinon, elle reste sur place.
+    // Si la prochaine position reste dans les limites de la scène, le player
+    // y est positionnée. Sinon, il reste sur place.
     if (this->parentScene()->isInsideScene(nextRect)) {
         this->setPos(this->pos() + playerDistance);
     }

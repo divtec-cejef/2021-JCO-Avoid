@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# User files
+*.user
+
 # Folders
 *\build

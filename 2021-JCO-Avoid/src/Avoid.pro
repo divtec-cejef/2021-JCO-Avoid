@@ -10,6 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Avoid
 TEMPLATE = app
+RC_ICONS = icon.ico
 
 #DEFINES += DEBUG_SPRITE_COUNT
 #DEFINES += DEBUG_BBOX

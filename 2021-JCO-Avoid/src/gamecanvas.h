@@ -85,6 +85,7 @@ private:
     GameView* m_pView;
     GameCore* m_pGameCore;
     QPointer<QGraphicsTextItem> m_pDetailedInfosItem; // Smart Pointer pour qu'il soit mis à zéro au cas où l'item est effacé par GameScene::clear()
+    void initDetailedInfos();
 
     bool m_keepTicking;
 

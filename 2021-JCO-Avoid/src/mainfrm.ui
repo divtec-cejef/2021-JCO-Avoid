@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Game Framework</string>
+   <string>Avoid</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../res/images/iconAvoid.ico</normaloff>../res/images/iconAvoid.ico</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

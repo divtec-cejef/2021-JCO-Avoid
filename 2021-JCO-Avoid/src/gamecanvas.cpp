@@ -35,6 +35,8 @@ GameCanvas::GameCanvas(GameView* pView, QObject* pParent) : QObject(pParent) {
     m_tickTimer.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
     connect(&m_tickTimer, SIGNAL(timeout()), this, SLOT(onTick()));
 
+    initDetailedInfos();
+
     QTimer::singleShot(0, this, SLOT(onInit()));
 }
 
@@ -45,6 +47,16 @@ GameCanvas::~GameCanvas()
 {
     delete m_pGameCore;
     m_pGameCore = nullptr;
+}
+
+//! Initialise l'affichage des informations détaillées.
+void GameCanvas::initDetailedInfos()
+{
+    m_pDetailedInfosItem = new QGraphicsTextItem("");
+    m_pDetailedInfosItem->setDefaultTextColor(Qt::blue);
+    m_pDetailedInfosItem->setPos(0,20);
+    m_pDetailedInfosItem->setZValue(std::numeric_limits<qreal>::max()); // Toujours devant les autres items
+    m_pDetailedInfosItem->hide();
 }
 
 //! Construit une scène de jeu et lui installe un filtre d'événements pour intercepter les

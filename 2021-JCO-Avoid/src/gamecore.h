@@ -109,7 +109,6 @@ private:
     Sprite* m_pPlayer;
     Sprite* m_pAnimMort;
     Sprite* pBonus;
-    Sprite* pObstacle;
     Sprite* pBouton;
 
     Player* pPlayer;

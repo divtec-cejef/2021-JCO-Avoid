@@ -64,7 +64,7 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     m_tickTimerLoseEndurance.setSingleShot(false);
     m_tickTimerLoseEndurance.setInterval(LOSE_ENDURANCE_INTERVAL);
     m_tickTimerLoseEndurance.setTimerType(Qt::PreciseTimer); // Important pour avoir un précision suffisante sous Windows
-    connect(&m_tickTimerLoseEndurance, &QTimer::timeout, pProgressBar, &progressBar::loseEndurance);
+    connect(&m_tickTimerLoseEndurance, SIGNAL(timeout()), pProgressBar, SLOT(loseEndurance()));
 
 
 
@@ -91,7 +91,6 @@ GameCore::GameCore(GameCanvas* pGameCanvas, QObject* pParent) : QObject(pParent)
     setupTimerPartie();
     startSpawnObstacleTimer();
     startRetournerEcran();
-
     // Démarre le tick pour que les animations qui en dépendent fonctionnent correctement.
     // Attention : il est important que l'enclenchement du tick soit fait vers la fin de cette fonction,
     // sinon le temps passé jusqu'au premier tick (ElapsedTime) peut être élevé et provoquer de gros
@@ -123,7 +122,7 @@ void GameCore::setupObstacle(){
             //sinon génére un obstacle à une position x aléatoire
         }else{
             nombreObstacle++;
-            pObstacle = new Sprite(QString(GameFramework::imagesPath() + "obstacle/%0.png").arg(nbGenObstacle));
+            Sprite* pObstacle = new Sprite(QString(GameFramework::imagesPath() + "obstacle/%0.png").arg(nbGenObstacle));
             pObstacle->setPos(nbGen,0);
             pObstacle->setScale(0.5);
 
@@ -156,7 +155,6 @@ void GameCore::setupBonus(){
     ObjetTickHandler* pbTickHandler = new ObjetTickHandler;
     pbTickHandler->setDestroyOnCollisionEnabled(true);
     pBonus->setTickHandler(pbTickHandler);
-
     m_pScene->addSpriteToScene(pBonus);
     pBonus->registerForTick();
 }
@@ -168,7 +166,9 @@ void GameCore::setupTimerPartie(){
     m_textTimer = "0";
     m_pObjetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 700);
     //Applique une police d'écriture au texte du timer
-    int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
+    qDebug() << GameFramework::fontsPath() + "manaspc.ttf";
+    int id = QFontDatabase::addApplicationFont(GameFramework::fontsPath() + "manaspc.ttf");
+    QStringList stringList = QFontDatabase::applicationFontFamilies(id);
     QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont mana(familiy);
     mana.setPointSize(50);
@@ -185,7 +185,7 @@ void GameCore::setupResultat(){
     m_pObjetTimer->setOpacity(1);
     m_pObjetTimer->setZValue(1);
     //Applique une police d'écriture au texte du résultat
-    int id = QFontDatabase::addApplicationFont(GameFramework::imagesPath() + "manaspc.ttf");
+    int id = QFontDatabase::addApplicationFont(GameFramework::fontsPath() + "manaspc.ttf");
     QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont mana(familiy);
     mana.setPointSize(50);
@@ -323,7 +323,6 @@ void GameCore::setupBouton(){
     pBouton->setScale(0.1);
 
     m_pScene->addSpriteToScene(pBouton);
-
 }
 
 //! Supprimer tout les sprites de la scène excepté le joueur
@@ -446,12 +445,14 @@ void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons button
     // Si le bouton droite est cliqué et que le clip n'a pas déjà démarré,
     // on démarre le clip de la balle qui tombe et rebondit sur le sol.
     if (buttons.testFlag(Qt::LeftButton)) {
-        // bouton gauche cliqué : on vérifie si le sprite en dessous peut être shooté.
-        Sprite* pTargetSprite = m_pScene->spriteAt(mousePosition);
-        if (pTargetSprite == pBouton) {
-            // Le sprite est une tête à tirer : elle est détruite et explose
-            pTickHandler->s_vitesseObtsacle = 7;
-            restartGame();
+        if (jeuTermine) {
+            // bouton gauche cliqué : on vérifie si le sprite en dessous peut être shooté.
+            Sprite* pTargetSprite = m_pScene->spriteAt(mousePosition);
+            if (pTargetSprite == pBouton) {
+                // Le sprite est une tête à tirer : elle est détruite et explose
+                pTickHandler->s_vitesseObtsacle = 7;
+                restartGame();
+            }
         }
     }
 }

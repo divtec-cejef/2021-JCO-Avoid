@@ -81,6 +81,7 @@ QString resourcesPath() {
 #endif
     resourceDir.cdUp(); // Quitte 'debug...' !! ATTENTION : selon la version de QtCreator, cette ligne doit être supprimée.
     resourceDir.cdUp(); // Quitte 'build...'
+    resourceDir.cdUp(); // Quitte 'build...'
 #endif
     resourceDir.cd("res");
     return resourceDir.absolutePath() + QDir::separator();
@@ -90,6 +91,12 @@ QString resourcesPath() {
  * \return une chaîne de caractères contenant le chemin absolu du répertoire des images.
  */
 QString imagesPath() {
-    return resourcesPath() + QDir::separator() + QString("images") + QDir::separator();
+    return resourcesPath() + QString("images") + QDir::separator();
+}
+
+QString fontsPath() {
+    return resourcesPath() + QString("fonts") + QDir::separator();
 }
 }
+
+

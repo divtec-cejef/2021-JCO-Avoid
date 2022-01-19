@@ -289,7 +289,6 @@ void GameCore::startGameTimer(int tickInterval)  {
 void GameCore::timerPartie(){
     tempsPartie += 0.1;
     m_pObjetTimer->setText(QString::number(tempsPartie));
-
 }
 
 //! Met en place le joueur
@@ -299,7 +298,7 @@ void GameCore::setupPlayer() {
     int ajustementHauteur = 80;
 
     pPlayer->setPos(m_pScene->width()/2, m_pScene->height() - ajustementHauteur);
-    pPlayer->setZValue(1);    // Passe devant tous les autres sprites
+    pPlayer->setZValue(1);   // Passe devant tous les autres sprites
     pPlayer->setScale(0.4);
     m_pScene->addSpriteToScene(pPlayer);
     pPlayer->registerForTick();
@@ -384,7 +383,7 @@ void GameCore::restartGame(){
     setupPlayer();
 }
 
-//! Retourne l'écran de 180 degrés
+//! Retourne l'écran et le timer de 180 degrés
 //!
 void GameCore::rotateScreen() {
 
@@ -419,7 +418,6 @@ void GameCore::keyReleased(int key) {
 }
 
 //! Cadence.
-//! Gère le déplacement de la Terre qui tourne en cercle.
 //! \param elapsedTimeInMilliseconds  Temps écoulé depuis le dernier appel.
 void GameCore::tick(long long elapsedTimeInMilliseconds) {
     updateProgressBar();
@@ -442,7 +440,6 @@ void GameCore::mouseButtonPressed(QPointF mousePosition, Qt::MouseButtons button
     emit notifyMouseButtonPressed(mousePosition, buttons);
 
     // Si le bouton droite est cliqué et que le clip n'a pas déjà démarré,
-    // on démarre le clip de la balle qui tombe et rebondit sur le sol.
     if (buttons.testFlag(Qt::LeftButton)) {
         if (jeuTermine) {
             // bouton gauche cliqué : on vérifie si le sprite en dessous peut être shooté.

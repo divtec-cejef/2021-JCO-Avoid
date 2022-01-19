@@ -166,7 +166,6 @@ void GameCore::setupTimerPartie(){
     m_textTimer = "0";
     m_pObjetTimer = m_pScene->createText(QPointF(0,0), m_textTimer, 700);
     //Applique une police d'écriture au texte du timer
-    qDebug() << GameFramework::fontsPath() + "manaspc.ttf";
     int id = QFontDatabase::addApplicationFont(GameFramework::fontsPath() + "manaspc.ttf");
     QStringList stringList = QFontDatabase::applicationFontFamilies(id);
     QString familiy = QFontDatabase::applicationFontFamilies(id).at(0);
@@ -398,7 +397,7 @@ void GameCore::rotateScreen() {
         m_pObjetTimer->setX(0);
     } else {
         m_pObjetTimer->setRotation(180);
-        m_pObjetTimer->setX(50);
+        m_pObjetTimer->setX(40);
     }
 }
 

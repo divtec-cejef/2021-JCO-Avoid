@@ -396,7 +396,8 @@ void GameCore::rotateScreen() {
         m_pObjetTimer->setX(0);
     } else {
         m_pObjetTimer->setRotation(180);
-        m_pObjetTimer->setX(40);
+        m_pObjetTimer->setX(0);
+        m_pObjetTimer->setX(80);
     }
 }
 

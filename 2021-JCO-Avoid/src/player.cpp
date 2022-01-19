@@ -152,7 +152,6 @@ void Player::deathAnimation() {
 
 //! Stop l'animation du personnage
 //!
-
 void Player::onDeathAnimationEnd() {
 
     this->stopAnimation();

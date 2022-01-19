@@ -22,7 +22,6 @@
  * - Fonction : Les fonctions commencent par une minuscule et sont camélisées.
  * - Type énuméré : Les types énumérés commencent par une majuscule et sont camélisées.
  *
- *
  */
 
 #include "mainfrm.h"

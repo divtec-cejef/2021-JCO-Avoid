@@ -178,9 +178,10 @@ void GameCore::setupTimerPartie(){
 //! Met en place le résultat de la partie
 //!
 void GameCore::setupResultat(){
-    m_pObjetResultat = m_pScene->createText(QPointF((m_pScene->width() / 2) - 620,m_pScene->height() / 2), m_textResultat, 70);
+    double screenXCenter = m_pScene->width() / 2;
+    m_pObjetResultat = m_pScene->createText(QPointF(screenXCenter - screenXCenter / 2  - 100,m_pScene->height() / 2), m_textResultat, 70);
     m_pObjetTimer->setOpacity(0.5);
-    m_pObjetTimer->setPos(m_pScene->width() / 2 + 300,m_pScene->height() / 2);
+    m_pObjetTimer->setPos(screenXCenter + screenXCenter / 2,m_pScene->height() / 2);
     m_pObjetTimer->setOpacity(1);
     m_pObjetTimer->setZValue(1);
     //Applique une police d'écriture au texte du résultat
